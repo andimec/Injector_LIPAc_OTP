@@ -4,7 +4,7 @@ LIPAc Injector Operator Training Platform (OTP) and Digital Twin.
 
 ## Purpose
 
-This repository provides a software architecture for an offline, non-invasive digital twin of the LIPAc Injector. The platform is intended for operator training, procedure validation, fault injection, logging/replay, and Phoebus/EPICS integration without commanding the real machine.
+This repository provides an offline, non-invasive digital twin of the LIPAc Injector for operator training, procedure validation, fault injection, logging/replay, and Phoebus/EPICS integration without commanding the real machine.
 
 ## Architecture
 
@@ -16,8 +16,8 @@ This repository provides a software architecture for an offline, non-invasive di
                          EPICS PVs
                             |
                  +----------v-----------+
-                 |   EPICS Adapter      |
-                 |  read/write boundary |
+                 |   Simulation IOC      |
+                 |  backend boundary     |
                  +----------+-----------+
                             |
                  +----------v-----------+
@@ -36,23 +36,25 @@ This repository provides a software architecture for an offline, non-invasive di
                  +-----------------------+
 ```
 
-The physical models, simulation engine, EPICS interface and OPI layer are kept separate so that a real and a simulation IOC can expose the same PV contract in a later phase.
+The physical models, simulation engine, PV registry, EPICS boundary and OPI layer are kept separate. This allows the simulator to expose the same PV contract through a future simulation IOC while remaining isolated from the production Injector IOC.
 
-## Initial package layout
+## Package layout
 
-- `src/injector_otp/core`: simulation clock, state machine and common types.
-- `src/injector_otp/models`: subsystem models. Initial models are intentionally simple placeholders with explicit interfaces.
-- `src/injector_otp/epics`: EPICS boundary. The initial implementation is a backend-agnostic in-memory PV store so model development does not depend on EPICS availability.
-- `src/injector_otp/faults`: deterministic fault injection interface.
-- `src/injector_otp/app.py`: application composition and simulation loop.
-- `config/`: configuration and PV/PBS mapping baseline.
-- `tests/`: architecture-level tests.
-- `docs/architecture.md`: detailed design decisions and next steps.
+- `src/injector_otp/core`: simulation clock, state machine, PV contract and registry loader.
+- `src/injector_otp/models`: subsystem model interfaces and composition point.
+- `src/injector_otp/epics`: backend-neutral PV boundary and in-memory simulation store.
+- `src/injector_otp/faults`: deterministic fault definitions and injection manager.
+- `src/injector_otp/app.py`: application composition and simulation bootstrap.
+- `config/pv_registry_v1_2.json`: machine-readable September 2026 Injector PV snapshot.
+- `tests/`: architecture and registry tests.
+- `docs/`: architecture and registry design documentation.
+
+## V1.2 PV registry
+
+The simulator now bootstraps its PV namespace from `config/pv_registry_v1_2.json` rather than a hard-coded list. The registry preserves the source EPICS metadata and does not invent engineering attributes that are not supported by the source workbook.
+
+The current JSON snapshot contains 891 unique PV entries. The earlier engineering target of 870 active PVs remains a validation item because the source workbook does not expose an unambiguous inactive flag for those 21 entries. They are therefore retained rather than silently discarded.
 
 ## Safety boundary
 
-This repository is a training/simulation platform. The simulator must never write to production LIPAc control PVs. A future EPICS backend must require an explicit simulation IOC namespace and configuration guard before it can publish PVs.
-
-## Current baseline
-
-The PV architecture is based on the September 2026 active-PV snapshot and the V1.1 cross-check. The repository does not yet claim that the full PV list is authoritative. The controlled EPICS database, OPI configuration and PBS should be used for later verification.
+This repository is a training/simulation platform. It must never write to production LIPAc control PVs. The current backend is in-memory only. Any future EPICS implementation must target an explicitly configured simulation IOC namespace and must fail closed if production endpoints are configured.
