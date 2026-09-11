@@ -1,20 +1,59 @@
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
 from .core.engine import SimulationEngine
+from .core.pv_registry_loader import load_registry
 from .epics.store import PVStore
 from .faults.manager import FaultDefinition, FaultManager
 from .models.injector import InjectorModel
 
 
-def build_application() -> tuple[SimulationEngine, PVStore, FaultManager]:
+def _default_value(source_data: dict[str, Any]) -> Any:
+    if source_data.get("is_array"):
+        return []
+    epics_type = str(source_data.get("epics_type", "")).lower()
+    if "enum" in epics_type:
+        return 0
+    if "double" in epics_type or "float" in epics_type:
+        return 0.0
+    if "int" in epics_type:
+        return 0
+    if "string" in epics_type:
+        return ""
+    return 0
+
+
+def build_application(
+    registry_path: str | Path = "config/pv_registry_v1_2.json",
+) -> tuple[SimulationEngine, PVStore, FaultManager]:
+    """Build a fully populated offline simulation from the V1.2 PV contract."""
     pv = PVStore()
     faults = FaultManager()
 
-    # Initial contract. This is intentionally small until the full V1.1 registry
-    # is converted into machine-readable configuration.
-    pv.define("LEBT:FC:InStat", False, writable=False)
-    pv.define("PPS:BEAM:InhibitStat", False, writable=False)
-    pv.define("MPS:INJ:DefStat", False, writable=False)
-    pv.define("SRC:COIL01_PS:ISet", 0.0, writable=True)
-    pv.define("SRC:COIL01_PS:IRdbk", 0.0, writable=False)
+    payload_registry = load_registry(registry_path)
+
+    # Re-read the JSON here because PVStore needs source access permissions and
+    # initial-value information, while PVRegistry intentionally exposes the
+    # normalized engineering contract only.
+    import json
+    payload = json.loads(Path(registry_path).read_text(encoding="utf-8"))
+    source_by_name = {
+        item["name"]: item.get("source_data", {})
+        for item in payload.get("pvs", [])
+    }
+
+    for definition in payload_registry.all():
+        source_data = source_by_name.get(definition.name, {})
+        pv.define(
+            definition.name,
+            _default_value(source_data),
+            writable=bool(source_data.get("write_access", False)),
+        )
+
+    # Simulator-owned status PVs are deliberately outside the production PV
+    # namespace and therefore cannot address the real Injector IOC.
     pv.define("OTP:STATE", "OFF", writable=False)
     pv.define("OTP:SIM_TIME", 0.0, writable=False)
 
