@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .core.control import SimulationControlPlane, SimulationLogic
 from .core.engine import SimulationEngine
 from .core.pv_registry_loader import load_registry
 from .epics.simulation_backend import SimulationPVBackend
@@ -28,8 +29,10 @@ def _default_value(source_data: dict[str, Any]) -> Any:
 
 def build_application(
     registry_path: str | Path = "config/pv_registry_v1_2.json",
+    logic: list[SimulationLogic] | None = None,
+    control_plane: SimulationControlPlane | None = None,
 ) -> tuple[SimulationEngine, SimulationPVBackend, FaultManager]:
-    """Build a fully populated offline simulation from the V1.2 PV contract."""
+    """Build an offline simulation with injectable external control logic."""
     pv = SimulationPVBackend()
     faults = FaultManager()
 
@@ -76,6 +79,8 @@ def build_application(
         dt=0.1,
         pv_backend=pv,
         fault_manager=faults,
+        control_plane=control_plane,
+        logic=logic,
     )
     return engine, pv, faults
 
