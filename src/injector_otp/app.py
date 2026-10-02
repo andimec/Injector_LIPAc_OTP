@@ -5,7 +5,7 @@ from typing import Any
 
 from .core.engine import SimulationEngine
 from .core.pv_registry_loader import load_registry
-from .epics.store import PVStore
+from .epics.simulation_backend import SimulationPVBackend
 from .faults.manager import FaultDefinition, FaultManager
 from .models.injector import InjectorModel
 
@@ -27,16 +27,13 @@ def _default_value(source_data: dict[str, Any]) -> Any:
 
 def build_application(
     registry_path: str | Path = "config/pv_registry_v1_2.json",
-) -> tuple[SimulationEngine, PVStore, FaultManager]:
+) -> tuple[SimulationEngine, SimulationPVBackend, FaultManager]:
     """Build a fully populated offline simulation from the V1.2 PV contract."""
-    pv = PVStore()
+    pv = SimulationPVBackend()
     faults = FaultManager()
 
     payload_registry = load_registry(registry_path)
 
-    # Re-read the JSON here because PVStore needs source access permissions and
-    # initial-value information, while PVRegistry intentionally exposes the
-    # normalized engineering contract only.
     import json
     payload = json.loads(Path(registry_path).read_text(encoding="utf-8"))
     source_by_name = {
@@ -52,8 +49,6 @@ def build_application(
             writable=bool(source_data.get("write_access", False)),
         )
 
-    # Simulator-owned status PVs are deliberately outside the production PV
-    # namespace and therefore cannot address the real Injector IOC.
     pv.define("OTP:STATE", "OFF", writable=False)
     pv.define("OTP:SIM_TIME", 0.0, writable=False)
 
