@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from .base import SubsystemModel
+from ..core.engine import SimulationContext
 
 
 class InjectorModel(SubsystemModel):
@@ -13,8 +16,12 @@ class InjectorModel(SubsystemModel):
         self.rf_forward_W = 0.0
         self.vacuum_mbar = 1.0
 
-    def update(self, dt: float) -> None:
+    def update(self, dt: float, context: SimulationContext) -> None:
         super().update(dt)
-        # Placeholder dynamics. Real subsystem equations are added independently.
+        # External interlocks/faults are inputs to the model boundary and are
+        # deliberately not calculated here.
         if not self.state.enabled or self.state.fault:
+            return
+
+        if self.in_fault(context):
             return
