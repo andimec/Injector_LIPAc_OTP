@@ -1,54 +1,74 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-
-
-@dataclass
-class SubsystemModel:
-    """Minimal model boundary. Physics and control behaviour are added later."""
-
-    name: str
-
-    def update(self, dt: float) -> None:
-        if dt <= 0:
-            raise ValueError("dt must be positive")
+from ..core.engine import SimulationContext
+from .base import SubsystemModel
 
 
 class SourceModel(SubsystemModel):
-    pass
+    name = "source"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class VacuumModel(SubsystemModel):
-    pass
+    name = "vacuum"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class MagnetModel(SubsystemModel):
-    pass
+    name = "magnets"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class HVModel(SubsystemModel):
-    pass
+    name = "hv"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class RFModel(SubsystemModel):
-    pass
+    name = "rf"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class ChopperModel(SubsystemModel):
-    pass
+    name = "chopper"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class DiagnosticsModel(SubsystemModel):
-    pass
+    name = "diagnostics"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class CoolingModel(SubsystemModel):
-    pass
+    name = "cooling"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class MPSModel(SubsystemModel):
-    pass
+    name = "mps"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
 
 
 class PPSModel(SubsystemModel):
-    pass
+    name = "pps"
+
+    def update(self, dt: float, context: SimulationContext) -> None:
+        super().update(dt)
