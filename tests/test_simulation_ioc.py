@@ -21,9 +21,11 @@ def test_operator_write_stays_inside_simulation_namespace():
     assert backend.get("OTP:LEBT:TEST") == 2.0
 
 
-def test_production_namespace_is_rejected():
-    with pytest.raises(PermissionError):
+def test_production_source_name_is_mapped_to_simulation_namespace():
+    assert (
         SimulationIOCContract.simulation_name("SRC:COIL01_PS:ISet")
+        == "OTP:SRC:COIL01_PS:ISet"
+    )
 
 
 def test_non_simulation_name_cannot_bypass_contract():
