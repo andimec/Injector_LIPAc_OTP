@@ -1,5 +1,12 @@
 from injector_otp.app import build_application
+from injector_otp.core.control import SimulationControlPlane
 from injector_otp.core.state import InjectorState
+
+
+class ExternalInterlockAndFaultLogic:
+    def evaluate(self, context, controls):
+        controls.set_interlock("HV:ENABLE", context.pv.get("OTP:TEST_HV_OK", True))
+        controls.set_device_fault("hv", context.pv.get("OTP:TEST_HV_FAULT", False))
 
 
 def test_application_builds_in_safe_off_state():
@@ -43,3 +50,35 @@ def test_active_fault_is_visible_in_engine_context_and_snapshot():
     snapshot = engine.snapshot()
     assert snapshot["faults"] == ["VACUUM_LOSS"]
     assert snapshot["time"] == 0.1
+
+
+def test_external_logic_controls_interlocks_and_device_faults():
+    engine, pv, _ = build_application()
+    engine.logic.append(ExternalInterlockAndFaultLogic())
+
+    pv.define("OTP:TEST_HV_OK", True, writable=True)
+    pv.define("OTP:TEST_HV_FAULT", False, writable=True)
+
+    engine.step()
+    assert engine.context.interlocks["HV:ENABLE"] is True
+    assert engine.context.device_faults["hv"] is False
+
+    pv.put("OTP:TEST_HV_OK", False)
+    pv.put("OTP:TEST_HV_FAULT", True)
+    engine.step()
+
+    assert engine.context.interlocks["HV:ENABLE"] is False
+    assert engine.context.device_faults["hv"] is True
+    assert engine.snapshot()["interlocks"]["HV:ENABLE"] is False
+    assert engine.snapshot()["device_faults"]["hv"] is True
+
+
+def test_control_plane_is_independent_from_fault_manager():
+    controls = SimulationControlPlane()
+    controls.set_interlock("RF:ENABLE", False)
+    controls.set_device_fault("rf", True)
+
+    assert controls.interlock_ok("RF:ENABLE") is False
+    assert controls.device_in_fault("rf") is True
+    controls.clear_device_fault("rf")
+    assert controls.device_in_fault("rf") is False
