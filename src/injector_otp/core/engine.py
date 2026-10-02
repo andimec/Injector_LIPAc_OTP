@@ -23,13 +23,7 @@ class SimulationContext:
 
 
 class SimulationEngine:
-    """Coordinates the deterministic simulation cycle and PV boundary.
-
-    The engine deliberately keeps the first implementation backend-neutral.
-    Physical subsystem models are updated first, protection/status information
-    is then published, and the simulation clock is advanced only after the
-    completed cycle.
-    """
+    """Coordinates the deterministic simulation cycle and PV boundary."""
 
     def __init__(
         self,
@@ -62,20 +56,19 @@ class SimulationEngine:
         for model in self.models:
             model.update(step_dt)
 
-        # 4-6. Protection/state evaluation will be populated as subsystem
-        # models acquire their authorization interfaces. For now the engine
-        # preserves the explicit ordering and publishes the current state.
+        # 4-6. Protection and state evaluation will be populated as subsystem
+        # models acquire their authorization interfaces.
         self.context.state = self.state_machine.state
 
-        # 7. Publish standard simulator status PVs.
-        self._publish_state()
-
-        # 8. Refresh the context PV snapshot after model publication.
-        self._sync_context_from_pv()
-
-        # 9. Advance simulation time only after a complete cycle.
+        # 7. Advance simulation time after the completed model cycle.
         self.context.time += step_dt
+
+        # 8. Publish standard simulator status PVs.
+        self._publish_state()
         self._publish_time()
+
+        # 9. Refresh the context snapshot after all publications.
+        self._sync_context_from_pv()
 
         return self.context
 
@@ -94,12 +87,8 @@ class SimulationEngine:
             self.context.faults = set()
 
     def _publish_state(self) -> None:
-        """Publish standard simulator state when the PVs exist."""
-        if self.pv_backend is None:
-            return
-
-        names = set(self.pv_backend.names())
-        if "OTP:STATE" in names:
+        """Publish standard simulator state when the PV exists."""
+        if self.pv_backend is not None and "OTP:STATE" in set(self.pv_backend.names()):
             self.pv_backend.publish("OTP:STATE", self.context.state.value)
 
     def _publish_time(self) -> None:
