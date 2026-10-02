@@ -25,3 +25,9 @@ def test_operator_write_is_separate_from_model_publish():
         pass
     else:
         raise AssertionError("Read-only PV accepted an operator write")
+
+
+def test_v1_2_registry_is_exposed_only_in_simulation_namespace():
+    _, pv, _ = build_application()
+    assert "OTP:PPS:BEAM:InhibitStat" in pv.names()
+    assert "PPS:BEAM:InhibitStat" not in pv.names()
