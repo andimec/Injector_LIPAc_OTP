@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
@@ -33,8 +34,6 @@ def build_application(
     faults = FaultManager()
 
     payload_registry = load_registry(registry_path)
-
-    import json
     payload = json.loads(Path(registry_path).read_text(encoding="utf-8"))
     source_by_name = {
         item["name"]: item.get("source_data", {})
@@ -72,7 +71,12 @@ def build_application(
     ))
 
     model = InjectorModel()
-    engine = SimulationEngine(models=[model], dt=0.1, pv_backend=pv)
+    engine = SimulationEngine(
+        models=[model],
+        dt=0.1,
+        pv_backend=pv,
+        fault_manager=faults,
+    )
     return engine, pv, faults
 
 
