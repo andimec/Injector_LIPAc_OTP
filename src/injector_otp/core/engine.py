@@ -5,11 +5,12 @@ from typing import Protocol, Any
 
 from ..epics.backend import PVBackend
 from ..faults.manager import FaultManager
+from .control import SimulationControlPlane, SimulationLogic
 from .state import InjectorState, StateMachine
 
 
 class Model(Protocol):
-    def update(self, dt: float) -> None: ...
+    def update(self, dt: float, context: "SimulationContext") -> None: ...
 
 
 @dataclass
@@ -20,10 +21,12 @@ class SimulationContext:
     state: InjectorState = InjectorState.OFF
     pv: dict[str, object] = field(default_factory=dict)
     faults: set[str] = field(default_factory=set)
+    interlocks: dict[str, bool] = field(default_factory=dict)
+    device_faults: dict[str, bool] = field(default_factory=dict)
 
 
 class SimulationEngine:
-    """Coordinates the deterministic simulation cycle and PV boundary."""
+    """Coordinates deterministic simulation and external control logic."""
 
     def __init__(
         self,
@@ -31,6 +34,8 @@ class SimulationEngine:
         dt: float = 0.1,
         pv_backend: PVBackend | None = None,
         fault_manager: FaultManager | None = None,
+        control_plane: SimulationControlPlane | None = None,
+        logic: list[SimulationLogic] | None = None,
     ) -> None:
         if dt <= 0:
             raise ValueError("dt must be positive")
@@ -40,24 +45,30 @@ class SimulationEngine:
         self.models = models or []
         self.pv_backend = pv_backend
         self.fault_manager = fault_manager
+        self.control_plane = control_plane or SimulationControlPlane()
+        self.logic = logic or []
 
     def step(self, dt: float | None = None) -> SimulationContext:
         step_dt = self.dt if dt is None else dt
         if step_dt <= 0:
             raise ValueError("dt must be positive")
 
-        # 1. Read the current simulation PV state.
+        # 1. Read operator commands and current simulation PV state.
         self._sync_context_from_pv()
 
-        # 2. Apply active synthetic faults as engine-visible state.
+        # 2. External logic calculates interlocks and synthetic device faults.
+        for logic in self.logic:
+            logic.evaluate(self.context, self.control_plane)
+        self._sync_control_plane()
+
+        # 3. Keep named training faults visible independently of device faults.
         self._sync_faults()
 
-        # 3. Update physical/reduced-order subsystem models.
+        # 4. Update physical/reduced-order subsystem models.
         for model in self.models:
-            model.update(step_dt)
+            model.update(step_dt, self.context)
 
-        # 4-6. Protection and state evaluation will be populated as subsystem
-        # models acquire their authorization interfaces.
+        # 5-6. Protection/state evaluation is external in this architecture.
         self.context.state = self.state_machine.state
 
         # 7. Advance simulation time after the completed model cycle.
@@ -69,7 +80,6 @@ class SimulationEngine:
 
         # 9. Refresh the context snapshot after all publications.
         self._sync_context_from_pv()
-
         return self.context
 
     def _sync_context_from_pv(self) -> None:
@@ -80,6 +90,10 @@ class SimulationEngine:
             for name in self.pv_backend.names()
         }
 
+    def _sync_control_plane(self) -> None:
+        self.context.interlocks = dict(self.control_plane.interlocks)
+        self.context.device_faults = dict(self.control_plane.device_faults)
+
     def _sync_faults(self) -> None:
         if self.fault_manager is not None:
             self.context.faults = set(self.fault_manager.active)
@@ -87,7 +101,6 @@ class SimulationEngine:
             self.context.faults = set()
 
     def _publish_state(self) -> None:
-        """Publish standard simulator state when the PV exists."""
         if self.pv_backend is not None and "OTP:STATE" in set(self.pv_backend.names()):
             self.pv_backend.publish("OTP:STATE", self.context.state.value)
 
@@ -101,5 +114,7 @@ class SimulationEngine:
             "time": self.context.time,
             "state": self.context.state.value,
             "faults": sorted(self.context.faults),
+            "interlocks": dict(sorted(self.context.interlocks.items())),
+            "device_faults": dict(sorted(self.context.device_faults.items())),
             "pv": dict(self.context.pv),
         }
