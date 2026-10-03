@@ -128,3 +128,84 @@ Phase 7  Phoebus OPIs
 Phase 8  Logging, replay and scenario validation
 Phase 9  Real/virtual IOC interchangeability
 ```
+
+
+## 8. Interlock architecture
+
+The interlock layer is an external simulation-logic component. Physical
+subsystem models do not contain the Injector authorization equations.
+
+The SimulationEngine evaluates external logic before the physical-model update:
+
+```
+PV state
+   |
+   v
+InjectorInterlockLogic
+   |
+   +--> normalized authorization signals
+   |
+   +--> SimulationControlPlane
+             |
+             +--> physical models
+             +--> state/protection observers
+```
+
+The internal authorization convention is:
+
+- True: authorized / allowed.
+- False: blocked.
+
+The logic integrates the available documentation as complementary evidence.
+The current LCS User Manual v4.0 supplies the main authorization chains, while
+the PLC maintenance documentation contributes legacy signal relationships and
+Boolean equations. A legacy relationship is never silently substituted for a
+current authorization chain.
+
+The implemented authorization groups are:
+
+1. HVPS authorization.
+2. IEPS authorization.
+3. RF-for-Plasma authorization.
+4. RF-for-Beam authorization.
+5. normalized beam authorization including the available FBI status.
+
+The legacy relationships are exposed separately under the normalized
+LEGACY:MPS namespace.
+
+### 8.1 Source-to-model traceability
+
+Each implemented condition should be traceable to:
+
+```
+source document
+    -> documented condition / signal
+    -> PV registry entry
+    -> interlock expression
+    -> normalized control-plane signal
+    -> test case
+```
+
+If the documentation does not define a complete Boolean equation, the
+implementation records the missing information rather than inventing a rule.
+
+### 8.2 Fault separation
+
+Device faults are independent from authorization signals. The external
+control plane may contain, for example:
+
+```
+device_faults["hv"] = True
+interlocks["HV:ENABLE"] = False
+```
+
+This separation is required so that training scenarios can exercise fault
+injection, interlock response and recovery independently.
+
+### 8.3 Protection boundary
+
+The OTP reproduces observable protection and authorization behaviour for
+training and simulation. It does not replace the real Injector PPS/MPS
+hardware. Detailed latching, timing, reset and recovery behaviour should only
+be implemented when supported by the corresponding authoritative
+documentation.
