@@ -1,10 +1,24 @@
 # Simulation Engine modelling baseline
 
-## Source hierarchy
+## Source integration
 
-The current **Injector LCS User Manual v4.0** is the primary source for current operating references and numerical values. The older Injector LCS/PLC maintenance manuals are treated as supplementary sources for architecture, signal relationships, and interlock details that are not fully described in the current manual.
+The Engine 2.0 treats the available Injector documentation as complementary
+sources of evidence rather than imposing a strict "newer document replaces
+older document" hierarchy.
 
-The simulator must not silently promote an old value to a current machine limit. Where an older document conflicts with the current user manual, the current manual takes precedence for current operating references.
+The current Injector LCS User Manual v4.0 provides the current LCS/OPI
+authorization paths and operating references. The older Injector LCS/PLC
+maintenance manuals provide additional architecture, signal relationships and
+Boolean PPS/MPS relationships. The PV registry and operating-parameter
+configuration provide machine-readable representations used by the simulator.
+
+When two sources describe the same condition differently, the simulator does
+not silently choose one. The relationship is documented, the source context
+is preserved, and unresolved differences remain explicit until the relevant
+authoritative information is available.
+
+Numerical operating values and protection limits are kept distinct: a typical
+operating value is not automatically promoted to a protection threshold.
 
 ## Subsystem boundaries
 
@@ -38,9 +52,9 @@ The documentation establishes several dependencies that should become model inte
 The SimulationEngine should evolve from a list of independent update(dt) calls into an ordered deterministic cycle:
 
 1. Read operator commands and setpoints from the simulation PV namespace.
-2. Apply active synthetic faults.
-3. Update physical/subsystem models.
-4. Evaluate subsystem health and authorization conditions.
+2. Evaluate external authorization/interlock logic from the current observed state.
+3. Apply active synthetic faults and synchronize fault state.
+4. Update physical/reduced-order subsystem models.
 5. Evaluate MPS/PPS effects and beam inhibition.
 6. Evaluate the injector operating state.
 7. Publish calculated/readback/status PVs.
