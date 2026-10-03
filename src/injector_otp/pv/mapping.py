@@ -45,6 +45,8 @@ def role_from_definition(definition: PVDefinition) -> PVRole:
         return PVRole.SETPOINT
     if definition.direction is PVDirection.MONITOR:
         return PVRole.MONITOR
+    if definition.direction is PVDirection.UNRESOLVED:
+        return PVRole.UNRESOLVED
     return PVRole.CALCULATED
 
 
@@ -58,7 +60,9 @@ def runtime_spec(
     # Source workbook read/write metadata is not sufficient to infer semantic
     # ownership. A source PV can be read/write for implementation reasons.
     operator_writable = role in (PVRole.COMMAND, PVRole.SETPOINT)
-    owner = PVOwner.OPERATOR if operator_writable else PVOwner.SIMULATION
+    owner = PVOwner.OPERATOR if operator_writable else (
+        PVOwner.UNRESOLVED if role is PVRole.UNRESOLVED else PVOwner.SIMULATION
+    )
 
     return PVRuntimeSpec(
         name=definition.name,
