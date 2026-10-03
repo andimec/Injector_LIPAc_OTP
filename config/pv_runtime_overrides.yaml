@@ -3,19 +3,19 @@
 # The source PV workbook describes EPICS access characteristics but does not
 # uniquely determine Digital Twin ownership. Only PVs whose semantic role has
 # been verified for the pilot are overridden here. Unlisted PVs remain
-# unresolved/simulation-owned until their behaviour is documented.
+# unresolved until their behaviour is documented.
 
 inputs:
-  - LEBT:HV_PS:OnCmd
-  - LEBT:HV_PS:VSet
-  - SRC:COIL01_PS:OnCmd
+  - LEBT:HV_PS:HTOnCmd
+  - LEBT:HV_PS:ICmd
+  - SRC:COIL01_PS:ON
   - SRC:COIL01_PS:ISet
+  - PPS:HV:PermStat
+  - PPS:BEAM:InhibitStat
 
 outputs:
   - LEBT:HV_PS:OnStat
-  - LEBT:HV_PS:VMon
+  - LEBT:HV_PS:LectVht
   - SRC:COIL01_PS:IRdbk
   - SRC:COIL01_PS:OnStat
   - SRC:COIL01:FSDefStat
-  - PPS:HV:PermStat
-  - PPS:BEAM:InhibitStat
