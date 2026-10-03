@@ -9,6 +9,7 @@ class PVDirection(str, Enum):
     COMMAND = "command"
     SETPOINT = "setpoint"
     CALCULATED = "calculated"
+    UNRESOLVED = "unresolved"
 
 
 @dataclass(frozen=True)
@@ -23,7 +24,7 @@ class PVDefinition:
 
 
 class PVRegistry:
-    """In-memory registry of the PV contract used by the Digital Twin."""
+    """In-memory registry of the PV inventory and semantic contract."""
 
     def __init__(self, definitions: list[PVDefinition] | None = None) -> None:
         self._definitions = {item.name: item for item in definitions or []}
