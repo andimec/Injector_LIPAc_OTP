@@ -29,6 +29,16 @@ from typing import Any
 from ..core.control import SimulationControlPlane
 
 
+SOURCE_REFERENCES = {
+    "hv": "Injector LCS User Manual v4.0, section 4.4",
+    "rf": "Injector LCS User Manual v4.0, section 4.3",
+    "ie": "Injector LCS User Manual v4.0, section 4.5",
+    "fbi": "Injector LCS User Manual v4.0, section 4.6",
+    "pps_mps": "Injector LCS User Manual v4.0, section 4.1",
+    "legacy_pps_mps": "Injector PLC Maintenance Manual, sections 3.1-3.2",
+}
+
+
 @dataclass(frozen=True)
 class InterlockResult:
     """A named authorization result and the individual conditions that formed it."""
