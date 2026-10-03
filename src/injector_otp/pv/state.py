@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from time import time
-from typing import Any
+from typing import Any, Iterable
 
 from ..core.pv_registry import PVDirection, PVDefinition, PVRegistry
 
@@ -23,15 +23,27 @@ class SimulationPVState:
     This object is the source of truth between models and the EPICS adapter.
     Models never access EPICS directly.
 
-    Operator-facing writes are accepted only for PVs classified as COMMAND or
-    SETPOINT. Model-generated values are written through publish().
+    Operator-facing writes are accepted only for explicitly configured command
+    and setpoint inputs. Model-generated values are written through publish().
     """
 
-    def __init__(self, registry: PVRegistry | None = None) -> None:
+    def __init__(
+        self,
+        registry: PVRegistry | None = None,
+        *,
+        writable_names: Iterable[str] = (),
+    ) -> None:
         self.registry = registry
+        self._writable_names = set(writable_names)
         self._values: dict[str, PVValue] = {}
 
-    def define(self, name: str, value: Any = 0, *, source: str = "initialization") -> None:
+    def define(
+        self,
+        name: str,
+        value: Any = 0,
+        *,
+        source: str = "initialization",
+    ) -> None:
         self._require_registered(name)
         self._values[name] = PVValue(name, value, time(), source)
 
@@ -42,17 +54,23 @@ class SimulationPVState:
         return self._values[name]
 
     def put(self, name: str, value: Any, *, source: str = "operator") -> None:
-        definition = self._definition(name)
-        if definition is not None and definition.direction not in (
-            PVDirection.COMMAND,
-            PVDirection.SETPOINT,
-        ):
-            raise PermissionError(f"PV is simulation-owned/read-only: {name}")
+        if name not in self._writable_names:
+            definition = self._definition(name)
+            if definition is None or definition.direction not in (
+                PVDirection.COMMAND,
+                PVDirection.SETPOINT,
+            ):
+                raise PermissionError(
+                    f"PV is simulation-owned/read-only or unresolved: {name}"
+                )
+            raise PermissionError(
+                f"PV is not explicitly enabled as an operator input: {name}"
+            )
         self._values[name] = PVValue(name, value, time(), source)
 
     def publish(self, name: str, value: Any, *, source: str = "simulation") -> None:
         """Publish a model/interlock-generated output."""
-        self._require_registered(name, allow_runtime=True)
+        self._require_registered(name)
         self._values[name] = PVValue(name, value, time(), source)
 
     def names(self) -> list[str]:
@@ -72,11 +90,8 @@ class SimulationPVState:
         except KeyError:
             return None
 
-    def _require_registered(self, name: str, *, allow_runtime: bool = False) -> None:
+    def _require_registered(self, name: str) -> None:
         if self.registry is None:
             return
-        if name in self.registry.names():
-            return
-        if allow_runtime and name.startswith("OTP:"):
-            return
-        raise KeyError(f"PV is not registered: {name}")
+        if name not in self.registry.names():
+            raise KeyError(f"PV is not registered: {name}")
