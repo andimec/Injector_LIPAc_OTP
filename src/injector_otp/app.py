@@ -80,7 +80,7 @@ def build_application(
     ))
 
     model = InjectorModel()
-    simulation_logic = list(logic) if logic is not None else [InjectorInterlockLogic()]
+    simulation_logic = [InjectorInterlockLogic(), *(logic or [])]
     engine = SimulationEngine(
         models=[model],
         dt=0.1,
