@@ -7,7 +7,7 @@ name = "injector-lipac-otp"
 version = "0.1.0"
 description = "LIPAc Injector Operator Training Platform and Digital Twin"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["PyYAML>=6.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
