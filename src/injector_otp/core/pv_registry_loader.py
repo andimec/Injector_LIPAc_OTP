@@ -9,15 +9,17 @@ from .pv_registry import PVDirection, PVDefinition, PVRegistry
 
 _DIRECTION_BY_ACCESS = {
     (True, False): PVDirection.MONITOR,
-    (True, True): PVDirection.COMMAND,
     (False, True): PVDirection.SETPOINT,
+    # Read/write in the source IOC does not identify semantic ownership.
+    # Treat it as unresolved until the command/setpoint/output role is verified.
+    (True, True): PVDirection.UNRESOLVED,
 }
 
 
 def _direction(source_data: dict[str, Any]) -> PVDirection:
     read = bool(source_data.get("read_access", False))
     write = bool(source_data.get("write_access", False))
-    return _DIRECTION_BY_ACCESS.get((read, write), PVDirection.CALCULATED)
+    return _DIRECTION_BY_ACCESS.get((read, write), PVDirection.UNRESOLVED)
 
 
 def _normalise_type(epics_type: str | None) -> str:
@@ -36,7 +38,7 @@ def _normalise_type(epics_type: str | None) -> str:
 
 
 def load_registry(path: str | Path) -> PVRegistry:
-    """Load the machine-readable PV registry without requiring YAML dependencies."""
+    """Load the machine-readable PV inventory without inventing semantics."""
     source = Path(path)
     payload = json.loads(source.read_text(encoding="utf-8"))
 
