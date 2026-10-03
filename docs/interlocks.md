@@ -211,3 +211,16 @@ Examples currently left deliberately open:
 
 Those items should be added after the corresponding authoritative signal or
 protection documentation is available.
+
+
+### 4.1 Legacy signal qualification
+
+The legacy PLC equation refers to a dedicated Repeller fault condition. The
+current V1.2 registry exposes the Repeller power-supply ON status but does not
+provide a dedicated Repeller FSDefStat signal in the same naming family.
+
+For that reason the implementation uses Repeller availability as a readiness
+proxy in LEGACY:MPS:FOCALIZATION:OK. This signal must not be interpreted as a
+literal reconstruction of the historical MPS fault bit. It can be replaced by
+the exact Repeller fault PV when the authoritative current signal definition
+is available.
