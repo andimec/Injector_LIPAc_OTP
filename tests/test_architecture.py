@@ -82,3 +82,147 @@ def test_control_plane_is_independent_from_fault_manager():
     assert controls.device_in_fault("rf") is True
     controls.clear_device_fault("rf")
     assert controls.device_in_fault("rf") is False
+
+
+def _publish_many(pv, values):
+    for name, value in values.items():
+        pv.publish(name, value)
+
+
+def test_default_interlock_logic_is_wired_into_application():
+    engine, _, _ = build_application()
+    engine.step()
+
+    assert engine.context.interlocks["HV:ENABLE"] is False
+    assert engine.context.interlocks["RF:PLASMA:ENABLE"] is False
+    assert engine.context.interlocks["RF:BEAM:ENABLE"] is False
+
+
+def test_hv_interlock_requires_all_documented_conditions():
+    engine, pv, _ = build_application()
+    values = {
+        "LEBT:HV:RoomKeyA1": True,
+        "LEBT:HV:RlyRmtStat": True,
+        "LEBT:HV:RlyCloseStat": True,
+        "LEBT:VAC01:SGVCDefStat": True,
+        "SRC:IE_PS:OnStat": True,
+        "INJ:WS:ResPCDefStat": True,
+        "SRC:COIL01:FSDefStat": True,
+        "SRC:COIL02:FSDefStat": True,
+        "SRC:RF:FSDefStat": True,
+        "PPS:HV:PermStat": True,
+        "LEBT:HV_PS:ExtSec": True,
+    }
+    _publish_many(pv, values)
+    engine.step()
+    assert engine.context.interlocks["HV:ENABLE"] is True
+
+    pv.publish("SRC:COIL02:FSDefStat", False)
+    engine.step()
+    assert engine.context.interlocks["HV:ENABLE"] is False
+
+
+def test_rf_plasma_interlock_uses_d2_gas_configuration():
+    engine, pv, _ = build_application()
+    values = {
+        "SRC:COIL01_PS:OnStat": True,
+        "SRC:COIL02_PS:OnStat": True,
+        "SRC:IE_PS:OnStat": True,
+        "LEBT:R_PS:OnStat": True,
+        "SRC:SVL:D2OpenStat": True,
+        "LEBT:GE:FSFlowStat": True,
+        "LEBT:GE:TSDefStat": True,
+        "SRC:RF:FSDefStat": True,
+        "LEBT:VAC01:SGVCDefStat": True,
+        "PPS:PLSM:PermStat": True,
+    }
+    _publish_many(pv, values)
+    engine.step()
+    assert engine.context.interlocks["RF:PLASMA:ENABLE"] is True
+
+    pv.publish("SRC:SVL:D2OpenStat", False)
+    engine.step()
+    assert engine.context.interlocks["RF:PLASMA:ENABLE"] is False
+
+
+def test_rf_beam_interlock_requires_documented_beam_conditions():
+    engine, pv, _ = build_application()
+    values = {
+        "LEBT:CHOP:FSDefStat": True,
+        "LEBT:EMIT:FSDefStat": True,
+        "LEBT:FC:FSDefStat": True,
+        "LEBT:IC:FSDefStat": True,
+        "LEBT:SOL01:VCFlowStat": True,
+        "LEBT:SOL02:VCFlowStat": True,
+        "LEBT:SOL01_PS:OnStat": True,
+        "LEBT:SOL02_PS:OnStat": True,
+        "SRC:RF:FSDefStat": True,
+        "LEBT:GV:OpenStat": True,
+        "LEBT:CHOP:InStat": True,
+        "SRC:SVL:D2OpenStat": True,
+        "LEBT:GE:FSFlowStat": True,
+        "LEBT:GE:TSDefStat": True,
+        "LEBT:HV_PS:OnStat": True,
+        "SRC:IE_PS:OnStat": True,
+        "LEBT:R_PS:OnStat": True,
+        "PPS:CHOP:PermStat": True,
+        "PPS:ACCL:PermStat": True,
+        "PPS:BEAM:InhibitStat": False,
+    }
+    _publish_many(pv, values)
+    engine.step()
+    assert engine.context.interlocks["RF:BEAM:ENABLE"] is True
+
+    pv.publish("PPS:BEAM:InhibitStat", True)
+    engine.step()
+    assert engine.context.interlocks["RF:BEAM:ENABLE"] is False
+
+
+def test_external_device_fault_can_block_authorization_without_changing_pv_state():
+    controls = SimulationControlPlane()
+    engine, pv, _ = build_application(control_plane=controls)
+    values = {
+        "LEBT:HV:RoomKeyA1": True,
+        "LEBT:HV:RlyRmtStat": True,
+        "LEBT:HV:RlyCloseStat": True,
+        "LEBT:VAC01:SGVCDefStat": True,
+        "SRC:IE_PS:OnStat": True,
+        "INJ:WS:ResPCDefStat": True,
+        "SRC:COIL01:FSDefStat": True,
+        "SRC:COIL02:FSDefStat": True,
+        "SRC:RF:FSDefStat": True,
+        "PPS:HV:PermStat": True,
+        "LEBT:HV_PS:ExtSec": True,
+    }
+    _publish_many(pv, values)
+    engine.step()
+    assert engine.context.interlocks["HV:ENABLE"] is True
+
+    controls.set_device_fault("hv", True)
+    engine.step()
+    assert engine.context.interlocks["HV:ENABLE"] is False
+    assert pv.get("SRC:RF:FSDefStat") is True
+
+
+def test_legacy_relationships_are_exposed_separately():
+    engine, pv, _ = build_application()
+    _publish_many(
+        pv,
+        {
+            "LEBT:R_PS:OnStat": True,
+            "LEBT:SOL01:FSDefStat": True,
+            "LEBT:SOL02:FSDefStat": True,
+            "LEBT:VAC01:SGVCDefStat": True,
+            "LEBT:VAC02:SGVCDefStat": True,
+            "LEBT:FC:InStat": True,
+            "LEBT:GV:CloseStat": True,
+            "LEBT:CHOP:InStat": True,
+            "LEBT:CHOP_PS:OnStat": True,
+        },
+    )
+    engine.step()
+
+    assert engine.context.interlocks["LEGACY:MPS:FOCALIZATION:OK"] is True
+    assert engine.context.interlocks["LEGACY:MPS:VACUUM:OK"] is True
+    assert engine.context.interlocks["LEGACY:MPS:GV_PROTECTION"] is True
+    assert engine.context.interlocks["LEGACY:MPS:CHOPPER:STATUS"] is True
