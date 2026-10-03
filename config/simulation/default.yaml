@@ -3,7 +3,7 @@
 # Calculated interlock outputs and model readbacks must not be configured here.
 
 simulation:
-  initial_state: OFF
+  initial_state: "OFF"
   timestep_s: 0.1
 
 external_conditions:
