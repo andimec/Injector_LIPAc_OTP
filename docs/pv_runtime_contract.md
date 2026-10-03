@@ -104,9 +104,9 @@ Every simulation-owned PV should have a clear generator.
 | SRC:COIL01:FSDefStat | CoilModel / FaultManager |
 | LEBT:HV_PS:VMon | HVModel |
 | LEBT:HV_PS:OnStat | HVModel |
-| PPS:HV:PermStat | InjectorInterlockLogic |
-| PPS:PLSM:PermStat | InjectorInterlockLogic |
-| PPS:BEAM:InhibitStat | MPS/PPS logic |
+| PPS:HV:PermStat | external PPS condition / future PPSModel |
+| PPS:PLSM:PermStat | external PPS condition / future PPSModel |
+| PPS:BEAM:InhibitStat | external protection condition / future PPSModel |
 
 Where documentation does not establish the generator, it remains unresolved
 rather than being invented.
@@ -301,3 +301,16 @@ the existing EPICS/SNL ramp implementation.
 
 The Digital Twin deliberately places the behavioural intelligence in Python
 while preserving the observable PV contract.
+
+
+## Current PPS boundary
+
+The current interlock implementation consumes raw PPS permit/inhibit PVs as
+external protection conditions because the authoritative hardware PPS
+implementation is outside the Digital Twin. The normalized Python control
+signals such as HV:ENABLE and BEAM:ENABLE remain simulation-owned control-plane
+results.
+
+A future PPSModel may generate the raw PPS PVs once the authoritative PPS
+behaviour required for training has been specified. Until then, the simulator
+does not invent a hardware PPS implementation.
