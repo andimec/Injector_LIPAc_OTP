@@ -48,8 +48,14 @@ class SimulationPVBackend:
             for name in self.names()
         }
 
-    @staticmethod
-    def _source_name(name: str) -> str:
-        if SimulationIOCContract.is_simulation_name(name):
-            return name[len(SIM_NAMESPACE):]
+    def _source_name(self, name: str) -> str:
+        if not SimulationIOCContract.is_simulation_name(name):
+            return name
+
+        candidate = name[len(SIM_NAMESPACE):]
+        # Application PVs use source Injector names internally, while
+        # standalone tests may deliberately define OTP-prefixed runtime PVs.
+        # Preserve whichever representation actually exists in the state.
+        if candidate in self.state.names():
+            return candidate
         return name
