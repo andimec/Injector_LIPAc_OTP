@@ -1,0 +1,38 @@
+# Default simulation startup configuration.
+# This file defines initial conditions only.
+# Calculated interlock outputs and model readbacks must not be configured here.
+
+simulation:
+  initial_state: OFF
+  timestep_s: 0.1
+
+external_conditions:
+  vacuum:
+    ready: true
+  cooling:
+    ready: true
+  gas:
+    available: true
+  magnets:
+    ready: true
+  rf:
+    ready: true
+
+initial_pvs:
+  LEBT:HV:RoomKeyA1: true
+  LEBT:HV:RlyRmtStat: true
+  LEBT:HV:RlyCloseStat: true
+  LEBT:VAC01:SGVCDefStat: true
+  LEBT:VAC02:SGVCDefStat: true
+  SRC:IE_PS:OnStat: true
+  INJ:WS:ResPCDefStat: true
+  SRC:COIL01:FSDefStat: true
+  SRC:COIL02:FSDefStat: true
+  SRC:RF:FSDefStat: true
+  PPS:HV:PermStat: true
+  PPS:PLSM:PermStat: true
+  PPS:CHOP:PermStat: true
+  PPS:ACCL:PermStat: true
+  PPS:BEAM:InhibitStat: false
+
+device_faults: {}
