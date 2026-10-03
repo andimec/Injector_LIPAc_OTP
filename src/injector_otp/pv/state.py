@@ -93,5 +93,6 @@ class SimulationPVState:
     def _require_registered(self, name: str) -> None:
         if self.registry is None:
             return
-        if name not in self.registry.names():
-            raise KeyError(f"PV is not registered: {name}")
+        if name in self.registry.names() or name.startswith("OTP:"):
+            return
+        raise KeyError(f"PV is not registered: {name}")
