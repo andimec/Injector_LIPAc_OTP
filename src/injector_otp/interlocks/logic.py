@@ -279,4 +279,4 @@ class InjectorInterlockLogic:
         return self._bool(context, "LEBT:CHOP_IM:Fbi")
 
 
-__all__ = ["InjectorInterlockLogic", "InterlockResult"]
+__all__ = ["InjectorInterlockLogic", "InterlockResult", "SOURCE_REFERENCES"]
