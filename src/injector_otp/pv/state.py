@@ -47,6 +47,10 @@ class SimulationPVState:
         self._require_registered(name)
         self._values[name] = PVValue(name, value, time(), source)
 
+    def allow_operator_write(self, name: str) -> None:
+        """Explicitly mark a PV as writable by the local adapter/test harness."""
+        self._writable_names.add(name)
+
     def get(self, name: str) -> Any:
         return self._values[name].value
 
