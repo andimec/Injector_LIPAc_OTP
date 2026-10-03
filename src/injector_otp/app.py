@@ -10,6 +10,7 @@ from .core.pv_registry_loader import load_registry
 from .epics.simulation_backend import SimulationPVBackend
 from .faults.manager import FaultDefinition, FaultManager
 from .models.injector import InjectorModel
+from .interlocks.logic import InjectorInterlockLogic
 
 
 def _default_value(source_data: dict[str, Any]) -> Any:
@@ -32,7 +33,12 @@ def build_application(
     logic: list[SimulationLogic] | None = None,
     control_plane: SimulationControlPlane | None = None,
 ) -> tuple[SimulationEngine, SimulationPVBackend, FaultManager]:
-    """Build an offline simulation with injectable external control logic."""
+    """Build an offline simulation with documented Injector interlock logic.
+
+    The default application includes InjectorInterlockLogic. Additional external
+    logic objects can be supplied through ``logic`` and are evaluated by the
+    SimulationEngine before physical-model updates.
+    """
     pv = SimulationPVBackend()
     faults = FaultManager()
 
@@ -74,13 +80,14 @@ def build_application(
     ))
 
     model = InjectorModel()
+    simulation_logic = list(logic) if logic is not None else [InjectorInterlockLogic()]
     engine = SimulationEngine(
         models=[model],
         dt=0.1,
         pv_backend=pv,
         fault_manager=faults,
         control_plane=control_plane,
-        logic=logic,
+        logic=simulation_logic,
     )
     return engine, pv, faults
 
