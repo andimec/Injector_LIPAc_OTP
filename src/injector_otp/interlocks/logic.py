@@ -53,8 +53,8 @@ class InjectorInterlockLogic:
         Commands may change equipment PVs through the models, but the
         authorization result is always calculated from observed conditions.
         """
-        hv = self._evaluate_hv(context)
-        ie = self._evaluate_ie(context)
+        hv = self._evaluate_hv(context, controls)
+        ie = self._evaluate_ie(context, controls)
         plasma = self._evaluate_rf_plasma(context, controls)
         beam = self._evaluate_rf_beam(context, controls)
 
@@ -95,7 +95,7 @@ class InjectorInterlockLogic:
         # signals. They are not used to silently replace current chains.
         self._evaluate_legacy_relationships(context, controls)
 
-    def _evaluate_hv(self, context: Any) -> InterlockResult:
+    def _evaluate_hv(self, context: Any, controls: SimulationControlPlane) -> InterlockResult:
         """Implement the current LCS HVPS authorization chain."""
         conditions = {
             "control_room_key": self._bool(context, "LEBT:HV:RoomKeyA1"),
@@ -106,13 +106,13 @@ class InjectorInterlockLogic:
             "cooling": self._healthy_pv(context, "INJ:WS:ResPCDefStat"),
             "coil1_healthy": self._healthy_pv(context, "SRC:COIL01:FSDefStat"),
             "coil2_healthy": self._healthy_pv(context, "SRC:COIL02:FSDefStat"),
-            "rf_healthy": self._healthy_pv(context, "SRC:RF:FSDefStat"),
+            "rf_healthy": self._healthy_pv(context, "SRC:RF:FSDefStat") and not controls.device_in_fault("rf"),
             "pps_hv_permit": self._bool(context, "PPS:HV:PermStat"),
-            "external_hv_safety": self._bool(context, "LEBT:HV_PS:ExtSec"),
+            "external_hv_safety": self._bool(context, "LEBT:HV_PS:ExtSec") and not controls.device_in_fault("hv"),
         }
         return InterlockResult("HV:ENABLE", all(conditions.values()), conditions)
 
-    def _evaluate_ie(self, context: Any) -> InterlockResult:
+    def _evaluate_ie(self, context: Any, controls: SimulationControlPlane) -> InterlockResult:
         """Implement the dedicated IEPS authorization chain."""
         conditions = {
             "control_room_key": self._bool(context, "LEBT:HV:RoomKeyA1"),
@@ -125,7 +125,7 @@ class InjectorInterlockLogic:
             "coil2_healthy": self._healthy_pv(context, "SRC:COIL02:FSDefStat"),
             "rf_healthy": self._healthy_pv(context, "SRC:RF:FSDefStat"),
             "pps_hv_permit": self._bool(context, "PPS:HV:PermStat"),
-            "external_ie_safety": self._bool(context, "SRC:IE_PS:ExtSec"),
+            "external_ie_safety": self._bool(context, "SRC:IE_PS:ExtSec") and not controls.device_in_fault("ie"),
         }
         return InterlockResult("IE:ENABLE", all(conditions.values()), conditions)
 
@@ -138,8 +138,8 @@ class InjectorInterlockLogic:
         conditions = {
             "coil1_on": self._healthy_pv(context, "SRC:COIL01_PS:OnStat"),
             "coil2_on": self._healthy_pv(context, "SRC:COIL02_PS:OnStat"),
-            "ie_on": self._healthy_pv(context, "SRC:IE_PS:OnStat"),
-            "repeller_on": self._healthy_pv(context, "LEBT:R_PS:OnStat"),
+            "ie_on": self._healthy_pv(context, "SRC:IE_PS:OnStat") and not controls.device_in_fault("ie"),
+            "repeller_on": self._healthy_pv(context, "LEBT:R_PS:OnStat") and not controls.device_in_fault("repeller"),
             "gas_ready": self._gas_ready(context, controls),
             "rf_healthy": self._healthy_pv(context, "SRC:RF:FSDefStat"),
             "vacuum": self._healthy_pv(context, "LEBT:VAC01:SGVCDefStat"),
@@ -154,19 +154,19 @@ class InjectorInterlockLogic:
     ) -> InterlockResult:
         """Implement the RF-for-Beam authorization path."""
         conditions = {
-            "chopper_healthy": self._healthy_pv(context, "LEBT:CHOP:FSDefStat"),
+            "chopper_healthy": self._healthy_pv(context, "LEBT:CHOP:FSDefStat") and not controls.device_in_fault("chopper"),
             "emittance_healthy": self._healthy_pv(context, "LEBT:EMIT:FSDefStat"),
             "faraday_cup_healthy": self._healthy_pv(context, "LEBT:FC:FSDefStat"),
             "acct_healthy": self._healthy_pv(context, "LEBT:IC:FSDefStat"),
             "solenoid1_cooling": self._healthy_pv(context, "LEBT:SOL01:VCFlowStat"),
             "solenoid2_cooling": self._healthy_pv(context, "LEBT:SOL02:VCFlowStat"),
-            "solenoid1_on": self._healthy_pv(context, "LEBT:SOL01_PS:OnStat"),
-            "solenoid2_on": self._healthy_pv(context, "LEBT:SOL02_PS:OnStat"),
+            "solenoid1_on": self._healthy_pv(context, "LEBT:SOL01_PS:OnStat") and not controls.device_in_fault("solenoids"),
+            "solenoid2_on": self._healthy_pv(context, "LEBT:SOL02_PS:OnStat") and not controls.device_in_fault("solenoids"),
             "rf_healthy": self._healthy_pv(context, "SRC:RF:FSDefStat"),
             "gate_valve_open": self._bool(context, "LEBT:GV:OpenStat"),
             "chopper_inserted": self._bool(context, "LEBT:CHOP:InStat"),
             "gas_ready": self._gas_ready(context, controls),
-            "hv_on": self._healthy_pv(context, "LEBT:HV_PS:OnStat"),
+            "hv_on": self._healthy_pv(context, "LEBT:HV_PS:OnStat") and not controls.device_in_fault("hv"),
             "ie_on": self._healthy_pv(context, "SRC:IE_PS:OnStat"),
             "repeller_on": self._healthy_pv(context, "LEBT:R_PS:OnStat"),
             "chopper_pps_permit": self._bool(context, "PPS:CHOP:PermStat"),
