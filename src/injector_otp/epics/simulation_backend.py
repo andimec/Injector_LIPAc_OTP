@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..pv.state import SimulationPVState
-from .contract import SimulationIOCContract
+from .contract import SIM_NAMESPACE, SimulationIOCContract
 
 
 class SimulationPVBackend:
@@ -17,16 +17,12 @@ class SimulationPVBackend:
         self.state = state or SimulationPVState()
 
     def define(self, name: str, value: Any = 0, writable: bool = False) -> None:
-        # Writable is retained for compatibility with the previous in-memory
-        # backend. New applications should configure writable names explicitly
-        # in SimulationPVState.
-        if writable and name not in self.state._writable_names:
-            self.state._writable_names.add(name)
+        if writable:
+            self.state.allow_operator_write(name)
         self.state.define(name, value=value)
 
     def get(self, name: str) -> Any:
-        source_name = self._source_name(name)
-        return self.state.get(source_name)
+        return self.state.get(self._source_name(name))
 
     def put(self, name: str, value: Any) -> None:
         sim_name = SimulationIOCContract.simulation_name(name)
@@ -55,5 +51,5 @@ class SimulationPVBackend:
     @staticmethod
     def _source_name(name: str) -> str:
         if SimulationIOCContract.is_simulation_name(name):
-            return name[len(SimulationIOCContract.SIM_NAMESPACE):]
+            return name[len(SIM_NAMESPACE):]
         return name
