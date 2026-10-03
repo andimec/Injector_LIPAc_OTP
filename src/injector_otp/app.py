@@ -4,15 +4,19 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .config.loader import (
+    load_pv_runtime_overrides,
+    load_simulation_config,
+)
 from .core.control import SimulationControlPlane, SimulationLogic
 from .core.engine import SimulationEngine
-from .core.state import InjectorState
-from .config.loader import load_simulation_config
 from .core.pv_registry_loader import load_registry
+from .core.state import InjectorState
 from .epics.simulation_backend import SimulationPVBackend
 from .faults.manager import FaultDefinition, FaultManager
-from .models.injector import InjectorModel
 from .interlocks.logic import InjectorInterlockLogic
+from .models.injector import InjectorModel
+from .pv.state import SimulationPVState
 
 
 def _default_value(source_data: dict[str, Any]) -> Any:
@@ -33,65 +37,85 @@ def _default_value(source_data: dict[str, Any]) -> Any:
 def build_application(
     registry_path: str | Path = "config/pv_registry_v1_2.json",
     simulation_config_path: str | Path = "config/simulation/default.yaml",
+    runtime_overrides_path: str | Path = "config/pv_runtime_overrides.yaml",
     logic: list[SimulationLogic] | None = None,
     control_plane: SimulationControlPlane | None = None,
 ) -> tuple[SimulationEngine, SimulationPVBackend, FaultManager]:
-    """Build an offline simulation from the PV registry and startup config.
+    """Build the Python Digital Twin and its local EPICS-facing adapter.
 
-    The configuration supplies initial external conditions only. Calculated
-    interlock outputs remain owned by the interlock logic and simulation engine.
-    The default application includes InjectorInterlockLogic. Additional external
-    logic objects can be supplied through ``logic``.
+    The simulation engine owns all behaviour. The returned SimulationPVBackend
+    is only a transport adapter used by tests and by the pre-Soft-IOC phase.
     """
-    pv = SimulationPVBackend()
+
     faults = FaultManager()
     simulation_config = load_simulation_config(simulation_config_path)
+    runtime_overrides = load_pv_runtime_overrides(runtime_overrides_path)
 
-    payload_registry = load_registry(registry_path)
+    registry = load_registry(registry_path)
     payload = json.loads(Path(registry_path).read_text(encoding="utf-8"))
     source_by_name = {
         item["name"]: item.get("source_data", {})
         for item in payload.get("pvs", [])
     }
 
-    for definition in payload_registry.all():
-        source_data = source_by_name.get(definition.name, {})
-        pv.define(
-            definition.name,
-            _default_value(source_data),
-            writable=bool(source_data.get("write_access", False)),
+    registry_names = set(registry.names())
+    override_names = set(runtime_overrides.inputs) | set(runtime_overrides.outputs)
+    missing_overrides = sorted(override_names - registry_names)
+    if missing_overrides:
+        raise ValueError(
+            "Runtime ownership override is not present in the PV registry: "
+            + ", ".join(missing_overrides)
         )
 
-    pv.define("OTP:STATE", "OFF", writable=False)
-    pv.define("OTP:SIM_TIME", 0.0, writable=False)
+    pv_state = SimulationPVState(
+        registry,
+        writable_names=runtime_overrides.inputs,
+    )
 
-    # Initial PVs are external conditions, not calculated outputs. Use publish()
-    # deliberately so read-only monitor PVs can still be initialized at startup.
-    defined_names = set(pv.names())
+    for definition in registry.all():
+        source_data = source_by_name.get(definition.name, {})
+        pv_state.define(
+            definition.name,
+            _default_value(source_data),
+            source="registry-default",
+        )
+
+    # Runtime status PVs belong to the simulation and are not part of the
+    # machine snapshot registry.
+    pv_state.define("OTP:STATE", "OFF", source="engine")
+    pv_state.define("OTP:SIM_TIME", 0.0, source="engine")
+
+    # Initial PVs represent external/startup conditions. They are applied by
+    # the application layer and never become calculated outputs.
     for name, value in simulation_config.initial_pvs.items():
-        sim_name = f"OTP:{name}" if not name.startswith("OTP:") else name
-        if sim_name not in defined_names:
+        if name not in registry_names:
             raise ValueError(f"Initial PV is not present in the PV registry: {name}")
-        pv.publish(sim_name, value)
+        pv_state.publish(name, value, source="startup-config")
 
-    faults.register(FaultDefinition(
-        "VACUUM_LOSS",
-        severity="trip",
-        description="Synthetic vacuum degradation/loss scenario.",
-        state_impact="fault",
-    ))
-    faults.register(FaultDefinition(
-        "RF_FAILURE",
-        severity="trip",
-        description="Synthetic RF availability failure.",
-        state_impact="inhibit",
-    ))
-    faults.register(FaultDefinition(
-        "MAGNET_DRIFT",
-        severity="warning",
-        description="Synthetic magnet setpoint-to-feedback drift.",
-        state_impact="none",
-    ))
+    faults.register(
+        FaultDefinition(
+            "VACUUM_LOSS",
+            severity="trip",
+            description="Synthetic vacuum degradation/loss scenario.",
+            state_impact="fault",
+        )
+    )
+    faults.register(
+        FaultDefinition(
+            "RF_FAILURE",
+            severity="trip",
+            description="Synthetic RF availability failure.",
+            state_impact="inhibit",
+        )
+    )
+    faults.register(
+        FaultDefinition(
+            "MAGNET_DRIFT",
+            severity="warning",
+            description="Synthetic magnet setpoint-to-feedback drift.",
+            state_impact="none",
+        )
+    )
 
     model = InjectorModel()
     simulation_control = control_plane or SimulationControlPlane()
@@ -102,15 +126,19 @@ def build_application(
     engine = SimulationEngine(
         models=[model],
         dt=simulation_config.timestep_s,
-        pv_backend=pv,
+        pv_state=pv_state,
         fault_manager=faults,
         control_plane=simulation_control,
         logic=simulation_logic,
     )
+
     engine.state_machine.transition(InjectorState(simulation_config.initial_state))
     engine.context.state = engine.state_machine.state
-    pv.publish("OTP:STATE", engine.context.state.value)
-    return engine, pv, faults
+    pv_state.publish("OTP:STATE", engine.context.state.value, source="engine")
+
+    # The adapter is deliberately constructed after the engine-owned state.
+    backend = SimulationPVBackend(pv_state)
+    return engine, backend, faults
 
 
 def step_once() -> None:
