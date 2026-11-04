@@ -60,11 +60,11 @@ Every behavioural calculation is evaluated in Python, never inside the Soft IOC.
 | Injector timing | `injectorTiming.db` | `TimingSystemModel` | Physical duty and original legacy display ratio kept separate | Pulse alignment, phase, chopper transmission, current system integration |
 | HV spark suppressor | `emitApp/db/injectorHV_Spark.db` | Interface-only | Comparator/count definitions indexed | 10 ms monitor, threshold polarity, delayed inhibition and reset |
 | Chopper drive | `plcInjector_Output.db` | `PositionerModel` | Insert/remove and position state | Movement time, MPS permit and thermal thresholds |
-| Chopper CIM / FBI | `Resources/Chopper_Interlock_Module/` | `ChopperFBIModel` | Explicit injected FBI trigger and latch | FPGA/cRIO thresholds, time windows, latch reset state machine |
+| Chopper CIM / FBI | `Resources/Chopper_Interlock_Module/` | `ChopperCIMModel` | PRE-ARM/ARMED and injected FBI event snapshot | FPGA/cRIO thresholds, time windows, latch reset state machine |
 | Cooling skid | `plcInjector_Input.db` | `CoolingSkidModel` | External sensor state and injected failure | Temperatures, flow/pressure dynamics, PLC alarms and delays |
 | Faraday cup / beam stop | `plcInjector_Output.db`, `emitApp/db/injectorFC/BS_Calorimetry.db` | `PositionerModel` + beam qualitative observable | Position/synthetic signal | Calorimetry, intercept geometry and precise charge collection |
 | ACCT / fast acquisition | `facqApp/db`, `emitApp/db/emitIcv*` | Interface-only | PV inventory | Acquisition timing, normalization, calibration and waveforms |
-| Emittance measurement unit | `emitSnlEmu_v2.st`, `emitSnlMotor.st`, `emitSnlAlims.st` | Interface-only (state machine pending) | SNL dependencies identified | Full scanning states, servo enabling, settling, measurement grid and abort logic |
+| Emittance measurement unit | `emitSnlEmu_v2.st`, `emitSnlMotor.st`, `emitSnlAlims.st` | `EmuMotorModel`, `EmuPlatePSModel`, `EmuScanSequencer`, `EmuAcquisitionModel` | Wide/upper/lower and ROI scan sequences, motor and plate readbacks, synthetic FACQ event, global 4096-point grid, preliminary RMS | Current Fast/Full presets, live FACQ waveform and physical calibration; [full audit](emu_reconstruction.md) |
 | FGA / RGA / diagnostics | `injectorFGA.db`, EMU and fast-acq records | Interface-only | PV inventory and equations | Sweep parameters, physics and acquisition model |
 | Platform access, PPS/MPS | Siemens FC10/FC11/FC20/FC23 (historical) | `InjectorInterlockLogic` + `SimulationControlPlane` | Distinct normalized permits and faults | Validated current PLC ladder, PPS interface ownership and failure propagation |
 | Plasma / extracted beam | Current operation procedures and independent physics studies | `BeamTransportModel` (qualitative) | Bounded visualization only | ECR ionization, H2/D2 kinetics, meniscus, LEBT transport, losses and emittance |
@@ -155,7 +155,7 @@ This incompatibility is deliberately flagged for review.
 Additional detection branches include `initDetectUp`, `verifMoteurUp`,
 `verifAlimsUp`, `scanDetectUp`, corresponding lower-scan states,
 and `pause4`. The true transition graph, timeouts, ROI optimization and
-motor limits must be extracted from the original SNL before execution.
+motor limits have been reconstructed from `emitMotor.db` (DLLM=-3 mm, DHLM=182 mm). The executable `EmuScanSequencer` now applies these limits and bounded timeouts; see [EMU reconstruction](emu_reconstruction.md).
 
 `emitSnlMotor.st` coordinates MaxV and servo with an external security PV.
 `emitSnlAlims.st` changes a `Calcdly.ODLY` delay between 0 and 30 s
