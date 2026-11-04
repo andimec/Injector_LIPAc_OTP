@@ -19,6 +19,7 @@ from math import floor, isfinite
 from .base import SubsystemModel
 from .catalog import DeviceCatalog
 from .emu_geometry import EmuGeometry, EmuROI, build_roi
+from .emu_analysis import rms_emittance, samples_to_csv
 
 
 class EmuMode(str, Enum):
@@ -419,6 +420,16 @@ class EmuScanSequencer(SubsystemModel):
                 self._abort(context, "no new FACQ sample event")
 
         self._metrics(context)
+
+    def results_csv(self) -> str:
+        """Return source-column EMU scan points, with no disk side effects."""
+        return samples_to_csv(self.samples)
+
+    def preliminary_emittance(self):
+        """Uncorrected current-weighted RMS/Twiss, not a certified result."""
+        if self.mode != EmuMode.EMITTANCE:
+            raise ValueError("RMS emittance needs an emittance scan")
+        return rms_emittance(self.samples)
 
     def _metrics(self, context) -> None:
         context.metrics["emu.scan_active"] = float(self.stage not in (
