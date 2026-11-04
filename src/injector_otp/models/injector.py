@@ -16,6 +16,7 @@ from .plant import CoolingSkidModel, GasFlowController, VacuumRegionModel, Valve
 from .vacuum_opi import VacuumOPIPreconditions
 from .chopper_cim import ChopperCIMModel
 from .hv_auto_ramp import HVAutoRampModel, HVRampSettings
+from .calorimetry import LegacyCalorimetryModel
 from .power_supplies import POWER_SUPPLY_PREFIXES, PowerSupplyDevice
 
 
@@ -101,6 +102,7 @@ class InjectorModel(SubsystemModel):
             self._add(RFSystemModel(catalog, self.parameters))
 
         self._add(BeamTransportModel(catalog, self.parameters), "qualitative_only")
+        self._add(LegacyCalorimetryModel(catalog), "exact_legacy_equations")
 
         # All remaining equipment families are represented as explicit
         # uncalibrated interfaces. They will not invent PV values.
