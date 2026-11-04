@@ -92,8 +92,8 @@ def build_application(
 
     # Runtime status PVs belong to the simulation and are not part of the
     # machine snapshot registry.
-    pv_state.define("OTP:STATE", "OFF", source="engine")
-    pv_state.define("OTP:SIM_TIME", 0.0, source="engine")
+    pv_state.define("SIM:STATE", "OFF", source="engine")
+    pv_state.define("SIM:TIME", 0.0, source="engine")
 
     # Initial PVs represent external/startup conditions. They are applied by
     # the application layer and never become calculated outputs.
@@ -157,7 +157,7 @@ def build_application(
 
     engine.state_machine.transition(InjectorState(simulation_config.initial_state))
     engine.context.state = engine.state_machine.state
-    pv_state.publish("OTP:STATE", engine.context.state.value, source="engine")
+    pv_state.publish("SIM:STATE", engine.context.state.value, source="engine")
 
     # The adapter is deliberately constructed after the engine-owned state.
     backend = SimulationPVBackend(pv_state)
