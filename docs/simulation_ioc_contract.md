@@ -2,53 +2,38 @@
 
 ## Purpose
 
-The Digital Twin exposes an EPICS-like PV interface without connecting to the real LIPAc Injector control system.
+The digital twin runs inside a VM physically/logically isolated from the LIPAc
+production network. PV names remain **identical** to the original Injector
+interface. Phoebus screens should not require an `OTP:` prefix.
 
-The contract has three rules:
-1. Injector PV names are treated as the source contract.
-2. The simulation backend exposes them under the explicit OTP: namespace.
-3. Only the OTP: namespace can be written through the simulation interface.
+- Example: `LEBT:SOL01_PS:ISet` stays `LEBT:SOL01_PS:ISet`.
+- The local `SimulationPVBackend` performs no name translation.
+- The future Soft IOC must publish only on the private VM/training interfaces.
+  Deployment must verify absent LIPAc routing, CA discovery and PVA address
+  lists before enabling any EPICS listener.
+- Python owns readback generation. The Soft IOC transports the model's
+  outputs and accepts only allowlisted commands/setpoints.
 
-Example: LEBT:SOL01_PS:ISet becomes OTP:LEBT:SOL01_PS:ISet.
+## Ownership and access
 
-## PV operations
+The runtime `config/pv_runtime_overrides.yaml` provides the explicit
+operator-input allowlist. EPICS read/write transport metadata alone cannot
+authorize a write. PVs that represent status, readback, external PPS/PLC
+conditions or unresolved signals are not operator-writable.
+Model publication is separate from operator writes.
 
-The backend provides get(name), put(name, value), publish(name, value), and names().
-The V1.2 registry remains the source of EPICS type and access metadata.
+The backend provides `get`, `put`, `publish`, `names`, timestamps and
+snapshots. The bridge does not implement machine logic.
 
-## Namespace boundary
+## Internal simulation status
 
-Source PVs are transformed as: source PV -> OTP:<source PV>.
-Simulator-owned status PVs beginning with OTP: are not prefixed again.
+The local runtime uses `SIM:STATE` and `SIM:TIME` for internal indicators.
+These are **not** source LIPAc equipment PVs.
 
-A future EPICS soft IOC adapter must preserve this rule and reject configurations that map the simulator directly onto production PV names.
+## Validation limits
 
-## Access semantics
+This contract does not certify that the VM is isolated. Isolation is a
+deployment-level requirement, and there is no real CA/PVA Soft IOC in this
+Python baseline. No path to the production accelerator is intended.
 
-write_access=true makes a simulated PV operator-writable. write_access=false makes it read-only to the operator. Model publication is a separate path.
-
-## Timestamps
-
-The in-memory backend records a timestamp whenever a value is written or published. A future soft IOC adapter should expose timestamps derived from simulation time where deterministic replay is required.
-
-## Safety boundary
-
-The initial implementation is local and in-memory. It has no EPICS Channel Access or PVAccess client and therefore has no production network path.
-
-A future soft IOC implementation should require mode=simulation, namespace=OTP:, and production_write_enabled=false.
-
-## Future soft IOC adapter
-
-PV Registry -> SimulationPVBackend -> In-memory backend or Soft IOC adapter -> EPICS -> Phoebus.
-
-Physical models must depend only on the backend-neutral interface. EPICS-specific libraries belong exclusively in the adapter layer.
-
-## Out of scope for V1.4
-
-- connection to a real Injector IOC
-- writes to production PVs
-- Channel Access/PVA networking
-- Phoebus OPI files
-- alarm server integration
-- real-time scheduling guarantees
-- replacement of the controlled LIPAc EPICS database
+See [PV/readback traceability](pv_readback_traceability.md).
