@@ -10,9 +10,9 @@ def test_application_defaults_to_reconciled_v2_registry():
     # V2.0 is the union of snapshot, standalone DB and current OPI references.
     assert len(load_v2_0_registry()) == 1052
     assert len(pv.names()) == 1054   # 1052 Injector/SNL PV references + two OTP runtime PVs
-    assert "OTP:DPLA:LEBT-CTransm:calc" in pv.names()
-    assert "OTP:INJ:PLC:comStat" in pv.names()
-    assert pv.get("OTP:STATE") == "OFF"
+    assert "DPLA:LEBT-CTransm:calc" in pv.names()
+    assert "INJ:PLC:comStat" in pv.names()
+    assert pv.get("SIM:STATE") == "OFF"
     assert engine.context.time == 0.0
 
 
