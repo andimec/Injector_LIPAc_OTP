@@ -6,6 +6,9 @@
 inputs:
   - LEBT:AUTO:UptoHT
   - LEBT:AUTO:StopHT
+  - LEBT:BS:Comp
+  - LEBT:FC:Comp
+  - LEBT:IC:Comp
   - LEBT:CHOP:InCmd
   - LEBT:CHOP:OutCmd
   - LEBT:CHOP_IM:AcctThr
