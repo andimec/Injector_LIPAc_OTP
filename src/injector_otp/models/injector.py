@@ -15,6 +15,7 @@ from .control_devices import (
 from .plant import CoolingSkidModel, GasFlowController, VacuumRegionModel, ValveDevice
 from .vacuum_opi import VacuumOPIPreconditions
 from .chopper_cim import ChopperCIMModel
+from .hv_auto_ramp import HVAutoRampModel, HVRampSettings
 from .power_supplies import POWER_SUPPLY_PREFIXES, PowerSupplyDevice
 
 
@@ -71,6 +72,11 @@ class InjectorModel(SubsystemModel):
             self._add(VacuumRegionModel(region, catalog, self.parameters))
 
         self._add(VacuumOPIPreconditions(catalog), "exact_opi_formula_only")
+
+        # Automation requests operator-setpoint inputs via the engine ACL.
+        # It runs ahead of PS dynamics so its requests are consumed in-cycle.
+        ramp_settings = HVRampSettings(**self.parameters.get("auto_hv", {}))
+        self._add(HVAutoRampModel(catalog, ramp_settings), "procedure_based_2026")
 
         for prefix in POWER_SUPPLY_PREFIXES:
             if catalog.contains_prefix(prefix):
