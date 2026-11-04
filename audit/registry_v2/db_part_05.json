@@ -1,0 +1,4227 @@
+{
+  "source_commit": "04a922247f0f25834d921cd9a3a68c96c4f71596",
+  "files": {
+    "db/injectorApp/db/injectorTiming.db": {
+      "sha": "ad1e39901765e47f32c13587ed1adae9fd7d049a",
+      "records": [
+        {
+          "name": "SRC:TIM:TPulse",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "duree pulse source LUT6",
+            "OMSL": "supervisory",
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 4
+        },
+        {
+          "name": "SRC:TIM:RetPulse",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Debut pulse source(LUT5)",
+            "OMSL": "supervisory",
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 18
+        },
+        {
+          "name": "SRC:TIM:TChopper",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "duree Chopper LBE(LUT2)",
+            "OMSL": "supervisory",
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 32
+        },
+        {
+          "name": "SRC:TIM:RetChopper",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Debut Chopper LBE(LUT1)",
+            "OMSL": "supervisory",
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 46
+        },
+        {
+          "name": "SRC:TIM:Trep",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Repetition",
+            "OMSL": "supervisory",
+            "DRVH": "5000",
+            "DRVL": "20",
+            "HOPR": "5000",
+            "LOPR": "20",
+            "SCAN": "Passive",
+            "PREC": "0",
+            "EGU": "ms"
+          },
+          "line": 60
+        },
+        {
+          "name": "SRC:TIM:Ret1",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Retard 1 (LUT3)",
+            "OMSL": "supervisory",
+            "DRVH": "1000",
+            "DRVL": "-1000",
+            "HOPR": "1000",
+            "LOPR": "-1000",
+            "SCAN": "Passive",
+            "PREC": "0",
+            "EGU": "micros"
+          },
+          "line": 74
+        },
+        {
+          "name": "SRC:TIM:Ret2",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Retard 2 (LUT4)",
+            "OMSL": "supervisory",
+            "DRVH": "50000",
+            "DRVL": "10",
+            "HOPR": "50000",
+            "LOPR": "10",
+            "SCAN": "Passive",
+            "PREC": "0",
+            "EGU": "micros"
+          },
+          "line": 88
+        },
+        {
+          "name": "SRC:TIM:Ret3",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Retard 3 (LUT8)",
+            "OMSL": "supervisory",
+            "DRVH": "50000",
+            "DRVL": "0.01",
+            "HOPR": "50000",
+            "LOPR": "0.01",
+            "SCAN": "Passive",
+            "PREC": "0",
+            "EGU": "micros"
+          },
+          "line": 102
+        },
+        {
+          "name": "SRC:TIM:OK",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "HIGH": "5"
+          },
+          "line": 116
+        },
+        {
+          "name": "SRC:TIM:CWMode",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "HIGH": "5"
+          },
+          "line": 123
+        },
+        {
+          "name": "SRC:TIM:Mode",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "ONAM": "CW",
+            "ZNAM": "Pulse",
+            "ASG": "D_PLUS"
+          },
+          "line": 130
+        },
+        {
+          "name": "SRC:TIM:Init",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "HIGH": "5"
+          },
+          "line": 138
+        },
+        {
+          "name": "SRC:TIM:Cyclut",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul TRep/TSource",
+            "SCAN": "2 second",
+            "PREC": "2",
+            "CALC": "A/B"
+          },
+          "line": 145
+        },
+        {
+          "name": "SRC:TIM:DutyCycle",
+          "record_type": "calc",
+          "fields": {
+            "DESC": " TRep/TSource",
+            "PREC": "2",
+            "CALC": "(B)?A:C"
+          },
+          "line": 153
+        },
+        {
+          "name": "SRC:TIM:Date",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Current time and date",
+            "SCAN": "2 second"
+          },
+          "line": 160
+        },
+        {
+          "name": "SRC:TIM:Dialog",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "zone dialogue",
+            "VAL": "..................."
+          },
+          "line": 167
+        }
+      ]
+    },
+    "db/injectorApp/db/MatsusadaPRK_proto.db": {
+      "sha": "1200b14b41e8367372ceaaba658a0ad6d638e7fe",
+      "records": []
+    },
+    "db/injectorApp/db/PBZ20_proto.db": {
+      "sha": "29f57ac878691cc9a6d894622f4cecb36391c22f",
+      "records": []
+    },
+    "db/ioc.db": {
+      "sha": "0a8eb285bbaed5de9e2041f6dd597db5b81bcdb2",
+      "records": [
+        {
+          "name": "$(IOCNAME):pv1",
+          "record_type": "ao",
+          "fields": {
+            "DESC": "Example of PV",
+            "DTYP": "Soft Channel",
+            "EGU": "unit",
+            "DRVH": "60",
+            "DRVL": "1",
+            "VAL": "15"
+          },
+          "line": 1
+        }
+      ]
+    },
+    "db/opi/Injector_missing.db": {
+      "sha": "60eb4924824e65722f722fc931ecb98b1f3f38e4",
+      "records": [
+        {
+          "name": "LEBT:CHOP_IM:AcctThr",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "LOPR": "-1.7976931348623157E308",
+            "HOPR": "1.7976931348623157E308",
+            "PREC": "0"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:CHOP_IM:AcctThrRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 13
+        },
+        {
+          "name": "LEBT:CHOP_IM:CurrentAcct",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:CHOP_IM:CurrentVmon",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 27
+        },
+        {
+          "name": "LEBT:CHOP_IM:DbgChop",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:CHOP_IM:DbgFaraday",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 40
+        },
+        {
+          "name": "LEBT:CHOP_IM:Fbi",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 46
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiAcct",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiCGate",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 59
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiDPeriod",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 65
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiDPulse",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 71
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiFaraday",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 77
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiStmState",
+          "record_type": "longin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 83
+        },
+        {
+          "name": "LEBT:CHOP_IM:FbiVmon",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 89
+        },
+        {
+          "name": "LEBT:CHOP_IM:StmState",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 96
+        },
+        {
+          "name": "LEBT:CHOP_IM:StmStateSet",
+          "record_type": "longout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 102
+        },
+        {
+          "name": "LEBT:CHOP_IM:VmonOff",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "LOPR": "-1.7976931348623157E308",
+            "HOPR": "1.7976931348623157E308",
+            "PREC": "0"
+          },
+          "line": 108
+        },
+        {
+          "name": "LEBT:CHOP_IM:VmonOffRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 117
+        },
+        {
+          "name": "LEBT:CHOP_IM:VmonThr",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "LOPR": "-1.7976931348623157E308",
+            "HOPR": "1.7976931348623157E308",
+            "PREC": "0"
+          },
+          "line": 124
+        },
+        {
+          "name": "LEBT:CHOP_IM:VmonThrRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 133
+        },
+        {
+          "name": "LEBT:EMIT:upperText",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 140
+        },
+        {
+          "name": "LPBD:HVPS:ChangeVoltage",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 146
+        },
+        {
+          "name": "LPBD:HVPS:CtrlHeartBeat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 152
+        },
+        {
+          "name": "LPBD:HVPS:Current",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 158
+        },
+        {
+          "name": "LPBD:HVPS:OutputOnOff",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 165
+        },
+        {
+          "name": "LPBD:HVPS:SetVoltage",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "LOPR": "-Infinity",
+            "HOPR": "Infinity",
+            "PREC": "0"
+          },
+          "line": 171
+        },
+        {
+          "name": "LPBD:HVPS:Voltage",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "0"
+          },
+          "line": 180
+        },
+        {
+          "name": "MPS:CCU11_01:InMaskCfg1Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 187
+        },
+        {
+          "name": "MPS:CCU11_01:InMaskCfg2Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 193
+        },
+        {
+          "name": "MPS:CCU11_01:InMaskCfg3Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 199
+        },
+        {
+          "name": "MPS:CCU11_01:InMaskCfg4Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 205
+        },
+        {
+          "name": "MPS:CCU11_01:InMaskCfg5Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 211
+        },
+        {
+          "name": "MPS:CCU12_01:Sig1Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 217
+        },
+        {
+          "name": "MPS:CCU12_01:Sig3Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 223
+        },
+        {
+          "name": "MPS:CCU12_02:Sig1Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 229
+        },
+        {
+          "name": "MPS:CCU19_01:Sig1Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 235
+        },
+        {
+          "name": "MPS:CCU19_01:Sig2Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 241
+        },
+        {
+          "name": "MPS:CCU19_01:Sig3Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 247
+        },
+        {
+          "name": "MPS:CCU19_01:Sig4Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 253
+        },
+        {
+          "name": "MPS:CCU20_01:Sig2Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 259
+        },
+        {
+          "name": "MPS:CCU20_01:Sig3Rdbk",
+          "record_type": "mbbiDirect",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 265
+        },
+        {
+          "name": "RFQ:VAC_M1MA:HVacP",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit",
+            "PREC": "2"
+          },
+          "line": 271
+        },
+        {
+          "name": "RFQ:VAC_VG10:Alrm",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 278
+        },
+        {
+          "name": "RFQ:VAC_VG20:Alrm",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OPI inferred; see audit"
+          },
+          "line": 284
+        }
+      ]
+    },
+    "db/plcInjectorApp/db/plcInjector_Input.db": {
+      "sha": "8a9ebe140ef4eee8f34f839c31f90063aa712faa",
+      "records": [
+        {
+          "name": "LEBT:HV:RlyOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status HV RLY",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:HV:RlyCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status HV RLY",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:TR1:OilDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status Oil T1",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:TR1:OilAlarmStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Alarm Oil T1",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Alarm"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:HV:CageKeyA1",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:HV:PFDCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 54
+        },
+        {
+          "name": "SRC:CD:CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:HV_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 74
+        },
+        {
+          "name": "LEBT:HV_PS:AuxStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 84
+        },
+        {
+          "name": "LEBT:HV_PS:RdyStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 94
+        },
+        {
+          "name": "LEBT:HV_PS:RmtStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 104
+        },
+        {
+          "name": "LEBT:R_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "In"
+          },
+          "line": 114
+        },
+        {
+          "name": "LEBT:R_PS:RdyStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 124
+        },
+        {
+          "name": "LEBT:R_PS:RemStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 134
+        },
+        {
+          "name": "LEBT:SOL01_PS:RemStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 144
+        },
+        {
+          "name": "LEBT:SOL02_PS:RemStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 154
+        },
+        {
+          "name": "LEBT:SOL01:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 164
+        },
+        {
+          "name": "LEBT:STV01:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 174
+        },
+        {
+          "name": "LEBT:SOL01:VCFlowStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 184
+        },
+        {
+          "name": "LEBT:EMIT:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 194
+        },
+        {
+          "name": "LEBT:STV02:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 204
+        },
+        {
+          "name": "LEBT:SOL02:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 214
+        },
+        {
+          "name": "LEBT:SOL02:VCFlowStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 224
+        },
+        {
+          "name": "LEBT:FC:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 234
+        },
+        {
+          "name": "LEBT:IC:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 244
+        },
+        {
+          "name": "LEBT:BS:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 254
+        },
+        {
+          "name": "LEBT:GE:TSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 264
+        },
+        {
+          "name": "LEBT:FC:InStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 274
+        },
+        {
+          "name": "LEBT:FC:OutStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Out",
+            "ZNAM": "In"
+          },
+          "line": 284
+        },
+        {
+          "name": "LEBT:GV:OpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Open",
+            "ZNAM": "Close"
+          },
+          "line": 294
+        },
+        {
+          "name": "LEBT:GV:CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 304
+        },
+        {
+          "name": "LEBT:VAC01:PPOnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 314
+        },
+        {
+          "name": "LEBT:VAC01:TPOnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 324
+        },
+        {
+          "name": "LEBT:VAC01:PVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 334
+        },
+        {
+          "name": "LEBT:VAC01:PVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 344
+        },
+        {
+          "name": "LEBT:VAC01:AIVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status AIV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 354
+        },
+        {
+          "name": "LEBT:VAC01:AIVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status AIV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 364
+        },
+        {
+          "name": "LEBT:VAC01:SVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 374
+        },
+        {
+          "name": "LEBT:VAC01:SVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 384
+        },
+        {
+          "name": "LEBT:VAC01:NIVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status NIV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 394
+        },
+        {
+          "name": "LEBT:VAC01:NIVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status NIV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 404
+        },
+        {
+          "name": "LEBT:VAC01:LTVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status LTV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 414
+        },
+        {
+          "name": "LEBT:VAC01:LTVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status LTV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 424
+        },
+        {
+          "name": "LEBT:VAC01:TPSpeedStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Not nominal speed",
+            "ONAM": "Nominal speed"
+          },
+          "line": 434
+        },
+        {
+          "name": "LEBT:VAC01:TPDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Failure",
+            "ONAM": "No failure"
+          },
+          "line": 444
+        },
+        {
+          "name": "LEBT:VAC01:PGVCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PGVC",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 454
+        },
+        {
+          "name": "LEBT:VAC01:SGVCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SGVC",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 464
+        },
+        {
+          "name": "LEBT:VAC01:PGTPDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PGTP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 474
+        },
+        {
+          "name": "LEBT:VAC01:SGTPDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SGTP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 484
+        },
+        {
+          "name": "LEBT:VAC02:PPOnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 494
+        },
+        {
+          "name": "LEBT:VAC02:TPOnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 504
+        },
+        {
+          "name": "LEBT:VAC02:PVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 514
+        },
+        {
+          "name": "LEBT:VAC02:PVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 524
+        },
+        {
+          "name": "LEBT:VAC02:AIVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status AIV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 534
+        },
+        {
+          "name": "LEBT:VAC02:AIVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status AIV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 544
+        },
+        {
+          "name": "LEBT:VAC02:SVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 554
+        },
+        {
+          "name": "LEBT:VAC02:SVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 564
+        },
+        {
+          "name": "LEBT:VAC02:LTVOpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status LTV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 574
+        },
+        {
+          "name": "LEBT:VAC02:LTVCloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status LTV",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 584
+        },
+        {
+          "name": "LEBT:VAC02:TPSpeedStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Not nominal speed",
+            "ONAM": "Nominal speed"
+          },
+          "line": 594
+        },
+        {
+          "name": "LEBT:VAC02:TPDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Error",
+            "ONAM": "No error"
+          },
+          "line": 604
+        },
+        {
+          "name": "LEBT:VAC02:PGVCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PGVC",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 614
+        },
+        {
+          "name": "LEBT:VAC02:SGVCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SGVC",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 624
+        },
+        {
+          "name": "LEBT:VAC02:PGTPDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PGTP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 634
+        },
+        {
+          "name": "LEBT:VAC02:SGTPDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status SGTP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 644
+        },
+        {
+          "name": "LEBT:SOL01:TSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 654
+        },
+        {
+          "name": "LEBT:SOL02:TSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 664
+        },
+        {
+          "name": "LEBT:SOL01_VC:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 674
+        },
+        {
+          "name": "LEBT:SOL02_VC:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 684
+        },
+        {
+          "name": "LEBT:EMIT:OutStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Out",
+            "ZNAM": "In"
+          },
+          "line": 694
+        },
+        {
+          "name": "LEBT:STV02:TSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status TP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 704
+        },
+        {
+          "name": "LEBT:HV:RoomKeyA1",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "OK"
+          },
+          "line": 714
+        },
+        {
+          "name": "LEBT:GE:FSFlowStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "OK"
+          },
+          "line": 724
+        },
+        {
+          "name": "LEBT:CHOP:InStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 734
+        },
+        {
+          "name": "LEBT:CHOP:OutStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Out",
+            "ZNAM": "In"
+          },
+          "line": 744
+        },
+        {
+          "name": "LEBT:CHOP:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 754
+        },
+        {
+          "name": "LEBT:CHOP_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 764
+        },
+        {
+          "name": "INJ:WS:P1OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 774
+        },
+        {
+          "name": "INJ:WS:P2OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 784
+        },
+        {
+          "name": "INJ:WS:P1SelStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Sel",
+            "ZNAM": "Off"
+          },
+          "line": 794
+        },
+        {
+          "name": "INJ:WS:P2SelStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Sel",
+            "ZNAM": "Off"
+          },
+          "line": 804
+        },
+        {
+          "name": "INJ:WS:FSPCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 814
+        },
+        {
+          "name": "INJ:WS:ResCylDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 824
+        },
+        {
+          "name": "INJ:WS:PaspDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 834
+        },
+        {
+          "name": "INJ:WS:ResPCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 844
+        },
+        {
+          "name": "INJ:WS:TePCDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 854
+        },
+        {
+          "name": "INJ:WS:NBVEDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 864
+        },
+        {
+          "name": "INJ:WS:NSVEDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 874
+        },
+        {
+          "name": "INJ:WS:FSSDDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 884
+        },
+        {
+          "name": "INJ:WS:P1DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 894
+        },
+        {
+          "name": "INJ:WS:P2DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 904
+        },
+        {
+          "name": "INJ:WS:FSCSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 914
+        },
+        {
+          "name": "SRC:LOCK:KEYB1",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 924
+        },
+        {
+          "name": "SRC:COIL01:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 934
+        },
+        {
+          "name": "SRC:COIL02:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 944
+        },
+        {
+          "name": "SRC:COIL01:TSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 954
+        },
+        {
+          "name": "SRC:COIL02:TSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 964
+        },
+        {
+          "name": "SRC:COIL01_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 974
+        },
+        {
+          "name": "SRC:COIL01_PS:RdyStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 984
+        },
+        {
+          "name": "SRC:COIL01_PS:RemStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 994
+        },
+        {
+          "name": "SRC:COIL02_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1004
+        },
+        {
+          "name": "SRC:COIL02_PS:RdyStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 1014
+        },
+        {
+          "name": "SRC:COIL02_PS:RemStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 1024
+        },
+        {
+          "name": "SRC:IE_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1034
+        },
+        {
+          "name": "SRC:IE_PS:RdyStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 1044
+        },
+        {
+          "name": "SRC:IE_PS:RemStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 1054
+        },
+        {
+          "name": "SRC:SVL:D2OpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1064
+        },
+        {
+          "name": "SRC:SVL:D2CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 1074
+        },
+        {
+          "name": "SRC:SVL:H2OpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1084
+        },
+        {
+          "name": "SRC:SVL:H2CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 1094
+        },
+        {
+          "name": "SRC:RF:FSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1104
+        },
+        {
+          "name": "SRC:RF_GEN:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1114
+        },
+        {
+          "name": "PPS:SVL:D2PermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1124
+        },
+        {
+          "name": "PPS:SVL:H2PermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1134
+        },
+        {
+          "name": "PPS:ACCL:PermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1144
+        },
+        {
+          "name": "PPS:PLSM:PermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1154
+        },
+        {
+          "name": "PPS:HV:PermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1164
+        },
+        {
+          "name": "PPS:FC:OutPermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1174
+        },
+        {
+          "name": "PPS:GV:OpenPermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1184
+        },
+        {
+          "name": "PPS:BEAM:InhibitStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1194
+        },
+        {
+          "name": "PPS:GV:OpenInhibitStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1204
+        },
+        {
+          "name": "PPS:RFQ:VacDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1214
+        },
+        {
+          "name": "PPS:CHOP:PermStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1224
+        },
+        {
+          "name": "LEBT:HV:RlyRmtCmd",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rmt"
+          },
+          "line": 1234
+        },
+        {
+          "name": "LEBT:PF:Light",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1244
+        },
+        {
+          "name": "LEBT:PF:Buzzer",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1254
+        },
+        {
+          "name": "LEBT:PF:LightHtOn",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1264
+        },
+        {
+          "name": "LEBT:PF:LightMagnet",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1274
+        },
+        {
+          "name": "LEBT:HV_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1284
+        },
+        {
+          "name": "LEBT:R_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1294
+        },
+        {
+          "name": "LEBT:STH01_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1304
+        },
+        {
+          "name": "LEBT:STV01_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1314
+        },
+        {
+          "name": "LEBT:STH02_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1324
+        },
+        {
+          "name": "LEBT:STV02_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1334
+        },
+        {
+          "name": "LEBT:SOL01_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1344
+        },
+        {
+          "name": "LEBT:SOL02_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1354
+        },
+        {
+          "name": "LEBT:RC_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1364
+        },
+        {
+          "name": "LEBT:FC:OUT",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "IN",
+            "ONAM": "OUT"
+          },
+          "line": 1374
+        },
+        {
+          "name": "LEBT:VAC:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1384
+        },
+        {
+          "name": "LEBT:GV:Open",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1394
+        },
+        {
+          "name": "LEBT:VAC01:PPStart",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1404
+        },
+        {
+          "name": "LEBT:VAC01:TPStart",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1414
+        },
+        {
+          "name": "LEBT:VAC01:PVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1424
+        },
+        {
+          "name": "LEBT:VAC01:AIVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1434
+        },
+        {
+          "name": "LEBT:VAC01:SVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1444
+        },
+        {
+          "name": "LEBT:VAC01:NIVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1454
+        },
+        {
+          "name": "LEBT:VAC02:PPStart",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1464
+        },
+        {
+          "name": "LEBT:VAC02:TPStart",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1474
+        },
+        {
+          "name": "LEBT:VAC02:PVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1484
+        },
+        {
+          "name": "LEBT:VAC02:AIVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1494
+        },
+        {
+          "name": "LEBT:VAC02:SVOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1504
+        },
+        {
+          "name": "LEBT:EMIT_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1514
+        },
+        {
+          "name": "PPS:WS:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1524
+        },
+        {
+          "name": "PPS:VAC:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1534
+        },
+        {
+          "name": "PPS:HV:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1544
+        },
+        {
+          "name": "PPS:HV:PSDefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1554
+        },
+        {
+          "name": "LEBT:CHOP:Out",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1564
+        },
+        {
+          "name": "LEBT:CHOP_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1574
+        },
+        {
+          "name": "SRC:COIL01_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1584
+        },
+        {
+          "name": "SRC:COIL02_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1594
+        },
+        {
+          "name": "SRC:IE_PS:ExtSec",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1604
+        },
+        {
+          "name": "SRC:SVL:D2Open",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1614
+        },
+        {
+          "name": "SRC:SVL:H2Open",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1624
+        },
+        {
+          "name": "SRC:RF_GEN:PlasmaStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "def",
+            "ONAM": "OK for Plasma"
+          },
+          "line": 1634
+        },
+        {
+          "name": "PPS:SVL:H2CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 1644
+        },
+        {
+          "name": "PPS:SVL:D2CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 1654
+        },
+        {
+          "name": "PPS:RF:PlsmStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Off",
+            "ZNAM": "On"
+          },
+          "line": 1664
+        },
+        {
+          "name": "PPS:HV_PS:OffStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Off",
+            "ZNAM": "On"
+          },
+          "line": 1674
+        },
+        {
+          "name": "PPS:FC:InStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "IN",
+            "ZNAM": "Out"
+          },
+          "line": 1684
+        },
+        {
+          "name": "PPS:GV:CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Open",
+            "ZNAM": "Close"
+          },
+          "line": 1694
+        },
+        {
+          "name": "PPS:CHOP:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 1704
+        },
+        {
+          "name": "PPS:CHOP:OffStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Off",
+            "ZNAM": "On"
+          },
+          "line": 1714
+        },
+        {
+          "name": "MPS:INJ:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Def INJ from MPS",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 1724
+        },
+        {
+          "name": "MPS:INJ:Halt",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Halt INJ by PPS",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Halt",
+            "ZNAM": " "
+          },
+          "line": 1734
+        },
+        {
+          "name": "MPS:CHOP_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Chop_PS ON",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "On",
+            "ZNAM": " "
+          },
+          "line": 1744
+        },
+        {
+          "name": "MPS:GV:Protect",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "GV protected by FC",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "OK",
+            "ZNAM": " "
+          },
+          "line": 1754
+        },
+        {
+          "name": "MPS:FOC:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "LEBT Def Focal",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 1764
+        },
+        {
+          "name": "MPS:LEBT_VAC:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "LEBT Def Vac",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 1774
+        },
+        {
+          "name": "MPS:GV:OpenStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "GV is Open",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 1784
+        },
+        {
+          "name": "MPS:INJ_WS:DefStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Def on Inj Cooling",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 1794
+        },
+        {
+          "name": "INJ:WS:FMCSMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Secondary Circuit Flow Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1804
+        },
+        {
+          "name": "INJ:WS:FMCS",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Secondary Circuit Flow Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "m3/h",
+            "PREC": "1"
+          },
+          "line": 1815
+        },
+        {
+          "name": "INJ:WS:PeCSMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Secondary Circuit In Pressure Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1824
+        },
+        {
+          "name": "INJ:WS:PeCS",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Secondary Circuit In Pressure Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 1835
+        },
+        {
+          "name": "INJ:WS:PaspMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Suction Pressure Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1844
+        },
+        {
+          "name": "INJ:WS:Pasp",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Suction Pressure Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 1855
+        },
+        {
+          "name": "INJ:WS:ResCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit Resistivity Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1864
+        },
+        {
+          "name": "INJ:WS:ResCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit Resistivity Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "Mohm-cm",
+            "PREC": "2"
+          },
+          "line": 1875
+        },
+        {
+          "name": "INJ:WS:TeCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit In Temp Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1884
+        },
+        {
+          "name": "INJ:WS:TeCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit In Temp Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 1895
+        },
+        {
+          "name": "INJ:WS:TeCSMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Secondary Circuit In Temp Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1904
+        },
+        {
+          "name": "INJ:WS:TeCS",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Secondary Circuit In Temp Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 1915
+        },
+        {
+          "name": "INJ:WS:FMSDMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Demineralization Station Flow Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1924
+        },
+        {
+          "name": "INJ:WS:FMSD",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Demineralization Station Flow Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "m3/h",
+            "PREC": "1"
+          },
+          "line": 1935
+        },
+        {
+          "name": "INJ:WS:FMCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit Flow Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1944
+        },
+        {
+          "name": "INJ:WS:FMCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit Flow Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "m3/h",
+            "PREC": "1"
+          },
+          "line": 1955
+        },
+        {
+          "name": "INJ:WS:PsCSMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Secondary Circuit Out Pressure Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1964
+        },
+        {
+          "name": "INJ:WS:PsCS",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Secondary Circuit Out Pressure Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 1975
+        },
+        {
+          "name": "INJ:WS:PsCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit Out Pressure Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 1984
+        },
+        {
+          "name": "INJ:WS:PsCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit Out Pressure Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 1995
+        },
+        {
+          "name": "INJ:WS:PeCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit In Pressure Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2004
+        },
+        {
+          "name": "INJ:WS:PeCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit In Pressure Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 2015
+        },
+        {
+          "name": "INJ:WS:ResCylMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Cylinder Resistivity Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2024
+        },
+        {
+          "name": "INJ:WS:ResCyl",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Cylinder Resistivity Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "Mohm-cm",
+            "PREC": "2"
+          },
+          "line": 2035
+        },
+        {
+          "name": "INJ:WS:TsCSMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Secondary Circuit Out Temp Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2044
+        },
+        {
+          "name": "INJ:WS:TsCS",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Secondary Circuit Out Temp Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2055
+        },
+        {
+          "name": "INJ:WS:TeEchCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit Hex In Temp Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2064
+        },
+        {
+          "name": "INJ:WS:TeEchCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit Hex In Temp Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2075
+        },
+        {
+          "name": "INJ:WS:TsEchCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit Hex Out Temp Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2084
+        },
+        {
+          "name": "INJ:WS:TsEchCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit Hex Out Temp Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2095
+        },
+        {
+          "name": "INJ:WS:TsCPMes",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Primary Circuit Out Temp Raw",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2104
+        },
+        {
+          "name": "INJ:WS:TsCP",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Primary Circuit Out Temp Scaled",
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2115
+        },
+        {
+          "name": "LEBT:VAC01:VacPGVC",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2124
+        },
+        {
+          "name": "LEBT:VAC01:VacSGVC",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2134
+        },
+        {
+          "name": "LEBT:VAC01:VacPGTP",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2144
+        },
+        {
+          "name": "LEBT:VAC01:VacSGTP",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2154
+        },
+        {
+          "name": "LEBT:VAC02:VacPGVC",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2164
+        },
+        {
+          "name": "LEBT:VAC02:VacSGVC",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2174
+        },
+        {
+          "name": "LEBT:VAC02:VacPGTP",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2184
+        },
+        {
+          "name": "LEBT:VAC02:VacSGTP",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Mesure Vaccum",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2194
+        },
+        {
+          "name": "LEBT:HV:RlyRmtStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 2204
+        },
+        {
+          "name": "LEBT:HV:RondeStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "OK"
+          },
+          "line": 2214
+        },
+        {
+          "name": "LEBT:HV:RdyStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 2224
+        },
+        {
+          "name": "SRC:FC:DiscDef",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2234
+        },
+        {
+          "name": "SRC:SVL:H2DiscDef",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2244
+        },
+        {
+          "name": "SRC:SVL:D2DiscDef",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2254
+        },
+        {
+          "name": "LEBT:GV:DiscDef",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2264
+        },
+        {
+          "name": "LEBT:CHOP:ON",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 2274
+        },
+        {
+          "name": "LEBT:HV:RlyDefOpen",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 2284
+        },
+        {
+          "name": "INJ:PLC:MuscadeForcON",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Status PP",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 2294
+        }
+      ]
+    },
+    "db/plcInjectorApp/db/plcInjector_Output.db": {
+      "sha": "bb6ebc367ded6489f7b3b262bd22261000bc7922",
+      "records": [
+        {
+          "name": "LEBT:VAC01:PPOnCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON PP",
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:VAC01:PPOffCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF PP",
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:VAC01:TPOnCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON TP",
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:VAC01:TPOffCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF TP",
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:VAC01:PVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open PV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:VAC01:PVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close PV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 54
+        },
+        {
+          "name": "LEBT:VAC01:SVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open SV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:VAC01:SVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close SV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 74
+        },
+        {
+          "name": "LEBT:VAC01:AIVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open AIV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 84
+        },
+        {
+          "name": "LEBT:VAC01:AIVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close AIV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 94
+        },
+        {
+          "name": "LEBT:VAC01:NIVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open NIV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 104
+        },
+        {
+          "name": "LEBT:VAC01:NIVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close NIV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 114
+        },
+        {
+          "name": "LEBT:VAC02:PPOnCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON PP",
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 124
+        },
+        {
+          "name": "LEBT:VAC02:PPOffCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF PP",
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 134
+        },
+        {
+          "name": "LEBT:VAC02:TPOnCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON TP",
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 144
+        },
+        {
+          "name": "LEBT:VAC02:TPOffCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF TP",
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 154
+        },
+        {
+          "name": "LEBT:VAC02:PVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open PV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 164
+        },
+        {
+          "name": "LEBT:VAC02:PVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close PV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 174
+        },
+        {
+          "name": "LEBT:VAC02:SVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open SV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 184
+        },
+        {
+          "name": "LEBT:VAC02:SVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close SV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 194
+        },
+        {
+          "name": "LEBT:VAC02:AIVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open AIV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 204
+        },
+        {
+          "name": "LEBT:VAC02:AIVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close AIV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 214
+        },
+        {
+          "name": "LEBT:VAC02:NIVOpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open NIV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 224
+        },
+        {
+          "name": "LEBT:VAC02:NIVCloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close NIV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 234
+        },
+        {
+          "name": "LEBT:GV:OpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON PP",
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 244
+        },
+        {
+          "name": "LEBT:GV:CloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF PP",
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 254
+        },
+        {
+          "name": "SRC:SVL:D2OpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON TP",
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 264
+        },
+        {
+          "name": "SRC:SVL:D2CloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF TP",
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 274
+        },
+        {
+          "name": "SRC:SVL:H2OpenCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Open PV",
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 284
+        },
+        {
+          "name": "SRC:SVL:H2CloseCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Close PV",
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 294
+        },
+        {
+          "name": "LEBT:FC:InCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde In FC",
+            "ZNAM": "In",
+            "ONAM": "Out",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 304
+        },
+        {
+          "name": "LEBT:FC:OutCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Out FC",
+            "ZNAM": "In",
+            "ONAM": "Out",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 314
+        },
+        {
+          "name": "LEBT:VAC:SVForcing",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Force SV",
+            "ZNAM": "Normal",
+            "ONAM": "Force",
+            "PINI": "YES",
+            "HIGH": "3600"
+          },
+          "line": 324
+        },
+        {
+          "name": "LEBT:CHOP:InCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde In Choper",
+            "ONAM": "In",
+            "ZNAM": "Out",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 334
+        },
+        {
+          "name": "LEBT:CHOP:OutCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde Out choper",
+            "ONAM": "In",
+            "ZNAM": "Out",
+            "PINI": "YES",
+            "HIGH": "5"
+          },
+          "line": 344
+        }
+      ]
+    },
+    "db/plcInjectorApp/db/plcInjector_Status.db": {
+      "sha": "e03a323455e5d2bbc06da7337c4cc14c149ffc23",
+      "records": [
+        {
+          "name": "INJ:PLC:comStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Communication Status",
+            "SCAN": "I/O Intr",
+            "ZNAM": "DSCT",
+            "ONAM": "CNTD"
+          },
+          "line": 4
+        },
+        {
+          "name": "INJ:PLC:Cptr0",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "Compteur Epics",
+            "SCAN": "1 second",
+            "CALC": "(A<B?A+1:A=0)"
+          },
+          "line": 13
+        },
+        {
+          "name": "INJ:PLC:epicsCpt0",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Compteur Epics",
+            "PINI": "YES",
+            "OMSL": "closed_loop"
+          },
+          "line": 20
+        },
+        {
+          "name": "INJ:PLC:CptrPlc",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "compteur PLC",
+            "SCAN": "I/O Intr",
+            "PINI": "NO",
+            "LINR": "NO CONVERSION"
+          },
+          "line": 28
+        }
+      ]
+    },
+    "db/plcInjectorApp/db/plcInjector_StatusForOpi.db": {
+      "sha": "0b62e3d9e56184657dd23c66dc9db72b582530fe",
+      "records": [
+        {
+          "name": "LEBT:VAC01:PVOpenPrecond",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "VAC01 PV Open Precondition",
+            "SCAN": "1 second",
+            "CALC": "(A&B)|C"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:VAC01:SVOpenPrecond",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "VAC01 PV Open Precondition",
+            "SCAN": "1 second",
+            "CALC": "((((A&B)|D)|(E&F&G))&C)|H"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:VAC02:PVOpenPrecond",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "VAC01 PV Open Precondition",
+            "SCAN": "1 second",
+            "CALC": "(A&B)|C"
+          },
+          "line": 18
+        },
+        {
+          "name": "LEBT:VAC02:SVOpenPrecond",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "VAC01 PV Open Precondition",
+            "SCAN": "1 second",
+            "CALC": "(A&B&C&D)|E"
+          },
+          "line": 25
+        }
+      ]
+    }
+  }
+}

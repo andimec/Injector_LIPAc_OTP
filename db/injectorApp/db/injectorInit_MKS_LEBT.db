@@ -1,0 +1,98 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorInit_MKS_LEBT.db
+
+record(bo, "LEBT:MFC:INITCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(PINI, "NO")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(stringout, "LEBT:MFC:Remote")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringout, "LEBT:MFC:FlowMode")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "F")
+}
+
+record(stringout, "LEBT:MFC:CloseVL1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "LEBT:MFC:CloseVlv1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "LEBT:MFC:CloseVL2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "LEBT:MFC:CloseVlv2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "LEBT:MFC:DP2OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "LEBT:MFC:Range1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringout, "LEBT:MFC:Range2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(ao, "LEBT:MFC:Gain1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "1.0")
+    field(PREC, "3")
+    field(DRVH, "5.0")
+    field(DRVL, "0.0")
+    field(HOPR, "5.0")
+    field(LOPR, "0.0")
+}
+
+record(ao, "LEBT:MFC:Gain2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "1.00")
+    field(PREC, "3")
+    field(DRVH, "5.0")
+    field(DRVL, "0.0")
+    field(HOPR, "5.0")
+    field(LOPR, "0.0")
+}
+
+record(stringout, "LEBT:MFC:DP1Line1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringout, "LEBT:MFC:DP1Line2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}

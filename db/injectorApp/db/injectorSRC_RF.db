@@ -1,0 +1,59 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorSRC_RF.db
+
+record(ao, "SRC:RF_GEN:Pwr")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "1200")
+    field(DRVL, "0")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_GEN:Offset")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "1200")
+    field(DRVL, "0")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+}
+
+record(calc, "SRC:RF_GEN:PwrSet")
+{
+    field(CALC, "A-B")
+}
+
+record(calcout, "SRC:RF_GEN:VRFcalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}
+
+record(ao, "SRC:RF_GEN:VRFSet")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}
+
+record(calcout, "SRC:RF_GEN:CalcOffset")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}
+
+record(ao, "SRC:RF_GEN:VoffsetSet")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}

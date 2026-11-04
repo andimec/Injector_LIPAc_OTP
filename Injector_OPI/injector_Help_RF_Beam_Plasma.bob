@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <width>900</width>
+  <height>800</height>
+  <background_color>
+    <color name="HelpPanel" red="181" green="249" blue="215">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>
+
+      Autorisation of the RF generator for Beam or for PLasma only.
+
+   PS  :  Power Supply
+
+   HV : High Voltage (FUG 120kV)
+   COIL01,COIL02 : Coils around the plasma chamber (Hazemeyer)
+   IE : Intermediate Electrode ( FUG )
+   R : Repeller
+   SOL01,SOL02 : Solenoids on the LEBT  (Hazemeyer)
+   RC : Repeller on the injection cone
+   STV01,STH01,STV02,STH02 : Steerers (Hazemeyer)
+
+
+  FC : Faraday cup
+  GV : Gate Valve 
+  CHOPPER : Chopper inserted in th LEBT
+
+  FlowStat : Status of the water flow meter
+  DefStat   : Status of the default of the power supply
+
+
+
+
+
+</text>
+    <x>48</x>
+    <y>78</y>
+    <width>835</width>
+    <height>500</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

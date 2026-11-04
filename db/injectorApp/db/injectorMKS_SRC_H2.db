@@ -1,0 +1,118 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorMKS_SRC_H2.db
+
+record(bo, "SRC:MFCH:OpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ON")
+    field(SCAN, "Passive")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+}
+
+record(stringout, "SRC:MFCH:OpenVanne2")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(OMSL, "closed_loop")
+    field(VAL, "OFF")
+}
+
+record(ai, "SRC:MFCH:Deb2Mes")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+    field(LINR, "NO CONVERSION")
+    field(EGU, "SCCM")
+    field(LSV, "MINOR")
+    field(EGUF, "10")
+    field(EGUL, "0")
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:MFCH:Debit")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(VAL, "0")
+    field(PREC, "2")
+    field(LINR, "NO CONVERSION")
+    field(DRVH, "10")
+    field(DRVL, "0")
+    field(DESC, "Valeur Debit H2")
+    field(EGUF, "10")
+    field(EGUL, "0")
+}
+
+record(stringin, "SRC:MFCH:EtatLD")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(stringout, "SRC:MFCH:SetOn2")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(OMSL, "closed_loop")
+    field(VAL, "OFF")
+}
+
+record(bo, "SRC:MFCH:RmtCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "SRC:MFCH:LocCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(stringout, "SRC:MFCH:Debug")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(bo, "SRC:MFCH:ScanDIS")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "SCAN")
+    field(ONAM, "NO SCAN")
+}
+
+record(stringin, "SRC:MFCH:LectSP2")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(stringin, "SRC:MFCH:EtatVanne")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "1 second")
+}
+
+record(bi, "SRC:MFCH:EtatLocRem")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Loc=0;rem=1")
+    field(SCAN, "Passive")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rmt")
+}
+
+record(bi, "SRC:MFCH:StsVanne")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Loc=0;rem=1")
+    field(SCAN, "Passive")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}

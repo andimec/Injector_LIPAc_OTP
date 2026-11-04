@@ -1,0 +1,8 @@
+record(ao, "$(IOCNAME):pv1") {
+    field(DESC, "Example of PV")
+    field(DTYP, "Soft Channel")
+    field(EGU,  "unit")
+    field(DRVH, "60")
+    field(DRVL, "1")
+    field(VAL,  "15")
+}

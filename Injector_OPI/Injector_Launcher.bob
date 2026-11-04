@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <width>1600</width>
+  <height>900</height>
+  <background_color>
+    <color name="MainBackground" red="120" green="120" blue="120">
+    </color>
+  </background_color>
+  <actions>
+    <action type="open_display">
+      <description>Open Display</description>
+      <file />
+      <target>window</target>
+    </action>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="group" version="3.0.0">
+    <x>318</x>
+    <y>192</y>
+    <width>877</width>
+    <height>547</height>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>Injector_Main.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>Source &amp; LEBT</text>
+      <x>114</x>
+      <y>144</y>
+      <width>319</width>
+      <height>61</height>
+      <background_color>
+        <color name="MainBackground" red="120" green="120" blue="120">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>Injector_Vacuum.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Injector Vacuum</text>
+      <x>444</x>
+      <y>144</y>
+      <width>319</width>
+      <height>61</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_3</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>Injector_magnets_status.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Equipment Status</text>
+      <x>444</x>
+      <y>234</y>
+      <width>319</width>
+      <height>61</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_2</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>Injector_Timing.opi</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Timing</text>
+      <x>114</x>
+      <y>234</y>
+      <width>319</width>
+      <height>61</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>Injector_FGA.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Four Grid Analyser (FGA)</text>
+      <x>114</x>
+      <y>324</y>
+      <width>319</width>
+      <height>61</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_6</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emuLauncher.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>Emittance Measurement Unit</text>
+      <x>444</x>
+      <y>324</y>
+      <width>319</width>
+      <height>61</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>468</x>
+    <y>54</y>
+    <width>556</width>
+    <height>73</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>IFMIF Injector Launcher</text>
+    <x>568</x>
+    <y>72</y>
+    <width>355</width>
+    <height>37</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

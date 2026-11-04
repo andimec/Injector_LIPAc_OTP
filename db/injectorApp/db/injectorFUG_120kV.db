@@ -1,0 +1,140 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorFUG_120kV.db
+
+record(bo, "LEBT:HV_PS:Reset")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:HV_PS:AuxOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:HV_PS:AuxOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:HV_PS:HTOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:HV_PS:HTOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(HIGH, "2")
+}
+
+record(ao, "LEBT:HV_PS:HTCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(PREC, "1")
+    field(EGUF, "120")
+    field(EGU, "kV")
+    field(DRVH, "100")
+    field(DRVL, "0")
+    field(HOPR, "100")
+    field(LOPR, "0")
+    field(ASLO, "1")
+}
+
+record(calc, "LEBT:HV_PS:CalcVHT")
+{
+    field(CALC, "A*C")
+}
+
+record(ao, "LEBT:HV_PS:EcrVHT")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+}
+
+record(ao, "LEBT:HV_PS:ICmd")
+{
+    field(DTYP, "Soft Channel")
+    field(PREC, "1")
+    field(EGUF, "250")
+    field(EGU, "mA")
+    field(DRVH, "250")
+    field(DRVL, "0")
+    field(HOPR, "250")
+    field(LOPR, "0")
+    field(ASLO, "1")
+}
+
+record(calc, "LEBT:HV_PS:CalcI")
+{
+    field(CALC, "A/B")
+}
+
+record(ao, "LEBT:HV_PS:EcrI")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+}
+
+record(stringout, "LEBT:HV_PS:IniTinteg")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "integ time")
+    field(PINI, "YES")
+    field(VAL, "S6")
+}
+
+record(stringout, "LEBT:HV_PS:CmdMesI")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes I")
+    field(SCAN, "2 second")
+    field(VAL, "M1")
+}
+
+record(calcout, "LEBT:HV_PS:DelayI")
+{
+    field(CALC, "((A=B)?1:0)")
+    field(ODLY, "1")
+}
+
+record(ai, "LEBT:HV_PS:LectVht")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "lec V")
+    field(SCAN, "2 second")
+}
+
+record(calcout, "LEBT:HV_PS:ScaleVHT")
+{
+    field(DESC, "scaling de VHt")
+    field(CALC, "(A/B)")
+    field(PREC, "1")
+}
+
+record(ai, "LEBT:HV_PS:LectIht")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "lect I")
+    field(SCAN, "2 second")
+}
+
+record(calcout, "LEBT:HV_PS:ScaleIHT")
+{
+    field(DESC, "scaling de IHt")
+    field(CALC, "(A*B)")
+    field(PREC, "1")
+}

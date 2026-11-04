@@ -1,0 +1,83 @@
+version: 1.1
+source: Injector-LIPAc PVs-data-2026-09-09
+
+# This file is a small architecture seed, not the complete 870-PV baseline.
+# The complete controlled mapping will be generated from the V1.1 workbook.
+
+pbs:
+  system: "04"
+  levels: [system, subsystem, elements, component]
+  branches:
+    - code: "04.04.01.01"
+      name: "RF chain"
+    - code: "04.04.01.02"
+      name: "Coils"
+    - code: "04.04.01.03"
+      name: "Source Mechanics"
+    - code: "04.04.01.04"
+      name: "Gas injection"
+    - code: "04.04.01.05"
+      name: "Accelerator column"
+    - code: "04.04.01.06"
+      name: "HV Platform and cage"
+    - code: "04.04.01.07"
+      name: "HV Power supplies"
+    - code: "04.04.02.01"
+      name: "Mechanics"
+    - code: "04.04.02.02"
+      name: "Magnets elements"
+    - code: "04.04.02.03"
+      name: "Power supplies"
+    - code: "04.04.03.01"
+      name: "ACCT"
+    - code: "04.04.03.04"
+      name: "Movable faraday cup"
+    - code: "04.04.03.09"
+      name: "Emittancemeter"
+    - code: "04.04.03.11"
+      name: "Chopper"
+    - code: "04.04.04.01"
+      name: "Water cooling system"
+    - code: "04.04.04.02"
+      name: "Vacuum system (Vault)"
+    - code: "04.04.05.01"
+      name: "Programmable Logic Controller"
+
+# Contract examples. Every production PV will eventually have:
+# name, direction, type, PBS path, model ownership and safety classification.
+pvs:
+  - name: "SRC:COIL01_PS:ISet"
+    direction: command
+    type: number
+    pbs: "04.04.01.02"
+    model: coils
+  - name: "SRC:COIL01_PS:IRdbk"
+    direction: monitor
+    type: number
+    pbs: "04.04.01.02"
+    model: coils
+  - name: "LEBT:SOL01_PS:OnStat"
+    direction: monitor
+    type: boolean
+    pbs: "04.04.02.03"
+    model: magnets
+  - name: "LEBT:FC:InStat"
+    direction: monitor
+    type: boolean
+    pbs: "04.04.03.04"
+    model: diagnostics
+  - name: "LEBT:Chop:InStat"
+    direction: monitor
+    type: boolean
+    pbs: "04.04.03.11"
+    model: chopper
+  - name: "PPS:BEAM:InhibitStat"
+    direction: monitor
+    type: boolean
+    pbs: "04.04.05.01"
+    model: pps
+  - name: "MPS:INJ:DefStat"
+    direction: monitor
+    type: boolean
+    pbs: "04.04.05.01"
+    model: mps

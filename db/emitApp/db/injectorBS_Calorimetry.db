@@ -1,0 +1,91 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/injectorBS_Calorimetry.db
+
+record(ai, "LEBT:BS:TinRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur BS_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(calc, "LEBT:BS:Tincalc")
+{
+    field(CALC, "(A*B)")
+    field(PREC, "1")
+}
+
+record(ai, "LEBT:BS:ToutRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tout sur BS_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(calc, "LEBT:BS:Toutcalc")
+{
+    field(CALC, "(A*B)")
+    field(PREC, "1")
+}
+
+record(ao, "LEBT:BS:Comp")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Compensation")
+    field(OMSL, "supervisory")
+    field(DRVH, "10")
+    field(DRVL, "-10")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+    field(PREC, "1")
+}
+
+record(calc, "LEBT:BS:DeltaT")
+{
+    field(DESC, "BS_W: Tout - Tin")
+    field(SCAN, "Passive")
+    field(CALC, "(B-A)-C")
+    field(PREC, "2")
+}
+
+record(calc, "LEBT:BS:Icalc")
+{
+    field(DESC, "calcul I sur BS")
+    field(PREC, "2")
+    field(CALC, "(((E/C)*B*A)/D)*F")
+}
+
+record(calc, "LEBT:BS:DeltaT2")
+{
+    field(DESC, "BS_W: Tout - Tin")
+    field(SCAN, "Passive")
+    field(CALC, "(B-A)-C")
+    field(PREC, "2")
+}
+
+record(calc, "LEBT:BS:Icalc2")
+{
+    field(DESC, "calcul I sur BS")
+    field(PREC, "2")
+    field(CALC, "(((E/C)*B*A)/D)*F")
+}
+
+record(calc, "LEBT:BS:IRendement")
+{
+    field(DESC, "calcul Rendement")
+    field(PREC, "2")
+    field(CALC, "(A/B)*C")
+}

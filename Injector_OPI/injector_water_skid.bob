@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <width>1900</width>
+  <height>1050</height>
+  <background_color>
+    <color name="MainBackground" red="120" green="120" blue="120">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="embedded" version="2.0.0">
+    <name>Linking Container</name>
+    <file>../../L2-SystemOverview/Integrated/COOLING_SKIDS/INJECTOR_COOLING_SKID.opi</file>
+    <width>1912</width>
+    <height>1050</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

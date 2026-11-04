@@ -1,0 +1,171 @@
+{
+  "source_commit": "04a922247f0f25834d921cd9a3a68c96c4f71596",
+  "files": {
+    "Injector_OPI/emuMotorUser_v2.bob": {
+      "sha": "3f9516abe8e4aeacd0d4e725111e43ca5ae1b643",
+      "refs": {
+        "LEBT:EMIT:MOTOR.LLS": 2,
+        "LEBT:EMIT:MOTOR.ATHM": 2,
+        "LEBT:EMIT:MOTOR.HLS": 2,
+        "LEBT:EMIT:MOTOR.SPMG": 1,
+        "LEBT:EMIT:MOTOR.LLM": 1,
+        "LEBT:EMIT:MOTOR.HLM": 1,
+        "LEBT:EMIT:MOTOR.RBV": 1,
+        "LEBT:EMIT:MOTOR.VAL": 1,
+        "LEBT:EMIT:Actdisable": 1,
+        "LEBT:EMIT:MOTOR.CNEN": 1,
+        "LEBT:EMIT:Actenable": 1,
+        "LEBT:EMIT_SERV:Status": 1,
+        "LEBT:EMIT_PS:ExtSec": 1,
+        "LEBT:EMIT:MOTOR.TWR": 1,
+        "LEBT:EMIT:MOTOR.TWV": 1,
+        "LEBT:EMIT:MOTOR.TWF": 1,
+        "LEBT:EMIT:MOTOR.HOMR": 1,
+        "LEBT:EMIT:MOTOR.HOMF": 1,
+        "LEBT:EMIT:SOFT_LIM_VIO": 1,
+        "LEBT:EMIT_SERV:Refresh": 1,
+        "LEBT:EMIT:HARD_LIM_VIO": 1
+      },
+      "dynamic": [
+        "</macros>\n      <x>6</x>\n      <y>272</y>\n      <width>535</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"534.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_6</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>292</x>\n      <y>286</y>\n      <width>1</width>\n      <height>61</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"0.0\" y=\"60.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_6</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>116</x>\n      <y>286</y>\n      <width>1</width>\n      <height>61</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"0.0\" y=\"60.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n    </widget>\n    <widget type=\"textentry\" version=\"3.0.0\">\n      <name>Text Input_8</name>\n      <pv_name>ca://LEBT:EMIT:MOTOR.RLV",
+        "</macros>\n      <x>438</x>\n      <y>2</y>\n      <width>1</width>\n      <height>245</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"0.0\" y=\"244.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_2</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>445</x>\n      <y>148</y>\n      <width>110</width>\n      <height>2</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"109.0\" y=\"1.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_2</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>210</x>\n      <y>2</y>\n      <width>2</width>\n      <height>175</height>\n      <points>\n        <point x=\"1.0\" y=\"0.0\">\n        </point>\n        <point x=\"0.0\" y=\"174.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_2</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>1</x>\n      <y>182</y>\n      <width>432</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"431.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_3</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>219</x>\n      <y>123</y>\n      <width>214</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"213.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"polyline\" version=\"2.0.0\">\n      <name>Polyline_2</name>\n      <macros>\n        <pv_name />\n      </macros>\n      <x>325</x>\n      <y>187</y>\n      <width>1</width>\n      <height>60</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"0.0\" y=\"59.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n    </widget>\n    <widget type=\"led\" version=\"2.0.0\">\n      <name>LED_9</name>\n      <pv_name>ca://LEBT:EMIT:MOTOR.MOVN",
+        "</macros>\n    <width>659</width>\n    <height>67</height>\n    <line_width>1</line_width>\n    <line_color>\n      <color red=\"26\" green=\"26\" blue=\"26\">\n      </color>\n    </line_color>\n    <background_color>\n      <color name=\"HeaderPanel\" red=\"158\" green=\"196\" blue=\"224\">\n      </color>\n    </background_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"label\" version=\"2.0.0\">\n    <name>Label</name>\n    <text>E M U  Motor Control</text>\n    <x>126</x>\n    <y>24</y>\n    <width>403</width>\n    <font>\n      <font name=\"Header2\" family=\"Sans\" style=\"BOLD\" size=\"13.861386138613861\">\n      </font>\n    </font>\n    <background_color>\n      <color name=\"HeaderPanel\" red=\"158\" green=\"196\" blue=\"224\">\n      </color>\n    </background_color>\n    <transparent>false</transparent>\n    <horizontal_alignment>1</horizontal_alignment>\n    <vertical_alignment>1</vertical_alignment>\n    <actions>\n    </actions>\n    <border_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </border_color>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_1</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <y>67</y>\n    <width>77</width>\n    <height>391</height>\n    <line_width>1</line_width>\n    <line_color>\n      <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n      </color>\n    </line_color>\n    <background_color>\n      <color name=\"panelArea\" red=\"218\" green=\"218\" blue=\"218\">\n      </color>\n    </background_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"progressbar\" version=\"2.0.0\">\n    <name>Progress Bar</name>\n    <pv_name>ca://LEBT:EMIT:Position.VAL"
+      ]
+    },
+    "Injector_OPI/Help_Calorimetry.bob": {
+      "sha": "4c31761ba9020e647395b996f22a00e35d663300",
+      "refs": {},
+      "dynamic": []
+    },
+    "Injector_OPI/Help_RF_Beam_Plasma.bob": {
+      "sha": "fb4842c87b185bda73861fc1d1e56e382ef538e1",
+      "refs": {},
+      "dynamic": []
+    },
+    "Injector_OPI/Help_Status_RF.bob": {
+      "sha": "e308342ce3302d3ee955202e8c71399e2ff509ce",
+      "refs": {},
+      "dynamic": []
+    },
+    "Injector_OPI/Help_Status.bob": {
+      "sha": "15485363867b3f03611093d4204b873f64fc914e",
+      "refs": {},
+      "dynamic": []
+    },
+    "Injector_OPI/Help_Vacuum.bob": {
+      "sha": "0d8c8263b34d70dee0b09ac65164430c6145a375",
+      "refs": {},
+      "dynamic": []
+    },
+    "Injector_OPI/HVSparkSuppressor.bob": {
+      "sha": "50a74d055eeb1b5d7a28257418c19d624ab97ca7",
+      "refs": {
+        "LEBT:HV:Vmonitor": 1,
+        "LEBT:HVsparkSuppressor:Switch": 28,
+        "LEBT:Repeller:Vmonitor": 1,
+        "LEBT:HV:VThRatio": 1,
+        "LEBT:Repeller:VThRatio": 1,
+        "LEBT:MPS:HVsparkSuppressor:delay.HIGH": 1,
+        "LEBT:Repeller:Comparator": 2,
+        "LEBT:HV:Comparator": 2,
+        "LEBT:MPS:HVsparkSuppressor:delay": 4,
+        "LEBT:HVsparkSuppressor:Counter": 2,
+        "LEBT:HVsparkSuppressor:IntCmd": 1,
+        "LEBT:HV:Counter": 2,
+        "LEBT:Repeller:Counter": 2,
+        "LEBT:VMEStats:memoryFree": 1,
+        "LEBT:VMEStats:memoryTotal": 1,
+        "LEBT:VMEStats:memoryUsedPercent": 1,
+        "LEBT:VMEStats:cpuUsedPercent": 1
+      },
+      "dynamic": [
+        "</macros>\n      <x>567</x>\n      <y>315</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch",
+        "</macros>\n      <x>123</x>\n      <y>189</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch",
+        "</macros>\n      <x>123</x>\n      <y>240</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch",
+        "</macros>\n      <x>124</x>\n      <y>399</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch",
+        "</macros>\n      <x>124</x>\n      <y>453</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch",
+        "</macros>\n      <x>294</x>\n      <y>421</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch",
+        "</macros>\n      <x>282</x>\n      <y>211</y>\n      <width>118</width>\n      <height>1</height>\n      <points>\n        <point x=\"0.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n        <point x=\"117.0\" y=\"0.0\">\n        </point>\n      </points>\n      <line_width>1</line_width>\n      <line_color>\n        <color red=\"30\" green=\"144\" blue=\"255\">\n        </color>\n      </line_color>\n      <actions>\n      </actions>\n      <rules>\n        <rule name=\"Rule\" prop_id=\"enabled\" out_exp=\"false\">\n          <exp bool_exp=\"pv0==0\">\n            <value>false</value>\n          </exp>\n          <exp bool_exp=\"pv0==1\">\n            <value>true</value>\n          </exp>\n          <pv_name>ca://LEBT:HVsparkSuppressor:Switch"
+      ]
+    },
+    "Injector_OPI/Injector_Calorimetry.bob": {
+      "sha": "86e729766ac9957136099d7e8e61d684fdb3d52c",
+      "refs": {
+        "LEBT:FC:Toutcalc": 1,
+        "LEBT:FC:ICalc.INPE": 2,
+        "LEBT:FC:I": 1,
+        "LEBT:FC:ICalc": 1,
+        "LEBT:FC:InStat": 1,
+        "LEBT:FC:OutStat": 1,
+        "LEBT:FC:Comp": 2,
+        "LEBT:HV_PS:HTCmd": 1,
+        "SRC:TIM:DutyCycle": 1,
+        "LEBT:IC:Toutcalc": 1,
+        "LEBT:ACCT:I": 1,
+        "LEBT:IC:Icalc": 1,
+        "LEBT:IC:Tincalc": 1,
+        "LEBT:IC:Comp": 2
+      },
+      "dynamic": [
+        "</macros>\n    <x>130</x>\n    <y>30</y>\n    <width>667</width>\n    <height>32</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <background_color>\n      <color name=\"HeaderPanel\" red=\"158\" green=\"196\" blue=\"224\">\n      </color>\n    </background_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"label\" version=\"2.0.0\">\n    <name>Label</name>\n    <text>Calorimetric Measurements</text>\n    <x>230</x>\n    <y>36</y>\n    <width>402</width>\n    <font>\n      <font name=\"Header2\" family=\"Arial\" style=\"REGULAR\" size=\"8.910891089108912\">\n      </font>\n    </font>\n    <background_color>\n      <color name=\"HeaderPanel\" red=\"158\" green=\"196\" blue=\"224\">\n      </color>\n    </background_color>\n    <transparent>false</transparent>\n    <vertical_alignment>1</vertical_alignment>\n    <actions>\n    </actions>\n    <border_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </border_color>\n  </widget>\n  <widget type=\"textupdate\" version=\"2.0.0\">\n    <name>Text_Update_FC_Tincalc</name>\n    <pv_name>ca://LEBT:FC:Tincalc"
+      ]
+    },
+    "Injector_OPI/Injector_FGA.bob": {
+      "sha": "83c51c178487616c857a2096c420ee3ede754f9b",
+      "refs": {
+        "LEBT:FGA_PS3:VSet": 2,
+        "LEBT:FGA_PS4:VSet": 2,
+        "LEBT:FGA_PS3:Vdeb": 1,
+        "LEBT:FGA_PS3:Vfin": 1,
+        "LEBT:FGA_PS3:Npas": 1,
+        "LEBT:FGA:CalculDV": 1,
+        "LEBT:FGA:StartMes": 1,
+        "LEBT:FGA:StopMes": 1,
+        "LEBT:FGA:Dialog": 1,
+        "LEBT:FGA_PS2:VSet": 1
+      },
+      "dynamic": [
+        "</macros>\n    <x>66</x>\n    <y>120</y>\n    <width>1150</width>\n    <height>581</height>\n    <line_width>2</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <background_color>\n      <color red=\"0\" green=\"0\" blue=\"255\">\n      </color>\n    </background_color>\n    <transparent>true</transparent>\n    <corner_width>16</corner_width>\n    <corner_height>16</corner_height>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>66</x>\n    <y>24</y>\n    <width>619</width>\n    <height>52</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <background_color>\n      <color name=\"HeaderPanel\" red=\"158\" green=\"196\" blue=\"224\">\n      </color>\n    </background_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"label\" version=\"2.0.0\">\n    <name>Label_1</name>\n    <text>Space Charge Compensation Measurement (FGA)</text>\n    <x>96</x>\n    <y>36</y>\n    <width>583</width>\n    <font>\n      <font name=\"Header2\" family=\"Arial\" style=\"REGULAR\" size=\"8.910891089108912\">\n      </font>\n    </font>\n    <background_color>\n      <color name=\"HeaderPanel\" red=\"158\" green=\"196\" blue=\"224\">\n      </color>\n    </background_color>\n    <transparent>false</transparent>\n    <vertical_alignment>1</vertical_alignment>\n    <actions>\n    </actions>\n    <border_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </border_color>\n  </widget>\n  <widget type=\"scaledslider\" version=\"2.0.0\">\n    <name>Scaled Slider</name>\n    <pv_name>ca://LEBT:FGA_PS2:VSet"
+      ]
+    },
+    "Injector_OPI/injector_Help_PLC.bob": {
+      "sha": "aeb48fe89233aee32d810b6074b96c98a02f7b16",
+      "refs": {
+        "LEBT:EMIT:FSDefStat": 2,
+        "LEBT:BS:FSDefStat": 2,
+        "LEBT:FC:FSDefStat": 8,
+        "LEBT:IC:FSDefStat": 1,
+        "LEBT:SOL01:VCFlowStat": 1,
+        "LEBT:SOL02:VCFlowStat": 1,
+        "SRC:RF:FSDefStat": 2,
+        "SRC:COIL02_PS:OnStat": 2,
+        "LEBT:SOL01_PS:OnStat": 1,
+        "LEBT:SOL02_PS:OnStat": 9,
+        "LEBT:HV_PS:OnStat": 15,
+        "SRC:IE_PS:OnStat": 2,
+        "LEBT:R_PS:OnStat": 2,
+        "LEBT:GE:FSFlowStat": 1,
+        "LEBT:CHOP:InStat": 1,
+        "LEBT:GV:OpenStat": 1,
+        "SRC:SVL:D2OpenStat": 3,
+        "LEBT:FC:InStat": 1,
+        "SRC:SVL:H2OpenStat": 2,
+        "SRC:SVL:D2CloseStat": 1,
+        "PPS:BEAM:InhibitStat": 1,
+        "SRC:RF_GEN:PlasmaStat": 1,
+        "LEBT:VAC01:SGVCDefStat": 1,
+        "SRC:COIL01_PS:OnStat": 1
+      },
+      "dynamic": [
+        "</macros>\n    <x>273</x>\n    <y>489</y>\n    <width>672</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>40</x>\n    <y>232</y>\n    <width>1005</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"led\" version=\"2.0.0\">\n    <name>LED</name>\n    <pv_name>ca://LEBT:CHOP:FSDefStat",
+        "</macros>\n    <x>376</x>\n    <y>317</y>\n    <width>673</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"led\" version=\"2.0.0\">\n    <name>LED_8</name>\n    <pv_name>ca://SRC:COIL01_PS:OnStat",
+        "</macros>\n    <x>1044</x>\n    <y>232</y>\n    <width>5</width>\n    <height>89</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_3</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>40</x>\n    <y>191</y>\n    <width>5</width>\n    <height>489</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"led\" version=\"2.0.0\">\n    <name>LED_16</name>\n    <pv_name>ca://LEBT:GE:TSDefStat",
+        "</macros>\n    <x>372</x>\n    <y>400</y>\n    <width>413</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"led\" version=\"2.0.0\">\n    <name>LED_20</name>\n    <pv_name>ca://PPS:CHOP:PermStat",
+        "</macros>\n    <x>784</x>\n    <y>317</y>\n    <width>5</width>\n    <height>89</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_6</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>372</x>\n    <y>317</y>\n    <width>5</width>\n    <height>88</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"led\" version=\"2.0.0\">\n    <name>LED_25</name>\n    <pv_name>ca://PPS:PLSM:PermStat",
+        "</macros>\n    <x>41</x>\n    <y>605</y>\n    <width>900</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_9</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>944</x>\n    <y>549</y>\n    <width>89</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_10</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>940</x>\n    <y>493</y>\n    <width>5</width>\n    <height>117</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rounded Rectangle</name>\n    <macros>\n      <pv_name>ca://SRC:RF_GEN:PlasmaStat",
+        "</macros>\n    <x>273</x>\n    <y>359</y>\n    <width>104</width>\n    <height>5</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_12</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>268</x>\n    <y>359</y>\n    <width>5</width>\n    <height>135</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"label\" version=\"2.0.0\">\n    <name>Label_3</name>\n    <text>CHOP:FSDefStat</text>\n    <x>53</x>\n    <y>181</y>\n    <width>111</width>\n    <height>24</height>\n    <font>\n      <font name=\"Small\" family=\"Sans\" style=\"REGULAR\" size=\"8.910891089108912\">\n      </font>\n    </font>\n    <horizontal_alignment>1</horizontal_alignment>\n    <vertical_alignment>1</vertical_alignment>\n    <wrap_words>false</wrap_words>\n    <actions>\n    </actions>\n    <rules>\n      <rule name=\"Rule\" prop_id=\"visible\" out_exp=\"false\">\n        <exp bool_exp=\"pv0==0\">\n          <value>true</value>\n        </exp>\n        <exp bool_exp=\"pv0==1\">\n          <value>false</value>\n        </exp>\n        <pv_name>ca://LEBT:CHOP:FSDefStat",
+        "</macros>\n    <x>745</x>\n    <y>274</y>\n    <width>130</width>\n    <height>2</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <background_color>\n      <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n      </color>\n    </background_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"rectangle\" version=\"2.0.0\">\n    <name>Rectangle_14</name>\n    <macros>\n      <pv_name />\n    </macros>\n    <x>895</x>\n    <y>274</y>\n    <width>130</width>\n    <height>2</height>\n    <line_width>0</line_width>\n    <line_color>\n      <color red=\"0\" green=\"128\" blue=\"255\">\n      </color>\n    </line_color>\n    <background_color>\n      <color name=\"TextBackground\" red=\"70\" green=\"70\" blue=\"70\">\n      </color>\n    </background_color>\n    <actions>\n    </actions>\n    <tooltip>$(pv_name)\n$(pv_value)</tooltip>\n  </widget>\n  <widget type=\"label\" version=\"2.0.0\">\n    <name>Label_20</name>\n    <text>R_PS:OnStat</text>\n    <x>788</x>\n    <y>350</y>\n    <height>24</height>\n    <font>\n      <font name=\"Small\" family=\"Sans\" style=\"REGULAR\" size=\"8.910891089108912\">\n      </font>\n    </font>\n    <horizontal_alignment>1</horizontal_alignment>\n    <vertical_alignment>1</vertical_alignment>\n    <wrap_words>false</wrap_words>\n    <actions>\n    </actions>\n    <rules>\n      <rule name=\"Rule\" prop_id=\"visible\" out_exp=\"false\">\n        <exp bool_exp=\"pv0==0\">\n          <value>true</value>\n        </exp>\n        <exp bool_exp=\"pv0==1\">\n          <value>false</value>\n        </exp>\n        <pv_name>ca://LEBT:HV_PS:OnStat"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1681 @@
+{
+  "source_commit": "04a922247f0f25834d921cd9a3a68c96c4f71596",
+  "files": {
+    "db/emitApp/db/injectorBS_Calorimetry.db": {
+      "sha": "59fd7365b240b8b2d28c1cc2d080b4901a8472e4",
+      "records": [
+        {
+          "name": "LEBT:BS:TinRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur BS_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:BS:Tincalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "PREC": "1"
+          },
+          "line": 18
+        },
+        {
+          "name": "LEBT:BS:ToutRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tout sur BS_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:BS:Toutcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "PREC": "1"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:BS:Comp",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Compensation",
+            "OMSL": "supervisory",
+            "DRVH": "10",
+            "DRVL": "-10",
+            "HOPR": "10",
+            "LOPR": "-10",
+            "PREC": "1"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:BS:DeltaT",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "BS_W: Tout - Tin",
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "PREC": "2"
+          },
+          "line": 56
+        },
+        {
+          "name": "LEBT:BS:Icalc",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul I sur BS",
+            "PREC": "2",
+            "CALC": "(((E/C)*B*A)/D)*F"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:BS:DeltaT2",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "BS_W: Tout - Tin",
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "PREC": "2"
+          },
+          "line": 71
+        },
+        {
+          "name": "LEBT:BS:Icalc2",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul I sur BS",
+            "PREC": "2",
+            "CALC": "(((E/C)*B*A)/D)*F"
+          },
+          "line": 79
+        },
+        {
+          "name": "LEBT:BS:IRendement",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul Rendement",
+            "PREC": "2",
+            "CALC": "(A/B)*C"
+          },
+          "line": 86
+        }
+      ]
+    },
+    "db/emitApp/db/injectorFC_Calorimetry.db": {
+      "sha": "89c9e58394f6d5d8cbf3b47996876b91d10f97ef",
+      "records": [
+        {
+          "name": "LEBT:FC:TinRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur FC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:FC:Tincalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A*B",
+            "PREC": "2"
+          },
+          "line": 18
+        },
+        {
+          "name": "LEBT:FC:ToutRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tout sur FC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:FC:Toutcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A*B",
+            "PREC": "2"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:FC:DeltaT",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "FC_W: Tout - Tin",
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "PREC": "2"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:FC:ICalc",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul I sur FC",
+            "PREC": "2",
+            "CALC": "(((E/C)*B*A)/D)*F"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:FC:Comp",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Compensation",
+            "OMSL": "supervisory",
+            "DRVH": "10",
+            "DRVL": "-10",
+            "HOPR": "10",
+            "LOPR": "-10",
+            "PREC": "1"
+          },
+          "line": 59
+        },
+        {
+          "name": "LEBT:FC:IRendement",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul Rendement",
+            "SCAN": "2 second",
+            "PREC": "2",
+            "CALC": "(E)?((A/B)*C):D"
+          },
+          "line": 71
+        },
+        {
+          "name": "LEBT:FC:TinAvg",
+          "record_type": "compress",
+          "fields": {
+            "DESC": "moyenne sur Tin",
+            "ALG": "Average",
+            "NSAM": "20"
+          },
+          "line": 79
+        },
+        {
+          "name": "LEBT:FC:Fanout",
+          "record_type": "fanout",
+          "fields": {},
+          "line": 86
+        }
+      ]
+    },
+    "db/emitApp/db/injectorGE_temp.db": {
+      "sha": "1c795e9ee745d3d821cfc3c364e4905f50c7af03",
+      "records": [
+        {
+          "name": "LEBT:GE:Temp",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Temp Ground Elec",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "1",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:GE:Tcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A*B",
+            "PREC": "1"
+          },
+          "line": 18
+        },
+        {
+          "name": "LEBT:FGA:TRegul",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Temp FGA",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "1",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:FGA:TRegulcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A*B",
+            "PREC": "1"
+          },
+          "line": 38
+        }
+      ]
+    },
+    "db/emitApp/db/injectorHV_Spark.db": {
+      "sha": "95cf29b88b2a40797dbfa0bff0aa389192e18d7c",
+      "records": [
+        {
+          "name": "LEBT:HVsparkSuppressor:Switch",
+          "record_type": "dfanout",
+          "fields": {
+            "VAL": "0",
+            "PINI": "1"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:HV:Vmonitor",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "HV spark application input #1",
+            "SCAN": ".01 second",
+            "LINR": "LINEAR",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 10
+        },
+        {
+          "name": "LEBT:Repeller:Vmonitor",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "HV spark application input #2",
+            "SCAN": ".01 second",
+            "LINR": "LINEAR",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 23
+        },
+        {
+          "name": "LEBT:HV:VThRatio",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Setup Threshold1",
+            "EGU": "V"
+          },
+          "line": 36
+        },
+        {
+          "name": "LEBT:Repeller:VThRatio",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Setup Threshold2",
+            "EGU": "V"
+          },
+          "line": 43
+        },
+        {
+          "name": "LEBT:HV:Comparator",
+          "record_type": "calcout",
+          "fields": {
+            "DESC": "HV spark application digital input #1",
+            "CALC": "(A<B)",
+            "OOPT": "Transition To Non-zero",
+            "DOPT": "Use CALC"
+          },
+          "line": 50
+        },
+        {
+          "name": "LEBT:HV:Counts",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 58
+        },
+        {
+          "name": "LEBT:HV:Counter",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A+1"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:Repeller:Comparator",
+          "record_type": "calcout",
+          "fields": {
+            "DESC": "HV spark application digital input #2",
+            "CALC": "(A<B)",
+            "OOPT": "Transition To Non-zero",
+            "DOPT": "Use CALC"
+          },
+          "line": 69
+        },
+        {
+          "name": "LEBT:Repeller:Counts",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 77
+        },
+        {
+          "name": "LEBT:Repeller:Counter",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A+1"
+          },
+          "line": 83
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:OnOff",
+          "record_type": "calcout",
+          "fields": {
+            "DESC": "HV spark comparator",
+            "OOPT": "When Non-zero",
+            "DOPT": "Use CALC",
+            "CALC": "(((A=1)||(B=1))?1:0)"
+          },
+          "line": 88
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:IntCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "VAL": "1"
+          },
+          "line": 96
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:Counts",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 103
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:Counter",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A+1"
+          },
+          "line": 109
+        },
+        {
+          "name": "LEBT:MPS:HVsparkSuppressor:delay",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "HV spark output to MPS",
+            "HIGH": "0.5",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 114
+        }
+      ]
+    },
+    "db/emitApp/db/injectorIC_Calorimetry.db": {
+      "sha": "4199c353ab2c7edbe758d7b74f371aeae2bcebc9",
+      "records": [
+        {
+          "name": "LEBT:IC:TinRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:IC:Tincalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "PREC": "2"
+          },
+          "line": 18
+        },
+        {
+          "name": "LEBT:IC:ToutRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tout sur FC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:IC:Toutcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "PREC": "2"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:IC:Comp",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Compensation",
+            "OMSL": "supervisory",
+            "DRVH": "10",
+            "DRVL": "-10",
+            "HOPR": "10",
+            "LOPR": "-10",
+            "PREC": "1"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:IC:DeltaT",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "IC_W: Tout - Tin",
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "PREC": "2"
+          },
+          "line": 56
+        },
+        {
+          "name": "LEBT:IC:Icalc",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul I sur IC",
+            "PREC": "2",
+            "CALC": "((E/C)*B*A)/D"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:IC:IRendement",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul Rendement",
+            "PREC": "2",
+            "CALC": "(A/B)*C"
+          },
+          "line": 71
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH09",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 78
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH10",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 92
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH11",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 106
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH12",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 120
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH13",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 134
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH14",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 148
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH15",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mes Tin sur IC_W",
+            "SCAN": "2 second",
+            "LINR": "LINEAR",
+            "PREC": "2",
+            "EGUF": "10",
+            "EGUL": "-10",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 162
+        }
+      ]
+    },
+    "db/facqApp/db/facqDiagIcv108.db": {
+      "sha": "067ea4229c454b653f606188dc34086faa450c4b",
+      "records": [
+        {
+          "name": "LEBT:FC:Iwf",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "204.8",
+            "LOPR": "-204.8",
+            "NELM": "1000000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:FC:I",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGUF": "204.8",
+            "EGUL": "-204.8",
+            "EGU": "mA",
+            "DESC": "beam",
+            "LINR": "LINEAR"
+          },
+          "line": 16
+        },
+        {
+          "name": "LEBT:FC:IwfGraph",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "204.8",
+            "LOPR": "-204.8",
+            "NELM": "10000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 28
+        },
+        {
+          "name": "LEBT:BS:Iwf",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "193.2",
+            "LOPR": "-193.2",
+            "NELM": "1000000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 40
+        },
+        {
+          "name": "LEBT:BS:I",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGUF": "193.2",
+            "EGUL": "-193.2",
+            "EGU": "mA",
+            "DESC": "beam",
+            "LINR": "LINEAR"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:BS:IwfGraph",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "193.2",
+            "LOPR": "-193.2",
+            "NELM": "10000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:EMIT_FC:Iwf",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "10240",
+            "LOPR": "-10240",
+            "NELM": "1000000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 76
+        },
+        {
+          "name": "LEBT:EMIT_FC:I",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGUF": "10240",
+            "EGUL": "-10240",
+            "EGU": "mV",
+            "DESC": "beam",
+            "LINR": "LINEAR"
+          },
+          "line": 88
+        },
+        {
+          "name": "LEBT:EMIT_FC:IwfGraph",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "10240",
+            "LOPR": "-10240",
+            "NELM": "10000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 100
+        },
+        {
+          "name": "LEBT:ACCT:Iwf",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "204.8",
+            "LOPR": "-204.8",
+            "NELM": "1000000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 112
+        },
+        {
+          "name": "LEBT:ACCT:I",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "EGUF": "204.8",
+            "EGUL": "-204.8",
+            "EGU": "mA",
+            "DESC": "beam",
+            "LINR": "LINEAR"
+          },
+          "line": 124
+        },
+        {
+          "name": "LEBT:ACCT:IwfGraph",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "1",
+            "HOPR": "204.8",
+            "LOPR": "-204.8",
+            "NELM": "10000",
+            "FTVL": "FLOAT",
+            "DESC": "waveform"
+          },
+          "line": 136
+        }
+      ]
+    },
+    "db/Icv108App/db/Icv108.db": {
+      "sha": "974dc5562635c299282ff1bb1fc4b489185b932e",
+      "records": [
+        {
+          "name": "LEBT:FACQ:Fsamp",
+          "record_type": "mbbo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "ZRVL": "100",
+            "ONVL": "250",
+            "ZRST": "100 KEch/s",
+            "ONST": "250 KEch/s",
+            "TWVL": "1000",
+            "TWST": "1000 KEch/s",
+            "VAL": "0"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:FACQ:Tmeas2",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 16
+        },
+        {
+          "name": "LEBT:FACQ:Tmeas1",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 25
+        },
+        {
+          "name": "LEBT:FACQ:Cfg",
+          "record_type": "mbbo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "ZRVL": "0x000002",
+            "ONVL": "0x000004",
+            "ZRST": "FC",
+            "ONST": "LPBD",
+            "PINI": "YES",
+            "VAL": "0",
+            "TWVL": "0x000010",
+            "THVL": "0x000020",
+            "FRVL": "0x000024",
+            "FVVL": "",
+            "SXVL": "",
+            "SVVL": "",
+            "TWST": "EMU",
+            "THST": "ACCT",
+            "FRST": "LPBD-ACCT",
+            "FVST": "",
+            "SXST": "",
+            "SVST": ""
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:FACQ:Tdisp1",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 57
+        },
+        {
+          "name": "LEBT:FACQ:Tdisp2",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 66
+        },
+        {
+          "name": "LEBT:FACQ:Xwf",
+          "record_type": "waveform",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "PREC": "2",
+            "NELM": "10000",
+            "FTVL": "FLOAT",
+            "HOPR": "10000",
+            "LOPR": "0"
+          },
+          "line": 75
+        },
+        {
+          "name": "LEBT:FACQ:ConfigTrigger",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "ZNAM": "Trig. Soft",
+            "ONAM": "Trig. Ext"
+          },
+          "line": 86
+        },
+        {
+          "name": "LEBT:FACQ:TriggerSoft",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel"
+          },
+          "line": 93
+        },
+        {
+          "name": "LEBT:FACQ:LedActivite",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "ZNAM": "0",
+            "ONAM": "1"
+          },
+          "line": 98
+        },
+        {
+          "name": "LEBT:FACQ:Mode",
+          "record_type": "mbbo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "NOBT": "8",
+            "ZRVL": "0",
+            "ONVL": "8230",
+            "ZRST": "Mode 0",
+            "ONST": "Mode 6",
+            "VAL": "0"
+          },
+          "line": 106
+        },
+        {
+          "name": "LEBT:FACQ:START",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel"
+          },
+          "line": 117
+        },
+        {
+          "name": "LEBT:FACQ:Status",
+          "record_type": "stringout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "PINI": "YES",
+            "VAL": "INIT"
+          },
+          "line": 122
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorActions_auto.db": {
+      "sha": "c3d25200486642b6dc8ad0bb0f5801aef7528f59",
+      "records": [
+        {
+          "name": "LEBT:AUTO:UptoHT1",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "montee HT",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:AUTO:UptoHT",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "montee alims + HT",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 12
+        },
+        {
+          "name": "LEBT:AUTO:StopHT",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "arret HT",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:AUTO:Stop",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "arret complet",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 28
+        },
+        {
+          "name": "LEBT:AUTO:OKforHTON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Aut.montee HT",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 36
+        },
+        {
+          "name": "LEBT:AUTO:OKforHTOFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Aut.arret HT",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:AUTO:EndActHT",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "fin action",
+            "ZNAM": "marche",
+            "ONAM": "arret"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:AUTO:DialSecu",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "secuvanne",
+            "VAL": "attente action"
+          },
+          "line": 60
+        },
+        {
+          "name": "LEBT:AUTO:ActSecu",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "secuvanne",
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 67
+        },
+        {
+          "name": "SRC:AUTO:HFPwr",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "cons",
+            "EGUF": "1200",
+            "EGU": "W",
+            "DRVH": "1200",
+            "HOPR": "1200",
+            "ASLO": "1"
+          },
+          "line": 75
+        },
+        {
+          "name": "SRC:AUTO:DebitH",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "cons",
+            "EGUF": "5",
+            "EGU": "sccm",
+            "DRVH": "5",
+            "HOPR": "5",
+            "ASLO": "1",
+            "PREC": "2"
+          },
+          "line": 86
+        },
+        {
+          "name": "LEBT:HV_PS:HTpas",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ht pas",
+            "PINI": "YES",
+            "EGUF": "10",
+            "EGUL": "1",
+            "DRVH": "10",
+            "DRVL": "1",
+            "HOPR": "10",
+            "LOPR": "1",
+            "ASLO": "1"
+          },
+          "line": 98
+        },
+        {
+          "name": "LEBT:HV_PS:HTinitauto",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ht init",
+            "EGU": "kV",
+            "DRVH": "120",
+            "HOPR": "120",
+            "DRVL": "0",
+            "LOPR": "0",
+            "ASLO": "1"
+          },
+          "line": 112
+        },
+        {
+          "name": "LEBT:HV_PS:HTpas0",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "pas kV",
+            "CALC": "B#0?(A/B):C",
+            "PREC": "2"
+          },
+          "line": 124
+        },
+        {
+          "name": "SRC:AUTO:VSetIEPS",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "htei init",
+            "EGUF": "50",
+            "EGU": "kV",
+            "DRVH": "50",
+            "HOPR": "50",
+            "ASLO": "1"
+          },
+          "line": 131
+        },
+        {
+          "name": "SRC:AUTO:StepIEPS",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "pas kV",
+            "CALC": "B#0?(A/B):C",
+            "PREC": "2"
+          },
+          "line": 142
+        },
+        {
+          "name": "LEBT:HV_PS:HTfin1",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ht final 1",
+            "EGUF": "80",
+            "EGU": "kV",
+            "DRVH": "80",
+            "HOPR": "80",
+            "ASLO": "1"
+          },
+          "line": 149
+        },
+        {
+          "name": "LEBT:HV_PS:HTpas1",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "pas kV",
+            "CALC": "B#0?(A-B)/C:D",
+            "PREC": "2"
+          },
+          "line": 160
+        },
+        {
+          "name": "LEBT:AUTO:Dialog",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "HT ON",
+            "VAL": "attente action"
+          },
+          "line": 167
+        },
+        {
+          "name": "SRC:IE_PS:Vcalcpas",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "pas htei",
+            "CALC": "C#0?(A-B)/C:D",
+            "PREC": "2"
+          },
+          "line": 174
+        },
+        {
+          "name": "LEBT:AUTO:Diag1HV",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "HT ON",
+            "VAL": "attente action"
+          },
+          "line": 181
+        },
+        {
+          "name": "LEBT:AUTO:Dialog2",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "dialog2",
+            "VAL": "attente action"
+          },
+          "line": 188
+        },
+        {
+          "name": "LEBT:AUTO:Dialog3",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "dialog3",
+            "VAL": "attente action"
+          },
+          "line": 195
+        },
+        {
+          "name": "LEBT:AUTO:OKforBeam",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "permission faisceau",
+            "ZNAM": "NON",
+            "ONAM": "OUI"
+          },
+          "line": 202
+        },
+        {
+          "name": "LEBT:AUTO:OKforStart",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "permission autostart",
+            "ZNAM": "NON",
+            "ONAM": "OUI"
+          },
+          "line": 210
+        },
+        {
+          "name": "LEBT:AUTO:PSUP",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Montee_alims",
+            "ZNAM": "NON",
+            "ONAM": "OUI"
+          },
+          "line": 218
+        },
+        {
+          "name": "LEBT:AUTO:StepPF",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "pas point final",
+            "EGUF": "10",
+            "EGUL": "1",
+            "DRVH": "10",
+            "DRVL": "1",
+            "HOPR": "10",
+            "LOPR": "1",
+            "ASLO": "1"
+          },
+          "line": 226
+        },
+        {
+          "name": "LEBT:AUTO:FlnkPF",
+          "record_type": "fanout",
+          "fields": {
+            "DESC": "FLNK etats"
+          },
+          "line": 239
+        },
+        {
+          "name": "LEBT:AUTO:Imontee",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "imontee",
+            "EGUF": "100",
+            "EGUL": "5",
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 244
+        },
+        {
+          "name": "LEBT:AUTO:Ifinal",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ifinal",
+            "EGUF": "100",
+            "EGUL": "5",
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 257
+        },
+        {
+          "name": "LEBT:AUTO:Isurv",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "isurv",
+            "EGUF": "100",
+            "EGUL": "5",
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 270
+        },
+        {
+          "name": "LEBT:AUTO:Irapide",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "irapide",
+            "EGUF": "100",
+            "EGUL": "5",
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 283
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorCOIL01.db": {
+      "sha": "baea75c263ca97d7823684cb891ad82b887ef024",
+      "records": [
+        {
+          "name": "SRC:COIL01_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "I/O Intr"
+          },
+          "line": 4
+        },
+        {
+          "name": "SRC:COIL01_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "DRVH": "125",
+            "DRVL": "0",
+            "HOPR": "125",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 11
+        },
+        {
+          "name": "SRC:COIL01_PS:Rampe",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 22
+        },
+        {
+          "name": "SRC:COIL01_PS:IntCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 33
+        },
+        {
+          "name": "SRC:COIL01_PS:RampeCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde start rampe COIL01",
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 39
+        },
+        {
+          "name": "SRC:COIL01_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command ON COIL01",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 48
+        },
+        {
+          "name": "SRC:COIL01_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command OFF COIL01",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 56
+        },
+        {
+          "name": "SRC:COIL01_PS:RESET",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command reset COIL01",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 64
+        },
+        {
+          "name": "SRC:COIL01_PS:PretRampe",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde demande rampe C1"
+          },
+          "line": 72
+        },
+        {
+          "name": "SRC:COIL01_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture I COIL01_PS",
+            "SCAN": "I/O Intr",
+            "PREC": "1"
+          },
+          "line": 78
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorCOIL02.db": {
+      "sha": "0f82a961b8ccaaacbeee339af9ea10feeaa2702f",
+      "records": [
+        {
+          "name": "SRC:COIL02_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "I/O Intr"
+          },
+          "line": 4
+        },
+        {
+          "name": "SRC:COIL02_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "DRVH": "125",
+            "DRVL": "0",
+            "HOPR": "125",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 11
+        },
+        {
+          "name": "SRC:COIL02_PS:Rampe",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 22
+        },
+        {
+          "name": "SRC:COIL02_PS:IntCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 33
+        },
+        {
+          "name": "SRC:COIL02_PS:RampeCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde start rampe COIL02",
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 39
+        },
+        {
+          "name": "SRC:COIL02_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command ON COIL02",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 48
+        },
+        {
+          "name": "SRC:COIL02_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command OFF COIL02",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 56
+        },
+        {
+          "name": "SRC:COIL02_PS:RESET",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command reset COIL02",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 64
+        },
+        {
+          "name": "SRC:COIL02_PS:PretRampe",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde demande rampe C2"
+          },
+          "line": 72
+        },
+        {
+          "name": "SRC:COIL02_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture I COIL02_PS",
+            "SCAN": "I/O Intr",
+            "PREC": "1"
+          },
+          "line": 78
+        }
+      ]
+    }
+  }
+}

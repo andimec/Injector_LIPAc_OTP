@@ -1,0 +1,104 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorRCPS.db
+
+record(bo, "LEBT:RC_PS:ON")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON RC_PS")
+    field(OMSL, "supervisory")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bo, "LEBT:RC_PS:OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF RC_PS")
+    field(OMSL, "supervisory")
+}
+
+record(ao, "LEBT:RC_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "10")
+    field(DRVL, "0")
+    field(HOPR, "10")
+    field(LOPR, "0")
+    field(EGU, "mA")
+}
+
+record(calcout, "LEBT:RC_PS:Icalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(B*A)/C")
+}
+
+record(ai, "LEBT:RC_PS:IRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(calc, "LEBT:RC_PS:IRdbkcalc")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}
+
+record(ao, "LEBT:RC_PS:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "3")
+    field(DRVL, "0")
+    field(HOPR, "3")
+    field(LOPR, "0")
+    field(EGU, "kV")
+}
+
+record(calcout, "LEBT:RC_PS:Vcalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(B*A)/C")
+}
+
+record(ao, "LEBT:RC_PS:VOut")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}
+
+record(ai, "LEBT:RC_PS:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(calc, "LEBT:RC_PS:VRdbkcalc")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+    field(EGU, "kV")
+}
+
+record(ai, "LEBT:RC_PS:Status")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "lect status")
+    field(SCAN, "2 second")
+}
+
+record(ao, "LEBT:RC_PS:IOut")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}

@@ -1,0 +1,64 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorSTH01.db
+
+record(stringin, "LEBT:STH01_PS:idn")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "10 second")
+    field(DESC, "get IDN")
+}
+
+record(ao, "LEBT:STH01_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Set Current")
+    field(EGU, "A")
+    field(LOPR, "0")
+    field(HOPR, "150")
+}
+
+record(ao, "LEBT:STH01_PS:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Set Voltage")
+    field(EGU, "V")
+    field(LOPR, "0")
+    field(HOPR, "8")
+}
+
+record(ai, "LEBT:STH01_PS:IRdbkcalc")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Measured Current")
+    field(EGU, "A")
+    field(SCAN, "2 second")
+}
+
+record(ai, "LEBT:STH01_PS:VRdbkcalc")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Measured Voltage")
+    field(EGU, "V")
+    field(SCAN, "2 second")
+}
+
+record(bi, "LEBT:STH01_PS:OnStat")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS On/Off status")
+    field(SCAN, "2 second")
+}
+
+record(bo, "LEBT:STH01_PS:ON")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS On command")
+    field(HIGH, "1")
+}
+
+record(bo, "LEBT:STH01_PS:OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS Off command")
+    field(HIGH, "1")
+}

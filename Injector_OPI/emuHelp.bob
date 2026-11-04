@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>help-emu</name>
+  <width>530</width>
+  <height>700</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Help</name>
+    <text>start SNL = start stand-alone SNL program that holds the whole EMU process
+
+upper = detection of the upper edge of the beam
+lower = detection of the lower edge  of the beam
+wide scan = detection of Vpeak and deltaV at one precise position
+
+Vpeak = V for Ibeam maximum
+deltaV = beam width in Volt
+upper-lower = beam width in mm
+
+Vstart  = Vpeak + deltaV/2.
+Vend  = Vpeak  - deltaV/2.
+Vstep = ( Vstart - Vend ) / (HV points*2)
+              - value for each power supply -
+V1 = emups1 :  from (+Vstart / 2) to  (+Vend / 2)
+V2 = emups2 :  from (-Vstart  / 2) to  (-Vend / 2)
+
+Example :
+V1         : progression from start =  +5000 V  to end =  -5000 V
+V2         : progression from start =  -5000 V   to end = +5000V
+(V1-V2) : progression from start = +10000V to end  = -10000V
+
+Beam acquisition during process (see FACQ panel) :
+- emittance measurement only works with an external trigger.
+- the external trigger is provided by the Timing System (TREP).
+- end of acquisition must be less or equal than TREP.
+- only one acquisition can be defined in a display.
+
+Motor motions controls through the MaxV VME card :
+ - to use it for the EMU process
+    1) servo / maxv "Enable" to obtain green leds on maxv and servo
+    2) use "MoveAbs" or "tweak" for simple motions
+ - when measurement is over
+    1) "MoveAbs" =0   *** never use "home" cmd on expert panel ***
+    2)  servo / maxv "Disable" to obtain red leds on maxv and servo
+
+(if you have lost the control of the mechanism after having reach a 
+ switch limit on the servostar system (LET8), see Help on  motor panel)</text>
+    <x>19</x>
+    <y>25</y>
+    <width>498</width>
+    <height>648</height>
+    <font>
+      <font family="Arial" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <background_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

@@ -1,0 +1,43 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitServo.db
+
+record(bo, "LEBT:EMIT_SERV:EnaDisa")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Enable")
+    field(ZNAM, "DIS")
+    field(ONAM, "EN")
+}
+
+record(bo, "LEBT:EMIT_SERV:Refresh")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "status")
+    field(PINI, "NO")
+    field(ZNAM, "refresh")
+    field(ONAM, "refresh")
+}
+
+record(ai, "LEBT:EMIT_SERV:Status")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "STATUS")
+    field(SCAN, "Passive")
+    field(PINI, "NO")
+}
+
+record(bo, "LEBT:EMIT:Actenable")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "enable")
+    field(ZNAM, "enable")
+    field(ONAM, "enable")
+}
+
+record(bo, "LEBT:EMIT:Actdisable")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "disable")
+    field(ZNAM, "disable")
+    field(ONAM, "disable")
+}

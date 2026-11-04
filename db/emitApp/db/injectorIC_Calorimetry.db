@@ -1,0 +1,174 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/injectorIC_Calorimetry.db
+
+record(ai, "LEBT:IC:TinRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(calc, "LEBT:IC:Tincalc")
+{
+    field(CALC, "(A*B)")
+    field(PREC, "2")
+}
+
+record(ai, "LEBT:IC:ToutRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tout sur FC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(calc, "LEBT:IC:Toutcalc")
+{
+    field(CALC, "(A*B)")
+    field(PREC, "2")
+}
+
+record(ao, "LEBT:IC:Comp")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Compensation")
+    field(OMSL, "supervisory")
+    field(DRVH, "10")
+    field(DRVL, "-10")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+    field(PREC, "1")
+}
+
+record(calc, "LEBT:IC:DeltaT")
+{
+    field(DESC, "IC_W: Tout - Tin")
+    field(SCAN, "Passive")
+    field(CALC, "(B-A)-C")
+    field(PREC, "2")
+}
+
+record(calc, "LEBT:IC:Icalc")
+{
+    field(DESC, "calcul I sur IC")
+    field(PREC, "2")
+    field(CALC, "((E/C)*B*A)/D")
+}
+
+record(calc, "LEBT:IC:IRendement")
+{
+    field(DESC, "calcul Rendement")
+    field(PREC, "2")
+    field(CALC, "(A/B)*C")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH09")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH10")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH11")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH12")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH13")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH14")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}
+
+record(ai, "LEBT:IC:TinRdbk:CH15")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mes Tin sur IC_W")
+    field(SCAN, "2 second")
+    field(LINR, "LINEAR")
+    field(PREC, "2")
+    field(EGUF, "10")
+    field(EGUL, "-10")
+    field(EGU, "V")
+    field(HOPR, "10")
+    field(LOPR, "-10")
+}

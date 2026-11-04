@@ -1,0 +1,42 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitVxStats.db
+
+record(ai, "LEBT:VMEStats:cpuUsedPercent")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(SCAN, "I/O Intr")
+    field(HIHI, "90.0")
+    field(HIGH, "60.0")
+    field(HHSV, "MAJOR")
+    field(HSV, "MINOR")
+    field(EGU, "%")
+}
+
+record(ai, "LEBT:VMEStats:memoryUsedPercent")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(SCAN, "I/O Intr")
+    field(HIHI, "90.0")
+    field(HIGH, "60.0")
+    field(HHSV, "MAJOR")
+    field(HSV, "MINOR")
+    field(EGU, "%")
+}
+
+record(ai, "LEBT:VMEStats:memoryTotal")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "LEBT:VMEStats:memoryUsed")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "LEBT:VMEStats:memoryFree")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(SCAN, "I/O Intr")
+}

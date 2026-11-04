@@ -1,0 +1,30 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: plcInjectorApp/db/plcInjector_StatusForOpi.db
+
+record(calc, "LEBT:VAC01:PVOpenPrecond")
+{
+    field(DESC, "VAC01 PV Open Precondition")
+    field(SCAN, "1 second")
+    field(CALC, "(A&B)|C")
+}
+
+record(calc, "LEBT:VAC01:SVOpenPrecond")
+{
+    field(DESC, "VAC01 PV Open Precondition")
+    field(SCAN, "1 second")
+    field(CALC, "((((A&B)|D)|(E&F&G))&C)|H")
+}
+
+record(calc, "LEBT:VAC02:PVOpenPrecond")
+{
+    field(DESC, "VAC01 PV Open Precondition")
+    field(SCAN, "1 second")
+    field(CALC, "(A&B)|C")
+}
+
+record(calc, "LEBT:VAC02:SVOpenPrecond")
+{
+    field(DESC, "VAC01 PV Open Precondition")
+    field(SCAN, "1 second")
+    field(CALC, "(A&B&C&D)|E")
+}

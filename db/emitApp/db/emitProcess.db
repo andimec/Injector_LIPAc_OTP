@@ -1,0 +1,361 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitProcess.db
+
+record(calc, "LEBT:EMIT:Vht")
+{
+    field(DESC, "VHT")
+    field(CALC, "A-B")
+    field(SCAN, ".1 second")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+}
+
+record(ao, "LEBT:EMIT:Vpic")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vpic")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "NO")
+    field(VAL, "0")
+}
+
+record(ao, "LEBT:EMIT:VpicEnd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "VpicEnd")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "NO")
+    field(VAL, "-9999")
+}
+
+record(calc, "LEBT:EMIT:VhtRdbk")
+{
+    field(DESC, "VHT")
+    field(CALC, "A-B")
+    field(SCAN, ".1 second")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+}
+
+record(ao, "LEBT:EMIT:Vstart")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vstart")
+    field(EGU, "V")
+    field(HOPR, "5000")
+    field(LOPR, "-5000")
+}
+
+record(ao, "LEBT:EMIT:Energy")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vstart")
+    field(EGU, "keV")
+    field(PINI, "YES")
+    field(DRVH, "200")
+    field(HOPR, "200")
+}
+
+record(ao, "LEBT:EMIT:Vend")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vstart")
+    field(EGU, "V")
+    field(HOPR, "5000")
+    field(LOPR, "-5000")
+}
+
+record(ao, "LEBT:EMIT:Vstep")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vstart")
+    field(EGU, "V")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(ao, "LEBT:EMIT:Mstep")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vstart")
+    field(EGU, "mm")
+    field(HOPR, "20")
+    field(LOPR, "0")
+    field(PREC, "1")
+}
+
+record(ao, "LEBT:EMIT:Debscanl")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "debut")
+    field(PINI, "YES")
+    field(PREC, "0")
+    field(EGU, "V")
+    field(HOPR, "5000")
+    field(LOPR, "-5000")
+}
+
+record(ao, "LEBT:EMIT:Finscanl")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "fin")
+    field(PINI, "YES")
+    field(PREC, "0")
+    field(EGU, "V")
+    field(HOPR, "5000")
+    field(LOPR, "-5000")
+}
+
+record(ao, "LEBT:EMIT:Passcanl")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "pas")
+    field(PINI, "YES")
+    field(PREC, "0")
+    field(EGU, "V")
+    field(HOPR, "2000")
+    field(LOPR, "1")
+}
+
+record(ao, "LEBT:EMIT:Pasald")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "pas")
+    field(PINI, "YES")
+    field(PREC, "0")
+    field(EGU, "V")
+    field(HOPR, "1000")
+    field(LOPR, "1")
+}
+
+record(calcout, "LEBT:EMIT:Nptscanl")
+{
+    field(SCAN, "2 second")
+    field(CALC, "(ABS(A)+ABS(B))/ABS(C)")
+}
+
+record(calcout, "LEBT:EMIT:Nptdet")
+{
+    field(SCAN, "2 second")
+    field(CALC, "(ABS(A)+ABS(B))/ABS(C)")
+}
+
+record(bo, "LEBT:EMIT:Actemit")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mesEmit")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "LEBT:EMIT:Actscan")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "scanLarge")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "LEBT:EMIT:Actupper")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "detectUp")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "LEBT:EMIT:Actlower")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "findBeamLow")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(ao, "LEBT:EMIT:Pasmotdet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "pas")
+    field(PINI, "YES")
+    field(EGU, "mm")
+    field(HOPR, "150")
+    field(LOPR, "0")
+    field(PREC, "1")
+}
+
+record(ao, "LEBT:EMIT:Razgraph")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "raz")
+    field(HOPR, "100")
+    field(LOPR, "0")
+    field(PINI, "YES")
+}
+
+record(ao, "LEBT:EMIT:Deltav")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "deltaV")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "0")
+    field(PINI, "YES")
+}
+
+record(ao, "LEBT:EMIT:Borderup")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "border")
+    field(EGU, "mm")
+    field(HOPR, "130")
+    field(LOPR, "-50")
+    field(PINI, "YES")
+}
+
+record(ao, "LEBT:EMIT:Limdet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "limit")
+    field(PINI, "YES")
+    field(EGU, "mm")
+    field(HOPR, "180")
+    field(LOPR, "0")
+}
+
+record(bo, "LEBT:EMIT:Pausemit")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "pause")
+    field(ZNAM, "pause")
+    field(ONAM, "pause")
+}
+
+record(ao, "LEBT:EMIT:Borderlow")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "border")
+    field(EGU, "mm")
+    field(HOPR, "130")
+    field(LOPR, "-50")
+    field(PINI, "YES")
+}
+
+record(bo, "LEBT:EMIT:Savescan")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "save")
+    field(ZNAM, "save")
+    field(ONAM, "save")
+}
+
+record(stringin, "LEBT:EMIT:Scantext")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "scan")
+}
+
+record(bo, "LEBT:EMIT:Savemit")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "save")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "LEBT:EMIT:Savewf")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "save waveform")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(stringin, "LEBT:EMIT:Emitext")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "scan")
+}
+
+record(ao, "LEBT:EMIT:Emufic")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ibeam")
+}
+
+record(ao, "LEBT:EMIT:Upper")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "upper")
+    field(EGU, "mm")
+    field(HOPR, "200")
+    field(LOPR, "-200")
+}
+
+record(ao, "LEBT:EMIT:Lower")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Vstart")
+    field(EGU, "mm")
+    field(HOPR, "200")
+    field(LOPR, "-200")
+}
+
+record(bo, "LEBT:EMIT:Validate")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "validate")
+    field(ZNAM, "validate")
+    field(ONAM, "validate")
+}
+
+record(ao, "LEBT:EMIT:Nptemit")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Npoints")
+    field(HOPR, "500")
+    field(LOPR, "0")
+    field(PINI, "YES")
+}
+
+record(calc, "LEBT:EMIT:Compteur1")
+{
+    field(SCAN, "1 second")
+    field(CALC, "(A<B?A+1:A=0)")
+    field(EGU, "sec")
+}
+
+record(ao, "LEBT:EMIT:AnglePicInit")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "AnglePicInit")
+    field(EGU, "mrad")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "YES")
+}
+
+record(ao, "LEBT:EMIT:AnglePicEnd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "AnglePicEnd")
+    field(EGU, "mrad")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "YES")
+}
+
+record(ao, "LEBT:EMIT:AngleDelta")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "AngleDelta")
+    field(EGU, "mrad")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "YES")
+}

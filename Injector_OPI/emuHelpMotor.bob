@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <width>530</width>
+  <height>700</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>"UNLOCKING" motor motion controls  :
+*********************************
+(need to be 2 persons)
+power device for motor = ServoStar unit in LET8
+When HIGH (LP+) or LOW (LN+) limit is reached
+on ServoStar unit and no response from MaxV :
+ - power OFF the  ServoStar unit
+ - hold down the push button according to limit pos or neg
+ - power ON  the ServoStar unit (still holding down button)
+ - remote control command "MovAbs" to move from switch, 
+   depending on direction pos or neg.
+ - then Homing Procedure must be done to recover 
+   coordinates.
+
+Homing Procedure :
+*****************
+When switch "Home" is reached (green led lit) :
+ - ReadBack value must be "0.0"
+ - if not, press the "HOME rev" button to obtain 0.0
+   (rev=reverse), sometimes have to be done twice!
+
+NEVER use the "HOME rev" (or fwd) to reach the 
+reference "0.0 mm", but just the simple command :
+"MovAbs=0."
+
+Must be done when Measurement is over :
+**************************************
+1) Ensure that :
+     - "ReadBack" = 0.0mm
+     - switch "HOME" reached (see motor user interface for more details)
+ if not,  execute the command : "MovAbs" = 0.0mm
+2) "DISABLE" the motor control devices to obtain red leds on MAXV and SERVO
+
+- ServoStar unit can be POWERed OFF only when stages 1) and 2) are achieved.</text>
+    <x>48</x>
+    <y>24</y>
+    <width>430</width>
+    <height>650</height>
+    <background_color>
+      <color name="Off" red="60" green="100" blue="60">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

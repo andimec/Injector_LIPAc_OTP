@@ -1,0 +1,46 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitIcv196.db
+
+record(bo, "LEBT:EMIT_PS1:OnOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS1-ON")
+    field(ZNAM, "HV OFF")
+    field(ONAM, "HV ON")
+}
+
+record(bo, "LEBT:EMIT_PS1:Softbo")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS1-ON")
+    field(ZNAM, "HV Off")
+    field(ONAM, "HV On")
+}
+
+record(calcout, "LEBT:EMIT_PS1:Calcdly")
+{
+    field(CALC, "(A=B)?30:0")
+    field(ODLY, "30")
+}
+
+record(bo, "LEBT:EMIT_PS2:OnOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS2-ON")
+    field(ZNAM, "HV OFF")
+    field(ONAM, "HV ON")
+}
+
+record(bo, "LEBT:EMIT_PS2:Softbo")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS2-ON")
+    field(ZNAM, "HV Off")
+    field(ONAM, "HV On")
+}
+
+record(calcout, "LEBT:EMIT_PS2:Calcdly")
+{
+    field(CALC, "(A=B)?30:0")
+    field(ODLY, "30")
+}

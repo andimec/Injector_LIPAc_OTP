@@ -1,0 +1,2489 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <width>820</width>
+  <height>810</height>
+  <background_color>
+    <color name="Read_Background" red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+    <action type="open_display">
+      <description>Open Display</description>
+      <file>Automatic_Action.opi</file>
+      <target>tab</target>
+    </action>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <width>822</width>
+    <height>70</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Equipments Status</text>
+    <x>80</x>
+    <y>24</y>
+    <width>401</width>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Help_Status.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Help &gt;&gt;</text>
+    <x>576</x>
+    <y>9</y>
+    <width>115</width>
+    <height>31</height>
+    <background_color>
+      <color name="HelpPanel" red="181" green="249" blue="215">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Launcher.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Back</text>
+    <x>708</x>
+    <y>12</y>
+    <width>91</width>
+    <height>26</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>70</y>
+    <width>820</width>
+    <height>740</height>
+    <background_color>
+      <color name="Read_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <widget type="led" version="2.0.0">
+      <name>LED_32</name>
+      <pv_name>ca://LEBT:STH01_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>344</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_24</name>
+      <text>STV01</text>
+      <x>9</x>
+      <y>369</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_33</name>
+      <pv_name>ca://LEBT:STV01_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>371</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_34</name>
+      <pv_name>ca://LEBT:STH01_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>344</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_35</name>
+      <pv_name>ca://LEBT:STV01_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>371</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_25</name>
+      <text>STH02</text>
+      <x>9</x>
+      <y>398</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_36</name>
+      <pv_name>ca://LEBT:STH02_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>400</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_26</name>
+      <text>STV02</text>
+      <x>9</x>
+      <y>427</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_37</name>
+      <pv_name>ca://LEBT:STV02_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>429</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_38</name>
+      <pv_name>ca://LEBT:STH02_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>400</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_39</name>
+      <pv_name>ca://LEBT:STV02_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>429</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_27</name>
+      <text>VC(SOL02)</text>
+      <x>9</x>
+      <y>486</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_40</name>
+      <pv_name>ca://LEBT:SOL02:VCFlowStat</pv_name>
+      <x>200</x>
+      <y>488</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_28</name>
+      <text>VC(SOL01)</text>
+      <x>9</x>
+      <y>457</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_41</name>
+      <pv_name>ca://LEBT:SOL01:VCFlowStat</pv_name>
+      <x>200</x>
+      <y>459</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_29</name>
+      <text>BS</text>
+      <x>9</x>
+      <y>575</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_42</name>
+      <pv_name>ca://LEBT:BS:FSDefStat</pv_name>
+      <x>200</x>
+      <y>577</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_30</name>
+      <text>VC(DIAG1)</text>
+      <x>9</x>
+      <y>515</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_43</name>
+      <pv_name>ca://LEBT:STV01:FSDefStat</pv_name>
+      <x>200</x>
+      <y>517</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_31</name>
+      <text>FC</text>
+      <x>9</x>
+      <y>545</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_44</name>
+      <pv_name>ca://LEBT:FC:FSDefStat</pv_name>
+      <x>200</x>
+      <y>547</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>170</x>
+      <y>30</y>
+      <width>1</width>
+      <height>661</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="660.0">
+        </point>
+      </points>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_1</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>260</x>
+      <y>30</y>
+      <width>1</width>
+      <height>661</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="660.0">
+        </point>
+      </points>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>344</x>
+      <y>30</y>
+      <width>1</width>
+      <height>661</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="660.0">
+        </point>
+      </points>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_32</name>
+      <text>Repeller</text>
+      <x>9</x>
+      <y>217</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_45</name>
+      <pv_name>ca://LEBT:R_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>219</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_46</name>
+      <pv_name>ca://LEBT:R_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>219</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_33</name>
+      <text>mA</text>
+      <x>660</x>
+      <y>215</y>
+      <width>43</width>
+      <height>31</height>
+      <foreground_color>
+        <color name="TextDynamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_8</name>
+      <pv_name>ca://LEBT:R_PS:ISet</pv_name>
+      <x>600</x>
+      <y>216</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+      <precision>-1</precision>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_34</name>
+      <text>Imax</text>
+      <x>499</x>
+      <y>216</y>
+      <width>73</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_35</name>
+      <text>Chopper</text>
+      <x>9</x>
+      <y>247</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_36</name>
+      <text>IC</text>
+      <x>9</x>
+      <y>605</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_47</name>
+      <pv_name>ca://LEBT:IC:FSDefStat</pv_name>
+      <x>200</x>
+      <y>607</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_37</name>
+      <text>EMU</text>
+      <x>9</x>
+      <y>635</y>
+      <width>78</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_48</name>
+      <pv_name>ca://LEBT:EMIT_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>637</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_38</name>
+      <text>Repeller Cone</text>
+      <x>9</x>
+      <y>665</y>
+      <width>105</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_39</name>
+      <text>mA</text>
+      <x>660</x>
+      <y>654</y>
+      <width>43</width>
+      <height>31</height>
+      <foreground_color>
+        <color name="TextDynamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_9</name>
+      <pv_name>ca://LEBT:RC_PS:ISet</pv_name>
+      <x>600</x>
+      <y>655</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_40</name>
+      <text>Imax</text>
+      <x>499</x>
+      <y>655</y>
+      <width>73</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_49</name>
+      <pv_name>ca://LEBT:CHOP:FSDefStat</pv_name>
+      <x>200</x>
+      <y>249</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_50</name>
+      <pv_name>ca://LEBT:CHOP_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>249</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_51</name>
+      <pv_name>ca://LEBT:CHOP_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>249</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_52</name>
+      <pv_name>ca://LEBT:EMIT:OutStat</pv_name>
+      <x>434</x>
+      <y>637</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_53</name>
+      <pv_name>ca://SRC:IE_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>152</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>&lt;color blue="0" green="0" name="Major" red="255"/&gt;</value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>&lt;color blue="0" green="255" name="Green" red="0"/&gt;</value>
+          </exp>
+          <pv_name>ca://SRC:IE_PS:OnStat</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>injectorRF_Beam-Plasma.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>&gt;&gt;</text>
+      <x>432</x>
+      <y>118</y>
+      <width>37</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.881188118811881">
+        </font>
+      </font>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_5</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>injectorIEPS_interlocks.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>&gt;&gt;</text>
+      <x>432</x>
+      <y>153</y>
+      <width>37</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.881188118811881">
+        </font>
+      </font>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_6</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>injectorHVPS_interlocks.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>&gt;&gt;</text>
+      <x>432</x>
+      <y>190</y>
+      <width>37</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.881188118811881">
+        </font>
+      </font>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_3</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>481</x>
+      <y>30</y>
+      <width>1</width>
+      <height>661</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="660.0">
+        </point>
+      </points>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Grouping Container</name>
+      <width>787</width>
+      <height>37</height>
+      <style>2</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="Button_Background" red="210" green="210" blue="210">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <widget type="label" version="2.0.0">
+        <name>Label</name>
+        <text>Equipments </text>
+        <x>6</x>
+        <y>6</y>
+        <width>61</width>
+        <height>19</height>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>PS Parameters</text>
+        <x>576</x>
+        <y>6</y>
+        <width>91</width>
+        <height>19</height>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_2</name>
+        <text>Water Cooling</text>
+        <x>174</x>
+        <y>6</y>
+        <width>91</width>
+        <height>19</height>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_42</name>
+        <text>EXT. Interlock</text>
+        <x>372</x>
+        <y>6</y>
+        <width>91</width>
+        <height>19</height>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_42</name>
+        <text>Temperature</text>
+        <x>264</x>
+        <y>6</y>
+        <width>91</width>
+        <height>19</height>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_42</name>
+        <text>PS ON/OFF</text>
+        <x>96</x>
+        <y>6</y>
+        <width>61</width>
+        <height>19</height>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>COIL01</text>
+      <x>9</x>
+      <y>41</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>COIL02</text>
+      <x>9</x>
+      <y>70</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>RF</text>
+      <x>9</x>
+      <y>115</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>IE</text>
+      <x>9</x>
+      <y>150</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>SOL01</text>
+      <x>9</x>
+      <y>284</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>SOL02</text>
+      <x>9</x>
+      <y>314</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_8</name>
+      <pv_name>ca://SRC:COIL01_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>42</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>ca://SRC:COIL01:FSDefStat</pv_name>
+      <x>200</x>
+      <y>43</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_10</name>
+      <pv_name>ca://SRC:COIL01:TSDefStat</pv_name>
+      <x>284</x>
+      <y>42</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Green" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_14</name>
+      <pv_name>ca://SRC:COIL02:TSDefStat</pv_name>
+      <x>284</x>
+      <y>71</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Green" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_13</name>
+      <pv_name>ca://SRC:COIL02:FSDefStat</pv_name>
+      <x>200</x>
+      <y>72</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_12</name>
+      <pv_name>ca://SRC:COIL02_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>71</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_17</name>
+      <pv_name>ca://SRC:RF:FSDefStat</pv_name>
+      <x>200</x>
+      <y>117</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>ca://LEBT:SOL01:FSDefStat</pv_name>
+      <x>200</x>
+      <y>286</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_5</name>
+      <pv_name>ca://LEBT:SOL02:FSDefStat</pv_name>
+      <x>200</x>
+      <y>316</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>ca://LEBT:SOL01:TSDefStat</pv_name>
+      <x>279</x>
+      <y>286</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Green" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_6</name>
+      <pv_name>ca://LEBT:SOL02:TSDefStat</pv_name>
+      <x>279</x>
+      <y>316</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="Green" red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>ca://LEBT:SOL01_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>286</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>ca://LEBT:SOL02_PS:OnStat</pv_name>
+      <x>99</x>
+      <y>316</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>ca://LEBT:SOL01_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>286</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_7</name>
+      <pv_name>ca://LEBT:SOL02_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>316</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_23</name>
+      <pv_name>ca://SRC:IE_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>152</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_19</name>
+      <pv_name>ca://SRC:RF_GEN:PlasmaStat</pv_name>
+      <x>369</x>
+      <y>117</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_15</name>
+      <pv_name>ca://SRC:COIL02_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>72</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_11</name>
+      <pv_name>ca://SRC:COIL01_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>43</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_2</name>
+      <pv_name>ca://SRC:COIL01_PS:Rampe</pv_name>
+      <x>600</x>
+      <y>39</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>A/s</text>
+      <x>660</x>
+      <y>38</y>
+      <width>43</width>
+      <height>31</height>
+      <foreground_color>
+        <color name="TextDynamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_2</name>
+      <pv_name>ca://SRC:COIL01_PS:RampeCmd</pv_name>
+      <bit>-1</bit>
+      <x>713</x>
+      <y>39</y>
+      <width>74</width>
+      <off_label>Enter</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>...........</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_3</name>
+      <pv_name>ca://SRC:COIL02_PS:RampeCmd</pv_name>
+      <bit>-1</bit>
+      <x>713</x>
+      <y>68</y>
+      <width>74</width>
+      <off_label>Enter</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>...........</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_3</name>
+      <pv_name>ca://SRC:COIL02_PS:Rampe</pv_name>
+      <x>600</x>
+      <y>68</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input</name>
+      <pv_name>ca://LEBT:SOL01_PS:Rampe</pv_name>
+      <x>600</x>
+      <y>283</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>A/s</text>
+      <x>660</x>
+      <y>282</y>
+      <width>43</width>
+      <height>31</height>
+      <foreground_color>
+        <color name="TextDynamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>ca://LEBT:SOL01_PS:RampeCmd</pv_name>
+      <bit>-1</bit>
+      <x>713</x>
+      <y>283</y>
+      <width>74</width>
+      <off_label>Enter</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>...........</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_1</name>
+      <pv_name>ca://LEBT:SOL02_PS:RampeCmd</pv_name>
+      <bit>-1</bit>
+      <x>713</x>
+      <y>312</y>
+      <width>74</width>
+      <off_label>Enter</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>...........</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_1</name>
+      <pv_name>ca://LEBT:SOL02_PS:Rampe</pv_name>
+      <x>600</x>
+      <y>312</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>mA</text>
+      <x>660</x>
+      <y>148</y>
+      <width>43</width>
+      <height>31</height>
+      <foreground_color>
+        <color name="TextDynamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_4</name>
+      <pv_name>ca://SRC:IE_PS:ISet</pv_name>
+      <x>600</x>
+      <y>149</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>Imax</text>
+      <x>499</x>
+      <y>149</y>
+      <width>73</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>HV</text>
+      <x>9</x>
+      <y>187</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_19</name>
+      <pv_name>ca://LEBT:HV_PS:RdyStat</pv_name>
+      <x>99</x>
+      <y>189</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_20</name>
+      <pv_name>ca://LEBT:HV_PS:ExtSec</pv_name>
+      <x>369</x>
+      <y>189</y>
+      <width>46</width>
+      <height>26</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <square>true</square>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>mA</text>
+      <x>660</x>
+      <y>185</y>
+      <width>43</width>
+      <height>31</height>
+      <foreground_color>
+        <color name="TextDynamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_5</name>
+      <pv_name>ca://LEBT:HV_PS:ICmd</pv_name>
+      <x>600</x>
+      <y>186</y>
+      <width>55</width>
+      <height>30</height>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+      <precision>-1</precision>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_15</name>
+      <text>Imax</text>
+      <x>499</x>
+      <y>186</y>
+      <width>73</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_21</name>
+      <text>Slew rate</text>
+      <x>499</x>
+      <y>40</y>
+      <width>73</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_22</name>
+      <text>Slew rate</text>
+      <x>499</x>
+      <y>283</y>
+      <width>73</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_23</name>
+      <text>STH01</text>
+      <x>9</x>
+      <y>342</y>
+      <width>53</width>
+      <height>29</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="11.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+</display>

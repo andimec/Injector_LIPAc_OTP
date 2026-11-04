@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0">
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <wuid>7c01cf97:1380ef657a5:-7b4a</wuid>
+  <boy_version>4.0.103.201506301920</boy_version>
+  <scripts />
+  <show_ruler>true</show_ruler>
+  <height>600</height>
+  <name />
+  <snap_to_geometry>true</snap_to_geometry>
+  <show_grid>true</show_grid>
+  <background_color>
+    <color name="HelpPanel" />
+  </background_color>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <widget_type>Display</widget_type>
+  <show_close_button>true</show_close_button>
+  <width>700</width>
+  <rules />
+  <show_edit_range>true</show_edit_range>
+  <grid_space>6</grid_space>
+  <actions hook="false" hook_all="false" />
+  <y>-1</y>
+  <x>-1</x>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+    <visible>true</visible>
+    <vertical_alignment>0</vertical_alignment>
+    <wuid>7c01cf97:1380ef657a5:-79de</wuid>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>500</height>
+    <name>Label</name>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <widget_type>Label</widget_type>
+    <enabled>true</enabled>
+    <text>PP : Primary Pump
+TP : Turbomolecular pump
+PV : Primary Valve
+TP : Turbomolecular Valve
+SV : Secondary Valve
+
+
+
+AIV : Air Input Valve
+NIV : Nitrogen Input Valve
+LTV : Leak Test Valve
+
+PGTP : Primary Gauge Turbo Pump
+SGTP : Secondary Gauge Turbo Pump
+PGVC : Primary Gauge Vacuum Chamber
+SGVC : Secondary Gauge Vacuum Chamber
+
+
+SV Forcing : In case of problem it could be necessary to force the opening of at least one SV (secondary Valve). In this case the validation of the SV Forcing button will send to the PLC an information to tell : " Please let me Open SV !"
+
+When you have solve all the problems you must deselect the SV Forcing condition.</text>
+    <font>
+      <fontdata fontName="Sans" height="12" style="0" />
+    </font>
+    <width>600</width>
+    <border_style>0</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <horizontal_alignment>0</horizontal_alignment>
+    <actions hook="false" hook_all="false" />
+    <y>78</y>
+    <wrap_words>true</wrap_words>
+    <tooltip />
+    <x>48</x>
+  </widget>
+</display>

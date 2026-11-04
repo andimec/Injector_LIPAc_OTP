@@ -1,0 +1,294 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorActions_auto.db
+
+record(bo, "LEBT:AUTO:UptoHT1")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "montee HT")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(bo, "LEBT:AUTO:UptoHT")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "montee alims + HT")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(bo, "LEBT:AUTO:StopHT")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "arret HT")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(bo, "LEBT:AUTO:Stop")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "arret complet")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(bo, "LEBT:AUTO:OKforHTON")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Aut.montee HT")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(bo, "LEBT:AUTO:OKforHTOFF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Aut.arret HT")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(bo, "LEBT:AUTO:EndActHT")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "fin action")
+    field(ZNAM, "marche")
+    field(ONAM, "arret")
+}
+
+record(stringin, "LEBT:AUTO:DialSecu")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "secuvanne")
+    field(VAL, "attente action")
+}
+
+record(bo, "LEBT:AUTO:ActSecu")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "secuvanne")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON ")
+}
+
+record(ao, "SRC:AUTO:HFPwr")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "cons")
+    field(EGUF, "1200")
+    field(EGU, "W")
+    field(DRVH, "1200")
+    field(HOPR, "1200")
+    field(ASLO, "1")
+}
+
+record(ao, "SRC:AUTO:DebitH")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "cons")
+    field(EGUF, "5")
+    field(EGU, "sccm")
+    field(DRVH, "5")
+    field(HOPR, "5")
+    field(ASLO, "1")
+    field(PREC, "2")
+}
+
+record(ao, "LEBT:HV_PS:HTpas")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ht pas")
+    field(PINI, "YES")
+    field(EGUF, "10")
+    field(EGUL, "1")
+    field(DRVH, "10")
+    field(DRVL, "1")
+    field(HOPR, "10")
+    field(LOPR, "1")
+    field(ASLO, "1")
+}
+
+record(ao, "LEBT:HV_PS:HTinitauto")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ht init")
+    field(EGU, "kV")
+    field(DRVH, "120")
+    field(HOPR, "120")
+    field(DRVL, "0")
+    field(LOPR, "0")
+    field(ASLO, "1")
+}
+
+record(calc, "LEBT:HV_PS:HTpas0")
+{
+    field(DESC, "pas kV")
+    field(CALC, "B#0?(A/B):C")
+    field(PREC, "2")
+}
+
+record(ao, "SRC:AUTO:VSetIEPS")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "htei init")
+    field(EGUF, "50")
+    field(EGU, "kV")
+    field(DRVH, "50")
+    field(HOPR, "50")
+    field(ASLO, "1")
+}
+
+record(calc, "SRC:AUTO:StepIEPS")
+{
+    field(DESC, "pas kV")
+    field(CALC, "B#0?(A/B):C")
+    field(PREC, "2")
+}
+
+record(ao, "LEBT:HV_PS:HTfin1")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ht final 1")
+    field(EGUF, "80")
+    field(EGU, "kV")
+    field(DRVH, "80")
+    field(HOPR, "80")
+    field(ASLO, "1")
+}
+
+record(calc, "LEBT:HV_PS:HTpas1")
+{
+    field(DESC, "pas kV")
+    field(CALC, "B#0?(A-B)/C:D")
+    field(PREC, "2")
+}
+
+record(stringin, "LEBT:AUTO:Dialog")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "HT ON")
+    field(VAL, "attente action")
+}
+
+record(calc, "SRC:IE_PS:Vcalcpas")
+{
+    field(DESC, "pas htei")
+    field(CALC, "C#0?(A-B)/C:D")
+    field(PREC, "2")
+}
+
+record(stringin, "LEBT:AUTO:Diag1HV")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "HT ON")
+    field(VAL, "attente action")
+}
+
+record(stringin, "LEBT:AUTO:Dialog2")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "dialog2")
+    field(VAL, "attente action")
+}
+
+record(stringin, "LEBT:AUTO:Dialog3")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "dialog3")
+    field(VAL, "attente action")
+}
+
+record(bo, "LEBT:AUTO:OKforBeam")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "permission faisceau")
+    field(ZNAM, "NON")
+    field(ONAM, "OUI")
+}
+
+record(bo, "LEBT:AUTO:OKforStart")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "permission autostart")
+    field(ZNAM, "NON")
+    field(ONAM, "OUI")
+}
+
+record(bo, "LEBT:AUTO:PSUP")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Montee_alims")
+    field(ZNAM, "NON")
+    field(ONAM, "OUI")
+}
+
+record(ao, "LEBT:AUTO:StepPF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "pas point final")
+    field(EGUF, "10")
+    field(EGUL, "1")
+    field(DRVH, "10")
+    field(DRVL, "1")
+    field(HOPR, "10")
+    field(LOPR, "1")
+    field(ASLO, "1")
+}
+
+record(fanout, "LEBT:AUTO:FlnkPF")
+{
+    field(DESC, "FLNK etats")
+}
+
+record(ao, "LEBT:AUTO:Imontee")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "imontee")
+    field(EGUF, "100")
+    field(EGUL, "5")
+    field(EGU, "mA")
+    field(DRVH, "100")
+    field(DRVL, "5")
+    field(HOPR, "100")
+    field(LOPR, "5")
+}
+
+record(ao, "LEBT:AUTO:Ifinal")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ifinal")
+    field(EGUF, "100")
+    field(EGUL, "5")
+    field(EGU, "mA")
+    field(DRVH, "100")
+    field(DRVL, "5")
+    field(HOPR, "100")
+    field(LOPR, "5")
+}
+
+record(ao, "LEBT:AUTO:Isurv")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "isurv")
+    field(EGUF, "100")
+    field(EGUL, "5")
+    field(EGU, "mA")
+    field(DRVH, "100")
+    field(DRVL, "5")
+    field(HOPR, "100")
+    field(LOPR, "5")
+}
+
+record(ao, "LEBT:AUTO:Irapide")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "irapide")
+    field(EGUF, "100")
+    field(EGUL, "5")
+    field(EGU, "mA")
+    field(DRVH, "100")
+    field(DRVL, "5")
+    field(HOPR, "100")
+    field(LOPR, "5")
+}

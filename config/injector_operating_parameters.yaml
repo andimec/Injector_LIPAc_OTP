@@ -1,0 +1,74 @@
+# Injector nominal operating parameters
+# Source: User manual LCS Injector v4.0, Appendix A, page 35.
+# These values are modelling references, not protection limits unless explicitly
+# identified as such in the source documentation.
+
+source:
+  d2_flow_sccm:
+    nominal_range: [1.5, 4.6]
+    initial: 2.0
+    rf_conditioning: 2.3
+  coil_current_A:
+    coil1: 41.6
+    coil2: 87.8
+  coil_current_after_maintenance_A:
+    coil1: 37.5
+    coil2: 93.5
+
+vacuum:
+  reference_gauge: IV602
+  operating_pressure_mbar:
+    nominal_range: [1.0e-6, 1.0e-5]
+
+high_voltage:
+  main_hv_kV: 100.0
+  intermediate_electrode_kV: 25.0
+  repeller_kV: 4.5
+  main_hv_current_limit_mA: 250.0
+  conditioning_current_max_mA: 0.5
+  repeller_current_limit_mA: 0.5
+  typical_cw_platform_current_mA: 150.0
+
+magnets:
+  solenoid1_current_A: 280.0
+  solenoid2_current_A: 0.0
+  solenoid_slew_rate_A_per_s: 2.0
+  coil_slew_rate_A_per_s: 1.0
+
+rf:
+  cw_forward_power_W:
+    nominal_range: [800.0, 900.0]
+  initial_power_W: 880.0
+  maintenance_check_power_W:
+    nominal_range: [500.0, 620.0]
+  startup_offset_power_W:
+    nominal_range: [18.0, 25.0]
+  reflected_power_limit_W: 1000.0
+  atu_stub_x_counts:
+    nominal_range: [1550.0, 1860.0]
+  atu_stub_y_counts:
+    nominal_range: [2470.0, 2756.0]
+
+beam:
+  extracted_current_mA:
+    nominal_range: [145.0, 152.0]
+  faraday_cup_current_mA:
+    nominal_range: [142.0, 150.0]
+
+cooling:
+  skid_temperature_C: 20.0
+  skid_pressure_bar: 9.6
+
+chopper_interlock:
+  hv_off_threshold_V: 1000.0
+  hv_on_threshold_V: 6000.0
+  acct_on_threshold_mA: 5.0
+
+metadata:
+  status: modelling_baseline
+  authoritative_for_current_values: true
+  note: >
+    The current LCS User Manual is the primary source for the numerical
+    operating references above. Older maintenance manuals are used only to
+    recover architectural and interlock details that are not fully described
+    in the current user manual.
