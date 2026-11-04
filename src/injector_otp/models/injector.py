@@ -17,6 +17,8 @@ from .vacuum_opi import VacuumOPIPreconditions
 from .chopper_cim import ChopperCIMModel
 from .hv_auto_ramp import HVAutoRampModel, HVRampSettings
 from .calorimetry import LegacyCalorimetryModel
+from .emu_hardware import EmuMotorSupervisor, EmuMotorModel, EmuPlatePSModel, EmuAcquisitionModel
+from .emu_sequencer import EmuScanSequencer, EmuSequenceSettings
 from .power_supplies import POWER_SUPPLY_PREFIXES, PowerSupplyDevice
 
 
@@ -103,6 +105,17 @@ class InjectorModel(SubsystemModel):
 
         self._add(BeamTransportModel(catalog, self.parameters), "qualitative_only")
         self._add(LegacyCalorimetryModel(catalog), "exact_legacy_equations")
+
+        # EMU is a coupled motor/plates/FACQ process. The controller must
+        # observe the freshly computed actuator feedback and acquisition event.
+        emu = self.parameters.get("emu", {})
+        self._add(EmuMotorSupervisor(catalog, float(emu.get("enable_stage_delay_s", 1.0))),
+                  "source_snl_2012_with_explicit_external_guard")
+        self._add(EmuMotorModel(catalog, emu.get("motor", {})), "reduced_order_unvalidated_speed")
+        self._add(EmuPlatePSModel(catalog, emu.get("plates", {})), "source_links_with_training_dynamics")
+        self._add(EmuAcquisitionModel(catalog, emu.get("facq", {})), "synthetic_facq_trigger_only")
+        self._add(EmuScanSequencer(catalog, EmuSequenceSettings(**emu.get("scan", {}))),
+                  "reconstructed_2026_snl_sequence")
 
         # All remaining equipment families are represented as explicit
         # uncalibrated interfaces. They will not invent PV values.
