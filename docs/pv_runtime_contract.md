@@ -52,23 +52,23 @@ ownership and semantic role are an additional layer.
 
 A command expresses an action:
 
-    OTP:SRC:COIL01_PS:OnCmd = 1
+    SRC:COIL01_PS:OnCmd = 1
 
 A setpoint expresses a requested value:
 
-    OTP:SRC:COIL01_PS:ISet = 41.6
+    SRC:COIL01_PS:ISet = 41.6
 
 A readback expresses simulated equipment behaviour:
 
-    OTP:SRC:COIL01_PS:IRdbk = 37.8
+    SRC:COIL01_PS:IRdbk = 37.8
 
 A status expresses the resulting equipment state:
 
-    OTP:SRC:COIL01_PS:OnStat = 1
+    SRC:COIL01_PS:OnStat = 1
 
 An authorization result expresses calculated protection logic:
 
-    OTP:PPS:HV:PermStat = 0
+    PPS:HV:PermStat = 0
 
 ISet and IRdbk are intentionally different variables. The Python model
 determines the dynamic response between them.
@@ -197,17 +197,12 @@ Incorrect:
 The FaultManager therefore requests a fault condition; the affected model and
 protection logic determine the observable consequences.
 
-## 10. OTP namespace
+## 10. Native PV names and isolated VM
 
-Production-like names are mapped into the dedicated simulation namespace:
-
-    LEBT:HV_PS:OnStat
-    ->
-    OTP:LEBT:HV_PS:OnStat
-
-The OTP namespace is mandatory for the simulation IOC.
-
-The Digital Twin must never require production PV names for operation.
+No EPICS `OTP:` name rewriting is used. The original source names are exposed
+unchanged on the offline VM; for example `LEBT:HV_PS:OnStat` is the same
+name in Python, Soft IOC and Phoebus. The VM must not connect or route to
+LIPAc production controls. The operator-input allowlist remains mandatory.
 
 ## 11. EPICS is an interface, not the Injector logic
 
@@ -267,13 +262,13 @@ closed if configured with a production endpoint or production PV name.
 
 The first end-to-end slice should use:
 
-    OTP:LEBT:HV_PS:OnCmd
-    OTP:LEBT:HV_PS:OnStat
-    OTP:LEBT:HV_PS:VMon
-    OTP:SRC:COIL01_PS:ISet
-    OTP:SRC:COIL01_PS:IRdbk
-    OTP:PPS:HV:PermStat
-    OTP:PPS:BEAM:InhibitStat
+    LEBT:HV_PS:OnCmd
+    LEBT:HV_PS:OnStat
+    LEBT:HV_PS:VMon
+    SRC:COIL01_PS:ISet
+    SRC:COIL01_PS:IRdbk
+    PPS:HV:PermStat
+    PPS:BEAM:InhibitStat
 
 The acceptance path is:
 
