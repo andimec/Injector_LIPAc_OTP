@@ -100,6 +100,10 @@ inputs:
   - SRC:RF_ATU:WrtX
   - SRC:RF_ATU:WrtY
   - SRC:RF_GENE:FilOnCmd
+  - SRC:RF_GENE:CWmdOn
+  - SRC:RF_GENE:LimitPR
+  - SRC:RF_GENE:Modbus
+  - SRC:RF_GENE:EnvoiRAZ
   - SRC:RF_GENE:MOCmdOn
   - SRC:RF_GENE:PulseOrCW
   - SRC:RF_GENE:RfOffset
