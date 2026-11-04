@@ -43,7 +43,7 @@ The Soft IOC is intentionally simple:
 - accept permitted operator writes;
 - publish Python-generated values;
 - provide CA/PVA connectivity and monitors;
-- enforce the simulation namespace and EPICS access rules.
+- enforce the operator-write allowlist and EPICS access rules.
 
 It must not implement Injector behaviour.
 
@@ -125,20 +125,16 @@ The initial simulation timestep is 0.1 s.
 Simulation and EPICS publication frequencies are independent. A future model may
 run at a finer internal timestep while EPICS publication remains slower.
 
-## Namespace safety
+## Naming and isolated network boundary
 
-Production-like source:
+Source LIPAc PV names are **preserved unchanged** in the Python state,
+EPICS bridge, Soft IOC and Phoebus. There is no `OTP:` prefix translation.
+For example, `LEBT:HV_PS:OnStat` remains `LEBT:HV_PS:OnStat`.
 
-    LEBT:HV_PS:OnStat
-
-Simulation endpoint:
-
-    OTP:LEBT:HV_PS:OnStat
-
-The OTP: namespace is mandatory.
-
-The Python state may use source Injector names internally because it is not a
-network endpoint. The EPICS adapter maps them to OTP:.
+The VM must remain disconnected from the real LIPAc network. Restrict CA/PVA
+listening and discovery to the VM's training-only interface, with no production
+routes. Python's PV ownership allowlist still rejects writes to monitors and
+external safety conditions.
 
 ## Backend/adapter design
 
@@ -163,15 +159,15 @@ for tests and pre-IOC development. The engine no longer imports it.
 Use only PVs verified to exist in the current V1.2 registry. The initial pilot
 should be based on:
 
-    OTP:LEBT:HV_PS:HTOnCmd
-    OTP:LEBT:HV_PS:OnStat
-    OTP:LEBT:HV_PS:ICmd
-    OTP:SRC:COIL01_PS:ON
-    OTP:SRC:COIL01_PS:ISet
-    OTP:SRC:COIL01_PS:IRdbk
-    OTP:SRC:COIL01_PS:OnStat
-    OTP:PPS:HV:PermStat
-    OTP:PPS:BEAM:InhibitStat
+    LEBT:HV_PS:HTOnCmd
+    LEBT:HV_PS:OnStat
+    LEBT:HV_PS:ICmd
+    SRC:COIL01_PS:ON
+    SRC:COIL01_PS:ISet
+    SRC:COIL01_PS:IRdbk
+    SRC:COIL01_PS:OnStat
+    PPS:HV:PermStat
+    PPS:BEAM:InhibitStat
 
 The exact semantic classification of PVs not covered by the runtime override
 file remains unresolved.
@@ -189,13 +185,9 @@ Acceptance path:
 
 ## Production safety
 
-The OTP must never use production Injector PV names as network endpoints.
+Never connect this simulator with native PV names to the production LIPAc
+network. Before exposing EPICS, verify VM network isolation, interfaces,
+firewall rules and CA/PVA discovery. PV command allowlisting applies even
+inside the isolated VM.
 
-A future EPICS adapter must reject:
-
-- production PV names;
-- production IOC addresses;
-- missing OTP: prefix where a network-facing PV is expected.
-
-EPICS access security may add user/host restrictions, but the Python ownership
-rules remain authoritative for simulation semantics.
+The network-isolation requirement is not yet validated by end-to-end tests.
