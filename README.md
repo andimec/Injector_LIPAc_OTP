@@ -127,3 +127,19 @@ real PPS/MPS hardware.
 
 Detailed design decisions and source traceability are documented in
 docs/interlocks.md and docs/pv_runtime_contract.md.
+
+## EMU SNL reconstruction (development branch)
+
+The EMU sub-system now has a Python-owned motor/servo/plate-supply model,
+full/wide/edge SNL scan sequencing, bounded acquisition and in-memory points.
+No real EPICS IOC or hardware connection is used. The actual Fast/Full scan
+preset mappings and fast acquisition waveform remain to be validated.
+
+- [EMU source reconstruction](docs/emu_reconstruction.md)
+- [EMU offline demo](scripts/demo_emu.py)
+- [Model inventory](src/injector_otp/models/README.md)
+
+```bash
+python -m pip install -e .
+python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_training.csv
+```
