@@ -1,0 +1,114 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorRPS.db
+
+record(bo, "LEBT:R_PS:ON")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON R_PS")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:R_PS:OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF R_PS")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:R_PS:RESET")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde reset R_PS")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(ao, "LEBT:R_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "20")
+    field(DRVL, "0")
+    field(HOPR, "20")
+    field(LOPR, "0")
+    field(EGU, "mA")
+    field(PREC, "1")
+}
+
+record(calcout, "LEBT:R_PS:Icalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(B*A)/C")
+}
+
+record(ao, "LEBT:R_PS:IOut")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}
+
+record(ai, "LEBT:R_PS:IRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(calc, "LEBT:R_PS:IRdbkcalc")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}
+
+record(ao, "LEBT:R_PS:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "15")
+    field(DRVL, "0")
+    field(HOPR, "15")
+    field(LOPR, "0")
+    field(EGU, "kV")
+    field(PREC, "1")
+}
+
+record(calcout, "LEBT:R_PS:Vcalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(B*A)/C")
+}
+
+record(ao, "LEBT:R_PS:VOut")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}
+
+record(ai, "LEBT:R_PS:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(calc, "LEBT:R_PS:VRdbkcalc")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+    field(EGU, "kV")
+}
+
+record(ai, "LEBT:R_PS:Status")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "lect status")
+    field(SCAN, "2 second")
+}

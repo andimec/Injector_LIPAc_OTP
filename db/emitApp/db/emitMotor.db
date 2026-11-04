@@ -1,0 +1,72 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitMotor.db
+
+record(motor, "LEBT:EMIT:MOTOR")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "MOTOR")
+    field(VELO, "20480")
+    field(VBAS, "2048")
+    field(ACCL, "0.01")
+    field(BDST, "0")
+    field(BVEL, "40960")
+    field(BACC, "500")
+    field(MRES, "0.00048828")
+    field(PREC, "8")
+    field(EGU, "mm")
+    field(DHLM, "182")
+    field(DLLM, "-3")
+    field(TWV, "4")
+    field(SREV, "2048")
+    field(UREV, "2048")
+    field(ERES, "0.00048828")
+    field(RRES, "1")
+    field(URIP, "No")
+    field(RTRY, "1")
+    field(VMAX, "40960")
+    field(OMSL, "closed_loop")
+    field(UEIP, "No")
+    field(PCOF, "0.00005")
+    field(JVEL, "40960")
+    field(JAR, "3600")
+    field(HVEL, "10")
+    field(PINI, "NO")
+    field(CNEN, "Disable")
+    field(RDBD, "0.1")
+}
+
+record(calcout, "LEBT:EMIT:HARD_LIM_VIO")
+{
+    field(CALC, "A||B")
+}
+
+record(calcout, "LEBT:EMIT:SOFT_LIM_VIO")
+{
+    field(CALC, "A&&( !B && !C )")
+}
+
+record(calc, "LEBT:EMIT:Position")
+{
+    field(DESC, "position")
+    field(CALC, "(A*-1.)")
+    field(EGU, "mm")
+    field(PREC, "0")
+    field(HOPR, "2")
+    field(LOPR, "-181")
+    field(HIHI, "2")
+    field(LOLO, "-182")
+    field(HIGH, "1")
+    field(LOW, "-181")
+    field(HHSV, "MAJOR")
+    field(LLSV, "MAJOR")
+    field(HSV, "MINOR")
+    field(LSV, "MINOR")
+    field(SCAN, ".1 second")
+}
+
+record(bo, "LEBT:EMIT:Refresh")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(VAL, "1")
+}

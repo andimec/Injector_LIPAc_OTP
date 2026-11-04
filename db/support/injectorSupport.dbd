@@ -1,0 +1,9 @@
+include "motorRecord.dbd"
+device(motor,CONSTANT,devMotorSoft,"Soft Channel")
+device(ai,CONSTANT,devInjectorAi,"Injector Soft Channel")
+device(ao,CONSTANT,devInjectorAo,"Injector Soft Channel")
+device(bi,CONSTANT,devInjectorBi,"Injector Soft Channel")
+device(bo,CONSTANT,devInjectorBo,"Injector Soft Channel")
+device(stringin,CONSTANT,devInjectorSi,"Injector Soft Channel")
+device(stringout,CONSTANT,devInjectorSo,"Injector Soft Channel")
+device(waveform,CONSTANT,devInjectorWf,"Injector Soft Channel")

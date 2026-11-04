@@ -1,0 +1,35 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: plcInjectorApp/db/plcInjector_Status.db
+
+record(bi, "INJ:PLC:comStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Communication Status")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "DSCT")
+    field(ONAM, "CNTD")
+}
+
+record(calc, "INJ:PLC:Cptr0")
+{
+    field(DESC, "Compteur Epics")
+    field(SCAN, "1 second")
+    field(CALC, "(A<B?A+1:A=0)")
+}
+
+record(ao, "INJ:PLC:epicsCpt0")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Compteur Epics")
+    field(PINI, "YES")
+    field(OMSL, "closed_loop")
+}
+
+record(ai, "INJ:PLC:CptrPlc")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "compteur PLC")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(LINR, "NO CONVERSION")
+}

@@ -1,0 +1,118 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorMKS_LEBT.db
+
+record(bo, "LEBT:MFC:OpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ON")
+    field(SCAN, "Passive")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+}
+
+record(stringout, "LEBT:MFC:OpenVanne1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(OMSL, "closed_loop")
+    field(VAL, "OFF")
+}
+
+record(stringout, "LEBT:MFC:SetOn1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(OMSL, "closed_loop")
+    field(VAL, "OFF")
+}
+
+record(ai, "LEBT:MFC:Deb1Mes")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+    field(LINR, "NO CONVERSION")
+    field(EGU, "SCCM")
+    field(LSV, "MINOR")
+    field(EGUF, "10")
+    field(EGUL, "0")
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ao, "LEBT:MFC:Debit")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(VAL, "0")
+    field(PREC, "2")
+    field(LINR, "NO CONVERSION")
+    field(DRVH, "10")
+    field(DRVL, "0")
+    field(DESC, "Valeur Debit Gaz")
+    field(EGUF, "10")
+    field(EGUL, "0")
+}
+
+record(stringin, "LEBT:MFC:EtatLD")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(bo, "LEBT:MFC:RmtCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "LEBT:MFC:LocCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(stringout, "LEBT:MFC:Debug")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(bo, "LEBT:MFC:ScanDIS")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "SCAN")
+    field(ONAM, "NO SCAN")
+}
+
+record(stringin, "LEBT:MFC:LectSP1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(stringin, "LEBT:MFC:EtatVanne")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(bi, "LEBT:MFC:EtatLocRem")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Loc=0;rem=1")
+    field(SCAN, "Passive")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rmt")
+}
+
+record(bi, "LEBT:MFC:StsVanne")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Loc=0;rem=1")
+    field(SCAN, "Passive")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}

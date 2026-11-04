@@ -1,0 +1,105 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorInit_MKS_SRC.db
+
+record(bo, "SRC:MFC:InitCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(PINI, "NO")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(stringout, "SRC:MFC:Remote")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringout, "SRC:MFC:Flowmode")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "F")
+}
+
+record(stringout, "SRC:MFC:CloseVL1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "SRC:MFC:CloseVLV1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "SRC:MFC:CloseVL2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "SRC:MFC:CloseVLV2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "SRC:MFC:DP2OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "OFF")
+}
+
+record(stringout, "SRC:MFC:Range1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringout, "SRC:MFC:Range2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(ao, "SRC:MFC:Gain1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "1.0")
+    field(PREC, "3")
+    field(DRVH, "5.0")
+    field(DRVL, "0.0")
+    field(HOPR, "5.0")
+    field(LOPR, "0.0")
+}
+
+record(ao, "SRC:MFC:Gain2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "1.00")
+    field(PREC, "3")
+    field(DRVH, "5.0")
+    field(DRVL, "0.0")
+    field(HOPR, "5.0")
+    field(LOPR, "0.0")
+}
+
+record(stringout, "SRC:MFC:DP1Line1")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringout, "SRC:MFC:DP1Line2")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(bo, "SRC:MFC:ScanDIS")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "SCAN")
+    field(ONAM, "NO SCAN")
+}

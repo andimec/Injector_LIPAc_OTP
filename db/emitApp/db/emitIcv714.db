@@ -1,0 +1,114 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitIcv714.db
+
+record(ao, "LEBT:EMIT_PS1:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "EMUPS1")
+    field(PREC, "0")
+    field(EGUF, "10000")
+    field(EGUL, "-10000")
+    field(EGU, "V")
+    field(DRVH, "10000")
+    field(DRVL, "-10000")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}
+
+record(ao, "LEBT:EMIT_PS2:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "EMUPS2")
+    field(PREC, "0")
+    field(EGUF, "10000")
+    field(EGUL, "-10000")
+    field(EGU, "V")
+    field(DRVH, "10000")
+    field(DRVL, "-10000")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}
+
+record(ao, "LEBT:EMIT_PSR:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "EMUPSR")
+    field(PREC, "0")
+    field(EGUF, "200")
+    field(EGUL, "0")
+    field(EGU, "V")
+    field(DRVH, "200")
+    field(DRVL, "0")
+    field(HOPR, "200")
+    field(LOPR, "0")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}
+
+record(ao, "LEBT:FGA_PS2:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGAPS2")
+    field(PREC, "0")
+    field(EGUF, "500")
+    field(EGUL, "-500")
+    field(EGU, "V")
+    field(DRVH, "500")
+    field(DRVL, "-500")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}
+
+record(ao, "LEBT:FGA_PS3:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGAPS3")
+    field(PREC, "0")
+    field(EGUF, "500")
+    field(EGUL, "-500")
+    field(EGU, "V")
+    field(DRVH, "500")
+    field(DRVL, "-500")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}
+
+record(ao, "LEBT:FGA_PS4:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGAPS4")
+    field(PREC, "0")
+    field(EGUF, "200")
+    field(EGUL, "0")
+    field(EGU, "V")
+    field(DRVH, "200")
+    field(DRVL, "0")
+    field(HOPR, "200")
+    field(LOPR, "0")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}
+
+record(ao, "LEBT:CHOP_PS:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "CHOPPER")
+    field(PREC, "0")
+    field(EGUF, "10000")
+    field(EGUL, "0")
+    field(EGU, "V")
+    field(DRVH, "10000")
+    field(DRVL, "0")
+    field(HOPR, "10000")
+    field(LOPR, "0")
+    field(PINI, "NO")
+    field(LINR, "LINEAR")
+}

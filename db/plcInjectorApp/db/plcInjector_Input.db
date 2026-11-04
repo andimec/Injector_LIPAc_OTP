@@ -1,0 +1,2302 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: plcInjectorApp/db/plcInjector_Input.db
+
+record(bi, "LEBT:HV:RlyOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status HV RLY")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:HV:RlyCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status HV RLY")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "LEBT:TR1:OilDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status Oil T1")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:TR1:OilAlarmStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Alarm Oil T1")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Alarm")
+}
+
+record(bi, "LEBT:HV:CageKeyA1")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Out")
+    field(ONAM, "In")
+}
+
+record(bi, "LEBT:HV:PFDCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "SRC:CD:CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "LEBT:HV_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:HV_PS:AuxStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Out")
+    field(ONAM, "In")
+}
+
+record(bi, "LEBT:HV_PS:RdyStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Rdy")
+}
+
+record(bi, "LEBT:HV_PS:RmtStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Out")
+    field(ONAM, "In")
+}
+
+record(bi, "LEBT:R_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "In")
+}
+
+record(bi, "LEBT:R_PS:RdyStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Rdy")
+}
+
+record(bi, "LEBT:R_PS:RemStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "LEBT:SOL01_PS:RemStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "LEBT:SOL02_PS:RemStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "LEBT:SOL01:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:STV01:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:SOL01:VCFlowStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:EMIT:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:STV02:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:SOL02:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:SOL02:VCFlowStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:FC:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:IC:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:BS:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:GE:TSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:FC:InStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Out")
+    field(ONAM, "In")
+}
+
+record(bi, "LEBT:FC:OutStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Out")
+    field(ZNAM, "In")
+}
+
+record(bi, "LEBT:GV:OpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+}
+
+record(bi, "LEBT:GV:CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC01:PPOnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:VAC01:TPOnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:VAC01:PVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:PVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC01:AIVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status AIV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:AIVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status AIV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC01:SVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:SVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC01:NIVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status NIV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:NIVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status NIV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC01:LTVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status LTV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:LTVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status LTV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC01:TPSpeedStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Not nominal speed")
+    field(ONAM, "Nominal speed")
+}
+
+record(bi, "LEBT:VAC01:TPDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Failure")
+    field(ONAM, "No failure")
+}
+
+record(bi, "LEBT:VAC01:PGVCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PGVC")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC01:SGVCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SGVC")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC01:PGTPDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PGTP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC01:SGTPDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SGTP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC02:PPOnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:VAC02:TPOnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:VAC02:PVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:PVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC02:AIVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status AIV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:AIVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status AIV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC02:SVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:SVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC02:LTVOpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status LTV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:LTVCloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status LTV")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(bi, "LEBT:VAC02:TPSpeedStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Not nominal speed")
+    field(ONAM, "Nominal speed")
+}
+
+record(bi, "LEBT:VAC02:TPDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Error")
+    field(ONAM, "No error")
+}
+
+record(bi, "LEBT:VAC02:PGVCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PGVC")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC02:SGVCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SGVC")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC02:PGTPDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PGTP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:VAC02:SGTPDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status SGTP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Fault")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:SOL01:TSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:SOL02:TSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:SOL01_VC:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:SOL02_VC:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:EMIT:OutStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Out")
+    field(ZNAM, "In")
+}
+
+record(bi, "LEBT:STV02:TSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status TP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:HV:RoomKeyA1")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "OK")
+}
+
+record(bi, "LEBT:GE:FSFlowStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "OK")
+}
+
+record(bi, "LEBT:CHOP:InStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Out")
+    field(ONAM, "In")
+}
+
+record(bi, "LEBT:CHOP:OutStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Out")
+    field(ZNAM, "In")
+}
+
+record(bi, "LEBT:CHOP:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:CHOP_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+}
+
+record(bi, "INJ:WS:P1OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+}
+
+record(bi, "INJ:WS:P2OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+}
+
+record(bi, "INJ:WS:P1SelStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Sel")
+    field(ZNAM, "Off")
+}
+
+record(bi, "INJ:WS:P2SelStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Sel")
+    field(ZNAM, "Off")
+}
+
+record(bi, "INJ:WS:FSPCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:ResCylDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:PaspDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:ResPCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:TePCDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:NBVEDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:NSVEDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:FSSDDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:P1DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:P2DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "INJ:WS:FSCSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:LOCK:KEYB1")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Out")
+    field(ONAM, "In")
+}
+
+record(bi, "SRC:COIL01:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:COIL02:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:COIL01:TSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:COIL02:TSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:COIL01_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "SRC:COIL01_PS:RdyStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Rdy")
+}
+
+record(bi, "SRC:COIL01_PS:RemStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "SRC:COIL02_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "SRC:COIL02_PS:RdyStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Rdy")
+}
+
+record(bi, "SRC:COIL02_PS:RemStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "SRC:IE_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "SRC:IE_PS:RdyStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Rdy")
+}
+
+record(bi, "SRC:IE_PS:RemStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "SRC:SVL:D2OpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "SRC:SVL:D2CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "SRC:SVL:H2OpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "SRC:SVL:H2CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "SRC:RF:FSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:RF_GEN:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "PPS:SVL:D2PermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:SVL:H2PermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:ACCL:PermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:PLSM:PermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:HV:PermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:FC:OutPermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:GV:OpenPermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:BEAM:InhibitStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:GV:OpenInhibitStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:RFQ:VacDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "PPS:CHOP:PermStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Ok")
+}
+
+record(bi, "LEBT:HV:RlyRmtCmd")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rmt")
+}
+
+record(bi, "LEBT:PF:Light")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:PF:Buzzer")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:PF:LightHtOn")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:PF:LightMagnet")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:HV_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:R_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:STH01_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:STV01_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:STH02_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:STV02_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:SOL01_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:SOL02_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:RC_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "LEBT:FC:OUT")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "IN")
+    field(ONAM, "OUT")
+}
+
+record(bi, "LEBT:VAC:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:GV:Open")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:PPStart")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Stop")
+    field(ONAM, "Start")
+}
+
+record(bi, "LEBT:VAC01:TPStart")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Stop")
+    field(ONAM, "Start")
+}
+
+record(bi, "LEBT:VAC01:PVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:AIVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:SVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC01:NIVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:PPStart")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Stop")
+    field(ONAM, "Start")
+}
+
+record(bi, "LEBT:VAC02:TPStart")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Stop")
+    field(ONAM, "Start")
+}
+
+record(bi, "LEBT:VAC02:PVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:AIVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:VAC02:SVOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "LEBT:EMIT_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "PPS:WS:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "PPS:VAC:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "PPS:HV:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "PPS:HV:PSDefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:CHOP:Out")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:CHOP_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "SRC:COIL01_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "SRC:COIL02_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "SRC:IE_PS:ExtSec")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Intlk")
+}
+
+record(bi, "SRC:SVL:D2Open")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "SRC:SVL:H2Open")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}
+
+record(bi, "SRC:RF_GEN:PlasmaStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "def")
+    field(ONAM, "OK for Plasma")
+}
+
+record(bi, "PPS:SVL:H2CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "PPS:SVL:D2CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Close")
+    field(ZNAM, "Open")
+}
+
+record(bi, "PPS:RF:PlsmStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Off")
+    field(ZNAM, "On")
+}
+
+record(bi, "PPS:HV_PS:OffStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Off")
+    field(ZNAM, "On")
+}
+
+record(bi, "PPS:FC:InStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "IN")
+    field(ZNAM, "Out")
+}
+
+record(bi, "PPS:GV:CloseStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+}
+
+record(bi, "PPS:CHOP:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+}
+
+record(bi, "PPS:CHOP:OffStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Off")
+    field(ZNAM, "On")
+}
+
+record(bi, "MPS:INJ:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Def INJ from MPS")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Def")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:INJ:Halt")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Halt INJ by PPS")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Halt")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:CHOP_PS:OnStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Chop_PS ON")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "On")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:GV:Protect")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "GV protected by FC")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "OK")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:FOC:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "LEBT Def Focal")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Def")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:LEBT_VAC:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "LEBT Def Vac")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Def")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:GV:OpenStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "GV is Open")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Def")
+    field(ZNAM, " ")
+}
+
+record(bi, "MPS:INJ_WS:DefStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Def on Inj Cooling")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ONAM, "Def")
+    field(ZNAM, " ")
+}
+
+record(ai, "INJ:WS:FMCSMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Secondary Circuit Flow Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:FMCS")
+{
+    field(DESC, "Secondary Circuit Flow Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "m3/h")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:PeCSMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Secondary Circuit In Pressure Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:PeCS")
+{
+    field(DESC, "Secondary Circuit In Pressure Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "bar")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:PaspMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Suction Pressure Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:Pasp")
+{
+    field(DESC, "Suction Pressure Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "bar")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:ResCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit Resistivity Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:ResCP")
+{
+    field(DESC, "Primary Circuit Resistivity Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "Mohm-cm")
+    field(PREC, "2")
+}
+
+record(ai, "INJ:WS:TeCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit In Temp Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:TeCP")
+{
+    field(DESC, "Primary Circuit In Temp Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "degC")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:TeCSMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Secondary Circuit In Temp Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:TeCS")
+{
+    field(DESC, "Secondary Circuit In Temp Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "degC")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:FMSDMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Demineralization Station Flow Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:FMSD")
+{
+    field(DESC, "Demineralization Station Flow Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "m3/h")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:FMCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit Flow Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:FMCP")
+{
+    field(DESC, "Primary Circuit Flow Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "m3/h")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:PsCSMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Secondary Circuit Out Pressure Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:PsCS")
+{
+    field(DESC, "Secondary Circuit Out Pressure Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "bar")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:PsCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit Out Pressure Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:PsCP")
+{
+    field(DESC, "Primary Circuit Out Pressure Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "bar")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:PeCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit In Pressure Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:PeCP")
+{
+    field(DESC, "Primary Circuit In Pressure Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "bar")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:ResCylMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Cylinder Resistivity Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:ResCyl")
+{
+    field(DESC, "Cylinder Resistivity Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "Mohm-cm")
+    field(PREC, "2")
+}
+
+record(ai, "INJ:WS:TsCSMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Secondary Circuit Out Temp Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:TsCS")
+{
+    field(DESC, "Secondary Circuit Out Temp Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "degC")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:TeEchCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit Hex In Temp Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:TeEchCP")
+{
+    field(DESC, "Primary Circuit Hex In Temp Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "degC")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:TsEchCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit Hex Out Temp Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:TsEchCP")
+{
+    field(DESC, "Primary Circuit Hex Out Temp Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "degC")
+    field(PREC, "1")
+}
+
+record(ai, "INJ:WS:TsCPMes")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Primary Circuit Out Temp Raw")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(calc, "INJ:WS:TsCP")
+{
+    field(DESC, "Primary Circuit Out Temp Scaled")
+    field(SCAN, "Passive")
+    field(CALC, "((A/10)*B)-C")
+    field(EGU, "degC")
+    field(PREC, "1")
+}
+
+record(ai, "LEBT:VAC01:VacPGVC")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC01:VacSGVC")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC01:VacPGTP")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC01:VacSGTP")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC02:VacPGVC")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC02:VacSGVC")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC02:VacPGTP")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(ai, "LEBT:VAC02:VacSGTP")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Mesure Vaccum")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(PREC, "0")
+    field(EGU, "mbar")
+}
+
+record(bi, "LEBT:HV:RlyRmtStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Loc")
+    field(ONAM, "Rem")
+}
+
+record(bi, "LEBT:HV:RondeStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "OK")
+}
+
+record(bi, "LEBT:HV:RdyStat")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Def")
+    field(ONAM, "Rdy")
+}
+
+record(bi, "SRC:FC:DiscDef")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:SVL:H2DiscDef")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "SRC:SVL:D2DiscDef")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:GV:DiscDef")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Ok")
+    field(ONAM, "Def")
+}
+
+record(bi, "LEBT:CHOP:ON")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "LEBT:HV:RlyDefOpen")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "INJ:PLC:MuscadeForcON")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Status PP")
+    field(SCAN, "I/O Intr")
+    field(PINI, "NO")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}

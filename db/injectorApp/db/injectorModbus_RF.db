@@ -1,0 +1,426 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorModbus_RF.db
+
+record(bo, "SRC:RF_ATU:ModeXY")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mode Cde X et Y")
+    field(ZNAM, "Auto")
+    field(ONAM, "Remote")
+}
+
+record(calc, "SRC:RF_ATU:CalcModeXY")
+{
+    field(DESC, "calcul Cde mot 2")
+    field(CALC, "(A|(B<<1))")
+}
+
+record(bo, "SRC:RF_ATU:EnvoiMot2")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(ao, "SRC:RF_ATU:WrtCtrl")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "255")
+    field(DRVL, "0")
+    field(HOPR, "255")
+    field(LOPR, "0")
+}
+
+record(bo, "SRC:RF_ATU:ModeX")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mode Cde X")
+    field(ZNAM, "Auto")
+    field(ONAM, "Remote")
+}
+
+record(bo, "SRC:RF_ATU:ModeY")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mode Cde Y")
+    field(ZNAM, "Auto")
+    field(ONAM, "Remote")
+}
+
+record(ai, "SRC:RF_ATU:Mot100")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot100")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_ATU:Mot101")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot101")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_ATU:Mot102")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot102")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_ATU:Mot103")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot103")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_ATU:Mot104")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot104")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao, "SRC:RF_ATU:XYManu")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Mode de Controle")
+    field(OMSL, "supervisory")
+    field(DRVH, "127")
+    field(DRVL, "0")
+    field(HOPR, "127")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_ATU:WrtX")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "4095")
+    field(DRVL, "0")
+    field(HOPR, "4095")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_ATU:WrtY")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "4095")
+    field(DRVL, "0")
+    field(HOPR, "4095")
+    field(LOPR, "0")
+}
+
+record(ai, "SRC:RF_GENE:Mot100")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot100")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot101")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot101")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot102")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot102")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot103")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot103")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot104")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot104")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot105")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot105")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot106")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot106")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot107")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot107")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot108")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot108")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot109")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot109")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "SRC:RF_GENE:Mot110")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Mot110")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao, "SRC:RF_GENE:WrtPI")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "1200")
+    field(DRVL, "0")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_GENE:WrtLimitPR")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "1200")
+    field(DRVL, "0")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+}
+
+record(bo, "SRC:RF_GENE:Modbus")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cons modbus")
+    field(ZNAM, "No-optical")
+    field(ONAM, "Optical")
+    field(ASG, "D_PLUS")
+}
+
+record(bo, "SRC:RF_GENE:CWmdOn")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "mode CW")
+    field(ZNAM, "Pulse")
+    field(ONAM, "CW")
+    field(ASG, "D_PLUS")
+}
+
+record(bo, "SRC:RF_GENE:LimitPR")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OFF filament")
+    field(OMSL, "supervisory")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "SRC:RF_GENE:FilOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ON filament")
+    field(OMSL, "supervisory")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "SRC:RF_GENE:MOCmdOn")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ON micro ondes")
+    field(OMSL, "supervisory")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "SRC:RF_GENE:PulseOrCW")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "pulse or CW")
+    field(OMSL, "supervisory")
+    field(ZNAM, "Pulse")
+    field(ONAM, "CW")
+    field(ASG, "D_PLUS")
+}
+
+record(calc, "SRC:RF_GENE:CalcOnOff")
+{
+    field(DESC, "calcul RAZ")
+    field(CALC, "((A <<6)|(B & C))")
+}
+
+record(ao, "SRC:RF_GENE:WrtOnOff")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "255")
+    field(DRVL, "0")
+    field(HOPR, "255")
+    field(LOPR, "0")
+}
+
+record(bo, "SRC:RF_GENE:EnvoiMot2")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+}
+
+record(ao, "SRC:RF_GENE:WrtCtrl")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "255")
+    field(DRVL, "0")
+    field(HOPR, "255")
+    field(LOPR, "0")
+}
+
+record(calcout, "SRC:RF_GENE:CalcMot02")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "calcul Cde mot 2")
+    field(CALC, "(A<<2|B<<3|C<<4|D<<5|E<<6)")
+}
+
+record(bo, "SRC:RF_GENE:EnvoiRAZ")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(HIGH, "5")
+}
+
+record(calc, "SRC:RF_GENE:CalcRAZ")
+{
+    field(DESC, "calcul RAZ")
+    field(CALC, "(((A<<7)|(B))&(C))")
+}
+
+record(ao, "SRC:RF_GENE:WrtRAZ")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "255")
+    field(DRVL, "0")
+    field(HOPR, "255")
+    field(LOPR, "0")
+}
+
+record(calcout, "SRC:RF_GENE:MarcheRF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "1 si RF en marche")
+    field(SCAN, "2 second")
+    field(CALC, "(A & B)>>6")
+}
+
+record(calcout, "SRC:RF_GENE:PretRF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "1 si RF prete")
+    field(SCAN, "2 second")
+    field(CALC, "(A & B)>>7")
+}
+
+record(calcout, "SRC:RF_GENE:DefRF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "1 si Defaut")
+    field(SCAN, "2 second")
+    field(CALC, "(A & B)>>3")
+}
+
+record(calc, "SRC:RF_GENE:PwrRef")
+{
+    field(CALC, "(A*B)")
+    field(SCAN, "1 second")
+}
+
+record(ao, "SRC:RF_GENE:RfPwr")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "1200")
+    field(DRVL, "0")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_GENE:RfOffset")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "1200")
+    field(DRVL, "0")
+    field(HOPR, "1200")
+    field(LOPR, "0")
+}
+
+record(ai, "SRC:RF_GENE:Map099Rdbk")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao, "SRC:RF_GENE:Map003Set")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "WrtOnOff,WrtCtrl,WrtRAZ")
+    field(OMSL, "supervisory")
+    field(DRVH, "2")
+    field(DRVL, "0")
+    field(HOPR, "2")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_GENE:Map004Set")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "255")
+    field(DRVL, "0")
+    field(HOPR, "255")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:RF_GENE:Map007Set")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "25000")
+    field(DRVL, "3")
+    field(HOPR, "25000")
+    field(LOPR, "3")
+}
+
+record(ao, "SRC:RF_GENE:Map008Set")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "supervisory")
+    field(DRVH, "10000")
+    field(DRVL, "100")
+    field(HOPR, "10000")
+    field(LOPR, "100")
+}

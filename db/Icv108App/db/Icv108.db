@@ -1,0 +1,127 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: Icv108App/db/Icv108.db
+
+record(mbbo, "LEBT:FACQ:Fsamp")
+{
+    field(DTYP, "Soft Channel")
+    field(ZRVL, "100")
+    field(ONVL, "250")
+    field(ZRST, "100 KEch/s")
+    field(ONST, "250 KEch/s")
+    field(TWVL, "1000")
+    field(TWST, "1000 KEch/s")
+    field(VAL, "0")
+}
+
+record(ao, "LEBT:FACQ:Tmeas2")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(ao, "LEBT:FACQ:Tmeas1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(mbbo, "LEBT:FACQ:Cfg")
+{
+    field(DTYP, "Soft Channel")
+    field(ZRVL, "0x000002")
+    field(ONVL, "0x000004")
+    field(ZRST, "FC")
+    field(ONST, "LPBD")
+    field(PINI, "YES")
+    field(VAL, "0")
+    field(TWVL, "0x000010")
+    field(THVL, "0x000020")
+    field(FRVL, "0x000024")
+    field(FVVL, "")
+    field(SXVL, "")
+    field(SVVL, "")
+    field(TWST, "EMU")
+    field(THST, "ACCT")
+    field(FRST, "LPBD-ACCT")
+    field(FVST, "")
+    field(SXST, "")
+    field(SVST, "")
+}
+
+record(ao, "LEBT:FACQ:Tdisp1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(ao, "LEBT:FACQ:Tdisp2")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(HOPR, "1000")
+    field(LOPR, "0")
+}
+
+record(waveform, "LEBT:FACQ:Xwf")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "2")
+    field(NELM, "10000")
+    field(FTVL, "FLOAT")
+    field(HOPR, "10000")
+    field(LOPR, "0")
+}
+
+record(bo, "LEBT:FACQ:ConfigTrigger")
+{
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "Trig. Soft")
+    field(ONAM, "Trig. Ext")
+}
+
+record(bo, "LEBT:FACQ:TriggerSoft")
+{
+    field(DTYP, "Soft Channel")
+}
+
+record(bi, "LEBT:FACQ:LedActivite")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(mbbo, "LEBT:FACQ:Mode")
+{
+    field(DTYP, "Soft Channel")
+    field(NOBT, "8")
+    field(ZRVL, "0")
+    field(ONVL, "8230")
+    field(ZRST, "Mode 0")
+    field(ONST, "Mode 6")
+    field(VAL, "0")
+}
+
+record(bo, "LEBT:FACQ:START")
+{
+    field(DTYP, "Soft Channel")
+}
+
+record(stringout, "LEBT:FACQ:Status")
+{
+    field(DTYP, "Soft Channel")
+    field(PINI, "YES")
+    field(VAL, "INIT")
+}

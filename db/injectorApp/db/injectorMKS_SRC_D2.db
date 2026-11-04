@@ -1,0 +1,82 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorMKS_SRC_D2.db
+
+record(bo, "SRC:MFCD:OpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ON")
+    field(SCAN, "Passive")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(VAL, "0")
+}
+
+record(stringout, "SRC:MFCD:Vanne1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(OMSL, "closed_loop")
+    field(VAL, "OFF")
+}
+
+record(ai, "SRC:MFCD:Deb1Mes")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+    field(LINR, "NO CONVERSION")
+    field(EGU, "SCCM")
+    field(LSV, "MINOR")
+    field(EGUF, "10")
+    field(EGUL, "0")
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ao, "SRC:MFCD:Debit")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(VAL, "0")
+    field(PREC, "2")
+    field(LINR, "NO CONVERSION")
+    field(DRVH, "10")
+    field(DRVL, "0")
+    field(DESC, "Valeur Debit D2")
+    field(EGUF, "10")
+    field(EGUL, "0")
+}
+
+record(stringout, "SRC:MFCD:SetOn1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(OMSL, "closed_loop")
+    field(VAL, "OFF")
+}
+
+record(stringout, "SRC:MFCD:Debug")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "ON")
+}
+
+record(stringin, "SRC:MFCD:LectSP1")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(stringin, "SRC:MFCD:EtatVanne")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "2 second")
+}
+
+record(bi, "SRC:MFCD:StsVanne")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Loc=0;rem=1")
+    field(SCAN, "Passive")
+    field(ZNAM, "Close")
+    field(ONAM, "Open")
+}

@@ -1,0 +1,146 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: facqApp/db/facqDiagIcv108.db
+
+record(waveform, "LEBT:FC:Iwf")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "204.8")
+    field(LOPR, "-204.8")
+    field(NELM, "1000000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(ai, "LEBT:FC:I")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(EGUF, "204.8")
+    field(EGUL, "-204.8")
+    field(EGU, "mA")
+    field(DESC, "beam")
+    field(LINR, "LINEAR")
+}
+
+record(waveform, "LEBT:FC:IwfGraph")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "204.8")
+    field(LOPR, "-204.8")
+    field(NELM, "10000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(waveform, "LEBT:BS:Iwf")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "193.2")
+    field(LOPR, "-193.2")
+    field(NELM, "1000000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(ai, "LEBT:BS:I")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(EGUF, "193.2")
+    field(EGUL, "-193.2")
+    field(EGU, "mA")
+    field(DESC, "beam")
+    field(LINR, "LINEAR")
+}
+
+record(waveform, "LEBT:BS:IwfGraph")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "193.2")
+    field(LOPR, "-193.2")
+    field(NELM, "10000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(waveform, "LEBT:EMIT_FC:Iwf")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "10240")
+    field(LOPR, "-10240")
+    field(NELM, "1000000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(ai, "LEBT:EMIT_FC:I")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(EGUF, "10240")
+    field(EGUL, "-10240")
+    field(EGU, "mV")
+    field(DESC, "beam")
+    field(LINR, "LINEAR")
+}
+
+record(waveform, "LEBT:EMIT_FC:IwfGraph")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "10240")
+    field(LOPR, "-10240")
+    field(NELM, "10000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(waveform, "LEBT:ACCT:Iwf")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "204.8")
+    field(LOPR, "-204.8")
+    field(NELM, "1000000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}
+
+record(ai, "LEBT:ACCT:I")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "3")
+    field(EGUF, "204.8")
+    field(EGUL, "-204.8")
+    field(EGU, "mA")
+    field(DESC, "beam")
+    field(LINR, "LINEAR")
+}
+
+record(waveform, "LEBT:ACCT:IwfGraph")
+{
+    field(DTYP, "Soft Channel")
+    field(SCAN, "Passive")
+    field(PREC, "1")
+    field(HOPR, "204.8")
+    field(LOPR, "-204.8")
+    field(NELM, "10000")
+    field(FTVL, "FLOAT")
+    field(DESC, "waveform")
+}

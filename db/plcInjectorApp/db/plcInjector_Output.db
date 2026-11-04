@@ -1,0 +1,352 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: plcInjectorApp/db/plcInjector_Output.db
+
+record(bo, "LEBT:VAC01:PPOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON PP")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:PPOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF PP")
+    field(ZNAM, "On")
+    field(ONAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:TPOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON TP")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:TPOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF TP")
+    field(ZNAM, "On")
+    field(ONAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:PVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open PV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:PVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close PV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:SVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open SV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:SVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close SV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:AIVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open AIV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:AIVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close AIV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:NIVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open NIV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC01:NIVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close NIV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:PPOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON PP")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:PPOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF PP")
+    field(ZNAM, "On")
+    field(ONAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:TPOnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON TP")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:TPOffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF TP")
+    field(ZNAM, "On")
+    field(ONAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:PVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open PV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:PVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close PV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:SVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open SV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:SVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close SV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:AIVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open AIV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:AIVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close AIV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:NIVOpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open NIV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC02:NIVCloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close NIV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:GV:OpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON PP")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:GV:CloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF PP")
+    field(ZNAM, "On")
+    field(ONAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "SRC:SVL:D2OpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON TP")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "SRC:SVL:D2CloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF TP")
+    field(ZNAM, "On")
+    field(ONAM, "Off")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "SRC:SVL:H2OpenCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Open PV")
+    field(ONAM, "Open")
+    field(ZNAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "SRC:SVL:H2CloseCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Close PV")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:FC:InCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde In FC")
+    field(ZNAM, "In")
+    field(ONAM, "Out")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:FC:OutCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Out FC")
+    field(ZNAM, "In")
+    field(ONAM, "Out")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:VAC:SVForcing")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Force SV")
+    field(ZNAM, "Normal")
+    field(ONAM, "Force")
+    field(PINI, "YES")
+    field(HIGH, "3600")
+}
+
+record(bo, "LEBT:CHOP:InCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde In Choper")
+    field(ONAM, "In")
+    field(ZNAM, "Out")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}
+
+record(bo, "LEBT:CHOP:OutCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde Out choper")
+    field(ONAM, "In")
+    field(ZNAM, "Out")
+    field(PINI, "YES")
+    field(HIGH, "5")
+}

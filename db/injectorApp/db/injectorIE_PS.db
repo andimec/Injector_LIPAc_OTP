@@ -1,0 +1,130 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorIE_PS.db
+
+record(ao, "SRC:IE_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "20")
+    field(DRVL, "0")
+    field(HOPR, "20")
+    field(LOPR, "0")
+    field(EGU, "mA")
+}
+
+record(ai, "SRC:IE_PS:Status")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "lect status")
+    field(SCAN, "2 second")
+}
+
+record(bo, "SRC:IE_PS:OnCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde ON IE_PS")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(bo, "SRC:IE_PS:OffCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde OFF IE_PS")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(bo, "SRC:IE_PS:RstCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde reset IE_PS")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(ao, "SRC:IE_PS:VSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "50")
+    field(DRVL, "0")
+    field(HOPR, "50")
+    field(LOPR, "0")
+    field(PREC, "2")
+    field(EGU, "kV")
+}
+
+record(ai, "SRC:IE_PS:IRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(ai, "SRC:IE_PS:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(calcout, "SRC:IE_PS:Vcalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}
+
+record(ao, "SRC:IE_PS:VOut")
+{
+    field(DTYP, "Soft Channel")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+    field(OMSL, "closed_loop")
+}
+
+record(calc, "SRC:IE_PS:VRdbkcalc")
+{
+    field(PREC, "2")
+    field(CALC, "(A*B)/C")
+    field(EGU, "kV")
+}
+
+record(calcout, "SRC:IE_PS:Icalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}
+
+record(ao, "SRC:IE_PS:IOut")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "0")
+}
+
+record(calc, "SRC:IE_PS:IRdbkcalc")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+    field(EGU, "mA")
+}
+
+record(ai, "SRC:IE_PS:ISetRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+}
+
+record(calc, "SRC:IE_PS:RdbkCalcI")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+    field(EGU, "mA")
+}

@@ -1,0 +1,92 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: emitApp/db/emitIcv150.db
+
+record(ai, "LEBT:EMIT_PS1:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "EMUPS1")
+    field(SCAN, ".1 second")
+    field(PREC, "0")
+    field(EGUF, "10000")
+    field(EGUL, "-10000")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(LINR, "LINEAR")
+    field(SMOO, "0")
+}
+
+record(ai, "LEBT:EMIT_PS2:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "EMUPS2")
+    field(SCAN, ".1 second")
+    field(PREC, "0")
+    field(EGUF, "10000")
+    field(EGUL, "-10000")
+    field(EGU, "V")
+    field(HOPR, "10000")
+    field(LOPR, "-10000")
+    field(LINR, "LINEAR")
+    field(SMOO, "0")
+}
+
+record(ai, "LEBT:EMIT_PSR:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "EMUPSR")
+    field(SCAN, ".1 second")
+    field(PREC, "0")
+    field(EGUF, "200")
+    field(EGUL, "-200")
+    field(EGU, "V")
+    field(HOPR, "200")
+    field(LOPR, "0")
+    field(LINR, "LINEAR")
+    field(SMOO, "0")
+}
+
+record(ai, "LEBT:FGA_PS2:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGAPS2")
+    field(SCAN, ".1 second")
+    field(PREC, "0")
+    field(EGUF, "1000")
+    field(EGUL, "-1000")
+    field(EGU, "V")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(LINR, "LINEAR")
+    field(SMOO, "0")
+}
+
+record(ai, "LEBT:FGA_PS3:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGAPS3")
+    field(SCAN, ".1 second")
+    field(PREC, "0")
+    field(EGUF, "1000")
+    field(EGUL, "-1000")
+    field(EGU, "V")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(LINR, "LINEAR")
+    field(SMOO, "0")
+}
+
+record(ai, "LEBT:FGA_PS4:VRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGAPS4")
+    field(SCAN, ".1 second")
+    field(PREC, "0")
+    field(EGUF, "200")
+    field(EGUL, "-200")
+    field(EGU, "V")
+    field(HOPR, "200")
+    field(LOPR, "0")
+    field(LINR, "LINEAR")
+    field(SMOO, "0")
+}

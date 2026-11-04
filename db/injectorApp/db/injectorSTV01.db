@@ -1,0 +1,66 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorSTV01.db
+
+record(ai, "LEBT:STV01_PS:Status")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "lect status")
+    field(SCAN, "2 second")
+}
+
+record(calcout, "LEBT:STV01_PS:OnStat")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "1 si alim en marche")
+    field(SCAN, "2 second")
+    field(CALC, "(A & B)>>2")
+}
+
+record(calcout, "LEBT:STV01_PS:RdyStat")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "1 si alim ready")
+    field(SCAN, "2 second")
+    field(CALC, "(A & B)>>3")
+}
+
+record(ao, "LEBT:STV01_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(EGU, "A")
+    field(DRVH, "150")
+    field(DRVL, "-150")
+    field(HOPR, "150")
+    field(LOPR, "-150")
+}
+
+record(ai, "LEBT:STV01_PS:IRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Lecture mot")
+    field(SCAN, "2 second")
+    field(EGU, "A")
+}
+
+record(calcout, "LEBT:STV01_PS:Icalcout")
+{
+    field(DTYP, "Soft Channel")
+    field(CALC, "(B*A)/C")
+}
+
+record(ao, "LEBT:STV01_PS:IOut")
+{
+    field(DTYP, "Soft Channel")
+    field(OMSL, "closed_loop")
+    field(DRVH, "32000")
+    field(DRVL, "-32000")
+    field(EGU, "A")
+}
+
+record(calc, "LEBT:STV01_PS:IRdbkcalc")
+{
+    field(CALC, "(A*B)/C")
+    field(PREC, "2")
+}

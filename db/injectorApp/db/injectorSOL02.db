@@ -1,0 +1,103 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorSOL02.db
+
+record(ai, "LEBT:SOL02_PS:Status")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "lect status")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao, "LEBT:SOL02_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "600")
+    field(DRVL, "0")
+    field(HOPR, "600")
+    field(LOPR, "0")
+    field(PREC, "1")
+}
+
+record(ao, "LEBT:SOL02_PS:Rampe")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "ecriture Cde analog")
+    field(OMSL, "supervisory")
+    field(DRVH, "50")
+    field(DRVL, "0")
+    field(HOPR, "50")
+    field(LOPR, "0")
+}
+
+record(bo, "LEBT:SOL02_PS:IntCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(VAL, "1")
+}
+
+record(bo, "LEBT:SOL02_PS:RampeCmd")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde rampe SOL02")
+    field(ONAM, "ON")
+    field(ZNAM, "OFF")
+    field(HIGH, "1")
+}
+
+record(bo, "LEBT:SOL02_PS:PretRampe")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Cde demande rampe S1")
+}
+
+record(ai, "LEBT:SOL02_PS:IRdbk")
+{
+    field(DTYP, "Injector Soft Channel")
+    field(DESC, "Lecture Icons SOL02 PS")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
+}
+
+record(calc, "LEBT:SOL02_PS:OnStat")
+{
+    field(CALC, "A&B")
+    field(SCAN, "2 second")
+}
+
+record(calc, "LEBT:SOL02_PS:OffStat")
+{
+    field(CALC, "(A&B)>>1")
+    field(SCAN, "1 second")
+}
+
+record(calc, "LEBT:SOL02_PS:RdyStat")
+{
+    field(CALC, "(A&B)>>2")
+    field(SCAN, ".1 second")
+}
+
+record(bo, "LEBT:SOL02_PS:ON")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Command ON SOL02")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:SOL02_PS:OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Command OFF SOL02")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:SOL02_PS:RESET")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Command reset SOL02")
+    field(OMSL, "supervisory")
+    field(HIGH, "2")
+}

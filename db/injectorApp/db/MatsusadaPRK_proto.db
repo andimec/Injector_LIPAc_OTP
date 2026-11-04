@@ -1,0 +1,3 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/MatsusadaPRK_proto.db
+# StreamDevice protocol: no EPICS records; protocol commands intentionally omitted.

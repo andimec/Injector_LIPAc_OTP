@@ -1,0 +1,46 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorSTV02.db
+
+record(stringin, "LEBT:STV02_PS:idn")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "get IDN")
+}
+
+record(ao, "LEBT:STV02_PS:ISet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Set Current")
+    field(EGU, "A")
+    field(LOPR, "-20")
+    field(HOPR, "20")
+}
+
+record(ai, "LEBT:STV02_PS:IRdbkcalc")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "Measured Current")
+    field(EGU, "A")
+    field(SCAN, "2 second")
+}
+
+record(bi, "LEBT:STV02_PS:OnStat")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS On/Off status")
+    field(SCAN, "2 second")
+}
+
+record(bo, "LEBT:STV02_PS:ON")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS On command")
+    field(HIGH, "1")
+}
+
+record(bo, "LEBT:STV02_PS:OFF")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "PS Off command")
+    field(HIGH, "1")
+}

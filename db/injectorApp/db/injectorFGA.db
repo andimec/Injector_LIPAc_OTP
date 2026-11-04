@@ -1,0 +1,101 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: injectorApp/db/injectorFGA.db
+
+record(ao, "LEBT:FGA_PS3:Vdeb")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGA ramp G3 Set Vdeb")
+    field(OMSL, "supervisory")
+    field(DRVH, "200")
+    field(DRVL, "-200")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(PREC, "2")
+    field(EGU, "V")
+}
+
+record(ao, "LEBT:FGA_PS3:Vfin")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGA ramp G3 Set Vfin")
+    field(OMSL, "supervisory")
+    field(DRVH, "200")
+    field(DRVL, "-200")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(SCAN, "Passive")
+    field(PREC, "2")
+    field(EGU, "V")
+}
+
+record(ao, "LEBT:FGA_PS3:Vgrid")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGA ramp G3 Set V")
+    field(OMSL, "supervisory")
+    field(DRVH, "200")
+    field(DRVL, "-200")
+    field(HOPR, "500")
+    field(LOPR, "-500")
+    field(SCAN, "Passive")
+    field(PREC, "2")
+    field(EGU, "V")
+}
+
+record(ao, "LEBT:FGA_PS3:Npas")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGA ramp G3 Set Npas")
+    field(OMSL, "supervisory")
+    field(DRVH, "100")
+    field(DRVL, "0")
+    field(HOPR, "100")
+    field(LOPR, "0")
+    field(SCAN, "Passive")
+}
+
+record(ao, "LEBT:FGA_PS3:DV")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "FGA Grid 03 Set V")
+    field(OMSL, "supervisory")
+    field(DRVH, "200")
+    field(DRVL, "-200")
+    field(HOPR, "200")
+    field(LOPR, "-200")
+    field(SCAN, "Passive")
+}
+
+record(calc, "LEBT:FGA:CalculDV")
+{
+    field(DESC, "calc DV")
+    field(CALC, "(B-A)/C")
+}
+
+record(bo, "LEBT:FGA:StopMes")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "start Measure")
+    field(HIGH, "2")
+}
+
+record(bo, "LEBT:FGA:StartMes")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "start Measure")
+    field(HIGH, "2")
+}
+
+record(stringin, "LEBT:FGA:Dialog")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "dialogue")
+    field(VAL, "*****")
+}
+
+record(bo, "LEBT:FGA:StartEnreg")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "start Measure")
+    field(HIGH, "2")
+}

@@ -1,0 +1,288 @@
+# Generated standalone simulation database. See ../../audit and tools/build_injector_db.py.
+# Source: opi/Injector_missing.db
+
+record(ao, "LEBT:CHOP_IM:AcctThr")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(LOPR, "-1.7976931348623157E308")
+    field(HOPR, "1.7976931348623157E308")
+    field(PREC, "0")
+}
+
+record(ai, "LEBT:CHOP_IM:AcctThrRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(ai, "LEBT:CHOP_IM:CurrentAcct")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(ai, "LEBT:CHOP_IM:CurrentVmon")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(bi, "LEBT:CHOP_IM:DbgChop")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(bi, "LEBT:CHOP_IM:DbgFaraday")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(bi, "LEBT:CHOP_IM:Fbi")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "LEBT:CHOP_IM:FbiAcct")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(ai, "LEBT:CHOP_IM:FbiCGate")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "LEBT:CHOP_IM:FbiDPeriod")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "LEBT:CHOP_IM:FbiDPulse")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "LEBT:CHOP_IM:FbiFaraday")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(longin, "LEBT:CHOP_IM:FbiStmState")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "LEBT:CHOP_IM:FbiVmon")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(bo, "LEBT:CHOP_IM:StmState")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(longout, "LEBT:CHOP_IM:StmStateSet")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ao, "LEBT:CHOP_IM:VmonOff")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(LOPR, "-1.7976931348623157E308")
+    field(HOPR, "1.7976931348623157E308")
+    field(PREC, "0")
+}
+
+record(ai, "LEBT:CHOP_IM:VmonOffRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(ao, "LEBT:CHOP_IM:VmonThr")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(LOPR, "-1.7976931348623157E308")
+    field(HOPR, "1.7976931348623157E308")
+    field(PREC, "0")
+}
+
+record(ai, "LEBT:CHOP_IM:VmonThrRdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(stringin, "LEBT:EMIT:upperText")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(bo, "LPBD:HVPS:ChangeVoltage")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(bi, "LPBD:HVPS:CtrlHeartBeat")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "LPBD:HVPS:Current")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(bo, "LPBD:HVPS:OutputOnOff")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ao, "LPBD:HVPS:SetVoltage")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(LOPR, "-Infinity")
+    field(HOPR, "Infinity")
+    field(PREC, "0")
+}
+
+record(ai, "LPBD:HVPS:Voltage")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "0")
+}
+
+record(mbbiDirect, "MPS:CCU11_01:InMaskCfg1Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU11_01:InMaskCfg2Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU11_01:InMaskCfg3Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU11_01:InMaskCfg4Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU11_01:InMaskCfg5Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU12_01:Sig1Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU12_01:Sig3Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU12_02:Sig1Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU19_01:Sig1Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU19_01:Sig2Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU19_01:Sig3Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU19_01:Sig4Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU20_01:Sig2Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(mbbiDirect, "MPS:CCU20_01:Sig3Rdbk")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "RFQ:VAC_M1MA:HVacP")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+    field(PREC, "2")
+}
+
+record(ai, "RFQ:VAC_VG10:Alrm")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
+
+record(ai, "RFQ:VAC_VG20:Alrm")
+{
+    field(DTYP, "Soft Channel")
+    field(DESC, "OPI inferred; see audit")
+}
