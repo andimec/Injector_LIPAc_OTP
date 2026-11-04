@@ -136,3 +136,45 @@ def test_fault_during_active_emu_scan_aborts_and_removes_plate_setpoints():
     assert emu(engine).stage == EmuStage.ABORTED
     assert pv.get("LEBT:EMIT_PS1:VSet") == 0
     assert pv.get("LEBT:EMIT_PS2:VSet") == 0
+
+
+
+@pytest.mark.parametrize("direction,limit,expected", [
+    ("UPPER", 2.0, [1.0, 2.0]),
+    ("LOWER", 179.0, [179.0]),
+])
+def test_legacy_beam_edge_detection_modes(direction, limit, expected):
+    engine, pv, _ = ready_engine()
+    pv.put("LEBT:EMIT:Debscanl", 100.0)
+    pv.put("LEBT:EMIT:Finscanl", -100.0)
+    pv.put("LEBT:EMIT:Passcanl", 100.0)
+    pv.put("LEBT:EMIT:Pasmotdet", 1.0)
+    pv.put("LEBT:EMIT:Limdet", limit)
+    pv.put(f"LEBT:EMIT:Act{direction.lower()}", 1)
+    assert tick_until(engine, lambda: emu(engine).stage in {
+        EmuStage.COMPLETE, EmuStage.ABORTED
+    }, maximum=1500)
+    assert emu(engine).stage == EmuStage.COMPLETE, emu(engine).message
+    positions = sorted(set(round(x.motor_mm, 6) for x in emu(engine).samples))
+    assert positions == expected
+    assert len(emu(engine).samples) == len(expected) * 3
+
+
+def test_emu_abort_holds_motor_position_after_motion_started():
+    engine, pv, _ = ready_engine()
+    pv.put("LEBT:EMIT:Debscanl", 100.0)
+    pv.put("LEBT:EMIT:Finscanl", -100.0)
+    pv.put("LEBT:EMIT:Passcanl", 100.0)
+    pv.put("LEBT:EMIT:Pasmotdet", 1.0)
+    pv.put("LEBT:EMIT:Limdet", 150.0)
+    pv.put("LEBT:EMIT:Actlower", 1)
+    assert tick_until(engine, lambda: (
+        emu(engine).stage == EmuStage.WAIT_MOTOR and
+        pv.get("LEBT:EMIT:MOTOR.RBV") > 3.0
+    ), maximum=180)
+    pv.put("LEBT:EMIT:Actlower", 0)
+    engine.step()
+    assert emu(engine).stage == EmuStage.ABORTED
+    assert pv.get("LEBT:EMIT:MOTOR.VAL") == pytest.approx(
+        pv.get("LEBT:EMIT:MOTOR.RBV")
+    )
