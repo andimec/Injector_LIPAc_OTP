@@ -92,14 +92,17 @@ runtime.
 This repository is a training/simulation platform. It must never write to
 production LIPAc control PVs.
 
-All EPICS-facing simulation names use the OTP: namespace:
+The isolated virtual machine exposes the **original LIPAc PV names unchanged**.
+For example, `LEBT:HV_PS:OnStat` remains `LEBT:HV_PS:OnStat` in
+Python, the simulation Soft IOC and Phoebus. No `OTP:` renaming is applied.
 
-    LEBT:HV_PS:OnStat
-    ->
-    OTP:LEBT:HV_PS:OnStat
+**Deployment boundary:** the VM must have no connection or route to the LIPAc
+production control network. CA/PVA interfaces must bind only to the isolated
+VM or training-only network. Network isolation does not replace the Python
+command allowlist, which prevents operator writes to readback and safety
+signals. Never attach this unqualified naming scheme to the production LAN.
 
-Any future Soft IOC adapter must fail closed if configured with a production
-endpoint or production PV name.
+See [write/readback traceability](docs/pv_readback_traceability.md).
 
 ## Interlock logic
 
