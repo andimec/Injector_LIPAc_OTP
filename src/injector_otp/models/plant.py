@@ -26,8 +26,16 @@ class ValveDevice(SubsystemModel):
         self.valve = ValveState(initially_open)
         self._previous = {}
 
+    def _pv(self, suffix: str) -> str | None:
+        # Prefixes such as LEBT:VAC01:SV use a suffix without a separator,
+        # while LEBT:GV uses the normal colon-separated form.
+        joined = f"{self.prefix}{suffix}"
+        if self.catalog.has(joined):
+            return joined
+        return self.catalog.pv(self.prefix, suffix)
+
     def _edge(self, context, suffix: str) -> bool:
-        pv = self.catalog.pv(self.prefix, suffix)
+        pv = self._pv(suffix)
         if not pv:
             return False
         active = bool(context.pv.get(pv, 0))
@@ -43,7 +51,7 @@ class ValveDevice(SubsystemModel):
             self.valve.opened = False
         for name, value in (("OpenStat", self.valve.opened),
                             ("CloseStat", not self.valve.opened)):
-            pv = self.catalog.pv(self.prefix, name)
+            pv = self._pv(name)
             if pv:
                 context.emit(pv, int(value), f"valve:{self.prefix}")
         context.metrics[f"{self.prefix}.open"] = float(self.valve.opened)
