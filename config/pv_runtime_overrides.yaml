@@ -4,6 +4,40 @@
 # are NOT writable from Phoebus.
 
 inputs:
+  - LEBT:EMIT:Actemit
+  - LEBT:EMIT:Actscan
+  - LEBT:EMIT:Actupper
+  - LEBT:EMIT:Actlower
+  - LEBT:EMIT:Actenable
+  - LEBT:EMIT:Actdisable
+  - LEBT:EMIT:Validate
+  - LEBT:EMIT:Pausemit
+  - LEBT:EMIT:Debscanl
+  - LEBT:EMIT:Finscanl
+  - LEBT:EMIT:Passcanl
+  - LEBT:EMIT:Pasald
+  - LEBT:EMIT:Pasmotdet
+  - LEBT:EMIT:Limdet
+  - LEBT:EMIT:AnglePicInit
+  - LEBT:EMIT:AnglePicEnd
+  - LEBT:EMIT:AngleDelta
+  - LEBT:EMIT:Borderup
+  - LEBT:EMIT:Borderlow
+  - LEBT:EMIT:Energy
+  - LEBT:EMIT:Nptemit
+  - LEBT:EMIT:Savemit
+  - LEBT:EMIT:Savescan
+  - LEBT:EMIT:Savewf
+  - LEBT:EMIT:MOTOR.VAL
+  - LEBT:EMIT:MOTOR.CNEN
+  - LEBT:EMIT:MOTOR.SPMG
+  - LEBT:EMIT:MOTOR.HOMR
+  - LEBT:EMIT_SERV:EnaDisa
+  - LEBT:EMIT_SERV:Refresh
+  - LEBT:EMIT_PS1:Softbo
+  - LEBT:EMIT_PS2:Softbo
+  - LEBT:EMIT_PS1:VSet
+  - LEBT:EMIT_PS2:VSet
   - LEBT:AUTO:UptoHT
   - LEBT:AUTO:StopHT
   - LEBT:BS:Comp
@@ -129,6 +163,8 @@ inputs:
   - SRC:TIM:Trep
 
 external_conditions:
+  - LEBT:EMIT:ExtSec
+  - LEBT:EMIT:FSDefStat
   - PPS:HV:PermStat
   - PPS:BEAM:InhibitStat
   - PPS:PLSM:PermStat
