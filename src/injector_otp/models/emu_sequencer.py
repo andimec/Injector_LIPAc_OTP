@@ -261,6 +261,10 @@ class EmuScanSequencer(SubsystemModel):
         # STOP paths, which sometimes left plate voltages energized.
         for key in ("PS1", "PS2"):
             self._input(context, f"LEBT:EMIT_{key}:VSet", 0.0)
+        # Hold position at the latest measured readback instead of leaving
+        # an in-flight motor command running after a training abort.
+        self._input(context, "LEBT:EMIT:MOTOR.VAL",
+                    self._read(context, "LEBT:EMIT:MOTOR.RBV"))
 
     def _complete(self, context) -> None:
         self._transition(EmuStage.COMPLETE)
