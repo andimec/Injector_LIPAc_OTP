@@ -46,12 +46,16 @@ class InjectorModel(SubsystemModel):
         # The sequence follows causal dependencies, not EPICS scan periods.
         self._add(CoolingSkidModel(catalog), "interface_with_fault_response")
 
-        for prefix in ("SRC:SVL_D", "SRC:SVL_H", "LEBT:GV"):
-            if catalog.contains_prefix(prefix):
-                self._add(ValveDevice(prefix, catalog))
+        for prefix, permit in (
+            ("SRC:SVL:D2", "PPS:SVL:D2PermStat"),
+            ("SRC:SVL:H2", "PPS:SVL:H2PermStat"),
+            ("LEBT:GV", "PPS:GV:OpenPermStat"),
+        ):
+            if catalog.has(prefix + "OpenCmd") or catalog.pv(prefix, "OpenCmd"):
+                self._add(ValveDevice(prefix, catalog, permit_pv=permit))
 
-        for prefix, valve in (("SRC:MFCD", "SRC:SVL_D"),
-                              ("SRC:MFCH", "SRC:SVL_H")):
+        for prefix, valve in (("SRC:MFCD", "SRC:SVL:D2"),
+                              ("SRC:MFCH", "SRC:SVL:H2")):
             if catalog.contains_prefix(prefix):
                 self._add(GasFlowController(prefix, valve, catalog, self.parameters))
 
