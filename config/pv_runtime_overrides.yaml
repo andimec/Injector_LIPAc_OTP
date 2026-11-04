@@ -4,6 +4,8 @@
 # are NOT writable from Phoebus.
 
 inputs:
+  - LEBT:AUTO:UptoHT
+  - LEBT:AUTO:StopHT
   - LEBT:CHOP:InCmd
   - LEBT:CHOP:OutCmd
   - LEBT:CHOP_IM:AcctThr
