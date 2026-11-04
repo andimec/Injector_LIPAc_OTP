@@ -46,3 +46,11 @@ beam:
   reference_rf_W: 880.0
   reference_d2_sccm: 2.3
   reference_hv_kV: 100.0
+
+# BA_D_2E9QH7 v2.0 gives 1 kV HV/IE increments at 1 s intervals.
+# Repeller 0.1 kV increments are stated without a dwell time.
+# 1 s repeller dwell and 20 s settling timeout are TRAINING ASSUMPTIONS.
+auto_hv:
+  hv_ie_step_interval_s: 1.0
+  repeller_step_interval_s: 1.0
+  feedback_timeout_s: 20.0
