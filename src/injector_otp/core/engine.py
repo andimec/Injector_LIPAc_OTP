@@ -27,6 +27,25 @@ class SimulationContext:
     faults: set[str] = field(default_factory=set)
     interlocks: dict[str, bool] = field(default_factory=dict)
     device_faults: dict[str, bool] = field(default_factory=dict)
+    outputs: dict[str, tuple[object, str]] = field(default_factory=dict)
+    metrics: dict[str, float] = field(default_factory=dict)
+    command_requests: dict[str, tuple[object, str]] = field(default_factory=dict)
+
+    def emit(self, name: str, value: object, source: str) -> None:
+        """Stage a Python-generated PV; visible to downstream models in-cycle."""
+        self.pv[name] = value
+        self.outputs[name] = (value, source)
+
+    def request_command(self, name: str, value: object, source: str) -> None:
+        """Request an existing, allowlisted command via Python control logic.
+
+        Internal automations must never publish operator-owned commands as
+        model readbacks or bypass the PV ownership contract.
+        """
+        if name in self.outputs:
+            raise ValueError(f"Both model output and command requested: {name}")
+        self.pv[name] = value
+        self.command_requests[name] = (value, source)
 
 
 class SimulationEngine:
@@ -62,6 +81,10 @@ class SimulationEngine:
         if step_dt <= 0:
             raise ValueError("dt must be positive")
 
+        self.context.outputs.clear()
+        self.context.metrics.clear()
+        self.context.command_requests.clear()
+
         # 1. Read the current command/setpoint/input state.
         self._sync_context_from_pv()
 
@@ -90,11 +113,17 @@ class SimulationEngine:
         # 7. Advance deterministic simulation time.
         self.context.time += step_dt
 
-        # 8. Publish simulator-owned status values.
+        # 8. Execute internally requested commands only through the
+        #    explicit operator-input allowlist.
+        self._publish_model_requests()
+        # 9. Publish model outputs through the Python-owned PV state.
+        self._publish_model_outputs()
+
+        # 10. Publish simulator-owned status values.
         self._publish_state()
         self._publish_time()
 
-        # 9. Refresh the context snapshot after all publications.
+        # 11. Refresh the context snapshot after all publications.
         self._sync_context_from_pv()
         return self.context
 
@@ -112,6 +141,26 @@ class SimulationEngine:
             self.context.faults = set(self.fault_manager.active)
         else:
             self.context.faults = set()
+
+    def _publish_model_requests(self) -> None:
+        if self.pv_state is None:
+            return
+        for name, (value, source) in self.context.command_requests.items():
+            if not self.pv_state.is_operator_writable(name):
+                raise PermissionError(
+                    f"Python automation requested non-command or unapproved PV: {name}"
+                )
+            self.pv_state.put(name, value, source=source)
+
+    def _publish_model_outputs(self) -> None:
+        if self.pv_state is None:
+            return
+        for name, (value, source) in self.context.outputs.items():
+            if self.pv_state.is_operator_writable(name):
+                raise PermissionError(
+                    f"Model attempted to overwrite an operator-owned PV: {name}"
+                )
+            self.pv_state.publish(name, value, source=source)
 
     def _publish_state(self) -> None:
         if self.pv_state is not None and "OTP:STATE" in self.pv_state.names():

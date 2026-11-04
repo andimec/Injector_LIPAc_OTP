@@ -1,21 +1,186 @@
-# Runtime semantic overrides for the Digital Twin PV contract.
-#
-# The source PV workbook describes EPICS access characteristics but does not
-# uniquely determine Digital Twin ownership. Only PVs whose semantic role has
-# been verified for the pilot are overridden here. Unlisted PVs remain
-# unresolved until their behaviour is documented.
+# Verified operator-facing pilot inputs from explicit DB records.
+# This versioned allowlist is intentionally not inferred from read_access/write_access.
+# The additional external conditions come from simulated PPS/PLC environment and
+# are NOT writable from Phoebus.
 
 inputs:
+  - LEBT:EMIT:Actemit
+  - LEBT:EMIT:Actscan
+  - LEBT:EMIT:Actupper
+  - LEBT:EMIT:Actlower
+  - LEBT:EMIT:Actenable
+  - LEBT:EMIT:Actdisable
+  - LEBT:EMIT:Validate
+  - LEBT:EMIT:Pausemit
+  - LEBT:EMIT:Debscanl
+  - LEBT:EMIT:Finscanl
+  - LEBT:EMIT:Passcanl
+  - LEBT:EMIT:Pasald
+  - LEBT:EMIT:Pasmotdet
+  - LEBT:EMIT:Limdet
+  - LEBT:EMIT:AnglePicInit
+  - LEBT:EMIT:AnglePicEnd
+  - LEBT:EMIT:AngleDelta
+  - LEBT:EMIT:Borderup
+  - LEBT:EMIT:Borderlow
+  - LEBT:EMIT:Energy
+  - LEBT:EMIT:Nptemit
+  - LEBT:EMIT:Savemit
+  - LEBT:EMIT:Savescan
+  - LEBT:EMIT:Savewf
+  - LEBT:EMIT:MOTOR.VAL
+  - LEBT:EMIT:MOTOR.CNEN
+  - LEBT:EMIT:MOTOR.SPMG
+  - LEBT:EMIT:MOTOR.HOMR
+  - LEBT:EMIT_SERV:EnaDisa
+  - LEBT:EMIT_SERV:Refresh
+  - LEBT:EMIT_PS1:Softbo
+  - LEBT:EMIT_PS2:Softbo
+  - LEBT:EMIT_PS1:VSet
+  - LEBT:EMIT_PS2:VSet
+  - LEBT:AUTO:UptoHT
+  - LEBT:AUTO:StopHT
+  - LEBT:BS:Comp
+  - LEBT:FC:Comp
+  - LEBT:IC:Comp
+  - LEBT:CHOP:InCmd
+  - LEBT:CHOP:OutCmd
+  - LEBT:CHOP_IM:AcctThr
+  - LEBT:CHOP_IM:StmStateSet
+  - LEBT:CHOP_IM:VmonThr
+  - LEBT:FC:InCmd
+  - LEBT:FC:OutCmd
+  - LEBT:GV:CloseCmd
+  - LEBT:GV:OpenCmd
+  - LEBT:HV_PS:AuxOffCmd
+  - LEBT:HV_PS:AuxOnCmd
+  - LEBT:HV_PS:HTCmd
+  - LEBT:HV_PS:HTOffCmd
   - LEBT:HV_PS:HTOnCmd
   - LEBT:HV_PS:ICmd
-  - SRC:COIL01_PS:ON
+  - LEBT:HV_PS:Reset
+  - LEBT:MFC:Debit
+  - LEBT:MFC:OpenCmd
+  - LEBT:RC_PS:ISet
+  - LEBT:RC_PS:OFF
+  - LEBT:RC_PS:ON
+  - LEBT:RC_PS:VSet
+  - LEBT:R_PS:ISet
+  - LEBT:R_PS:OFF
+  - LEBT:R_PS:ON
+  - LEBT:R_PS:RESET
+  - LEBT:R_PS:VSet
+  - LEBT:SOL01_PS:ISet
+  - LEBT:SOL01_PS:OFF
+  - LEBT:SOL01_PS:ON
+  - LEBT:SOL01_PS:RESET
+  - LEBT:SOL01_PS:Rampe
+  - LEBT:SOL02_PS:ISet
+  - LEBT:SOL02_PS:OFF
+  - LEBT:SOL02_PS:ON
+  - LEBT:SOL02_PS:RESET
+  - LEBT:SOL02_PS:Rampe
+  - LEBT:STH01_PS:ISet
+  - LEBT:STH01_PS:OFF
+  - LEBT:STH01_PS:ON
+  - LEBT:STH01_PS:VSet
+  - LEBT:STH02_PS:ISet
+  - LEBT:STH02_PS:OFF
+  - LEBT:STH02_PS:ON
+  - LEBT:STH02_PS:VSet
+  - LEBT:STV01_PS:ISet
+  - LEBT:STV02_PS:ISet
+  - LEBT:STV02_PS:OFF
+  - LEBT:STV02_PS:ON
+  - LEBT:VAC01:AIVCloseCmd
+  - LEBT:VAC01:AIVOpenCmd
+  - LEBT:VAC01:NIVCloseCmd
+  - LEBT:VAC01:NIVOpenCmd
+  - LEBT:VAC01:PPOffCmd
+  - LEBT:VAC01:PPOnCmd
+  - LEBT:VAC01:PVCloseCmd
+  - LEBT:VAC01:PVOpenCmd
+  - LEBT:VAC01:SVCloseCmd
+  - LEBT:VAC01:SVOpenCmd
+  - LEBT:VAC01:TPOffCmd
+  - LEBT:VAC01:TPOnCmd
+  - LEBT:VAC02:AIVCloseCmd
+  - LEBT:VAC02:AIVOpenCmd
+  - LEBT:VAC02:NIVCloseCmd
+  - LEBT:VAC02:NIVOpenCmd
+  - LEBT:VAC02:PPOffCmd
+  - LEBT:VAC02:PPOnCmd
+  - LEBT:VAC02:PVCloseCmd
+  - LEBT:VAC02:PVOpenCmd
+  - LEBT:VAC02:SVCloseCmd
+  - LEBT:VAC02:SVOpenCmd
+  - LEBT:VAC02:TPOffCmd
+  - LEBT:VAC02:TPOnCmd
   - SRC:COIL01_PS:ISet
+  - SRC:COIL01_PS:OFF
+  - SRC:COIL01_PS:ON
+  - SRC:COIL01_PS:RESET
+  - SRC:COIL01_PS:Rampe
+  - SRC:COIL02_PS:ISet
+  - SRC:COIL02_PS:OFF
+  - SRC:COIL02_PS:ON
+  - SRC:COIL02_PS:RESET
+  - SRC:COIL02_PS:Rampe
+  - SRC:IE_PS:ISet
+  - SRC:IE_PS:OffCmd
+  - SRC:IE_PS:OnCmd
+  - SRC:IE_PS:RstCmd
+  - SRC:IE_PS:VSet
+  - SRC:MFCD:Debit
+  - SRC:MFCD:OpenCmd
+  - SRC:MFCH:Debit
+  - SRC:MFCH:OpenCmd
+  - SRC:RF_ATU:ModeXY
+  - SRC:RF_ATU:WrtX
+  - SRC:RF_ATU:WrtY
+  - SRC:RF_GENE:FilOnCmd
+  - SRC:RF_GENE:CWmdOn
+  - SRC:RF_GENE:LimitPR
+  - SRC:RF_GENE:Modbus
+  - SRC:RF_GENE:EnvoiRAZ
+  - SRC:RF_GENE:MOCmdOn
+  - SRC:RF_GENE:PulseOrCW
+  - SRC:RF_GENE:RfOffset
+  - SRC:RF_GENE:RfPwr
+  - SRC:SVL:D2CloseCmd
+  - SRC:SVL:D2OpenCmd
+  - SRC:SVL:H2CloseCmd
+  - SRC:SVL:H2OpenCmd
+  - SRC:TIM:CWMode
+  - SRC:TIM:Mode
+  - SRC:TIM:Ret1
+  - SRC:TIM:Ret2
+  - SRC:TIM:Ret3
+  - SRC:TIM:RetChopper
+  - SRC:TIM:RetPulse
+  - SRC:TIM:TChopper
+  - SRC:TIM:TPulse
+  - SRC:TIM:Trep
+
+external_conditions:
+  - LEBT:EMIT:ExtSec
+  - LEBT:EMIT:FSDefStat
   - PPS:HV:PermStat
   - PPS:BEAM:InhibitStat
+  - PPS:PLSM:PermStat
+  - PPS:ACCL:PermStat
+  - PPS:CHOP:PermStat
+  - PPS:SVL:D2PermStat
+  - PPS:SVL:H2PermStat
+  - PPS:GV:OpenPermStat
 
 outputs:
   - LEBT:HV_PS:OnStat
-  - LEBT:HV_PS:LectVht
+  - LEBT:HV_PS:ScaleVHT
   - SRC:COIL01_PS:IRdbk
   - SRC:COIL01_PS:OnStat
-  - SRC:COIL01:FSDefStat
+  - SRC:COIL02_PS:IRdbk
+  - SRC:COIL02_PS:OnStat
+  - SRC:RF_GENE:MarcheRF
+  - LEBT:VAC01:VacSGVC
+  - LEBT:FC:I

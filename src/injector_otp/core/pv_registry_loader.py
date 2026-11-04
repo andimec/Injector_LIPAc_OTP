@@ -44,7 +44,9 @@ def load_registry(path: str | Path) -> PVRegistry:
 
     definitions: list[PVDefinition] = []
     for item in payload.get("pvs", []):
-        source_data = item.get("source_data", {})
+        source_data = item.get("source_data") or (
+            item.get("snapshot_v1_2") or {}
+        ).get("source_data", {})
         definitions.append(
             PVDefinition(
                 name=item["name"],
@@ -59,3 +61,8 @@ def load_registry(path: str | Path) -> PVRegistry:
 def load_v1_2_registry(repo_root: str | Path = ".") -> PVRegistry:
     """Load the current Injector V1.2 registry from the repository config."""
     return load_registry(Path(repo_root) / "config" / "pv_registry_v1_2.json")
+
+
+def load_v2_0_registry(repo_root: str | Path = ".") -> PVRegistry:
+    """Load reconciled PV registry V2.0 from the repository config."""
+    return load_registry(Path(repo_root) / "config" / "pv_registry_v2_0.json")

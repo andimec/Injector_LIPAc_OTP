@@ -1,0 +1,3690 @@
+{
+  "source_repo": "andimec/topIFMIF_INJ",
+  "source_commit": "3586551ce2eaede262d5cf584ab88d2d940c3a83",
+  "files": {
+    "injectorApp/db/MatsusadaPRK_proto.db": {
+      "blob_sha": "d7546a5d8560584a48999de0c0aa369cc363f58e",
+      "records": []
+    },
+    "injectorApp/db/PBZ20_proto.db": {
+      "blob_sha": "50a60489988b2454e10a2f4fc645ffc2fa01f191",
+      "records": []
+    },
+    "plcInjectorApp/db/plcInjector_Input.db": {
+      "blob_sha": "57ecf261e87b8fc35380a15f12411d72bfbe0d25",
+      "records": [
+        {
+          "name": "LEBT:HV:RlyOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/2 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:HV:RlyCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/2 T=BYTE B=1"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:TR1:OilDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/2 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:TR1:OilAlarmStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/2 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Alarm"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:HV:CageKeyA1",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/2 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 47
+        },
+        {
+          "name": "LEBT:HV:PFDCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/2 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 58
+        },
+        {
+          "name": "SRC:CD:CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 70
+        },
+        {
+          "name": "LEBT:HV_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 84
+        },
+        {
+          "name": "LEBT:HV_PS:AuxStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 95
+        },
+        {
+          "name": "LEBT:HV_PS:RdyStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 106
+        },
+        {
+          "name": "LEBT:HV_PS:RmtStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 117
+        },
+        {
+          "name": "LEBT:R_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "In"
+          },
+          "line": 128
+        },
+        {
+          "name": "LEBT:R_PS:RdyStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 139
+        },
+        {
+          "name": "LEBT:R_PS:RemStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/3 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 150
+        },
+        {
+          "name": "LEBT:SOL01_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/4 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 161
+        },
+        {
+          "name": "LEBT:SOL01_PS:RemStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/4 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 184
+        },
+        {
+          "name": "LEBT:SOL02_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/4 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 195
+        },
+        {
+          "name": "LEBT:SOL02_PS:RemStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/4 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 218
+        },
+        {
+          "name": "LEBT:SOL01:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/5 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 229
+        },
+        {
+          "name": "LEBT:STV01:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/5 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 240
+        },
+        {
+          "name": "LEBT:SOL01:VCFlowStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/5 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 251
+        },
+        {
+          "name": "LEBT:EMIT:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/5 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 262
+        },
+        {
+          "name": "LEBT:STV02:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/5 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 275
+        },
+        {
+          "name": "LEBT:SOL02:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/5 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 286
+        },
+        {
+          "name": "LEBT:SOL02:VCFlowStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 297
+        },
+        {
+          "name": "LEBT:FC:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 308
+        },
+        {
+          "name": "LEBT:IC:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 319
+        },
+        {
+          "name": "LEBT:BS:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 330
+        },
+        {
+          "name": "LEBT:GE:TSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 341
+        },
+        {
+          "name": "LEBT:FC:InStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 352
+        },
+        {
+          "name": "LEBT:FC:OutStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "Out",
+            "ZNAM": "In"
+          },
+          "line": 363
+        },
+        {
+          "name": "LEBT:GV:OpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/6 T=BYTE B=7"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close"
+          },
+          "line": 374
+        },
+        {
+          "name": "LEBT:GV:CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/7 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 385
+        },
+        {
+          "name": "LEBT:VAC01:PPOnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/7 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 401
+        },
+        {
+          "name": "LEBT:VAC01:TPOnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/7 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 412
+        },
+        {
+          "name": "LEBT:VAC01:PVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/7 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 423
+        },
+        {
+          "name": "LEBT:VAC01:PVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/7 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 434
+        },
+        {
+          "name": "LEBT:VAC01:AIVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/7 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 445
+        },
+        {
+          "name": "LEBT:VAC01:AIVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 456
+        },
+        {
+          "name": "LEBT:VAC01:SVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 467
+        },
+        {
+          "name": "LEBT:VAC01:SVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 478
+        },
+        {
+          "name": "LEBT:VAC01:NIVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 489
+        },
+        {
+          "name": "LEBT:VAC01:NIVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 500
+        },
+        {
+          "name": "LEBT:VAC01:LTVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 511
+        },
+        {
+          "name": "LEBT:VAC01:LTVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 522
+        },
+        {
+          "name": "LEBT:VAC01:TPSpeedStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/8 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Not nominal speed",
+            "ONAM": "Nominal speed"
+          },
+          "line": 533
+        },
+        {
+          "name": "LEBT:VAC01:TPDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Failure",
+            "ONAM": "No failure"
+          },
+          "line": 544
+        },
+        {
+          "name": "LEBT:VAC01:PGVCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 555
+        },
+        {
+          "name": "LEBT:VAC01:SGVCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 566
+        },
+        {
+          "name": "LEBT:VAC01:PGTPDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 577
+        },
+        {
+          "name": "LEBT:VAC01:SGTPDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 588
+        },
+        {
+          "name": "LEBT:VAC02:PPOnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 602
+        },
+        {
+          "name": "LEBT:VAC02:TPOnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 613
+        },
+        {
+          "name": "LEBT:VAC02:PVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/9 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 624
+        },
+        {
+          "name": "LEBT:VAC02:PVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/10 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 635
+        },
+        {
+          "name": "LEBT:VAC02:AIVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/10 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 646
+        },
+        {
+          "name": "LEBT:VAC02:AIVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/10 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 657
+        },
+        {
+          "name": "LEBT:VAC02:SVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/10 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 668
+        },
+        {
+          "name": "LEBT:VAC02:SVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/10 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 679
+        },
+        {
+          "name": "LEBT:VAC02:LTVOpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/10 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 692
+        },
+        {
+          "name": "LEBT:VAC02:LTVCloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close"
+          },
+          "line": 703
+        },
+        {
+          "name": "LEBT:VAC02:TPSpeedStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Not nominal speed",
+            "ONAM": "Nominal speed"
+          },
+          "line": 714
+        },
+        {
+          "name": "LEBT:VAC02:TPDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Error",
+            "ONAM": "No error"
+          },
+          "line": 725
+        },
+        {
+          "name": "LEBT:VAC02:PGVCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 736
+        },
+        {
+          "name": "LEBT:VAC02:SGVCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 747
+        },
+        {
+          "name": "LEBT:VAC02:PGTPDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 758
+        },
+        {
+          "name": "LEBT:VAC02:SGTPDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/11 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Fault",
+            "ONAM": "Ok"
+          },
+          "line": 769
+        },
+        {
+          "name": "LEBT:SOL01:TSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/14 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 985
+        },
+        {
+          "name": "LEBT:SOL02:TSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/14 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 996
+        },
+        {
+          "name": "LEBT:SOL01_VC:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/14 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1007
+        },
+        {
+          "name": "LEBT:SOL02_VC:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/14 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1018
+        },
+        {
+          "name": "LEBT:EMIT:OutStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/14 T=BYTE B=5"
+          },
+          "metadata": {
+            "ONAM": "Out",
+            "ZNAM": "In"
+          },
+          "line": 1029
+        },
+        {
+          "name": "LEBT:STV02:TSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/14 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1040
+        },
+        {
+          "name": "LEBT:HV:RoomKeyA1",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/15 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "OK"
+          },
+          "line": 1053
+        },
+        {
+          "name": "LEBT:GE:FSFlowStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/15 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "OK"
+          },
+          "line": 1062
+        },
+        {
+          "name": "LEBT:CHOP:InStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/15 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 1076
+        },
+        {
+          "name": "LEBT:CHOP:OutStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/15 T=BYTE B=5"
+          },
+          "metadata": {
+            "ONAM": "Out",
+            "ZNAM": "In"
+          },
+          "line": 1087
+        },
+        {
+          "name": "LEBT:CHOP:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/15 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1098
+        },
+        {
+          "name": "LEBT:CHOP_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/15 T=BYTE B=7"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 1109
+        },
+        {
+          "name": "INJ:WS:P1OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 1123
+        },
+        {
+          "name": "INJ:WS:P2OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=1"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 1134
+        },
+        {
+          "name": "INJ:WS:P1SelStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=2"
+          },
+          "metadata": {
+            "ONAM": "Sel",
+            "ZNAM": "Off"
+          },
+          "line": 1145
+        },
+        {
+          "name": "INJ:WS:P2SelStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=3"
+          },
+          "metadata": {
+            "ONAM": "Sel",
+            "ZNAM": "Off"
+          },
+          "line": 1156
+        },
+        {
+          "name": "INJ:WS:FSPCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1167
+        },
+        {
+          "name": "INJ:WS:ResCylDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1178
+        },
+        {
+          "name": "INJ:WS:PaspDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1189
+        },
+        {
+          "name": "INJ:WS:ResPCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/16 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1200
+        },
+        {
+          "name": "INJ:WS:TePCDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1211
+        },
+        {
+          "name": "INJ:WS:NBVEDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1222
+        },
+        {
+          "name": "INJ:WS:NSVEDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1233
+        },
+        {
+          "name": "INJ:WS:FSSDDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1244
+        },
+        {
+          "name": "INJ:WS:P1DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1255
+        },
+        {
+          "name": "INJ:WS:P2DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1266
+        },
+        {
+          "name": "INJ:WS:FSCSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/17 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1277
+        },
+        {
+          "name": "SRC:LOCK:KEYB1",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Out",
+            "ONAM": "In"
+          },
+          "line": 1289
+        },
+        {
+          "name": "SRC:COIL01:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1303
+        },
+        {
+          "name": "SRC:COIL02:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1314
+        },
+        {
+          "name": "SRC:COIL01:TSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1325
+        },
+        {
+          "name": "SRC:COIL02:TSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1336
+        },
+        {
+          "name": "SRC:COIL01_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1347
+        },
+        {
+          "name": "SRC:COIL01_PS:RdyStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 1358
+        },
+        {
+          "name": "SRC:COIL01_PS:RemStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/18 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 1369
+        },
+        {
+          "name": "SRC:COIL02_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1380
+        },
+        {
+          "name": "SRC:COIL02_PS:RdyStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 1391
+        },
+        {
+          "name": "SRC:COIL02_PS:RemStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 1402
+        },
+        {
+          "name": "SRC:IE_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1413
+        },
+        {
+          "name": "SRC:IE_PS:RdyStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 1424
+        },
+        {
+          "name": "SRC:IE_PS:RemStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 1435
+        },
+        {
+          "name": "SRC:SVL:D2OpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1446
+        },
+        {
+          "name": "SRC:SVL:D2CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/19 T=BYTE B=7"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 1457
+        },
+        {
+          "name": "SRC:SVL:H2OpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/20 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1468
+        },
+        {
+          "name": "SRC:SVL:H2CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/20 T=BYTE B=1"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 1479
+        },
+        {
+          "name": "SRC:RF:FSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/20 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1490
+        },
+        {
+          "name": "SRC:RF_GEN:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/20 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1501
+        },
+        {
+          "name": "PPS:SVL:D2PermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1515
+        },
+        {
+          "name": "PPS:SVL:H2PermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1526
+        },
+        {
+          "name": "PPS:ACCL:PermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1537
+        },
+        {
+          "name": "PPS:PLSM:PermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1548
+        },
+        {
+          "name": "PPS:HV:PermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1559
+        },
+        {
+          "name": "PPS:FC:OutPermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1570
+        },
+        {
+          "name": "PPS:GV:OpenPermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/22 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1581
+        },
+        {
+          "name": "PPS:BEAM:InhibitStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/23 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1593
+        },
+        {
+          "name": "PPS:GV:OpenInhibitStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/23 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1605
+        },
+        {
+          "name": "PPS:RFQ:VacDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/23 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1616
+        },
+        {
+          "name": "PPS:CHOP:PermStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/23 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Ok"
+          },
+          "line": 1627
+        },
+        {
+          "name": "LEBT:HV:RlyRmtCmd",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rmt"
+          },
+          "line": 1643
+        },
+        {
+          "name": "LEBT:PF:Light",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1655
+        },
+        {
+          "name": "LEBT:PF:Buzzer",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1666
+        },
+        {
+          "name": "LEBT:PF:LightHtOn",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1677
+        },
+        {
+          "name": "LEBT:PF:LightMagnet",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 1688
+        },
+        {
+          "name": "LEBT:HV_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1699
+        },
+        {
+          "name": "LEBT:R_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/24 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1710
+        },
+        {
+          "name": "LEBT:STH01_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1721
+        },
+        {
+          "name": "LEBT:STV01_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1732
+        },
+        {
+          "name": "LEBT:STH02_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1743
+        },
+        {
+          "name": "LEBT:STV02_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1754
+        },
+        {
+          "name": "LEBT:SOL01_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1765
+        },
+        {
+          "name": "LEBT:SOL02_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1776
+        },
+        {
+          "name": "LEBT:RC_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 1787
+        },
+        {
+          "name": "LEBT:FC:OUT",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/25 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "IN",
+            "ONAM": "OUT"
+          },
+          "line": 1797
+        },
+        {
+          "name": "LEBT:VAC:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 1810
+        },
+        {
+          "name": "LEBT:GV:Open",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1821
+        },
+        {
+          "name": "LEBT:VAC01:PPStart",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1833
+        },
+        {
+          "name": "LEBT:VAC01:TPStart",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1844
+        },
+        {
+          "name": "LEBT:VAC01:PVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1853
+        },
+        {
+          "name": "LEBT:VAC01:AIVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1863
+        },
+        {
+          "name": "LEBT:VAC01:SVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/26 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1873
+        },
+        {
+          "name": "LEBT:VAC01:NIVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/27 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1883
+        },
+        {
+          "name": "LEBT:VAC02:PPStart",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/27 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1893
+        },
+        {
+          "name": "LEBT:VAC02:TPStart",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/27 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Stop",
+            "ONAM": "Start"
+          },
+          "line": 1907
+        },
+        {
+          "name": "LEBT:VAC02:PVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/27 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1917
+        },
+        {
+          "name": "LEBT:VAC02:AIVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/27 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1927
+        },
+        {
+          "name": "LEBT:VAC02:SVOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/27 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 1937
+        },
+        {
+          "name": "LEBT:EMIT_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/28 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 2016
+        },
+        {
+          "name": "PPS:WS:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/28 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2028
+        },
+        {
+          "name": "PPS:VAC:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/29 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2039
+        },
+        {
+          "name": "PPS:HV:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/29 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2050
+        },
+        {
+          "name": "PPS:HV:PSDefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/29 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2061
+        },
+        {
+          "name": "LEBT:CHOP:Out",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/29 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2070
+        },
+        {
+          "name": "LEBT:CHOP_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/29 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 2085
+        },
+        {
+          "name": "SRC:COIL01_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/30 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 2099
+        },
+        {
+          "name": "SRC:COIL02_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/30 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 2110
+        },
+        {
+          "name": "SRC:IE_PS:ExtSec",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/30 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Intlk"
+          },
+          "line": 2121
+        },
+        {
+          "name": "SRC:SVL:D2Open",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/30 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 2130
+        },
+        {
+          "name": "SRC:SVL:H2Open",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/30 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Close",
+            "ONAM": "Open"
+          },
+          "line": 2140
+        },
+        {
+          "name": "SRC:RF_GEN:PlasmaStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/30 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "def",
+            "ONAM": "OK for Plasma"
+          },
+          "line": 2156
+        },
+        {
+          "name": "PPS:SVL:H2CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 2172
+        },
+        {
+          "name": "PPS:SVL:D2CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=1"
+          },
+          "metadata": {
+            "ONAM": "Close",
+            "ZNAM": "Open"
+          },
+          "line": 2183
+        },
+        {
+          "name": "PPS:RF:PlsmStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=2"
+          },
+          "metadata": {
+            "ONAM": "Off",
+            "ZNAM": "On"
+          },
+          "line": 2194
+        },
+        {
+          "name": "PPS:HV_PS:OffStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=3"
+          },
+          "metadata": {
+            "ONAM": "Off",
+            "ZNAM": "On"
+          },
+          "line": 2205
+        },
+        {
+          "name": "PPS:FC:InStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=4"
+          },
+          "metadata": {
+            "ONAM": "IN",
+            "ZNAM": "Out"
+          },
+          "line": 2216
+        },
+        {
+          "name": "PPS:GV:CloseStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=5"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close"
+          },
+          "line": 2227
+        },
+        {
+          "name": "PPS:CHOP:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off"
+          },
+          "line": 2238
+        },
+        {
+          "name": "PPS:CHOP:OffStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/32 T=BYTE B=7"
+          },
+          "metadata": {
+            "ONAM": "Off",
+            "ZNAM": "On"
+          },
+          "line": 2249
+        },
+        {
+          "name": "MPS:INJ:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 2260
+        },
+        {
+          "name": "MPS:INJ:Halt",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=1"
+          },
+          "metadata": {
+            "ONAM": "Halt",
+            "ZNAM": " "
+          },
+          "line": 2271
+        },
+        {
+          "name": "MPS:CHOP_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=2"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": " "
+          },
+          "line": 2282
+        },
+        {
+          "name": "MPS:GV:Protect",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=3"
+          },
+          "metadata": {
+            "ONAM": "OK",
+            "ZNAM": " "
+          },
+          "line": 2294
+        },
+        {
+          "name": "MPS:FOC:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=4"
+          },
+          "metadata": {
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 2305
+        },
+        {
+          "name": "MPS:LEBT_VAC:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=5"
+          },
+          "metadata": {
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 2316
+        },
+        {
+          "name": "MPS:GV:OpenStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 2327
+        },
+        {
+          "name": "MPS:INJ_WS:DefStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/33 T=BYTE B=7"
+          },
+          "metadata": {
+            "ONAM": "Def",
+            "ZNAM": " "
+          },
+          "line": 2339
+        },
+        {
+          "name": "INJ:WS:FMCSMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/36 T=FLOAT ",
+            "FLNK": "INJ:WS:FMCS"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2353
+        },
+        {
+          "name": "INJ:WS:FMCS",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:FMCSMes",
+            "INPB": "5",
+            "INPC": "10"
+          },
+          "metadata": {
+            "EGU": "m3/h",
+            "PREC": "1"
+          },
+          "line": 2364
+        },
+        {
+          "name": "INJ:WS:PeCSMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/40 T=FLOAT ",
+            "FLNK": "INJ:WS:PeCS"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2377
+        },
+        {
+          "name": "INJ:WS:PeCS",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:PeCSMes",
+            "INPB": "0.75",
+            "INPC": "1.5"
+          },
+          "metadata": {
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 2388
+        },
+        {
+          "name": "INJ:WS:PaspMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/44 T=FLOAT ",
+            "FLNK": "INJ:WS:Pasp"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2401
+        },
+        {
+          "name": "INJ:WS:Pasp",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:PaspMes",
+            "INPB": "0.75",
+            "INPC": "1.5"
+          },
+          "metadata": {
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 2412
+        },
+        {
+          "name": "INJ:WS:ResCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/48 T=FLOAT ",
+            "FLNK": "INJ:WS:ResCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2425
+        },
+        {
+          "name": "INJ:WS:ResCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:ResCPMes",
+            "INPB": "5",
+            "INPC": "5"
+          },
+          "metadata": {
+            "EGU": "Mohm-cm",
+            "PREC": "2"
+          },
+          "line": 2436
+        },
+        {
+          "name": "INJ:WS:TeCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/52 T=FLOAT ",
+            "FLNK": "INJ:WS:TeCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2449
+        },
+        {
+          "name": "INJ:WS:TeCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:TeCPMes",
+            "INPB": "6.25",
+            "INPC": "2.5"
+          },
+          "metadata": {
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2460
+        },
+        {
+          "name": "INJ:WS:TeCSMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/56 T=FLOAT ",
+            "FLNK": "INJ:WS:TeCS"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2473
+        },
+        {
+          "name": "INJ:WS:TeCS",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:TeCSMes",
+            "INPB": "6.25",
+            "INPC": "2.5"
+          },
+          "metadata": {
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2484
+        },
+        {
+          "name": "INJ:WS:FMSDMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/60 T=FLOAT ",
+            "FLNK": "INJ:WS:FMSD"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2497
+        },
+        {
+          "name": "INJ:WS:FMSD",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:FMSDMes",
+            "INPB": "0.625",
+            "INPC": "1.25"
+          },
+          "metadata": {
+            "EGU": "m3/h",
+            "PREC": "1"
+          },
+          "line": 2508
+        },
+        {
+          "name": "INJ:WS:FMCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/64 T=FLOAT ",
+            "FLNK": "INJ:WS:FMCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2521
+        },
+        {
+          "name": "INJ:WS:FMCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:FMCPMes",
+            "INPB": "3.75",
+            "INPC": "7.5"
+          },
+          "metadata": {
+            "EGU": "m3/h",
+            "PREC": "1"
+          },
+          "line": 2532
+        },
+        {
+          "name": "INJ:WS:PsCSMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/68 T=FLOAT ",
+            "FLNK": "INJ:WS:PsCS"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2545
+        },
+        {
+          "name": "INJ:WS:PsCS",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:PsCSMes",
+            "INPB": "0.75",
+            "INPC": "1.5"
+          },
+          "metadata": {
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 2556
+        },
+        {
+          "name": "INJ:WS:PsCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/72 T=FLOAT ",
+            "FLNK": "INJ:WS:PsCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2569
+        },
+        {
+          "name": "INJ:WS:PsCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:PsCPMes",
+            "INPB": "0.75",
+            "INPC": "1.5"
+          },
+          "metadata": {
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 2580
+        },
+        {
+          "name": "INJ:WS:PeCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/76 T=FLOAT ",
+            "FLNK": "INJ:WS:PeCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2593
+        },
+        {
+          "name": "INJ:WS:PeCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:PeCPMes",
+            "INPB": "2",
+            "INPC": "4"
+          },
+          "metadata": {
+            "EGU": "bar",
+            "PREC": "1"
+          },
+          "line": 2604
+        },
+        {
+          "name": "INJ:WS:ResCylMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/80 T=FLOAT ",
+            "FLNK": "INJ:WS:ResCyl"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2617
+        },
+        {
+          "name": "INJ:WS:ResCyl",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:ResCylMes",
+            "INPB": "5",
+            "INPC": "5"
+          },
+          "metadata": {
+            "EGU": "Mohm-cm",
+            "PREC": "2"
+          },
+          "line": 2628
+        },
+        {
+          "name": "INJ:WS:TsCSMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/84 T=FLOAT ",
+            "FLNK": "INJ:WS:TsCS"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2641
+        },
+        {
+          "name": "INJ:WS:TsCS",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:TsCSMes",
+            "INPB": "6.25",
+            "INPC": "2.5"
+          },
+          "metadata": {
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2652
+        },
+        {
+          "name": "INJ:WS:TeEchCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/88 T=FLOAT ",
+            "FLNK": "INJ:WS:TeEchCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2665
+        },
+        {
+          "name": "INJ:WS:TeEchCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:TeEchCPMes",
+            "INPB": "6.25",
+            "INPC": "2.5"
+          },
+          "metadata": {
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2676
+        },
+        {
+          "name": "INJ:WS:TsEchCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/92 T=FLOAT ",
+            "FLNK": "INJ:WS:TsEchCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2689
+        },
+        {
+          "name": "INJ:WS:TsEchCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:TsEchCPMes",
+            "INPB": "6.25",
+            "INPC": "2.5"
+          },
+          "metadata": {
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2700
+        },
+        {
+          "name": "INJ:WS:TsCPMes",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/96 T=FLOAT ",
+            "FLNK": "INJ:WS:TsCP"
+          },
+          "metadata": {
+            "PREC": "0",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 2713
+        },
+        {
+          "name": "INJ:WS:TsCP",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "((A/10)*B)-C",
+            "INPA": "INJ:WS:TsCPMes",
+            "INPB": "6.25",
+            "INPC": "2.5"
+          },
+          "metadata": {
+            "EGU": "degC",
+            "PREC": "1"
+          },
+          "line": 2724
+        },
+        {
+          "name": "LEBT:VAC01:VacPGVC",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/100 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2740
+        },
+        {
+          "name": "LEBT:VAC01:VacSGVC",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/104 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2751
+        },
+        {
+          "name": "LEBT:VAC01:VacPGTP",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/108 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2762
+        },
+        {
+          "name": "LEBT:VAC01:VacSGTP",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/112 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2773
+        },
+        {
+          "name": "LEBT:VAC02:VacPGVC",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/116 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2784
+        },
+        {
+          "name": "LEBT:VAC02:VacSGVC",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/120 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2795
+        },
+        {
+          "name": "LEBT:VAC02:VacPGTP",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/124 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2806
+        },
+        {
+          "name": "LEBT:VAC02:VacSGTP",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/128 T=FLOAT "
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "mbar"
+          },
+          "line": 2817
+        },
+        {
+          "name": "LEBT:HV:RlyRmtStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Loc",
+            "ONAM": "Rem"
+          },
+          "line": 2875
+        },
+        {
+          "name": "LEBT:HV:RondeStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "OK"
+          },
+          "line": 2884
+        },
+        {
+          "name": "LEBT:HV:RdyStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "Def",
+            "ONAM": "Rdy"
+          },
+          "line": 2895
+        },
+        {
+          "name": "SRC:FC:DiscDef",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2906
+        },
+        {
+          "name": "SRC:SVL:H2DiscDef",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=4"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2917
+        },
+        {
+          "name": "SRC:SVL:D2DiscDef",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2928
+        },
+        {
+          "name": "LEBT:GV:DiscDef",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Ok",
+            "ONAM": "Def"
+          },
+          "line": 2939
+        },
+        {
+          "name": "LEBT:CHOP:ON",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/148 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 2950
+        },
+        {
+          "name": "LEBT:HV:RlyDefOpen",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/149 T=BYTE B=0"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 2959
+        },
+        {
+          "name": "INJ:PLC:MuscadeForcON",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/149 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 2969
+        }
+      ]
+    },
+    "plcInjectorApp/db/plcInjector_Output.db": {
+      "blob_sha": "2c4125981197ea05a09ce719f9a04dd7b2f7fa5f",
+      "records": [
+        {
+          "name": "LEBT:VAC01:PPOnCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 13
+        },
+        {
+          "name": "LEBT:VAC01:PPOffCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 24
+        },
+        {
+          "name": "LEBT:VAC01:TPOnCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=2"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 35
+        },
+        {
+          "name": "LEBT:VAC01:TPOffCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 46
+        },
+        {
+          "name": "LEBT:VAC01:PVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=4"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 57
+        },
+        {
+          "name": "LEBT:VAC01:PVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 68
+        },
+        {
+          "name": "LEBT:VAC01:SVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 79
+        },
+        {
+          "name": "LEBT:VAC01:SVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/4 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 90
+        },
+        {
+          "name": "LEBT:VAC01:AIVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 101
+        },
+        {
+          "name": "LEBT:VAC01:AIVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 112
+        },
+        {
+          "name": "LEBT:VAC01:NIVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=2"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 123
+        },
+        {
+          "name": "LEBT:VAC01:NIVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 134
+        },
+        {
+          "name": "LEBT:VAC02:PPOnCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=4"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 147
+        },
+        {
+          "name": "LEBT:VAC02:PPOffCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 156
+        },
+        {
+          "name": "LEBT:VAC02:TPOnCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 166
+        },
+        {
+          "name": "LEBT:VAC02:TPOffCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/5 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 176
+        },
+        {
+          "name": "LEBT:VAC02:PVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 186
+        },
+        {
+          "name": "LEBT:VAC02:PVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 196
+        },
+        {
+          "name": "LEBT:VAC02:SVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=2"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 206
+        },
+        {
+          "name": "LEBT:VAC02:SVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 216
+        },
+        {
+          "name": "LEBT:VAC02:AIVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=4"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 226
+        },
+        {
+          "name": "LEBT:VAC02:AIVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 236
+        },
+        {
+          "name": "LEBT:VAC02:NIVOpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 246
+        },
+        {
+          "name": "LEBT:VAC02:NIVCloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/6 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 256
+        },
+        {
+          "name": "LEBT:GV:OpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/8 T=BYTE B=4"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 407
+        },
+        {
+          "name": "LEBT:GV:CloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/8 T=BYTE B=5"
+          },
+          "metadata": {
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 418
+        },
+        {
+          "name": "SRC:SVL:D2OpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/8 T=BYTE B=6"
+          },
+          "metadata": {
+            "ONAM": "On",
+            "ZNAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 429
+        },
+        {
+          "name": "SRC:SVL:D2CloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/8 T=BYTE B=7"
+          },
+          "metadata": {
+            "ZNAM": "On",
+            "ONAM": "Off",
+            "HIGH": "5"
+          },
+          "line": 440
+        },
+        {
+          "name": "SRC:SVL:H2OpenCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/9 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "Open",
+            "ZNAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 451
+        },
+        {
+          "name": "SRC:SVL:H2CloseCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/9 T=BYTE B=1"
+          },
+          "metadata": {
+            "ZNAM": "Open",
+            "ONAM": "Close",
+            "HIGH": "5"
+          },
+          "line": 462
+        },
+        {
+          "name": "LEBT:FC:InCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/9 T=BYTE B=2"
+          },
+          "metadata": {
+            "ZNAM": "In",
+            "ONAM": "Out",
+            "HIGH": "5"
+          },
+          "line": 473
+        },
+        {
+          "name": "LEBT:FC:OutCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/9 T=BYTE B=3"
+          },
+          "metadata": {
+            "ZNAM": "In",
+            "ONAM": "Out",
+            "HIGH": "5"
+          },
+          "line": 484
+        },
+        {
+          "name": "LEBT:VAC:SVForcing",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/9 T=BYTE B=6"
+          },
+          "metadata": {
+            "ZNAM": "Normal",
+            "ONAM": "Force",
+            "HIGH": "3600"
+          },
+          "line": 497
+        },
+        {
+          "name": "LEBT:CHOP:InCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/10 T=BYTE B=0"
+          },
+          "metadata": {
+            "ONAM": "In",
+            "ZNAM": "Out",
+            "HIGH": "5"
+          },
+          "line": 509
+        },
+        {
+          "name": "LEBT:CHOP:OutCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@plcInjector/10 T=BYTE B=1"
+          },
+          "metadata": {
+            "ONAM": "In",
+            "ZNAM": "Out",
+            "HIGH": "5"
+          },
+          "line": 520
+        }
+      ]
+    },
+    "plcInjectorApp/db/plcInjector_Status.db": {
+      "blob_sha": "5547f5d26e2d7f8c6efe07dd4081ed1a7366dab5",
+      "records": [
+        {
+          "name": "INJ:PLC:comStat",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector"
+          },
+          "metadata": {
+            "ZNAM": "DSCT",
+            "ONAM": "CNTD"
+          },
+          "line": 5
+        },
+        {
+          "name": "INJ:PLC:Cptr0",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "1 second",
+            "FLNK": "INJ:PLC:epicsCpt0",
+            "CALC": "(A<B?A+1:A=0)",
+            "INPA": "INJ:PLC:epicsCpt0.VAL",
+            "INPB": "255"
+          },
+          "metadata": {},
+          "line": 15
+        },
+        {
+          "name": "INJ:PLC:epicsCpt0",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@plcInjector/0 T=INT16",
+            "DOL": "INJ:PLC:Cptr0.VAL"
+          },
+          "metadata": {},
+          "line": 25
+        },
+        {
+          "name": "INJ:PLC:CptrPlc",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@plcInjector/0 T=UINT16"
+          },
+          "metadata": {},
+          "line": 34
+        }
+      ]
+    },
+    "plcInjectorApp/db/plcInjector_StatusForOpi.db": {
+      "blob_sha": "f1e109dde5ad8cb7e54bd4a06935a36d33ed75a5",
+      "records": [
+        {
+          "name": "LEBT:VAC01:PVOpenPrecond",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "1 second",
+            "CALC": "(A&B)|C",
+            "INPA": "LEBT:VAC01:TPDefStat",
+            "INPB": "LEBT:VAC01:PPOnStat",
+            "INPC": "LEBT:VAC01:AIVOpenStat"
+          },
+          "metadata": {},
+          "line": 1
+        },
+        {
+          "name": "LEBT:VAC01:SVOpenPrecond",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "1 second",
+            "CALC": "((((A&B)|D)|(E&F&G))&C)|H",
+            "INPA": "LEBT:VAC01:AIVOpenStat",
+            "INPB": "LEBT:VAC01:NIVOpenStat",
+            "INPC": "LEBT:VAC01:TPDefStat",
+            "INPD": "LEBT:VAC01:SVOpenStat",
+            "INPE": "LEBT:VAC01:PGTPDefStat",
+            "INPF": "LEBT:VAC01:SGTPDefStat",
+            "INPG": "LEBT:VAC01:PGVCDefStat",
+            "INPH": "LEBT:VAC:SVForcing"
+          },
+          "metadata": {},
+          "line": 9
+        },
+        {
+          "name": "LEBT:VAC02:PVOpenPrecond",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "1 second",
+            "CALC": "(A&B)|C",
+            "INPA": "LEBT:VAC02:TPDefStat",
+            "INPB": "LEBT:VAC02:PPOnStat",
+            "INPC": "LEBT:VAC02:AIVOpenStat"
+          },
+          "metadata": {},
+          "line": 22
+        },
+        {
+          "name": "LEBT:VAC02:SVOpenPrecond",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "1 second",
+            "CALC": "(A&B&C&D)|E",
+            "INPA": "LEBT:VAC02:PGTPDefStat",
+            "INPB": "LEBT:VAC02:SGTPDefStat",
+            "INPC": "LEBT:VAC02:PGVCDefStat",
+            "INPD": "LEBT:VAC02:TPSpeedStat",
+            "INPE": "LEBT:VAC:SVForcing"
+          },
+          "metadata": {},
+          "line": 30
+        }
+      ]
+    }
+  }
+}

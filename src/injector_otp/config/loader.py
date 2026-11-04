@@ -24,6 +24,7 @@ class PVRuntimeOverrides:
 
     inputs: tuple[str, ...] = ()
     outputs: tuple[str, ...] = ()
+    external_conditions: tuple[str, ...] = ()
 
 
 def load_simulation_config(
@@ -55,4 +56,7 @@ def load_pv_runtime_overrides(
     return PVRuntimeOverrides(
         inputs=tuple(str(item) for item in payload.get("inputs", [])),
         outputs=tuple(str(item) for item in payload.get("outputs", [])),
+        external_conditions=tuple(
+            str(item) for item in payload.get("external_conditions", [])
+        ),
     )

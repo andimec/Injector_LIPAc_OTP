@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+
+import yaml
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +18,7 @@ from .epics.simulation_backend import SimulationPVBackend
 from .faults.manager import FaultDefinition, FaultManager
 from .interlocks.logic import InjectorInterlockLogic
 from .models.injector import InjectorModel
+from .models.catalog import DeviceCatalog
 from .pv.state import SimulationPVState
 
 
@@ -35,7 +38,8 @@ def _default_value(source_data: dict[str, Any]) -> Any:
 
 
 def build_application(
-    registry_path: str | Path = "config/pv_registry_v1_2.json",
+    registry_path: str | Path = "config/pv_registry_v2_0.json",
+    model_parameters_path: str | Path = "config/model_parameters.yaml",
     simulation_config_path: str | Path = "config/simulation/default.yaml",
     runtime_overrides_path: str | Path = "config/pv_runtime_overrides.yaml",
     logic: list[SimulationLogic] | None = None,
@@ -54,12 +58,18 @@ def build_application(
     registry = load_registry(registry_path)
     payload = json.loads(Path(registry_path).read_text(encoding="utf-8"))
     source_by_name = {
-        item["name"]: item.get("source_data", {})
+        item["name"]: item.get("source_data") or (
+            item.get("snapshot_v1_2") or {}
+        ).get("source_data", {})
         for item in payload.get("pvs", [])
     }
 
     registry_names = set(registry.names())
-    override_names = set(runtime_overrides.inputs) | set(runtime_overrides.outputs)
+    override_names = (
+        set(runtime_overrides.inputs)
+        | set(runtime_overrides.outputs)
+        | set(runtime_overrides.external_conditions)
+    )
     missing_overrides = sorted(override_names - registry_names)
     if missing_overrides:
         raise ValueError(
@@ -117,7 +127,20 @@ def build_application(
         )
     )
 
-    model = InjectorModel()
+    catalog = DeviceCatalog.from_registry(registry_path)
+    model_parameters = yaml.safe_load(
+        Path(model_parameters_path).read_text(encoding="utf-8")
+    ) or {}
+    for name, description in (
+        ("COOLING_FAILURE", "Synthetic cooling/skid failure"),
+        ("FBI_TRIGGER", "Synthetic chopper Fast Beam Inhibit trigger"),
+    ):
+        faults.register(
+            FaultDefinition(name, severity="trip", description=description,
+                            state_impact="inhibit")
+        )
+
+    model = InjectorModel(catalog, model_parameters)
     simulation_control = control_plane or SimulationControlPlane()
     for device, active in simulation_config.device_faults.items():
         simulation_control.set_device_fault(device, active)

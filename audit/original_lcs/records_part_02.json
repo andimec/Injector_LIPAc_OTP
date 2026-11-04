@@ -1,0 +1,1619 @@
+{
+  "source_repo": "andimec/topIFMIF_INJ",
+  "source_commit": "3586551ce2eaede262d5cf584ab88d2d940c3a83",
+  "files": {
+    "emitApp/db/injectorFC_Calorimetry.db": {
+      "blob_sha": "c8c01b76994e293f53413f4450f58feb681506e1",
+      "records": [
+        {
+          "name": "LEBT:FC:TinRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S9 @",
+            "FLNK": "LEBT:FC:Fanout"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 5
+        },
+        {
+          "name": "LEBT:FC:Tincalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A*B",
+            "INPA": "LEBT:FC:TinRdbk.VAL",
+            "INPB": "5",
+            "FLNK": "LEBT:FC:DeltaT"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 21
+        },
+        {
+          "name": "LEBT:FC:ToutRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S10 @",
+            "FLNK": "LEBT:FC:Toutcalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:FC:Toutcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A*B",
+            "INPA": "LEBT:FC:ToutRdbk.VAL",
+            "INPB": "5",
+            "FLNK": "LEBT:FC:DeltaT"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:FC:DeltaT",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "INPA": "LEBT:FC:Tincalc",
+            "INPB": "LEBT:FC:Toutcalc",
+            "INPC": "LEBT:FC:Comp",
+            "FLNK": "LEBT:FC:ICalc"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:FC:ICalc",
+          "record_type": "calc",
+          "links": {
+            "INPA": "LEBT:FC:DeltaT",
+            "INPB": "4186.8",
+            "INPC": "60",
+            "INPD": "LEBT:HV_PS:HTCmd",
+            "INPE": "40",
+            "INPF": "SRC:TIM:DutyCycle",
+            "CALC": "(((E/C)*B*A)/D)*F"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:FC:Comp",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "DRVH": "10",
+            "DRVL": "-10",
+            "HOPR": "10",
+            "LOPR": "-10",
+            "PREC": "1"
+          },
+          "line": 75
+        },
+        {
+          "name": "LEBT:FC:IRendement",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "2 second",
+            "INPA": "LEBT:FC:ICalc",
+            "INPB": "LEBT:EMIT_FC:I",
+            "INPC": "100",
+            "INPD": "0",
+            "INPE": "LEBT:FC:InStat",
+            "CALC": "(E)?((A/B)*C):D"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 86
+        },
+        {
+          "name": "LEBT:FC:TinAvg",
+          "record_type": "compress",
+          "links": {
+            "INP": "LEBT:FC:Tincalc"
+          },
+          "metadata": {},
+          "line": 98
+        },
+        {
+          "name": "LEBT:FC:Fanout",
+          "record_type": "fanout",
+          "links": {
+            "LNK1": "LEBT:FC:Tincalc",
+            "LNK2": "LEBT:FC:TinAvg"
+          },
+          "metadata": {},
+          "line": 105
+        }
+      ]
+    },
+    "emitApp/db/injectorGE_temp.db": {
+      "blob_sha": "7742b661a24ca96fc4b141911ff57808629f0290",
+      "records": [
+        {
+          "name": "LEBT:GE:Temp",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S13 @",
+            "FLNK": "LEBT:GE:Tcalc"
+          },
+          "metadata": {
+            "PREC": "1",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 6
+        },
+        {
+          "name": "LEBT:GE:Tcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A*B",
+            "INPA": "LEBT:GE:Temp.VAL",
+            "INPB": "6",
+            "INPC": "1"
+          },
+          "metadata": {
+            "PREC": "1"
+          },
+          "line": 22
+        },
+        {
+          "name": "LEBT:FGA:TRegul",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S7 @",
+            "FLNK": "LEBT:FGA:TRegulcalc"
+          },
+          "metadata": {
+            "PREC": "1",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 30
+        },
+        {
+          "name": "LEBT:FGA:TRegulcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A*B",
+            "INPA": "LEBT:FGA:TRegul.VAL",
+            "INPB": "20",
+            "INPC": "1"
+          },
+          "metadata": {
+            "PREC": "1"
+          },
+          "line": 45
+        }
+      ]
+    },
+    "emitApp/db/injectorHV_Spark.db": {
+      "blob_sha": "8564e2e3e9bc48a378015a91db2ec4c72d98ef70",
+      "records": [
+        {
+          "name": "LEBT:HVsparkSuppressor:Switch",
+          "record_type": "dfanout",
+          "links": {
+            "OUTA": "LEBT:HV:Vmonitor.DISV",
+            "OUTB": "LEBT:Repeller:Vmonitor.DISV",
+            "OUTC": "LEBT:HV:VThRatio.DISV",
+            "OUTD": "LEBT:Repeller:VThRatio.DISV"
+          },
+          "metadata": {
+            "VAL": "0"
+          },
+          "line": 1
+        },
+        {
+          "name": "LEBT:HV:Vmonitor",
+          "record_type": "ai",
+          "links": {
+            "SCAN": ".01 second",
+            "INP": "#C0 S14 @",
+            "FLNK": "LEBT:HV:Comparator"
+          },
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 8
+        },
+        {
+          "name": "LEBT:Repeller:Vmonitor",
+          "record_type": "ai",
+          "links": {
+            "SCAN": ".01 second",
+            "INP": "#C0 S15 @",
+            "FLNK": "LEBT:Repeller:Comparator"
+          },
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 23
+        },
+        {
+          "name": "LEBT:HV:VThRatio",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:Repeller:VThRatio",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V"
+          },
+          "line": 43
+        },
+        {
+          "name": "LEBT:HV:Comparator",
+          "record_type": "calcout",
+          "links": {
+            "INPA": "LEBT:HV:Vmonitor",
+            "INPB": "LEBT:HV:VThRatio",
+            "CALC": "(A<B)",
+            "OOPT": "Transition To Non-zero",
+            "OUT": "LEBT:HV:Counts PP",
+            "FLNK": "LEBT:HVsparkSuppressor:OnOff"
+          },
+          "metadata": {},
+          "line": 48
+        },
+        {
+          "name": "LEBT:HV:Counts",
+          "record_type": "bo",
+          "links": {
+            "FLNK": "LEBT:HV:Counter"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 60
+        },
+        {
+          "name": "LEBT:HV:Counter",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A+1",
+            "INPA": "LEBT:HV:Counter",
+            "FLNK": "LEBT:HVsparkSuppressor:Counts"
+          },
+          "metadata": {},
+          "line": 65
+        },
+        {
+          "name": "LEBT:Repeller:Comparator",
+          "record_type": "calcout",
+          "links": {
+            "INPA": "LEBT:Repeller:Vmonitor",
+            "INPB": "LEBT:Repeller:VThRatio",
+            "CALC": "(A<B)",
+            "OOPT": "Transition To Non-zero",
+            "OUT": "LEBT:Repeller:Counts PP",
+            "FLNK": "LEBT:HVsparkSuppressor:OnOff"
+          },
+          "metadata": {},
+          "line": 71
+        },
+        {
+          "name": "LEBT:Repeller:Counts",
+          "record_type": "bo",
+          "links": {
+            "FLNK": "LEBT:Repeller:Counter"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 83
+        },
+        {
+          "name": "LEBT:Repeller:Counter",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A+1",
+            "INPA": "LEBT:Repeller:Counter",
+            "FLNK": "LEBT:HVsparkSuppressor:Counts"
+          },
+          "metadata": {},
+          "line": 88
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:OnOff",
+          "record_type": "calcout",
+          "links": {
+            "OOPT": "When Non-zero",
+            "INPA": "LEBT:HV:Comparator",
+            "INPB": "LEBT:Repeller:Comparator",
+            "CALC": "(((A=1)||(B=1))?1:0)",
+            "OUT": "LEBT:HVsparkSuppressor:IntCmd PP"
+          },
+          "metadata": {},
+          "line": 94
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:IntCmd",
+          "record_type": "bo",
+          "links": {
+            "SCAN": "Passive",
+            "OUT": "LEBT:MPS:HVsparkSuppressor:delay PP"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 104
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:Counts",
+          "record_type": "bo",
+          "links": {
+            "FLNK": "LEBT:HVsparkSuppressor:Counter"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 110
+        },
+        {
+          "name": "LEBT:HVsparkSuppressor:Counter",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A+1",
+            "INPA": "LEBT:HVsparkSuppressor:Counter"
+          },
+          "metadata": {},
+          "line": 115
+        },
+        {
+          "name": "LEBT:MPS:HVsparkSuppressor:delay",
+          "record_type": "bo",
+          "links": {
+            "OUT": "#C0 S47 @"
+          },
+          "metadata": {
+            "HIGH": "0.5",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 120
+        }
+      ]
+    },
+    "emitApp/db/injectorIC_Calorimetry.db": {
+      "blob_sha": "28c91a6cff60acaddc6fb4520e3b152323d37d49",
+      "records": [
+        {
+          "name": "LEBT:IC:TinRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S11 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 5
+        },
+        {
+          "name": "LEBT:IC:Tincalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)",
+            "INPA": "LEBT:IC:TinRdbk.VAL",
+            "INPB": "5",
+            "FLNK": "LEBT:IC:DeltaT"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 21
+        },
+        {
+          "name": "LEBT:IC:ToutRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S12 @",
+            "FLNK": "LEBT:IC:Toutcalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:IC:Toutcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)",
+            "INPA": "LEBT:IC:ToutRdbk.VAL",
+            "INPB": "5",
+            "FLNK": "LEBT:IC:DeltaT"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:IC:Comp",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "DRVH": "10",
+            "DRVL": "-10",
+            "HOPR": "10",
+            "LOPR": "-10",
+            "PREC": "1"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:IC:DeltaT",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "INPA": "LEBT:FC:Tincalc",
+            "INPB": "LEBT:IC:Toutcalc",
+            "INPC": "LEBT:IC:Comp",
+            "FLNK": "LEBT:IC:Icalc"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:IC:Icalc",
+          "record_type": "calc",
+          "links": {
+            "FLNK": "LEBT:IC:DeltaT",
+            "INPA": "LEBT:IC:DeltaT",
+            "INPB": "4186.8",
+            "INPC": "60",
+            "INPD": "100",
+            "INPE": "320",
+            "CALC": "((E/C)*B*A)/D"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 74
+        },
+        {
+          "name": "LEBT:IC:IRendement",
+          "record_type": "calc",
+          "links": {
+            "INPA": "LEBT:IC:Icalc",
+            "INPB": "LEBT:IC:I",
+            "INPC": "100",
+            "CALC": "(A/B)*C"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 86
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH09",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S9 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 102
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH10",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S10 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 117
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH11",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S11 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 131
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH12",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S12 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 145
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH13",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S13 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 159
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH14",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S14 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 173
+        },
+        {
+          "name": "LEBT:IC:TinRdbk:CH15",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "#C0 S15 @",
+            "FLNK": "LEBT:IC:Tincalc"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 187
+        }
+      ]
+    },
+    "facqApp/db/facqDiagIcv108.db": {
+      "blob_sha": "febf99cad8f8b4617696f64706880f935842aff7",
+      "records": [
+        {
+          "name": "$(DEVICE):Iwf",
+          "record_type": "waveform",
+          "links": {
+            "SCAN": "Passive",
+            "INP": "#C$(CARD) S$(CHANNEL) @"
+          },
+          "metadata": {
+            "PREC": "1",
+            "HOPR": "$(HOPR)",
+            "LOPR": "$(LOPR)"
+          },
+          "line": 5
+        },
+        {
+          "name": "$(DEVICE):I",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "Passive",
+            "INP": "#C$(CARD) S$(CHANNEL) @"
+          },
+          "metadata": {
+            "PREC": "3",
+            "EGU": "$(EGU)"
+          },
+          "line": 18
+        },
+        {
+          "name": "$(DEVICE):IwfGraph",
+          "record_type": "waveform",
+          "links": {
+            "SCAN": "Passive",
+            "INP": "#C$(CARD) S$(CHANNEL) @graph"
+          },
+          "metadata": {
+            "PREC": "1",
+            "HOPR": "$(HOPR)",
+            "LOPR": "$(LOPR)"
+          },
+          "line": 31
+        }
+      ]
+    },
+    "Icv108App/db/Icv108.db": {
+      "blob_sha": "8685d7136dbf885c8e1ec6296a5871a07fc3ac2f",
+      "records": [
+        {
+          "name": "$(SS):$(CC):$(FreqEch)",
+          "record_type": "mbbo",
+          "links": {
+            "OUT": "#C$(card) S1 @"
+          },
+          "metadata": {
+            "VAL": "0"
+          },
+          "line": 5
+        },
+        {
+          "name": "$(SS):$(CC):$(T3)",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "OUT": "#C$(card) S33 @T3"
+          },
+          "metadata": {
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 18
+        },
+        {
+          "name": "$(SS):$(CC):$(T2)",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "OUT": "#C$(card) S32 @T2"
+          },
+          "metadata": {
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 27
+        },
+        {
+          "name": "$(SS):$(CC):$(Config)",
+          "record_type": "mbbo",
+          "links": {
+            "OUT": "#C$(card) S0 @"
+          },
+          "metadata": {
+            "VAL": "0"
+          },
+          "line": 36
+        },
+        {
+          "name": "$(SS):$(CC):$(T0)",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "OUT": "#C$(card) S30 @T0"
+          },
+          "metadata": {
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 59
+        },
+        {
+          "name": "$(SS):$(CC):$(T1)",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "OUT": "#C$(card) S31 @T1"
+          },
+          "metadata": {
+            "PREC": "3",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 68
+        },
+        {
+          "name": "$(SS):$(CC):$(AxeX)",
+          "record_type": "waveform",
+          "links": {
+            "SCAN": "Passive",
+            "INP": "#C$(card) S32 @"
+          },
+          "metadata": {
+            "PREC": "2",
+            "HOPR": "10000",
+            "LOPR": "0"
+          },
+          "line": 77
+        },
+        {
+          "name": "$(SS):$(CC):ConfigTrigger",
+          "record_type": "bo",
+          "links": {
+            "OUT": "#C$(card) S30 @TriggerType"
+          },
+          "metadata": {
+            "ZNAM": "Trig. Soft",
+            "ONAM": "Trig. Ext"
+          },
+          "line": 88
+        },
+        {
+          "name": "$(SS):$(CC):TriggerSoft",
+          "record_type": "bo",
+          "links": {
+            "OUT": "#C$(card) S31 @TRIG"
+          },
+          "metadata": {},
+          "line": 95
+        },
+        {
+          "name": "$(SS):$(CC):LedActivite",
+          "record_type": "bi",
+          "links": {
+            "SCAN": "Passive",
+            "INP": "#C$(card) S0 @"
+          },
+          "metadata": {
+            "ZNAM": "0",
+            "ONAM": "1"
+          },
+          "line": 100
+        },
+        {
+          "name": "$(SS):$(CC):Mode",
+          "record_type": "mbbo",
+          "links": {
+            "OUT": "#C$(card) S2 @"
+          },
+          "metadata": {
+            "VAL": "0"
+          },
+          "line": 108
+        },
+        {
+          "name": "$(SS):$(CC):START",
+          "record_type": "bo",
+          "links": {
+            "OUT": "#C$(card) S32 @START"
+          },
+          "metadata": {},
+          "line": 119
+        },
+        {
+          "name": "$(SS):$(CC):Status",
+          "record_type": "stringout",
+          "links": {
+            "OUT": "#C$(card) S0 @STATUS"
+          },
+          "metadata": {
+            "VAL": "INIT"
+          },
+          "line": 124
+        }
+      ]
+    },
+    "injectorApp/db/injectorActions_auto.db": {
+      "blob_sha": "030022af9314291e9d097e50089c33e2fcfe641b",
+      "records": [
+        {
+          "name": "LEBT:AUTO:UptoHT1",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 1
+        },
+        {
+          "name": "LEBT:AUTO:UptoHT",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 7
+        },
+        {
+          "name": "LEBT:AUTO:StopHT",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:AUTO:Stop",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 21
+        },
+        {
+          "name": "LEBT:AUTO:OKforHTON",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 28
+        },
+        {
+          "name": "LEBT:AUTO:OKforHTOFF",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 37
+        },
+        {
+          "name": "LEBT:AUTO:EndActHT",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "marche",
+            "ONAM": "arret"
+          },
+          "line": 44
+        },
+        {
+          "name": "LEBT:AUTO:DialSecu",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "attente action"
+          },
+          "line": 51
+        },
+        {
+          "name": "LEBT:AUTO:ActSecu",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON "
+          },
+          "line": 57
+        },
+        {
+          "name": "SRC:AUTO:HFPwr",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:AUTO:StepPF"
+          },
+          "metadata": {
+            "EGU": "W",
+            "DRVH": "1200",
+            "HOPR": "1200"
+          },
+          "line": 63
+        },
+        {
+          "name": "SRC:AUTO:DebitH",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:AUTO:StepPF"
+          },
+          "metadata": {
+            "EGU": "sccm",
+            "DRVH": "5",
+            "HOPR": "5",
+            "PREC": "2"
+          },
+          "line": 75
+        },
+        {
+          "name": "LEBT:HV_PS:HTpas",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:HV_PS:HTpas0"
+          },
+          "metadata": {
+            "DRVH": "10",
+            "DRVL": "1",
+            "HOPR": "10",
+            "LOPR": "1"
+          },
+          "line": 86
+        },
+        {
+          "name": "LEBT:HV_PS:HTinitauto",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:HV_PS:HTpas0"
+          },
+          "metadata": {
+            "EGU": "kV",
+            "DRVH": "120",
+            "HOPR": "120",
+            "DRVL": "0",
+            "LOPR": "0"
+          },
+          "line": 99
+        },
+        {
+          "name": "LEBT:HV_PS:HTpas0",
+          "record_type": "calc",
+          "links": {
+            "CALC": "B#0?(A/B):C",
+            "FLNK": "SRC:IE_PS:calc_pas_init",
+            "INPA": "LEBT:HV_PS:HTinitauto.VAL NPP NMS",
+            "INPB": "LEBT:HV_PS:HTpas.VAL NPP NMS",
+            "INPC": "0"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 110
+        },
+        {
+          "name": "SRC:AUTO:VSetIEPS",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:AUTO:StepIEPS"
+          },
+          "metadata": {
+            "EGU": "kV",
+            "DRVH": "50",
+            "HOPR": "50"
+          },
+          "line": 119
+        },
+        {
+          "name": "SRC:AUTO:StepIEPS",
+          "record_type": "calc",
+          "links": {
+            "CALC": "B#0?(A/B):C",
+            "FLNK": "LEBT:HV_PS:HTpas1",
+            "INPA": "SRC:AUTO:VSetIEPS.VAL NPP NMS",
+            "INPB": "LEBT:HV_PS:HTpas.VAL NPP NMS",
+            "INPC": "0"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 129
+        },
+        {
+          "name": "LEBT:HV_PS:HTfin1",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:HV_PS:HTpas1"
+          },
+          "metadata": {
+            "EGU": "kV",
+            "DRVH": "80",
+            "HOPR": "80"
+          },
+          "line": 138
+        },
+        {
+          "name": "LEBT:HV_PS:HTpas1",
+          "record_type": "calc",
+          "links": {
+            "CALC": "B#0?(A-B)/C:D",
+            "FLNK": "LEBT:AUTO:StepPF",
+            "INPA": "LEBT:HV_PS:HTfin1.VAL NPP NMS",
+            "INPB": "LEBT:HV_PS:HTinitauto.VAL NPP NMS",
+            "INPC": "LEBT:HV_PS:HTpas.VAL NPP NMS",
+            "INPD": "0"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 148
+        },
+        {
+          "name": "LEBT:AUTO:Dialog",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "attente action"
+          },
+          "line": 158
+        },
+        {
+          "name": "SRC:IE_PS:Vcalcpas",
+          "record_type": "calc",
+          "links": {
+            "CALC": "C#0?(A-B)/C:D",
+            "INPA": "SRC:IE_PS:Vfinal_auto.VAL NPP NMS",
+            "INPB": "SRC:IE_PS:VSet_auto.VAL NPP NMS",
+            "INPC": "LEBT:AUTO:StepPF.VAL NPP NMS",
+            "INPD": "0"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 164
+        },
+        {
+          "name": "LEBT:AUTO:Diag1HV",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "attente action"
+          },
+          "line": 173
+        },
+        {
+          "name": "LEBT:AUTO:Dialog2",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "attente action"
+          },
+          "line": 179
+        },
+        {
+          "name": "LEBT:AUTO:Dialog3",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "attente action"
+          },
+          "line": 184
+        },
+        {
+          "name": "LEBT:AUTO:OKforBeam",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "NON",
+            "ONAM": "OUI"
+          },
+          "line": 189
+        },
+        {
+          "name": "LEBT:AUTO:OKforStart",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "NON",
+            "ONAM": "OUI"
+          },
+          "line": 195
+        },
+        {
+          "name": "LEBT:AUTO:PSUP",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "NON",
+            "ONAM": "OUI"
+          },
+          "line": 201
+        },
+        {
+          "name": "LEBT:AUTO:StepPF",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:AUTO:FlnkPF"
+          },
+          "metadata": {
+            "DRVH": "10",
+            "DRVL": "1",
+            "HOPR": "10",
+            "LOPR": "1"
+          },
+          "line": 208
+        },
+        {
+          "name": "LEBT:AUTO:FlnkPF",
+          "record_type": "fanout",
+          "links": {
+            "LNK1": "LEBT:AUTO:StepHT2",
+            "LNK2": "LEBT:AUTO:StepIEPS",
+            "LNK3": "LEBT:AUTO:StepDebit",
+            "LNK4": "LEBT:AUTO:StepRF"
+          },
+          "metadata": {},
+          "line": 221
+        },
+        {
+          "name": "LEBT:AUTO:Imontee",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 228
+        },
+        {
+          "name": "LEBT:AUTO:Ifinal",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 240
+        },
+        {
+          "name": "LEBT:AUTO:Isurv",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 251
+        },
+        {
+          "name": "LEBT:AUTO:Irapide",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mA",
+            "DRVH": "100",
+            "DRVL": "5",
+            "HOPR": "100",
+            "LOPR": "5"
+          },
+          "line": 262
+        }
+      ]
+    },
+    "injectorApp/db/injectorCOIL01.db": {
+      "blob_sha": "e4f3c67d2fca56fd6d017312a1cdaa94817ad872",
+      "records": [
+        {
+          "name": "SRC:COIL01_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_C1:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 5
+        },
+        {
+          "name": "SRC:COIL01_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:COIL01_PS:IntCmd",
+            "OUT": "@asyn(modbus_C1:ecr_Icons 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "125",
+            "DRVL": "0",
+            "HOPR": "125",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 13
+        },
+        {
+          "name": "SRC:COIL01_PS:Rampe",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:COIL01_PS:IntCmd",
+            "OUT": "@asyn(modbus_C1:ecr_rampe 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 26
+        },
+        {
+          "name": "SRC:COIL01_PS:IntCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "SRC:COIL01_PS:RampeCmd PP"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 38
+        },
+        {
+          "name": "SRC:COIL01_PS:RampeCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C1:ecr_Bit3 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 46
+        },
+        {
+          "name": "SRC:COIL01_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C1:ecr_Bit0 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 56
+        },
+        {
+          "name": "SRC:COIL01_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C1:ecr_Bit1 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 65
+        },
+        {
+          "name": "SRC:COIL01_PS:RESET",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C1:ecr_Bit2 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 73
+        },
+        {
+          "name": "SRC:COIL01_PS:PretRampe",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {},
+          "line": 81
+        },
+        {
+          "name": "SRC:COIL01_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_C1:lect_bloc1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "PREC": "1"
+          },
+          "line": 86
+        }
+      ]
+    },
+    "injectorApp/db/injectorCOIL02.db": {
+      "blob_sha": "10a68493015faf7fb3d476dbab487ae90d40519b",
+      "records": [
+        {
+          "name": "SRC:COIL02_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_C2:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 5
+        },
+        {
+          "name": "SRC:COIL02_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:COIL02_PS:IntCmd",
+            "OUT": "@asyn(modbus_C2:ecr_Icons 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "125",
+            "DRVL": "0",
+            "HOPR": "125",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 13
+        },
+        {
+          "name": "SRC:COIL02_PS:Rampe",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:COIL02_PS:IntCmd",
+            "OUT": "@asyn(modbus_C2:ecr_rampe 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 26
+        },
+        {
+          "name": "SRC:COIL02_PS:IntCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "SRC:COIL02_PS:RampeCmd PP"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 38
+        },
+        {
+          "name": "SRC:COIL02_PS:RampeCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C2:ecr_Bit3 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 46
+        },
+        {
+          "name": "SRC:COIL02_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C2:ecr_Bit0 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 56
+        },
+        {
+          "name": "SRC:COIL02_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C2:ecr_Bit1 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 65
+        },
+        {
+          "name": "SRC:COIL02_PS:RESET",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_C2:ecr_Bit2 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 73
+        },
+        {
+          "name": "SRC:COIL02_PS:PretRampe",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {},
+          "line": 81
+        },
+        {
+          "name": "SRC:COIL02_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_C2:lect_bloc1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "PREC": "1"
+          },
+          "line": 86
+        }
+      ]
+    },
+    "injectorApp/db/injectorFGA.db": {
+      "blob_sha": "54ec9bf56ce3653bb944330b4dc657f4b20b8b60",
+      "records": [
+        {
+          "name": "LEBT:FGA_PS3:Vdeb",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:FGA:CalculDV"
+          },
+          "metadata": {
+            "DRVH": "200",
+            "DRVL": "-200",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "PREC": "2",
+            "EGU": "V"
+          },
+          "line": 7
+        },
+        {
+          "name": "LEBT:FGA_PS3:Vfin",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "FLNK": "LEBT:FGA:CalculDV"
+          },
+          "metadata": {
+            "DRVH": "200",
+            "DRVL": "-200",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "PREC": "2",
+            "EGU": "V"
+          },
+          "line": 21
+        },
+        {
+          "name": "LEBT:FGA_PS3:Vgrid",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "200",
+            "DRVL": "-200",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "PREC": "2",
+            "EGU": "V"
+          },
+          "line": 35
+        },
+        {
+          "name": "LEBT:FGA_PS3:Npas",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "FLNK": "LEBT:FGA:CalculDV"
+          },
+          "metadata": {
+            "DRVH": "100",
+            "DRVL": "0",
+            "HOPR": "100",
+            "LOPR": "0"
+          },
+          "line": 48
+        },
+        {
+          "name": "LEBT:FGA_PS3:DV",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive",
+            "DOL": "LEBT:FGA:CalculDV.VAL"
+          },
+          "metadata": {
+            "DRVH": "200",
+            "DRVL": "-200",
+            "HOPR": "200",
+            "LOPR": "-200"
+          },
+          "line": 60
+        },
+        {
+          "name": "LEBT:FGA:CalculDV",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(B-A)/C",
+            "INPA": "LEBT:FGA_PS3:Vdeb",
+            "INPB": "LEBT:FGA_PS3:Vfin",
+            "INPC": "LEBT:FGA_PS3:Npas",
+            "FLNK": "LEBT:FGA_PS3:DV"
+          },
+          "metadata": {},
+          "line": 72
+        },
+        {
+          "name": "LEBT:FGA:StopMes",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 81
+        },
+        {
+          "name": "LEBT:FGA:StartMes",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 87
+        },
+        {
+          "name": "LEBT:FGA:Dialog",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "*****"
+          },
+          "line": 93
+        },
+        {
+          "name": "LEBT:FGA:StartEnreg",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 99
+        }
+      ]
+    }
+  }
+}

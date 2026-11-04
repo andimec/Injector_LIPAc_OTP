@@ -1,0 +1,1364 @@
+{
+  "source_repo": "andimec/topIFMIF_INJ",
+  "source_commit": "3586551ce2eaede262d5cf584ab88d2d940c3a83",
+  "files": {
+    "injectorApp/db/injectorRCPS.db": {
+      "blob_sha": "bfb972f341192c42dcad70a2ee18226e95e119c9",
+      "records": [
+        {
+          "name": "LEBT:RC_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_M2:ecr_Bit0 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 5
+        },
+        {
+          "name": "LEBT:RC_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_M2:ecr_Bit1 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 15
+        },
+        {
+          "name": "LEBT:RC_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:RC_PS:Icalcout"
+          },
+          "metadata": {
+            "DRVH": "10",
+            "DRVL": "0",
+            "HOPR": "10",
+            "LOPR": "0",
+            "EGU": "mA"
+          },
+          "line": 22
+        },
+        {
+          "name": "LEBT:RC_PS:Icalcout",
+          "record_type": "calcout",
+          "links": {
+            "CALC": "(B*A)/C",
+            "INPA": "LEBT:RC_PS:ISet.VAL",
+            "INPB": "30000",
+            "INPC": "10",
+            "FLNK": "LEBT:RC_PS:IOut"
+          },
+          "metadata": {},
+          "line": 34
+        },
+        {
+          "name": "LEBT:RC_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M2:lect_AI 2)MODBUS_DATA",
+            "FLNK": "LEBT:RC_PS:IRdbkcalc"
+          },
+          "metadata": {},
+          "line": 43
+        },
+        {
+          "name": "LEBT:RC_PS:IRdbkcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)/C",
+            "INPA": "LEBT:RC_PS:IRdbk.VAL",
+            "INPB": "1",
+            "INPC": "30000"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 51
+        },
+        {
+          "name": "LEBT:RC_PS:VSet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:RC_PS:Vcalcout"
+          },
+          "metadata": {
+            "DRVH": "3",
+            "DRVL": "0",
+            "HOPR": "3",
+            "LOPR": "0",
+            "EGU": "kV"
+          },
+          "line": 59
+        },
+        {
+          "name": "LEBT:RC_PS:Vcalcout",
+          "record_type": "calcout",
+          "links": {
+            "CALC": "(B*A)/C",
+            "INPA": "LEBT:RC_PS:VSet.VAL",
+            "INPB": "30000",
+            "INPC": "3",
+            "FLNK": "LEBT:RC_PS:VOut"
+          },
+          "metadata": {},
+          "line": 71
+        },
+        {
+          "name": "LEBT:RC_PS:VOut",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_M2:ecr_AO1 00)MODBUS_DATA",
+            "DOL": "LEBT:RC_PS:Vcalcout.VAL"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 80
+        },
+        {
+          "name": "LEBT:RC_PS:VRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M2:lect_AI 1)MODBUS_DATA",
+            "FLNK": "LEBT:RC_PS:VRdbkcalc"
+          },
+          "metadata": {},
+          "line": 89
+        },
+        {
+          "name": "LEBT:RC_PS:VRdbkcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)/C",
+            "INPA": "LEBT:RC_PS:VRdbk.VAL",
+            "INPB": "3",
+            "INPC": "30000"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "kV"
+          },
+          "line": 97
+        },
+        {
+          "name": "LEBT:RC_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M2:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 106
+        },
+        {
+          "name": "LEBT:RC_PS:IOut",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_M2:ecr_AO2 00)MODBUS_DATA",
+            "DOL": "LEBT:RC_PS:Icalcout.VAL"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 113
+        }
+      ]
+    },
+    "injectorApp/db/injectorRPS.db": {
+      "blob_sha": "9d2ee44786e573470ed5601d8a1bd9b424520185",
+      "records": [
+        {
+          "name": "LEBT:R_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_M2:ecr_Bit2 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 5
+        },
+        {
+          "name": "LEBT:R_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_M2:ecr_Bit3 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:R_PS:RESET",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_M2:ecr_Bit4 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 22
+        },
+        {
+          "name": "LEBT:R_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:R_PS:Icalcout"
+          },
+          "metadata": {
+            "DRVH": "20",
+            "DRVL": "0",
+            "HOPR": "20",
+            "LOPR": "0",
+            "EGU": "mA",
+            "PREC": "1"
+          },
+          "line": 30
+        },
+        {
+          "name": "LEBT:R_PS:Icalcout",
+          "record_type": "calcout",
+          "links": {
+            "CALC": "(B*A)/C",
+            "INPA": "LEBT:R_PS:ISet.VAL",
+            "INPB": "30000",
+            "INPC": "20",
+            "FLNK": "LEBT:R_PS:IOut"
+          },
+          "metadata": {},
+          "line": 43
+        },
+        {
+          "name": "LEBT:R_PS:IOut",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_M2:ecr_AO3 00)MODBUS_DATA",
+            "DOL": "LEBT:R_PS:Icalcout.VAL"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:R_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M2:lect_AI 4)MODBUS_DATA",
+            "FLNK": "LEBT:R_PS:IRdbkcalc"
+          },
+          "metadata": {},
+          "line": 61
+        },
+        {
+          "name": "LEBT:R_PS:IRdbkcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)/C",
+            "INPA": "LEBT:R_PS:IRdbk.VAL",
+            "INPB": "20",
+            "INPC": "30000"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 69
+        },
+        {
+          "name": "LEBT:R_PS:VSet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:R_PS:Vcalcout"
+          },
+          "metadata": {
+            "DRVH": "15",
+            "DRVL": "0",
+            "HOPR": "15",
+            "LOPR": "0",
+            "EGU": "kV",
+            "PREC": "1"
+          },
+          "line": 77
+        },
+        {
+          "name": "LEBT:R_PS:Vcalcout",
+          "record_type": "calcout",
+          "links": {
+            "CALC": "(B*A)/C",
+            "INPA": "LEBT:R_PS:VSet.VAL",
+            "INPB": "30000",
+            "INPC": "15",
+            "FLNK": "LEBT:R_PS:VOut"
+          },
+          "metadata": {},
+          "line": 90
+        },
+        {
+          "name": "LEBT:R_PS:VOut",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_M2:ecr_AO4 00)MODBUS_DATA",
+            "DOL": "LEBT:R_PS:Vcalcout.VAL"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 99
+        },
+        {
+          "name": "LEBT:R_PS:VRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M2:lect_AI 3)MODBUS_DATA",
+            "FLNK": "LEBT:R_PS:VRdbkcalc"
+          },
+          "metadata": {},
+          "line": 108
+        },
+        {
+          "name": "LEBT:R_PS:VRdbkcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)/C",
+            "INPA": "LEBT:R_PS:VRdbk.VAL",
+            "INPB": "15",
+            "INPC": "30000"
+          },
+          "metadata": {
+            "PREC": "2",
+            "EGU": "kV"
+          },
+          "line": 116
+        },
+        {
+          "name": "LEBT:R_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M2:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 125
+        }
+      ]
+    },
+    "injectorApp/db/injectorSOL01.db": {
+      "blob_sha": "a8e269137c0e3b3a03972c44eae1998179fcf780",
+      "records": [
+        {
+          "name": "LEBT:SOL01_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_S1:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 5
+        },
+        {
+          "name": "LEBT:SOL01_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:SOL01_PS:IntCmd",
+            "OUT": "@asyn(modbus_S1:ecr_Icons 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "600",
+            "DRVL": "0",
+            "HOPR": "600",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 13
+        },
+        {
+          "name": "LEBT:SOL01_PS:Rampe",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:SOL01_PS:IntCmd",
+            "OUT": "@asyn(modbus_S1:ecr_rampe 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 27
+        },
+        {
+          "name": "LEBT:SOL01_PS:IntCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "SRC:SOL01_PS:RampeCmd.VAL PP"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 39
+        },
+        {
+          "name": "LEBT:SOL01_PS:RampeCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S1:ecr_Bit3 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 47
+        },
+        {
+          "name": "LEBT:SOL01_PS:PretRampe",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {},
+          "line": 56
+        },
+        {
+          "name": "LEBT:SOL01_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_S1:lect_bloc1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "PREC": "1"
+          },
+          "line": 62
+        },
+        {
+          "name": "LEBT:SOL01_PS:OnStat",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A&B",
+            "SCAN": "2 second",
+            "INPA": "LEBT:SOL01_PS:Status PP",
+            "INPB": "1"
+          },
+          "metadata": {},
+          "line": 71
+        },
+        {
+          "name": "LEBT:SOL01_PS:OffStat",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A&B)>>1",
+            "INPA": "LEBT:SOL01_PS:Status PP",
+            "INPB": "2"
+          },
+          "metadata": {},
+          "line": 79
+        },
+        {
+          "name": "LEBT:SOL01_PS:RdyStat",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A&B)>>2",
+            "INPA": "LEBT:SOL01_PS:Status PP",
+            "INPB": "4"
+          },
+          "metadata": {},
+          "line": 85
+        },
+        {
+          "name": "LEBT:SOL01_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S1:ecr_Bit0 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 91
+        },
+        {
+          "name": "LEBT:SOL01_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S1:ecr_Bit1 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 99
+        },
+        {
+          "name": "LEBT:SOL01_PS:RESET",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S1:ecr_Bit2 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 107
+        }
+      ]
+    },
+    "injectorApp/db/injectorSOL02.db": {
+      "blob_sha": "170f04d5dcd1d79873c390e00b4080cadda54630",
+      "records": [
+        {
+          "name": "LEBT:SOL02_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_S2:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 5
+        },
+        {
+          "name": "LEBT:SOL02_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:SOL02_PS:IntCmd",
+            "OUT": "@asyn(modbus_S2:ecr_Icons 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "600",
+            "DRVL": "0",
+            "HOPR": "600",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:SOL02_PS:Rampe",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:SOL02_PS:IntCmd",
+            "OUT": "@asyn(modbus_S2:ecr_rampe 0 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 28
+        },
+        {
+          "name": "LEBT:SOL02_PS:IntCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "SRC:SOL02_PS:RampeCmd.VAL PP"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 40
+        },
+        {
+          "name": "LEBT:SOL02_PS:RampeCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S2:ecr_Bit3 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 48
+        },
+        {
+          "name": "LEBT:SOL02_PS:PretRampe",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {},
+          "line": 57
+        },
+        {
+          "name": "LEBT:SOL02_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@asyn(modbus_S2:lect_bloc1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "PREC": "1"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:SOL02_PS:OnStat",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A&B",
+            "SCAN": "2 second",
+            "INPA": "LEBT:SOL02_PS:Status PP",
+            "INPB": "1"
+          },
+          "metadata": {},
+          "line": 72
+        },
+        {
+          "name": "LEBT:SOL02_PS:OffStat",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A&B)>>1",
+            "INPA": "LEBT:SOL02_PS:Status PP",
+            "INPB": "2",
+            "SCAN": "1 second"
+          },
+          "metadata": {},
+          "line": 80
+        },
+        {
+          "name": "LEBT:SOL02_PS:RdyStat",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A&B)>>2",
+            "INPA": "LEBT:SOL02_PS:Status PP",
+            "INPB": "4",
+            "SCAN": ".1 second"
+          },
+          "metadata": {},
+          "line": 87
+        },
+        {
+          "name": "LEBT:SOL02_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S2:ecr_Bit0 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 94
+        },
+        {
+          "name": "LEBT:SOL02_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S2:ecr_Bit1 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 102
+        },
+        {
+          "name": "LEBT:SOL02_PS:RESET",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@asynMask(modbus_S2:ecr_Bit2 0 1 0)MODBUS_DATA"
+          },
+          "metadata": {
+            "HIGH": "2"
+          },
+          "line": 110
+        }
+      ]
+    },
+    "injectorApp/db/injectorSRC_RF.db": {
+      "blob_sha": "0a30f279dffadc0d7d20cfae84fdb4b14de935e9",
+      "records": [
+        {
+          "name": "SRC:RF_GEN:Pwr",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:RF_GEN:PwrSet"
+          },
+          "metadata": {
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 5
+        },
+        {
+          "name": "SRC:RF_GEN:Offset",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "SRC:RF_GEN:CalcOffset"
+          },
+          "metadata": {
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 17
+        },
+        {
+          "name": "SRC:RF_GEN:PwrSet",
+          "record_type": "calc",
+          "links": {
+            "FLNK": "SRC:RF_GEN:VRFcalcout",
+            "CALC": "A-B",
+            "INPA": "SRC:RF_GEN:Pwr",
+            "INPB": "SRC:RF_GEN:Offset"
+          },
+          "metadata": {},
+          "line": 28
+        },
+        {
+          "name": "SRC:RF_GEN:VRFcalcout",
+          "record_type": "calcout",
+          "links": {
+            "FLNK": "SRC:RF_GEN:VRFSet",
+            "CALC": "(A*B)/C",
+            "INPA": "SRC:RF_GEN:PwrSet",
+            "INPB": "30000",
+            "INPC": "1200"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 35
+        },
+        {
+          "name": "SRC:RF_GEN:VRFSet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_HT:ecr_AO5 00)MODBUS_DATA",
+            "DOL": "SRC:RF_GEN:VRFcalcout"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 45
+        },
+        {
+          "name": "SRC:RF_GEN:CalcOffset",
+          "record_type": "calcout",
+          "links": {
+            "FLNK": "SRC:RF_GEN:VoffsetSet",
+            "CALC": "(A*B)/C",
+            "INPA": "SRC:RF_GEN:Offset",
+            "INPB": "30000",
+            "INPC": "1200"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 54
+        },
+        {
+          "name": "SRC:RF_GEN:VoffsetSet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_HT:ecr_AO6 00)MODBUS_DATA",
+            "DOL": "SRC:RF_GEN:CalcOffset"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 64
+        }
+      ]
+    },
+    "injectorApp/db/injectorSTH01.db": {
+      "blob_sha": "9d8a2ab6ec9c2e087884b58a773cc81113147e40",
+      "records": [
+        {
+          "name": "LEBT:STH01_PS:idn",
+          "record_type": "stringin",
+          "links": {
+            "SCAN": "10 second",
+            "INP": "@MatsusadaPRK_proto.db getidn PS-STH01"
+          },
+          "metadata": {},
+          "line": 2
+        },
+        {
+          "name": "LEBT:STH01_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db setcurr PS-STH01"
+          },
+          "metadata": {
+            "EGU": "A",
+            "LOPR": "0",
+            "HOPR": "150"
+          },
+          "line": 10
+        },
+        {
+          "name": "LEBT:STH01_PS:VSet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db setvolt PS-STH01"
+          },
+          "metadata": {
+            "EGU": "V",
+            "LOPR": "0",
+            "HOPR": "8"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:STH01_PS:IRdbkcalc",
+          "record_type": "ai",
+          "links": {
+            "INP": "@MatsusadaPRK_proto.db meascurr PS-STH01",
+            "SCAN": "2 second"
+          },
+          "metadata": {
+            "EGU": "A"
+          },
+          "line": 30
+        },
+        {
+          "name": "LEBT:STH01_PS:VRdbkcalc",
+          "record_type": "ai",
+          "links": {
+            "INP": "@MatsusadaPRK_proto.db measvolt PS-STH01",
+            "SCAN": "2 second"
+          },
+          "metadata": {
+            "EGU": "V"
+          },
+          "line": 39
+        },
+        {
+          "name": "LEBT:STH01_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "INP": "@MatsusadaPRK_proto.db onstat PS-STH01",
+            "SCAN": "2 second"
+          },
+          "metadata": {},
+          "line": 48
+        },
+        {
+          "name": "LEBT:STH01_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db on PS-STH01"
+          },
+          "metadata": {
+            "HIGH": "1"
+          },
+          "line": 56
+        },
+        {
+          "name": "LEBT:STH01_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db off PS-STH01"
+          },
+          "metadata": {
+            "HIGH": "1"
+          },
+          "line": 64
+        }
+      ]
+    },
+    "injectorApp/db/injectorSTH02.db": {
+      "blob_sha": "570266038d25f3eaceb4be6c9b071a66b8f034f4",
+      "records": [
+        {
+          "name": "LEBT:STH02_PS:idn",
+          "record_type": "stringin",
+          "links": {
+            "SCAN": "10 second",
+            "INP": "@MatsusadaPRK_proto.db getidn PS-STH02"
+          },
+          "metadata": {},
+          "line": 2
+        },
+        {
+          "name": "LEBT:STH02_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db setcurr PS-STH02"
+          },
+          "metadata": {
+            "EGU": "A",
+            "LOPR": "0",
+            "HOPR": "150"
+          },
+          "line": 10
+        },
+        {
+          "name": "LEBT:STH02_PS:VSet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db setvolt PS-STH02"
+          },
+          "metadata": {
+            "EGU": "V",
+            "LOPR": "0",
+            "HOPR": "8"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:STH02_PS:IRdbkcalc",
+          "record_type": "ai",
+          "links": {
+            "INP": "@MatsusadaPRK_proto.db meascurr PS-STH02",
+            "SCAN": "2 second"
+          },
+          "metadata": {
+            "EGU": "A"
+          },
+          "line": 30
+        },
+        {
+          "name": "LEBT:STH02_PS:VRdbkcalc",
+          "record_type": "ai",
+          "links": {
+            "INP": "@MatsusadaPRK_proto.db measvolt PS-STH02",
+            "SCAN": "2 second"
+          },
+          "metadata": {
+            "EGU": "V"
+          },
+          "line": 39
+        },
+        {
+          "name": "LEBT:STH02_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "INP": "@MatsusadaPRK_proto.db onstat PS-STH02",
+            "SCAN": "2 second"
+          },
+          "metadata": {},
+          "line": 48
+        },
+        {
+          "name": "LEBT:STH02_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db on PS-STH02"
+          },
+          "metadata": {
+            "HIGH": "1"
+          },
+          "line": 56
+        },
+        {
+          "name": "LEBT:STH02_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@MatsusadaPRK_proto.db off PS-STH02"
+          },
+          "metadata": {
+            "HIGH": "1"
+          },
+          "line": 64
+        }
+      ]
+    },
+    "injectorApp/db/injectorSTV01.db": {
+      "blob_sha": "b461d6fabc2b9b38e83b7aab7887865e3aa4f040",
+      "records": [
+        {
+          "name": "LEBT:STV01_PS:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M1:lect_status 0)MODBUS_DATA"
+          },
+          "metadata": {},
+          "line": 5
+        },
+        {
+          "name": "LEBT:STV01_PS:OnStat",
+          "record_type": "calcout",
+          "links": {
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>2",
+            "INPA": "LEBT:STV01_PS:Status.VAL PP NMS",
+            "INPB": "4"
+          },
+          "metadata": {},
+          "line": 13
+        },
+        {
+          "name": "LEBT:STV01_PS:RdyStat",
+          "record_type": "calcout",
+          "links": {
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>3",
+            "INPA": "LEBT:STV01_PS:Status.VAL PP NMS",
+            "INPB": "8"
+          },
+          "metadata": {},
+          "line": 22
+        },
+        {
+          "name": "LEBT:STV01_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "FLNK": "LEBT:STV01_PS:Icalcout"
+          },
+          "metadata": {
+            "EGU": "A",
+            "DRVH": "150",
+            "DRVL": "-150",
+            "HOPR": "150",
+            "LOPR": "-150"
+          },
+          "line": 31
+        },
+        {
+          "name": "LEBT:STV01_PS:IRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@asyn(modbus_M1:lect_AI 3)MODBUS_DATA",
+            "FLNK": "LEBT:STV01_PS:IRdbkcalc"
+          },
+          "metadata": {
+            "EGU": "A"
+          },
+          "line": 43
+        },
+        {
+          "name": "LEBT:STV01_PS:Icalcout",
+          "record_type": "calcout",
+          "links": {
+            "CALC": "(B*A)/C",
+            "INPA": "LEBT:STV01_PS:ISet",
+            "INPB": "30000",
+            "INPC": "150",
+            "FLNK": "LEBT:STV01_PS:IOut"
+          },
+          "metadata": {},
+          "line": 54
+        },
+        {
+          "name": "LEBT:STV01_PS:IOut",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@asyn(modbus_M1:ecr_AO5 00)MODBUS_DATA",
+            "DOL": "LEBT:STV01_PS:Icalcout"
+          },
+          "metadata": {
+            "DRVH": "32000",
+            "DRVL": "-32000",
+            "EGU": "A"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:STV01_PS:IRdbkcalc",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*B)/C",
+            "INPA": "LEBT:STV01_PS:IRdbk",
+            "INPB": "150",
+            "INPC": "30000"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 73
+        }
+      ]
+    },
+    "injectorApp/db/injectorSTV02.db": {
+      "blob_sha": "6fac34ebe25ade23cca799ba0f89af595a994e66",
+      "records": [
+        {
+          "name": "LEBT:STV02_PS:idn",
+          "record_type": "stringin",
+          "links": {
+            "INP": "@PBZ20_proto.db getidn PS-STV02"
+          },
+          "metadata": {},
+          "line": 3
+        },
+        {
+          "name": "LEBT:STV02_PS:ISet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "@PBZ20_proto.db setcurr PS-STV02"
+          },
+          "metadata": {
+            "EGU": "A",
+            "LOPR": "-20",
+            "HOPR": "20"
+          },
+          "line": 10
+        },
+        {
+          "name": "LEBT:STV02_PS:IRdbkcalc",
+          "record_type": "ai",
+          "links": {
+            "INP": "@PBZ20_proto.db meascurr PS-STV02",
+            "SCAN": "2 second"
+          },
+          "metadata": {
+            "EGU": "A"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:STV02_PS:OnStat",
+          "record_type": "bi",
+          "links": {
+            "INP": "@PBZ20_proto.db onstat PS-STV02",
+            "SCAN": "2 second"
+          },
+          "metadata": {},
+          "line": 29
+        },
+        {
+          "name": "LEBT:STV02_PS:ON",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@PBZ20_proto.db on PS-STV02"
+          },
+          "metadata": {
+            "HIGH": "1"
+          },
+          "line": 37
+        },
+        {
+          "name": "LEBT:STV02_PS:OFF",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@PBZ20_proto.db off PS-STV02"
+          },
+          "metadata": {
+            "HIGH": "1"
+          },
+          "line": 45
+        }
+      ]
+    },
+    "injectorApp/db/injectorTiming.db": {
+      "blob_sha": "2e597b0f1aafba77ba88919b5f72a0abc042db5b",
+      "records": [
+        {
+          "name": "SRC:TIM:TPulse",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 5
+        },
+        {
+          "name": "SRC:TIM:RetPulse",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 19
+        },
+        {
+          "name": "SRC:TIM:TChopper",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 32
+        },
+        {
+          "name": "SRC:TIM:RetChopper",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "2000",
+            "DRVL": "0",
+            "HOPR": "2000",
+            "LOPR": "0",
+            "PREC": "3",
+            "EGU": "ms"
+          },
+          "line": 45
+        },
+        {
+          "name": "SRC:TIM:Trep",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "5000",
+            "DRVL": "20",
+            "HOPR": "5000",
+            "LOPR": "20",
+            "PREC": "0",
+            "EGU": "ms"
+          },
+          "line": 58
+        },
+        {
+          "name": "SRC:TIM:Ret1",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "1000",
+            "DRVL": "-1000",
+            "HOPR": "1000",
+            "LOPR": "-1000",
+            "PREC": "0",
+            "EGU": "micros"
+          },
+          "line": 71
+        },
+        {
+          "name": "SRC:TIM:Ret2",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "50000",
+            "DRVL": "10",
+            "HOPR": "50000",
+            "LOPR": "10",
+            "PREC": "0",
+            "EGU": "micros"
+          },
+          "line": 84
+        },
+        {
+          "name": "SRC:TIM:Ret3",
+          "record_type": "ao",
+          "links": {
+            "SCAN": "Passive"
+          },
+          "metadata": {
+            "DRVH": "50000",
+            "DRVL": "0.01",
+            "HOPR": "50000",
+            "LOPR": "0.01",
+            "PREC": "0",
+            "EGU": "micros"
+          },
+          "line": 97
+        },
+        {
+          "name": "SRC:TIM:OK",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "HIGH": "5"
+          },
+          "line": 110
+        },
+        {
+          "name": "SRC:TIM:CWMode",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "HIGH": "5"
+          },
+          "line": 117
+        },
+        {
+          "name": "SRC:TIM:Mode",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ONAM": "CW",
+            "ZNAM": "Pulse"
+          },
+          "line": 123
+        },
+        {
+          "name": "SRC:TIM:Init",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "HIGH": "5"
+          },
+          "line": 130
+        },
+        {
+          "name": "SRC:TIM:Cyclut",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "2 second",
+            "INPA": "SRC:TIM:Trep",
+            "INPB": "SRC:TIM:TPulse",
+            "CALC": "A/B",
+            "FLNK": "SRC:TIM:DutyCycle"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 136
+        },
+        {
+          "name": "SRC:TIM:DutyCycle",
+          "record_type": "calc",
+          "links": {
+            "INPA": "SRC:TIM:Cyclut",
+            "INPB": "SRC:RF_GENE:CWmdOn",
+            "INPC": "1",
+            "CALC": "(B)?A:C"
+          },
+          "metadata": {
+            "PREC": "2"
+          },
+          "line": 146
+        },
+        {
+          "name": "SRC:TIM:Date",
+          "record_type": "stringin",
+          "links": {
+            "SCAN": "2 second",
+            "INP": "@%d-%m-%Y %H:%M"
+          },
+          "metadata": {},
+          "line": 155
+        },
+        {
+          "name": "SRC:TIM:Dialog",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {
+            "VAL": "..................."
+          },
+          "line": 163
+        }
+      ]
+    }
+  }
+}
