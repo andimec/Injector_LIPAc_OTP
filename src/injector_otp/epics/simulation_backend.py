@@ -3,59 +3,42 @@ from __future__ import annotations
 from typing import Any
 
 from ..pv.state import SimulationPVState
-from .contract import SIM_NAMESPACE, SimulationIOCContract
+from .contract import SimulationIOCContract
 
 
 class SimulationPVBackend:
-    """Compatibility adapter exposing SimulationPVState through EPICS-like names.
+    """Local EPICS-like adapter. Exposes native LIPAc PV names unchanged.
 
-    The engine does not depend on this class. It exists as a local transport
-    adapter for tests and for the pre-Soft-IOC development phase.
+    It never connects to a production network. Writes are authorized only by
+    SimulationPVState's explicit allowlist, irrespective of PV spelling.
     """
 
     def __init__(self, state: SimulationPVState | None = None) -> None:
         self.state = state or SimulationPVState()
 
     def define(self, name: str, value: Any = 0, writable: bool = False) -> None:
+        name = SimulationIOCContract.simulation_name(name)
         if writable:
             self.state.allow_operator_write(name)
         self.state.define(name, value=value)
 
     def get(self, name: str) -> Any:
-        return self.state.get(self._source_name(name))
+        return self.state.get(SimulationIOCContract.simulation_name(name))
 
     def put(self, name: str, value: Any) -> None:
-        sim_name = SimulationIOCContract.simulation_name(name)
-        SimulationIOCContract.require_simulation_namespace(sim_name)
-        self.state.put(self._source_name(sim_name), value)
+        self.state.put(SimulationIOCContract.simulation_name(name), value)
 
     def publish(self, name: str, value: Any) -> None:
-        sim_name = SimulationIOCContract.simulation_name(name)
-        self.state.publish(self._source_name(sim_name), value)
+        self.state.publish(SimulationIOCContract.simulation_name(name), value)
 
     def names(self) -> list[str]:
-        return [
-            SimulationIOCContract.simulation_name(name)
-            for name in self.state.names()
-        ]
+        return self.state.names()
 
     def timestamp(self, name: str) -> float:
-        return self.state.record(self._source_name(name)).timestamp
+        return self.state.record(SimulationIOCContract.simulation_name(name)).timestamp
 
     def snapshot(self) -> dict[str, tuple[Any, float]]:
         return {
             name: (self.get(name), self.timestamp(name))
             for name in self.names()
         }
-
-    def _source_name(self, name: str) -> str:
-        if not SimulationIOCContract.is_simulation_name(name):
-            return name
-
-        candidate = name[len(SIM_NAMESPACE):]
-        # Application PVs use source Injector names internally, while
-        # standalone tests may deliberately define OTP-prefixed runtime PVs.
-        # Preserve whichever representation actually exists in the state.
-        if candidate in self.state.names():
-            return candidate
-        return name
