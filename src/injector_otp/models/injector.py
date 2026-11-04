@@ -9,11 +9,12 @@ from __future__ import annotations
 from .base import SubsystemModel
 from .catalog import DeviceCatalog
 from .control_devices import (
-    BeamTransportModel, ChopperFBIModel, InterfaceOnlyModel,
+    BeamTransportModel, InterfaceOnlyModel,
     PositionerModel, RFSystemModel, TimingSystemModel,
 )
 from .plant import CoolingSkidModel, GasFlowController, VacuumRegionModel, ValveDevice
 from .vacuum_opi import VacuumOPIPreconditions
+from .chopper_cim import ChopperCIMModel
 from .power_supplies import POWER_SUPPLY_PREFIXES, PowerSupplyDevice
 
 
@@ -83,7 +84,7 @@ class InjectorModel(SubsystemModel):
                 self._add(PositionerModel(prefix, catalog))
 
         if catalog.contains_prefix("LEBT:CHOP_IM"):
-            self._add(ChopperFBIModel(catalog), "fault_trigger_only")
+            self._add(ChopperCIMModel(catalog), "operational_state_and_injected_snapshot")
 
         if catalog.contains_prefix("SRC:RF_GENE"):
             self._add(RFSystemModel(catalog, self.parameters))
