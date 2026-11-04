@@ -144,30 +144,6 @@ class PositionerModel(SubsystemModel):
         context.metrics[f"{self.prefix}.inserted"] = float(self.inserted)
 
 
-class ChopperFBIModel(SubsystemModel):
-    """Fast Beam Inhibit observable, without inventing the cRIO firmware."""
-
-    name = "chopper_im"
-
-    def __init__(self, catalog: DeviceCatalog) -> None:
-        super().__init__()
-        self.catalog = catalog
-        self.latched = False
-
-    def update(self, dt: float, context) -> None:
-        super().update(dt)
-        # Threshold algorithms and clear/acknowledge semantics depend on the
-        # actual cRIO specification. Only explicit fault injection is modelled.
-        if ("FBI_TRIGGER" in context.faults
-                or context.device_faults.get("chopper", False)):
-            self.latched = True
-        if self.latched:
-            name = "LEBT:CHOP_IM:Fbi"
-            if self.catalog.has(name):
-                context.emit(name, 1, "chopper_fbi")
-        context.metrics["chopper.fbi"] = float(self.latched)
-
-
 class TimingSystemModel(SubsystemModel):
     name = "timing"
 
