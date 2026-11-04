@@ -40,5 +40,10 @@ initial_pvs:
   PPS:CHOP:PermStat: true
   PPS:ACCL:PermStat: true
   PPS:BEAM:InhibitStat: false
+  # LCS User Manual v4.0 section 4.4.2. These are configurable
+  # operator threshold inputs to a TRAINING CIM, not FPGA comparisons.
+  LEBT:CHOP_IM:VmonOff: 1000.0
+  LEBT:CHOP_IM:VmonThr: 6000.0
+  LEBT:CHOP_IM:AcctThr: 5.0
 
 device_faults: {}
