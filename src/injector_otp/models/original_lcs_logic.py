@@ -101,7 +101,9 @@ def timing_display_ratio(period_ms: float, pulse_ms: float,
     NB: The published source formula is INVERSE to physical duty fraction!
     This is retained only for compatibility with legacy displays.
     """
-    if rf_cw:
+    # Original CALC=(B)?A:C, B=RF_GENE:CWmdOn, A=Cyclut, C=1.
+    # Therefore CW selects Trep/TPulse, pulse mode selects 1.
+    if not rf_cw:
         return 1.0
     if pulse_ms <= 0:
         return None
