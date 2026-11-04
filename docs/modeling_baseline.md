@@ -88,3 +88,13 @@ These are modelling references. They are not automatically interpreted as hard p
 The engine will initially use reduced-order deterministic models. Detailed plasma physics, beam transport, RF electromagnetic simulation, thermal-fluid CFD and detailed vacuum conductance networks remain separate model implementations and can later be coupled through the same interfaces.
 
 This keeps the OTP useful for operator training and control integration without inventing undocumented physical behaviour.
+
+## EMU reconstruction baseline
+
+The EMU is now executable as separate Python models for MAXv motor and servo
+coordination, ICV plate supplies, FACQ scalar event and the original
+measurement state machine. Exact geometry and SNL voltage-grid calculations
+are kept separate from explicitly uncalibrated movement/response parameters.
+See [EMU reconstruction](emu_reconstruction.md). The in-memory simulator must
+not be interpreted as a deployed interlock, real FACQ waveform acquisition or
+calibrated transverse emittance measurement.

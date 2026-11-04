@@ -62,3 +62,33 @@ auto_hv:
   hv_ie_step_interval_s: 1.0
   repeller_step_interval_s: 1.0
   feedback_timeout_s: 20.0
+
+# EMU dynamics are TRAINING assumptions, distinct from verified SNL logic.
+# Source for geometry, state ordering and motor field limits:
+# topIFMIF_INJ/emitApp/src/emitSnlEmu_v2.st and emitMotor.db.
+# Source for MaxV/servo timing: emitSnlMotor.st (1 s per stage).
+emu:
+  enable_stage_delay_s: 1.0
+  motor:
+    initial_position_mm: 0.0
+    rate_mm_s: 20.0       # TODO fit from recorded motor motion
+    position_tolerance_mm: 0.01  # SNL v2 verifMoteur absolute threshold
+    lower_limit_mm: -3.0  # original motor DLLM
+    upper_limit_mm: 182.0 # original motor DHLM
+  plates:
+    plate_rate_V_s: 10000.0 # TODO fit real ICV714/150 response
+    turn_on_delay_s: 0.0    # source ODLY=30 off, 0 on is NOT physical response
+  facq:
+    synthetic_enabled: true
+    synthetic_period_s: 0.1  # simulation clock, NOT real fast acquisition rate
+  scan:
+    motor_tolerance_mm: 0.01
+    voltage_fraction_tolerance: 0.02
+    voltage_absolute_tolerance_V: 2.0
+    enable_timeout_s: 15.0
+    motor_timeout_s: 30.0
+    plate_timeout_s: 30.0
+    acquisition_timeout_s: 10.0
+    max_targets: 20000
+    min_motor_limit_mm: -3.0
+    max_motor_limit_mm: 182.0
