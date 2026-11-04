@@ -49,8 +49,11 @@ is an adapter around the simulation-owned PV state.
 - src/injector_otp/interlocks: documented Injector authorization chains and
   complementary legacy PPS/MPS relationships.
 - src/injector_otp/app.py: application composition and simulation bootstrap.
-- config/pv_registry_v1_2.json: machine-readable September 2026 Injector PV
-  snapshot.
+- config/pv_registry_v2_0.json: active reconciled registry (1052 PV references,
+  including six EMU SNL interfaces), sourced from historic PV snapshot,
+  original DB definitions and current OPIs.
+- config/pv_registry_v1_2.json: preserved historical September 2026 snapshot
+  (891 entries); not used by the default application bootstrap.
 - config/pv_runtime_overrides.yaml: explicitly verified runtime ownership
   overrides for the pilot.
 - config/simulation/default.yaml: startup conditions only.
@@ -59,7 +62,8 @@ is an adapter around the simulation-owned PV state.
 
 ## PV registry and runtime ownership
 
-The V1.2 JSON snapshot contains 891 unique PV entries.
+The active V2.0 registry contains 1052 PV references; the historical V1.2
+snapshot contains 891 unique entries.
 
 The source EPICS read/write flags do not uniquely determine Digital Twin
 semantics. A read/write PV may be writable for implementation reasons while
@@ -67,7 +71,7 @@ being a monitor, status or calculated value from the simulation perspective.
 
 Therefore:
 
-1. The V1.2 registry defines the available PV inventory and source metadata.
+1. The V2.0 registry defines the active PV inventory and source metadata.
 2. Runtime overrides define only verified pilot inputs.
 3. Unresolved PVs remain unresolved until their semantics are documented.
 4. SimulationPVState is the source of truth for simulation values.
@@ -116,7 +120,7 @@ classifying one source as valid and another as invalid:
   and RF-for-Beam authorization paths;
 - PLC maintenance documentation supplies complementary historical Boolean
   relationships;
-- V1.2 PV registry supplies concrete PV names;
+- V2.0 PV registry supplies reconciled concrete PV names;
 - ambiguous protection equations remain open rather than invented.
 
 The LCS manual states that PPS/MPS OPI information is for monitoring and
@@ -128,7 +132,7 @@ real PPS/MPS hardware.
 Detailed design decisions and source traceability are documented in
 docs/interlocks.md and docs/pv_runtime_contract.md.
 
-## EMU SNL reconstruction (development branch)
+## EMU SNL reconstruction
 
 The EMU sub-system now has a Python-owned motor/servo/plate-supply model,
 full/wide/edge SNL scan sequencing, bounded acquisition and in-memory points.
