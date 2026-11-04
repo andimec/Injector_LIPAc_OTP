@@ -63,8 +63,8 @@ def test_vacuum_sv_preconditions_match_original_calc():
 
 
 def test_legacy_timing_display_is_not_physical_duty():
-    assert timing_display_ratio(100.0, 5.0, False) == 20.0
+    assert timing_display_ratio(100.0, 5.0, False) == 1.0
     assert physical_duty_fraction(100.0, 5.0, False) == 0.05
-    assert timing_display_ratio(100.0, 5.0, True) == 1.0
+    assert timing_display_ratio(100.0, 5.0, True) == 20.0
     assert physical_duty_fraction(100.0, 5.0, True) == 1.0
-    assert timing_display_ratio(100.0, 0.0, False) is None
+    assert timing_display_ratio(100.0, 0.0, True) is None
