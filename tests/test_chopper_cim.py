@@ -31,8 +31,8 @@ def test_fbi_snapshot_is_captured_only_once_and_remains_latched():
     pv.put("LEBT:CHOP_IM:StmStateSet", 2)
     pv.put("SRC:TIM:Trep", 100)
     pv.put("SRC:TIM:TPulse", 5)
-    pv.publish("LEBT:CHOP_IM:CurrentVmon", 7000, source="scenario_measurement")
-    pv.publish("LEBT:CHOP_IM:CurrentAcct", 4.2, source="scenario_measurement")
+    pv.publish("LEBT:CHOP_IM:CurrentVmon", 7000)
+    pv.publish("LEBT:CHOP_IM:CurrentAcct", 4.2)
     engine.step()
     assert pv.get("LEBT:CHOP_IM:StmState") == 2
 
@@ -45,7 +45,7 @@ def test_fbi_snapshot_is_captured_only_once_and_remains_latched():
     assert pv.get("LEBT:CHOP_IM:FbiVmon") == 7000
     assert pv.get("LEBT:CHOP_IM:FbiAcct") == 4.2
 
-    pv.publish("LEBT:CHOP_IM:CurrentVmon", 300, source="scenario_measurement")
+    pv.publish("LEBT:CHOP_IM:CurrentVmon", 300)
     faults.clear("FBI_TRIGGER")
     engine.step()
     assert pv.get("LEBT:CHOP_IM:Fbi") == 1
@@ -55,7 +55,7 @@ def test_fbi_snapshot_is_captured_only_once_and_remains_latched():
 def test_cim_thresholds_do_not_spontaneously_reproduce_undocumented_fpga():
     engine, pv, _ = build_application()
     pv.put("LEBT:CHOP_IM:StmStateSet", 2)
-    pv.publish("LEBT:CHOP_IM:CurrentVmon", 500, source="scenario_measurement")
-    pv.publish("LEBT:CHOP_IM:CurrentAcct", 10, source="scenario_measurement")
+    pv.publish("LEBT:CHOP_IM:CurrentVmon", 500)
+    pv.publish("LEBT:CHOP_IM:CurrentAcct", 10)
     engine.step()
     assert pv.get("LEBT:CHOP_IM:Fbi") == 0
