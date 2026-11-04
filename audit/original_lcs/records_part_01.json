@@ -4,27 +4,694 @@
   "files": {
     "emitApp/db/emitIcv150.db": {
       "blob_sha": "eb2aa6ec9f0ef4044315b8017fcc23ec5674b76b",
-      "records": []
+      "records": [
+        {
+          "name": "LEBT:$(DEVICE)_$(CNAME):VRdbk",
+          "record_type": "ai",
+          "links": {
+            "SCAN": ".1 second",
+            "INP": "#C0 S$(SIGNAL) @"
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "$(EGU)",
+            "HOPR": "$(HOPR)",
+            "LOPR": "$(LOPR)"
+          },
+          "line": 5
+        }
+      ]
     },
     "emitApp/db/emitIcv196.db": {
       "blob_sha": "0d13ad2f831f0ddd89a33fc9740b6a3dc1e2e9a3",
-      "records": []
+      "records": [
+        {
+          "name": "LEBT:$(DEVICE)_$(CNAME):OnOffCmd",
+          "record_type": "bo",
+          "links": {
+            "OUT": "#C0 S$(SIGNAL) @"
+          },
+          "metadata": {
+            "ZNAM": "HV OFF",
+            "ONAM": "HV ON"
+          },
+          "line": 5
+        },
+        {
+          "name": "LEBT:$(DEVICE)_$(CNAME):Softbo",
+          "record_type": "bo",
+          "links": {
+            "FLNK": "LEBT:$(DEVICE)_$(CNAME):Calcdly",
+            "OUT": "LEBT:$(DEVICE)_$(CNAME):OnOffCmd.VAL"
+          },
+          "metadata": {
+            "ZNAM": "HV Off",
+            "ONAM": "HV On"
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:$(DEVICE)_$(CNAME):Calcdly",
+          "record_type": "calcout",
+          "links": {
+            "FLNK": "LEBT:$(DEVICE)_$(CNAME):OnOffCmd",
+            "CALC": "(A=B)?30:0",
+            "INPA": "LEBT:$(DEVICE)_$(CNAME):Softbo.VAL",
+            "INPB": "1",
+            "ODLY": "30"
+          },
+          "metadata": {},
+          "line": 23
+        }
+      ]
     },
     "emitApp/db/emitIcv714.db": {
       "blob_sha": "729c0d90ae211565eebfb458a7013e5fa3a86335",
-      "records": []
+      "records": [
+        {
+          "name": "LEBT:$(DEVICE)_$(CNAME):VSet",
+          "record_type": "ao",
+          "links": {
+            "OUT": "#C0 S$(SIGNAL) @"
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "$(EGU)",
+            "DRVH": "$(DRVH)",
+            "DRVL": "$(DRVL)",
+            "HOPR": "$(HOPR)",
+            "LOPR": "$(LOPR)"
+          },
+          "line": 5
+        }
+      ]
     },
     "emitApp/db/emitMotor.db": {
       "blob_sha": "7c9f3e7d45f054364478a4e7c334a75bd3028ce1",
-      "records": []
+      "records": [
+        {
+          "name": "$(DEVICE):MOTOR",
+          "record_type": "motor",
+          "links": {
+            "OUT": "#C0 S0 @"
+          },
+          "metadata": {
+            "PREC": "8",
+            "EGU": "mm"
+          },
+          "line": 7
+        },
+        {
+          "name": "$(DEVICE):HARD_LIM_VIO",
+          "record_type": "calcout",
+          "links": {
+            "INPA": "$(DEVICE).HLS",
+            "INPB": "$(DEVICE).LLS",
+            "CALC": "A||B"
+          },
+          "metadata": {},
+          "line": 43
+        },
+        {
+          "name": "$(DEVICE):SOFT_LIM_VIO",
+          "record_type": "calcout",
+          "links": {
+            "INPA": "$(DEVICE).LVIO",
+            "INPB": "$(DEVICE).HLS",
+            "INPC": "$(DEVICE).LLS",
+            "CALC": "A&&( !B && !C )"
+          },
+          "metadata": {},
+          "line": 50
+        },
+        {
+          "name": "$(DEVICE):Position",
+          "record_type": "calc",
+          "links": {
+            "CALC": "(A*-1.)",
+            "INPA": "$(DEVICE):MOTOR.RBV NPP MS",
+            "SCAN": ".1 second"
+          },
+          "metadata": {
+            "EGU": "mm",
+            "PREC": "0",
+            "HOPR": "2",
+            "LOPR": "-181",
+            "HIGH": "1"
+          },
+          "line": 56
+        },
+        {
+          "name": "$(DEVICE):Refresh",
+          "record_type": "bo",
+          "links": {
+            "SCAN": "Passive",
+            "OUT": "$(DEVICE):MOTOR.STUP"
+          },
+          "metadata": {
+            "VAL": "1"
+          },
+          "line": 75
+        }
+      ]
     },
     "emitApp/db/emitProcess.db": {
       "blob_sha": "2d3c0ae8ad9b7fbe9ef5bb4480d43b0a585418f0",
-      "records": []
+      "records": [
+        {
+          "name": "$(DEVICE):Vht",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A-B",
+            "INPA": "LEBT:EMIT_PS1:VSet NPP NMS",
+            "INPB": "LEBT:EMIT_PS2:VSet NPP NMS",
+            "SCAN": ".1 second"
+          },
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 5
+        },
+        {
+          "name": "$(DEVICE):Vpic",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "VAL": "0"
+          },
+          "line": 19
+        },
+        {
+          "name": "$(DEVICE):VpicEnd",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "VAL": "-9999"
+          },
+          "line": 30
+        },
+        {
+          "name": "$(DEVICE):VhtRdbk",
+          "record_type": "calc",
+          "links": {
+            "CALC": "A-B",
+            "INPA": "LEBT:EMIT_PS1:VRdbk NPP NMS",
+            "INPB": "LEBT:EMIT_PS2:VRdbk NPP NMS",
+            "SCAN": ".1 second"
+          },
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 40
+        },
+        {
+          "name": "$(DEVICE):Vstart",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 51
+        },
+        {
+          "name": "$(DEVICE):Energy",
+          "record_type": "ao",
+          "links": {
+            "DOL": "50"
+          },
+          "metadata": {
+            "EGU": "keV",
+            "DRVH": "200",
+            "HOPR": "200"
+          },
+          "line": 59
+        },
+        {
+          "name": "$(DEVICE):Vend",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 69
+        },
+        {
+          "name": "$(DEVICE):Vstep",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 77
+        },
+        {
+          "name": "$(DEVICE):Mstep",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "20",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 85
+        },
+        {
+          "name": "$(DEVICE):Debscanl",
+          "record_type": "ao",
+          "links": {
+            "DOL": "5000"
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 94
+        },
+        {
+          "name": "$(DEVICE):Finscanl",
+          "record_type": "ao",
+          "links": {
+            "DOL": "-5000"
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 105
+        },
+        {
+          "name": "$(DEVICE):Passcanl",
+          "record_type": "ao",
+          "links": {
+            "DOL": "100"
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "2000",
+            "LOPR": "1"
+          },
+          "line": 116
+        },
+        {
+          "name": "$(DEVICE):Pasald",
+          "record_type": "ao",
+          "links": {
+            "DOL": "100"
+          },
+          "metadata": {
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "1000",
+            "LOPR": "1"
+          },
+          "line": 127
+        },
+        {
+          "name": "$(DEVICE):Nptscanl",
+          "record_type": "calcout",
+          "links": {
+            "SCAN": "2 second",
+            "CALC": "(ABS(A)+ABS(B))/ABS(C)",
+            "INPA": "$(DEVICE):Debscanl.VAL PP",
+            "INPB": "$(DEVICE):Finscanl.VAL PP",
+            "INPC": "$(DEVICE):Passcanl.VAL PP"
+          },
+          "metadata": {},
+          "line": 138
+        },
+        {
+          "name": "$(DEVICE):Nptdet",
+          "record_type": "calcout",
+          "links": {
+            "SCAN": "2 second",
+            "CALC": "(ABS(A)+ABS(B))/ABS(C)",
+            "INPA": "$(DEVICE):Debscanl.VAL",
+            "INPB": "$(DEVICE):Finscanl.VAL",
+            "INPC": "$(DEVICE):Pasald.VAL"
+          },
+          "metadata": {},
+          "line": 146
+        },
+        {
+          "name": "$(DEVICE):Actemit",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 154
+        },
+        {
+          "name": "$(DEVICE):Actscan",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 161
+        },
+        {
+          "name": "$(DEVICE):Actupper",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 168
+        },
+        {
+          "name": "$(DEVICE):Actlower",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 175
+        },
+        {
+          "name": "$(DEVICE):Pasmotdet",
+          "record_type": "ao",
+          "links": {
+            "DOL": "1"
+          },
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "150",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 182
+        },
+        {
+          "name": "$(DEVICE):Razgraph",
+          "record_type": "ao",
+          "links": {
+            "DOL": "1"
+          },
+          "metadata": {
+            "HOPR": "100",
+            "LOPR": "0"
+          },
+          "line": 193
+        },
+        {
+          "name": "$(DEVICE):Deltav",
+          "record_type": "ao",
+          "links": {
+            "DOL": "1000"
+          },
+          "metadata": {
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "0"
+          },
+          "line": 202
+        },
+        {
+          "name": "$(DEVICE):Borderup",
+          "record_type": "ao",
+          "links": {
+            "DOL": "40"
+          },
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "130",
+            "LOPR": "-50"
+          },
+          "line": 212
+        },
+        {
+          "name": "$(DEVICE):Limdet",
+          "record_type": "ao",
+          "links": {
+            "DOL": "50"
+          },
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "180",
+            "LOPR": "0"
+          },
+          "line": 222
+        },
+        {
+          "name": "$(DEVICE):Pausemit",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "pause",
+            "ONAM": "pause"
+          },
+          "line": 232
+        },
+        {
+          "name": "$(DEVICE):Borderlow",
+          "record_type": "ao",
+          "links": {
+            "DOL": "120"
+          },
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "130",
+            "LOPR": "-50"
+          },
+          "line": 239
+        },
+        {
+          "name": "$(DEVICE):Savescan",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "save",
+            "ONAM": "save"
+          },
+          "line": 249
+        },
+        {
+          "name": "$(DEVICE):Scantext",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {},
+          "line": 256
+        },
+        {
+          "name": "$(DEVICE):Savemit",
+          "record_type": "bo",
+          "links": {
+            "DOL": "1"
+          },
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 261
+        },
+        {
+          "name": "$(DEVICE):Savewf",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 271
+        },
+        {
+          "name": "$(DEVICE):Emitext",
+          "record_type": "stringin",
+          "links": {},
+          "metadata": {},
+          "line": 278
+        },
+        {
+          "name": "$(DEVICE):Emufic",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {},
+          "line": 283
+        },
+        {
+          "name": "$(DEVICE):Upper",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "200",
+            "LOPR": "-200"
+          },
+          "line": 288
+        },
+        {
+          "name": "$(DEVICE):Lower",
+          "record_type": "ao",
+          "links": {},
+          "metadata": {
+            "EGU": "mm",
+            "HOPR": "200",
+            "LOPR": "-200"
+          },
+          "line": 296
+        },
+        {
+          "name": "$(DEVICE):Validate",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "validate",
+            "ONAM": "validate"
+          },
+          "line": 304
+        },
+        {
+          "name": "$(DEVICE):Nptemit",
+          "record_type": "ao",
+          "links": {
+            "DOL": "100"
+          },
+          "metadata": {
+            "HOPR": "500",
+            "LOPR": "0"
+          },
+          "line": 311
+        },
+        {
+          "name": "$(DEVICE):Compteur1",
+          "record_type": "calc",
+          "links": {
+            "SCAN": "1 second",
+            "CALC": "(A<B?A+1:A=0)",
+            "INPA": "$(DEVICE):Compteur1.VAL",
+            "INPB": "100"
+          },
+          "metadata": {
+            "EGU": "sec"
+          },
+          "line": 320
+        },
+        {
+          "name": "$(DEVICE):AnglePicInit",
+          "record_type": "ao",
+          "links": {
+            "DOL": "9999"
+          },
+          "metadata": {
+            "EGU": "mrad",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 330
+        },
+        {
+          "name": "$(DEVICE):AnglePicEnd",
+          "record_type": "ao",
+          "links": {
+            "DOL": "9999"
+          },
+          "metadata": {
+            "EGU": "mrad",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 339
+        },
+        {
+          "name": "$(DEVICE):AngleDelta",
+          "record_type": "ao",
+          "links": {
+            "DOL": "15"
+          },
+          "metadata": {
+            "EGU": "mrad",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 349
+        }
+      ]
     },
     "emitApp/db/emitServo.db": {
       "blob_sha": "21ec6f561452d248b75a424f5d6e7fbd8ccffe65",
-      "records": []
+      "records": [
+        {
+          "name": "$(DEVICE)_SERV:EnaDisa",
+          "record_type": "bo",
+          "links": {
+            "OUT": "@emitServoProto.db ecrServo SERVO"
+          },
+          "metadata": {
+            "ZNAM": "DIS",
+            "ONAM": "EN"
+          },
+          "line": 5
+        },
+        {
+          "name": "$(DEVICE)_SERV:Refresh",
+          "record_type": "bo",
+          "links": {
+            "FLNK": "$(DEVICE)_SERV:Status"
+          },
+          "metadata": {
+            "ZNAM": "refresh",
+            "ONAM": "refresh"
+          },
+          "line": 14
+        },
+        {
+          "name": "$(DEVICE)_SERV:Status",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "Passive",
+            "INP": "@emitServoProto.db lectServo SERVO"
+          },
+          "metadata": {},
+          "line": 23
+        },
+        {
+          "name": "$(DEVICE):Actenable",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "enable",
+            "ONAM": "enable"
+          },
+          "line": 31
+        },
+        {
+          "name": "$(DEVICE):Actdisable",
+          "record_type": "bo",
+          "links": {},
+          "metadata": {
+            "ZNAM": "disable",
+            "ONAM": "disable"
+          },
+          "line": 38
+        }
+      ]
     },
     "emitApp/db/emitServoProto.db": {
       "blob_sha": "1c725ab4fcbd4b7b1c710ac19f60f2c8496e360f",
@@ -32,7 +699,64 @@
     },
     "emitApp/db/emitVxStats.db": {
       "blob_sha": "7e979d88b35cd10a83ae6cc6c875e88635705449",
-      "records": []
+      "records": [
+        {
+          "name": "LEBT:VMEStats:cpuUsedPercent",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@cpu"
+          },
+          "metadata": {
+            "HIGH": "60.0",
+            "EGU": "%"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:VMEStats:memoryUsedPercent",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@memory"
+          },
+          "metadata": {
+            "HIGH": "60.0",
+            "EGU": "%"
+          },
+          "line": 22
+        },
+        {
+          "name": "LEBT:VMEStats:memoryTotal",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@memoryTotal"
+          },
+          "metadata": {},
+          "line": 33
+        },
+        {
+          "name": "LEBT:VMEStats:memoryUsed",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@memoryUsed"
+          },
+          "metadata": {},
+          "line": 39
+        },
+        {
+          "name": "LEBT:VMEStats:memoryFree",
+          "record_type": "ai",
+          "links": {
+            "SCAN": "I/O Intr",
+            "INP": "@memoryFree"
+          },
+          "metadata": {},
+          "line": 45
+        }
+      ]
     },
     "emitApp/db/extraPV.db": {
       "blob_sha": "edbf3b83263572da47044364a697f6ae585e855a",
@@ -40,10 +764,10 @@
         {
           "name": "SRC:TIM:Trep",
           "record_type": "ao",
-          "fields": {
+          "links": {
             "SCAN": "Passive"
           },
-          "limits": {
+          "metadata": {
             "DRVH": "5000",
             "DRVL": "20",
             "HOPR": "5000",
@@ -56,24 +780,26 @@
         {
           "name": "SRC:SVL:D2CloseStat",
           "record_type": "bi",
-          "fields": {
+          "links": {
             "SCAN": "1 second"
           },
-          "limits": {
+          "metadata": {
             "ONAM": "Closed",
-            "ZNAM": "Open"
+            "ZNAM": "Open",
+            "VAL": "1"
           },
           "line": 14
         },
         {
           "name": "SRC:SVL:H2CloseStat",
           "record_type": "bi",
-          "fields": {
+          "links": {
             "SCAN": "1 second"
           },
-          "limits": {
+          "metadata": {
             "ONAM": "Closed",
-            "ZNAM": "Open"
+            "ZNAM": "Open",
+            "VAL": "1"
           },
           "line": 24
         }
@@ -85,12 +811,12 @@
         {
           "name": "LEBT:BS:TinRdbk",
           "record_type": "ai",
-          "fields": {
+          "links": {
             "SCAN": "2 second",
             "INP": "#C0 S7 @",
             "FLNK": "LEBT:BS:Tincalc"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2",
             "EGU": "V",
             "HOPR": "10",
@@ -101,13 +827,13 @@
         {
           "name": "LEBT:BS:Tincalc",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "CALC": "(A*B)",
             "INPA": "LEBT:BS:TinRdbk.VAL",
             "INPB": "5",
             "FLNK": "LEBT:BS:DeltaT2"
           },
-          "limits": {
+          "metadata": {
             "PREC": "1"
           },
           "line": 29
@@ -115,12 +841,12 @@
         {
           "name": "LEBT:BS:ToutRdbk",
           "record_type": "ai",
-          "fields": {
+          "links": {
             "SCAN": "2 second",
             "INP": "#C0 S8 @",
             "FLNK": "LEBT:BS:Toutcalc"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2",
             "EGU": "V",
             "HOPR": "10",
@@ -131,13 +857,13 @@
         {
           "name": "LEBT:BS:Toutcalc",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "CALC": "(A*B)",
             "INPA": "LEBT:BS:ToutRdbk.VAL",
             "INPB": "5",
             "FLNK": "LEBT:BS:DeltaT"
           },
-          "limits": {
+          "metadata": {
             "PREC": "1"
           },
           "line": 52
@@ -145,8 +871,8 @@
         {
           "name": "LEBT:BS:Comp",
           "record_type": "ao",
-          "fields": {},
-          "limits": {
+          "links": {},
+          "metadata": {
             "DRVH": "10",
             "DRVL": "-10",
             "HOPR": "10",
@@ -158,7 +884,7 @@
         {
           "name": "LEBT:BS:DeltaT",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "SCAN": "Passive",
             "CALC": "(B-A)-C",
             "INPA": "LEBT:FC:Tincalc",
@@ -166,7 +892,7 @@
             "INPC": "LEBT:BS:Comp",
             "FLNK": "LEBT:BS:Icalc"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2"
           },
           "line": 73
@@ -174,7 +900,7 @@
         {
           "name": "LEBT:BS:Icalc",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "INPA": "LEBT:BS:DeltaT",
             "INPB": "4186.8",
             "INPC": "60",
@@ -183,7 +909,7 @@
             "INPF": "SRC:TIM:DutyCycle",
             "CALC": "(((E/C)*B*A)/D)*F"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2"
           },
           "line": 85
@@ -191,7 +917,7 @@
         {
           "name": "LEBT:BS:DeltaT2",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "SCAN": "Passive",
             "CALC": "(B-A)-C",
             "INPA": "LEBT:BS:Tincalc",
@@ -199,7 +925,7 @@
             "INPC": "LEBT:BS:Comp",
             "FLNK": "LEBT:BS:Icalc2"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2"
           },
           "line": 97
@@ -207,7 +933,7 @@
         {
           "name": "LEBT:BS:Icalc2",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "INPA": "LEBT:BS:DeltaT2",
             "INPB": "4186.8",
             "INPC": "60",
@@ -216,7 +942,7 @@
             "INPF": "SRC:TIM:DutyCycle",
             "CALC": "(((E/C)*B*A)/D)*F"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2"
           },
           "line": 108
@@ -224,13 +950,13 @@
         {
           "name": "LEBT:BS:IRendement",
           "record_type": "calc",
-          "fields": {
+          "links": {
             "INPA": "LEBT:BS:Icalc",
             "INPB": "LEBT:BS:I",
             "INPC": "100",
             "CALC": "(A/B)*C"
           },
-          "limits": {
+          "metadata": {
             "PREC": "2"
           },
           "line": 120
