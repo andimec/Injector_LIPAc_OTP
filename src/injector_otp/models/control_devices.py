@@ -9,6 +9,11 @@ from math import exp, sqrt
 
 from .base import SubsystemModel
 from .catalog import DeviceCatalog
+from .original_lcs_logic import (
+    rf_control_word, rf_onoff_word, rf_reset_word, rf_status_from_mot105,
+    reflected_power_display, rf_atu_mode_word,
+    physical_duty_fraction, timing_display_ratio,
+)
 
 
 class RFSystemModel(SubsystemModel):
@@ -68,10 +73,38 @@ class RFSystemModel(SubsystemModel):
             0.95, float(p.get("minimum_reflection_fraction", 0.02)) + mismatch / 8000.0
         )
         reflected = self.forward_W * reflect_fraction
-        self.emit(context, int(ready), "PretRF")
-        self.emit(context, int(self._on), "MarcheRF")
-        self.emit(context, int(fault), "DefRF")
-        self.emit(context, reflected, "PwrRef")
+        # Original Modbus RF control word and status word, reconstructed in
+        # Python rather than as EPICS calc/calcout chains.
+        ctrl = rf_control_word(
+            bool(self.read(context, "Modbus")),
+            bool(self.read(context, "CWmdOn")),
+            bool(self.read(context, "LimitPR")),
+            filament,
+            self._on,
+        )
+        self.emit(context, ctrl, "CalcMot02")
+        self.emit(context, rf_onoff_word(self._on, ctrl), "CalcOnOff")
+        self.emit(context, rf_reset_word(bool(self.read(context, "EnvoiRAZ")), ctrl), "CalcRAZ")
+
+        # Source PwrRef is a 0.9 multiplier of Modbus Mot103, NOT an RF
+        # reflection model. Generate a matching raw word and decode it.
+        raw_mot103 = reflected / 0.9
+        self.emit(context, raw_mot103, "Mot103")
+        self.emit(context, reflected_power_display(raw_mot103), "PwrRef")
+
+        status_word = (64 if self._on else 0) | (128 if ready else 0) | (8 if fault else 0)
+        self.emit(context, status_word, "Mot105")
+        status = rf_status_from_mot105(status_word)
+        self.emit(context, int(status["ready"]), "PretRF")
+        self.emit(context, int(status["on"]), "MarcheRF")
+        self.emit(context, int(status["defect"]), "DefRF")
+
+        mode_pv = self.catalog.pv("SRC:RF_ATU", "ModeXY")
+        if mode_pv is not None:
+            encoded = rf_atu_mode_word(int(context.pv.get(mode_pv, 0) or 0))
+            calc_pv = self.catalog.pv("SRC:RF_ATU", "CalcModeXY")
+            if calc_pv:
+                context.emit(calc_pv, encoded, "rf_atu")
         context.metrics["rf.forward_W"] = self.forward_W
         context.metrics["rf.reflected_W"] = reflected
         context.metrics["rf.ready"] = float(ready)
@@ -148,13 +181,22 @@ class TimingSystemModel(SubsystemModel):
         pulse_pv = "SRC:TIM:TPulse"
         period_ms = float(context.pv.get(period_pv, 0) or 0)
         width_ms = float(context.pv.get(pulse_pv, 0) or 0)
-        is_cw = bool(context.pv.get("SRC:TIM:Mode", 0))
-        duty = 1.0 if is_cw else (
-            min(1.0, max(0.0, width_ms / period_ms)) if period_ms > 0 else 0.0
+        # Source record explicitly selects CW from SRC:RF_GENE:CWmdOn,
+        # not from the separate SRC:TIM:Mode widget.
+        is_cw = bool(context.pv.get("SRC:RF_GENE:CWmdOn", 0))
+        physical = physical_duty_fraction(period_ms, width_ms, is_cw)
+        legacy = timing_display_ratio(period_ms, width_ms, is_cw)
+        if legacy is not None:
+            if self.catalog.has("SRC:TIM:Cyclut") and width_ms > 0:
+                context.emit("SRC:TIM:Cyclut", period_ms / width_ms, "timing_source_formula")
+            if self.catalog.has("SRC:TIM:DutyCycle"):
+                context.emit("SRC:TIM:DutyCycle", legacy, "timing_source_formula")
+        # Legacy display ratio is inverted with respect to physical duty.
+        # Use only the physical fraction for beam-pulse calculations.
+        context.metrics["timing.duty_cycle"] = physical
+        context.metrics["timing.legacy_display_ratio"] = (
+            legacy if legacy is not None else 0.0
         )
-        if self.catalog.has("SRC:TIM:DutyCycle"):
-            context.emit("SRC:TIM:DutyCycle", duty * 100, "timing")
-        context.metrics["timing.duty_cycle"] = duty
 
 
 class BeamTransportModel(SubsystemModel):
