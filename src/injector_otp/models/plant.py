@@ -18,13 +18,15 @@ class ValveState:
 
 
 class ValveDevice(SubsystemModel):
-    def __init__(self, prefix: str, catalog: DeviceCatalog, *, initially_open: bool = False):
+    def __init__(self, prefix: str, catalog: DeviceCatalog, *, initially_open: bool = False,
+                 permit_pv: str | None = None):
         super().__init__()
         self.name = prefix
         self.prefix = prefix
         self.catalog = catalog
         self.valve = ValveState(initially_open)
         self._previous = {}
+        self.permit_pv = permit_pv
 
     def _pv(self, suffix: str) -> str | None:
         # Prefixes such as LEBT:VAC01:SV use a suffix without a separator,
@@ -46,7 +48,9 @@ class ValveDevice(SubsystemModel):
     def update(self, dt: float, context) -> None:
         super().update(dt)
         if self._edge(context, "OpenCmd"):
-            self.valve.opened = True
+            permit = self.permit_pv is None or bool(context.pv.get(self.permit_pv, 0))
+            if permit:
+                self.valve.opened = True
         if self._edge(context, "CloseCmd"):
             self.valve.opened = False
         for name, value in (("OpenStat", self.valve.opened),
