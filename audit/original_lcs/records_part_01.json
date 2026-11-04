@@ -1,0 +1,241 @@
+{
+  "source_repo": "andimec/topIFMIF_INJ",
+  "source_commit": "3586551ce2eaede262d5cf584ab88d2d940c3a83",
+  "files": {
+    "emitApp/db/emitIcv150.db": {
+      "blob_sha": "eb2aa6ec9f0ef4044315b8017fcc23ec5674b76b",
+      "records": []
+    },
+    "emitApp/db/emitIcv196.db": {
+      "blob_sha": "0d13ad2f831f0ddd89a33fc9740b6a3dc1e2e9a3",
+      "records": []
+    },
+    "emitApp/db/emitIcv714.db": {
+      "blob_sha": "729c0d90ae211565eebfb458a7013e5fa3a86335",
+      "records": []
+    },
+    "emitApp/db/emitMotor.db": {
+      "blob_sha": "7c9f3e7d45f054364478a4e7c334a75bd3028ce1",
+      "records": []
+    },
+    "emitApp/db/emitProcess.db": {
+      "blob_sha": "2d3c0ae8ad9b7fbe9ef5bb4480d43b0a585418f0",
+      "records": []
+    },
+    "emitApp/db/emitServo.db": {
+      "blob_sha": "21ec6f561452d248b75a424f5d6e7fbd8ccffe65",
+      "records": []
+    },
+    "emitApp/db/emitServoProto.db": {
+      "blob_sha": "1c725ab4fcbd4b7b1c710ac19f60f2c8496e360f",
+      "records": []
+    },
+    "emitApp/db/emitVxStats.db": {
+      "blob_sha": "7e979d88b35cd10a83ae6cc6c875e88635705449",
+      "records": []
+    },
+    "emitApp/db/extraPV.db": {
+      "blob_sha": "edbf3b83263572da47044364a697f6ae585e855a",
+      "records": [
+        {
+          "name": "SRC:TIM:Trep",
+          "record_type": "ao",
+          "fields": {
+            "SCAN": "Passive"
+          },
+          "limits": {
+            "DRVH": "5000",
+            "DRVL": "20",
+            "HOPR": "5000",
+            "LOPR": "20",
+            "PREC": "0",
+            "EGU": "ms"
+          },
+          "line": 2
+        },
+        {
+          "name": "SRC:SVL:D2CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "SCAN": "1 second"
+          },
+          "limits": {
+            "ONAM": "Closed",
+            "ZNAM": "Open"
+          },
+          "line": 14
+        },
+        {
+          "name": "SRC:SVL:H2CloseStat",
+          "record_type": "bi",
+          "fields": {
+            "SCAN": "1 second"
+          },
+          "limits": {
+            "ONAM": "Closed",
+            "ZNAM": "Open"
+          },
+          "line": 24
+        }
+      ]
+    },
+    "emitApp/db/injectorBS_Calorimetry.db": {
+      "blob_sha": "860fb1c8a7111ef7b697ceb64922ba6053558a5b",
+      "records": [
+        {
+          "name": "LEBT:BS:TinRdbk",
+          "record_type": "ai",
+          "fields": {
+            "SCAN": "2 second",
+            "INP": "#C0 S7 @",
+            "FLNK": "LEBT:BS:Tincalc"
+          },
+          "limits": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 13
+        },
+        {
+          "name": "LEBT:BS:Tincalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "INPA": "LEBT:BS:TinRdbk.VAL",
+            "INPB": "5",
+            "FLNK": "LEBT:BS:DeltaT2"
+          },
+          "limits": {
+            "PREC": "1"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:BS:ToutRdbk",
+          "record_type": "ai",
+          "fields": {
+            "SCAN": "2 second",
+            "INP": "#C0 S8 @",
+            "FLNK": "LEBT:BS:Toutcalc"
+          },
+          "limits": {
+            "PREC": "2",
+            "EGU": "V",
+            "HOPR": "10",
+            "LOPR": "-10"
+          },
+          "line": 37
+        },
+        {
+          "name": "LEBT:BS:Toutcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "INPA": "LEBT:BS:ToutRdbk.VAL",
+            "INPB": "5",
+            "FLNK": "LEBT:BS:DeltaT"
+          },
+          "limits": {
+            "PREC": "1"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:BS:Comp",
+          "record_type": "ao",
+          "fields": {},
+          "limits": {
+            "DRVH": "10",
+            "DRVL": "-10",
+            "HOPR": "10",
+            "LOPR": "-10",
+            "PREC": "1"
+          },
+          "line": 61
+        },
+        {
+          "name": "LEBT:BS:DeltaT",
+          "record_type": "calc",
+          "fields": {
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "INPA": "LEBT:FC:Tincalc",
+            "INPB": "LEBT:BS:Toutcalc",
+            "INPC": "LEBT:BS:Comp",
+            "FLNK": "LEBT:BS:Icalc"
+          },
+          "limits": {
+            "PREC": "2"
+          },
+          "line": 73
+        },
+        {
+          "name": "LEBT:BS:Icalc",
+          "record_type": "calc",
+          "fields": {
+            "INPA": "LEBT:BS:DeltaT",
+            "INPB": "4186.8",
+            "INPC": "60",
+            "INPD": "LEBT:HV_PS:HTCmd",
+            "INPE": "40",
+            "INPF": "SRC:TIM:DutyCycle",
+            "CALC": "(((E/C)*B*A)/D)*F"
+          },
+          "limits": {
+            "PREC": "2"
+          },
+          "line": 85
+        },
+        {
+          "name": "LEBT:BS:DeltaT2",
+          "record_type": "calc",
+          "fields": {
+            "SCAN": "Passive",
+            "CALC": "(B-A)-C",
+            "INPA": "LEBT:BS:Tincalc",
+            "INPB": "LEBT:BS:Toutcalc",
+            "INPC": "LEBT:BS:Comp",
+            "FLNK": "LEBT:BS:Icalc2"
+          },
+          "limits": {
+            "PREC": "2"
+          },
+          "line": 97
+        },
+        {
+          "name": "LEBT:BS:Icalc2",
+          "record_type": "calc",
+          "fields": {
+            "INPA": "LEBT:BS:DeltaT2",
+            "INPB": "4186.8",
+            "INPC": "60",
+            "INPD": "LEBT:HV_PS:HTCmd",
+            "INPE": "40",
+            "INPF": "SRC:TIM:DutyCycle",
+            "CALC": "(((E/C)*B*A)/D)*F"
+          },
+          "limits": {
+            "PREC": "2"
+          },
+          "line": 108
+        },
+        {
+          "name": "LEBT:BS:IRendement",
+          "record_type": "calc",
+          "fields": {
+            "INPA": "LEBT:BS:Icalc",
+            "INPB": "LEBT:BS:I",
+            "INPC": "100",
+            "CALC": "(A/B)*C"
+          },
+          "limits": {
+            "PREC": "2"
+          },
+          "line": 120
+        }
+      ]
+    }
+  }
+}
