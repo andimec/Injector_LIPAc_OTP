@@ -45,6 +45,9 @@ rf:
   reference_stub_x: 1860
   reference_stub_y: 2756
   minimum_reflection_fraction: 0.02
+  # RF_GENE Modbus registers define two independent settings; the physical
+  # effect of RfOffset is NOT calibrated. Zero avoids inventing RF+offset.
+  rf_offset_effect_gain: 0.0
 
 beam:
   nominal_faraday_current_mA: 145.0
