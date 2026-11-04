@@ -1,0 +1,1608 @@
+{
+  "source_commit": "04a922247f0f25834d921cd9a3a68c96c4f71596",
+  "files": {
+    "db/injectorApp/db/injectorModbus_RF.db": {
+      "sha": "5390457a64085227c702f4dbc46f9c98c885191e",
+      "records": [
+        {
+          "name": "SRC:RF_ATU:ModeXY",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mode Cde X et Y",
+            "ZNAM": "Auto",
+            "ONAM": "Remote"
+          },
+          "line": 4
+        },
+        {
+          "name": "SRC:RF_ATU:CalcModeXY",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul Cde mot 2",
+            "CALC": "(A|(B<<1))"
+          },
+          "line": 12
+        },
+        {
+          "name": "SRC:RF_ATU:EnvoiMot2",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 18
+        },
+        {
+          "name": "SRC:RF_ATU:WrtCtrl",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "255",
+            "DRVL": "0",
+            "HOPR": "255",
+            "LOPR": "0"
+          },
+          "line": 25
+        },
+        {
+          "name": "SRC:RF_ATU:ModeX",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mode Cde X",
+            "ZNAM": "Auto",
+            "ONAM": "Remote"
+          },
+          "line": 35
+        },
+        {
+          "name": "SRC:RF_ATU:ModeY",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mode Cde Y",
+            "ZNAM": "Auto",
+            "ONAM": "Remote"
+          },
+          "line": 43
+        },
+        {
+          "name": "SRC:RF_ATU:Mot100",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot100",
+            "SCAN": "I/O Intr"
+          },
+          "line": 51
+        },
+        {
+          "name": "SRC:RF_ATU:Mot101",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot101",
+            "SCAN": "I/O Intr"
+          },
+          "line": 58
+        },
+        {
+          "name": "SRC:RF_ATU:Mot102",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot102",
+            "SCAN": "I/O Intr"
+          },
+          "line": 65
+        },
+        {
+          "name": "SRC:RF_ATU:Mot103",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot103",
+            "SCAN": "I/O Intr"
+          },
+          "line": 72
+        },
+        {
+          "name": "SRC:RF_ATU:Mot104",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot104",
+            "SCAN": "I/O Intr"
+          },
+          "line": 79
+        },
+        {
+          "name": "SRC:RF_ATU:XYManu",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Mode de Controle",
+            "OMSL": "supervisory",
+            "DRVH": "127",
+            "DRVL": "0",
+            "HOPR": "127",
+            "LOPR": "0"
+          },
+          "line": 86
+        },
+        {
+          "name": "SRC:RF_ATU:WrtX",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "4095",
+            "DRVL": "0",
+            "HOPR": "4095",
+            "LOPR": "0"
+          },
+          "line": 97
+        },
+        {
+          "name": "SRC:RF_ATU:WrtY",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "4095",
+            "DRVL": "0",
+            "HOPR": "4095",
+            "LOPR": "0"
+          },
+          "line": 107
+        },
+        {
+          "name": "SRC:RF_GENE:Mot100",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot100",
+            "SCAN": "I/O Intr"
+          },
+          "line": 117
+        },
+        {
+          "name": "SRC:RF_GENE:Mot101",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot101",
+            "SCAN": "I/O Intr"
+          },
+          "line": 124
+        },
+        {
+          "name": "SRC:RF_GENE:Mot102",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot102",
+            "SCAN": "I/O Intr"
+          },
+          "line": 131
+        },
+        {
+          "name": "SRC:RF_GENE:Mot103",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot103",
+            "SCAN": "I/O Intr"
+          },
+          "line": 138
+        },
+        {
+          "name": "SRC:RF_GENE:Mot104",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot104",
+            "SCAN": "I/O Intr"
+          },
+          "line": 145
+        },
+        {
+          "name": "SRC:RF_GENE:Mot105",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot105",
+            "SCAN": "I/O Intr"
+          },
+          "line": 152
+        },
+        {
+          "name": "SRC:RF_GENE:Mot106",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot106",
+            "SCAN": "I/O Intr"
+          },
+          "line": 159
+        },
+        {
+          "name": "SRC:RF_GENE:Mot107",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot107",
+            "SCAN": "I/O Intr"
+          },
+          "line": 166
+        },
+        {
+          "name": "SRC:RF_GENE:Mot108",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot108",
+            "SCAN": "I/O Intr"
+          },
+          "line": 173
+        },
+        {
+          "name": "SRC:RF_GENE:Mot109",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot109",
+            "SCAN": "I/O Intr"
+          },
+          "line": 180
+        },
+        {
+          "name": "SRC:RF_GENE:Mot110",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Mot110",
+            "SCAN": "I/O Intr"
+          },
+          "line": 187
+        },
+        {
+          "name": "SRC:RF_GENE:WrtPI",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 194
+        },
+        {
+          "name": "SRC:RF_GENE:WrtLimitPR",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 204
+        },
+        {
+          "name": "SRC:RF_GENE:Modbus",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cons modbus",
+            "ZNAM": "No-optical",
+            "ONAM": "Optical",
+            "ASG": "D_PLUS"
+          },
+          "line": 214
+        },
+        {
+          "name": "SRC:RF_GENE:CWmdOn",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mode CW",
+            "ZNAM": "Pulse",
+            "ONAM": "CW",
+            "ASG": "D_PLUS"
+          },
+          "line": 223
+        },
+        {
+          "name": "SRC:RF_GENE:LimitPR",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "OFF filament",
+            "OMSL": "supervisory",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 232
+        },
+        {
+          "name": "SRC:RF_GENE:FilOnCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ON filament",
+            "OMSL": "supervisory",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 241
+        },
+        {
+          "name": "SRC:RF_GENE:MOCmdOn",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ON micro ondes",
+            "OMSL": "supervisory",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 250
+        },
+        {
+          "name": "SRC:RF_GENE:PulseOrCW",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "pulse or CW",
+            "OMSL": "supervisory",
+            "ZNAM": "Pulse",
+            "ONAM": "CW",
+            "ASG": "D_PLUS"
+          },
+          "line": 259
+        },
+        {
+          "name": "SRC:RF_GENE:CalcOnOff",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul RAZ",
+            "CALC": "((A <<6)|(B & C))"
+          },
+          "line": 269
+        },
+        {
+          "name": "SRC:RF_GENE:WrtOnOff",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "255",
+            "DRVL": "0",
+            "HOPR": "255",
+            "LOPR": "0"
+          },
+          "line": 275
+        },
+        {
+          "name": "SRC:RF_GENE:EnvoiMot2",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory"
+          },
+          "line": 285
+        },
+        {
+          "name": "SRC:RF_GENE:WrtCtrl",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "255",
+            "DRVL": "0",
+            "HOPR": "255",
+            "LOPR": "0"
+          },
+          "line": 291
+        },
+        {
+          "name": "SRC:RF_GENE:CalcMot02",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "calcul Cde mot 2",
+            "CALC": "(A<<2|B<<3|C<<4|D<<5|E<<6)"
+          },
+          "line": 301
+        },
+        {
+          "name": "SRC:RF_GENE:EnvoiRAZ",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "HIGH": "5"
+          },
+          "line": 308
+        },
+        {
+          "name": "SRC:RF_GENE:CalcRAZ",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "calcul RAZ",
+            "CALC": "(((A<<7)|(B))&(C))"
+          },
+          "line": 315
+        },
+        {
+          "name": "SRC:RF_GENE:WrtRAZ",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "255",
+            "DRVL": "0",
+            "HOPR": "255",
+            "LOPR": "0"
+          },
+          "line": 321
+        },
+        {
+          "name": "SRC:RF_GENE:MarcheRF",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "1 si RF en marche",
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>6"
+          },
+          "line": 331
+        },
+        {
+          "name": "SRC:RF_GENE:PretRF",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "1 si RF prete",
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>7"
+          },
+          "line": 339
+        },
+        {
+          "name": "SRC:RF_GENE:DefRF",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "1 si Defaut",
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>3"
+          },
+          "line": 347
+        },
+        {
+          "name": "SRC:RF_GENE:PwrRef",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)",
+            "SCAN": "1 second"
+          },
+          "line": 355
+        },
+        {
+          "name": "SRC:RF_GENE:RfPwr",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 361
+        },
+        {
+          "name": "SRC:RF_GENE:RfOffset",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 371
+        },
+        {
+          "name": "SRC:RF_GENE:Map099Rdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "SCAN": "I/O Intr"
+          },
+          "line": 381
+        },
+        {
+          "name": "SRC:RF_GENE:Map003Set",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "WrtOnOff,WrtCtrl,WrtRAZ",
+            "OMSL": "supervisory",
+            "DRVH": "2",
+            "DRVL": "0",
+            "HOPR": "2",
+            "LOPR": "0"
+          },
+          "line": 387
+        },
+        {
+          "name": "SRC:RF_GENE:Map004Set",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "255",
+            "DRVL": "0",
+            "HOPR": "255",
+            "LOPR": "0"
+          },
+          "line": 398
+        },
+        {
+          "name": "SRC:RF_GENE:Map007Set",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "25000",
+            "DRVL": "3",
+            "HOPR": "25000",
+            "LOPR": "3"
+          },
+          "line": 408
+        },
+        {
+          "name": "SRC:RF_GENE:Map008Set",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "supervisory",
+            "DRVH": "10000",
+            "DRVL": "100",
+            "HOPR": "10000",
+            "LOPR": "100"
+          },
+          "line": 418
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorRCPS.db": {
+      "sha": "df91355034ec9834a507cad218b751cc3f6c00ac",
+      "records": [
+        {
+          "name": "LEBT:RC_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON RC_PS",
+            "OMSL": "supervisory",
+            "ZNAM": "Off",
+            "ONAM": "On"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:RC_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF RC_PS",
+            "OMSL": "supervisory"
+          },
+          "line": 13
+        },
+        {
+          "name": "LEBT:RC_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "10",
+            "DRVL": "0",
+            "HOPR": "10",
+            "LOPR": "0",
+            "EGU": "mA"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:RC_PS:Icalcout",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(B*A)/C"
+          },
+          "line": 32
+        },
+        {
+          "name": "LEBT:RC_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Lecture mot",
+            "SCAN": "2 second"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:RC_PS:IRdbkcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)/C",
+            "PREC": "2"
+          },
+          "line": 45
+        },
+        {
+          "name": "LEBT:RC_PS:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "3",
+            "DRVL": "0",
+            "HOPR": "3",
+            "LOPR": "0",
+            "EGU": "kV"
+          },
+          "line": 51
+        },
+        {
+          "name": "LEBT:RC_PS:Vcalcout",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(B*A)/C"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:RC_PS:VOut",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 69
+        },
+        {
+          "name": "LEBT:RC_PS:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Lecture mot",
+            "SCAN": "2 second"
+          },
+          "line": 77
+        },
+        {
+          "name": "LEBT:RC_PS:VRdbkcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)/C",
+            "PREC": "2",
+            "EGU": "kV"
+          },
+          "line": 84
+        },
+        {
+          "name": "LEBT:RC_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "2 second"
+          },
+          "line": 91
+        },
+        {
+          "name": "LEBT:RC_PS:IOut",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 98
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorRPS.db": {
+      "sha": "45e838c2c293285424e7cc4d9bf7813fc5c30511",
+      "records": [
+        {
+          "name": "LEBT:R_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON R_PS",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:R_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF R_PS",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 12
+        },
+        {
+          "name": "LEBT:R_PS:RESET",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde reset R_PS",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:R_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "20",
+            "DRVL": "0",
+            "HOPR": "20",
+            "LOPR": "0",
+            "EGU": "mA",
+            "PREC": "1"
+          },
+          "line": 28
+        },
+        {
+          "name": "LEBT:R_PS:Icalcout",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(B*A)/C"
+          },
+          "line": 41
+        },
+        {
+          "name": "LEBT:R_PS:IOut",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 47
+        },
+        {
+          "name": "LEBT:R_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Lecture mot",
+            "SCAN": "2 second"
+          },
+          "line": 55
+        },
+        {
+          "name": "LEBT:R_PS:IRdbkcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)/C",
+            "PREC": "2"
+          },
+          "line": 62
+        },
+        {
+          "name": "LEBT:R_PS:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "15",
+            "DRVL": "0",
+            "HOPR": "15",
+            "LOPR": "0",
+            "EGU": "kV",
+            "PREC": "1"
+          },
+          "line": 68
+        },
+        {
+          "name": "LEBT:R_PS:Vcalcout",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(B*A)/C"
+          },
+          "line": 81
+        },
+        {
+          "name": "LEBT:R_PS:VOut",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 87
+        },
+        {
+          "name": "LEBT:R_PS:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Lecture mot",
+            "SCAN": "2 second"
+          },
+          "line": 95
+        },
+        {
+          "name": "LEBT:R_PS:VRdbkcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)/C",
+            "PREC": "2",
+            "EGU": "kV"
+          },
+          "line": 102
+        },
+        {
+          "name": "LEBT:R_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "2 second"
+          },
+          "line": 109
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSOL01.db": {
+      "sha": "bfd117770556f3126fbb2c03a921511ef17dce0f",
+      "records": [
+        {
+          "name": "LEBT:SOL01_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "I/O Intr"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:SOL01_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "600",
+            "DRVL": "0",
+            "HOPR": "600",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:SOL01_PS:Rampe",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 23
+        },
+        {
+          "name": "LEBT:SOL01_PS:IntCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:SOL01_PS:RampeCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde rampe SOL01",
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 40
+        },
+        {
+          "name": "LEBT:SOL01_PS:PretRampe",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde demande rampe S1"
+          },
+          "line": 49
+        },
+        {
+          "name": "LEBT:SOL01_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Icons SOL01 PS",
+            "SCAN": "I/O Intr",
+            "PREC": "1"
+          },
+          "line": 55
+        },
+        {
+          "name": "LEBT:SOL01_PS:OnStat",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A&B",
+            "SCAN": "2 second"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:SOL01_PS:OffStat",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A&B)>>1"
+          },
+          "line": 69
+        },
+        {
+          "name": "LEBT:SOL01_PS:RdyStat",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A&B)>>2"
+          },
+          "line": 74
+        },
+        {
+          "name": "LEBT:SOL01_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde ON SOL01",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 79
+        },
+        {
+          "name": "LEBT:SOL01_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde OFF SOL01",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 87
+        },
+        {
+          "name": "LEBT:SOL01_PS:RESET",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde reset SOL01",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 95
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSOL02.db": {
+      "sha": "b6c8a7e64aeba297b47f154428ba4152f3bfe0ad",
+      "records": [
+        {
+          "name": "LEBT:SOL02_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "I/O Intr"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:SOL02_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "600",
+            "DRVL": "0",
+            "HOPR": "600",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:SOL02_PS:Rampe",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "50",
+            "DRVL": "0",
+            "HOPR": "50",
+            "LOPR": "0"
+          },
+          "line": 23
+        },
+        {
+          "name": "LEBT:SOL02_PS:IntCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "VAL": "1"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:SOL02_PS:RampeCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde rampe SOL02",
+            "ONAM": "ON",
+            "ZNAM": "OFF",
+            "HIGH": "1"
+          },
+          "line": 40
+        },
+        {
+          "name": "LEBT:SOL02_PS:PretRampe",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Cde demande rampe S1"
+          },
+          "line": 49
+        },
+        {
+          "name": "LEBT:SOL02_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "DESC": "Lecture Icons SOL02 PS",
+            "SCAN": "I/O Intr",
+            "PREC": "1"
+          },
+          "line": 55
+        },
+        {
+          "name": "LEBT:SOL02_PS:OnStat",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A&B",
+            "SCAN": "2 second"
+          },
+          "line": 63
+        },
+        {
+          "name": "LEBT:SOL02_PS:OffStat",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A&B)>>1",
+            "SCAN": "1 second"
+          },
+          "line": 69
+        },
+        {
+          "name": "LEBT:SOL02_PS:RdyStat",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A&B)>>2",
+            "SCAN": ".1 second"
+          },
+          "line": 75
+        },
+        {
+          "name": "LEBT:SOL02_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command ON SOL02",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 81
+        },
+        {
+          "name": "LEBT:SOL02_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command OFF SOL02",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 89
+        },
+        {
+          "name": "LEBT:SOL02_PS:RESET",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Command reset SOL02",
+            "OMSL": "supervisory",
+            "HIGH": "2"
+          },
+          "line": 97
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSRC_RF.db": {
+      "sha": "1aa95c1715fde68ee409482d01cc3fe16d6b8421",
+      "records": [
+        {
+          "name": "SRC:RF_GEN:Pwr",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 4
+        },
+        {
+          "name": "SRC:RF_GEN:Offset",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "DRVH": "1200",
+            "DRVL": "0",
+            "HOPR": "1200",
+            "LOPR": "0"
+          },
+          "line": 15
+        },
+        {
+          "name": "SRC:RF_GEN:PwrSet",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "A-B"
+          },
+          "line": 26
+        },
+        {
+          "name": "SRC:RF_GEN:VRFcalcout",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(A*B)/C",
+            "PREC": "2"
+          },
+          "line": 31
+        },
+        {
+          "name": "SRC:RF_GEN:VRFSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 38
+        },
+        {
+          "name": "SRC:RF_GEN:CalcOffset",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(A*B)/C",
+            "PREC": "2"
+          },
+          "line": 46
+        },
+        {
+          "name": "SRC:RF_GEN:VoffsetSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "0"
+          },
+          "line": 53
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSTH01.db": {
+      "sha": "0de3ec2e6a5eb006e326d063d2b1a48de588adc8",
+      "records": [
+        {
+          "name": "LEBT:STH01_PS:idn",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "10 second",
+            "DESC": "get IDN"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:STH01_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Set Current",
+            "EGU": "A",
+            "LOPR": "0",
+            "HOPR": "150"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:STH01_PS:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Set Voltage",
+            "EGU": "V",
+            "LOPR": "0",
+            "HOPR": "8"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:STH01_PS:IRdbkcalc",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Measured Current",
+            "EGU": "A",
+            "SCAN": "2 second"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:STH01_PS:VRdbkcalc",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Measured Voltage",
+            "EGU": "V",
+            "SCAN": "2 second"
+          },
+          "line": 37
+        },
+        {
+          "name": "LEBT:STH01_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS On/Off status",
+            "SCAN": "2 second"
+          },
+          "line": 45
+        },
+        {
+          "name": "LEBT:STH01_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS On command",
+            "HIGH": "1"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:STH01_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS Off command",
+            "HIGH": "1"
+          },
+          "line": 59
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSTH02.db": {
+      "sha": "18d8003c27b948fe2315bbf1cc63c821c384092d",
+      "records": [
+        {
+          "name": "LEBT:STH02_PS:idn",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "10 second",
+            "DESC": "get IDN"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:STH02_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Set Current",
+            "EGU": "A",
+            "LOPR": "0",
+            "HOPR": "150"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:STH02_PS:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Set Voltage",
+            "EGU": "V",
+            "LOPR": "0",
+            "HOPR": "8"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:STH02_PS:IRdbkcalc",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Measured Current",
+            "EGU": "A",
+            "SCAN": "2 second"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:STH02_PS:VRdbkcalc",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Measured Voltage",
+            "EGU": "V",
+            "SCAN": "2 second"
+          },
+          "line": 37
+        },
+        {
+          "name": "LEBT:STH02_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS On/Off status",
+            "SCAN": "2 second"
+          },
+          "line": 45
+        },
+        {
+          "name": "LEBT:STH02_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS On command",
+            "HIGH": "1"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:STH02_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS Off command",
+            "HIGH": "1"
+          },
+          "line": 59
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSTV01.db": {
+      "sha": "a0b9a595730cb5574c2a1c36b91304d8789be8b3",
+      "records": [
+        {
+          "name": "LEBT:STV01_PS:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "lect status",
+            "SCAN": "2 second"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:STV01_PS:OnStat",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "1 si alim en marche",
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>2"
+          },
+          "line": 11
+        },
+        {
+          "name": "LEBT:STV01_PS:RdyStat",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "1 si alim ready",
+            "SCAN": "2 second",
+            "CALC": "(A & B)>>3"
+          },
+          "line": 19
+        },
+        {
+          "name": "LEBT:STV01_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ecriture Cde analog",
+            "OMSL": "supervisory",
+            "EGU": "A",
+            "DRVH": "150",
+            "DRVL": "-150",
+            "HOPR": "150",
+            "LOPR": "-150"
+          },
+          "line": 27
+        },
+        {
+          "name": "LEBT:STV01_PS:IRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Lecture mot",
+            "SCAN": "2 second",
+            "EGU": "A"
+          },
+          "line": 39
+        },
+        {
+          "name": "LEBT:STV01_PS:Icalcout",
+          "record_type": "calcout",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "CALC": "(B*A)/C"
+          },
+          "line": 47
+        },
+        {
+          "name": "LEBT:STV01_PS:IOut",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "OMSL": "closed_loop",
+            "DRVH": "32000",
+            "DRVL": "-32000",
+            "EGU": "A"
+          },
+          "line": 53
+        },
+        {
+          "name": "LEBT:STV01_PS:IRdbkcalc",
+          "record_type": "calc",
+          "fields": {
+            "CALC": "(A*B)/C",
+            "PREC": "2"
+          },
+          "line": 62
+        }
+      ]
+    },
+    "db/injectorApp/db/injectorSTV02.db": {
+      "sha": "ce28ef20700a3f54c6de87cb147cefaccf51b219",
+      "records": [
+        {
+          "name": "LEBT:STV02_PS:idn",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "get IDN"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:STV02_PS:ISet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Set Current",
+            "EGU": "A",
+            "LOPR": "-20",
+            "HOPR": "20"
+          },
+          "line": 10
+        },
+        {
+          "name": "LEBT:STV02_PS:IRdbkcalc",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Measured Current",
+            "EGU": "A",
+            "SCAN": "2 second"
+          },
+          "line": 19
+        },
+        {
+          "name": "LEBT:STV02_PS:OnStat",
+          "record_type": "bi",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS On/Off status",
+            "SCAN": "2 second"
+          },
+          "line": 27
+        },
+        {
+          "name": "LEBT:STV02_PS:ON",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS On command",
+            "HIGH": "1"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:STV02_PS:OFF",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS Off command",
+            "HIGH": "1"
+          },
+          "line": 41
+        }
+      ]
+    }
+  }
+}
