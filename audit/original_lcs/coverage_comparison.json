@@ -1,0 +1,287 @@
+{
+  "source_repo": "andimec/topIFMIF_INJ",
+  "source_sha": "3586551ce2eaede262d5cf584ab88d2d940c3a83",
+  "source_db_files": 46,
+  "original_records": 729,
+  "original_distinct_pv_names": 724,
+  "original_concrete_names": 653,
+  "original_parameterized_records": 71,
+  "original_formulas": 101,
+  "concrete_records_missing_from_v2": 0,
+  "parameterized_unresolved": 71,
+  "source_record_links": 518,
+  "important_findings": [
+    "Original .db files contain hardware INP/OUT transport details and working CALC/FLNK links stripped by the simulation .db copies.",
+    "EMU records use $(DEVICE), $(CNAME) macros expanded in startup substitutions, so these must not be mistaken for literal PV names.",
+    "Original RF status bits come from Mot105; PwrRef displays Mot103*0.9.",
+    "VAC01 and VAC02 PV/SV preconditions are EPICS calculations for OPI, not authoritative PLC safety.",
+    "Original TIM Cyclut=Trep/TPulse, inverse of physical duty cycle. Use separate physical-duty metric.",
+    "Original RC_PS IRdbkcalc uses full scale 1 while Icalcout uses 10. Keep as a flagged calibration inconsistency.",
+    "Actual PLC ladder PDFs and LabVIEW CIM binaries are available but not decoded or certified as current 2026 logic."
+  ],
+  "unresolved_macro_names": [
+    "$(DEVICE):Actdisable",
+    "$(DEVICE):Actemit",
+    "$(DEVICE):Actenable",
+    "$(DEVICE):Actlower",
+    "$(DEVICE):Actscan",
+    "$(DEVICE):Actupper",
+    "$(DEVICE):AngleDelta",
+    "$(DEVICE):AnglePicEnd",
+    "$(DEVICE):AnglePicInit",
+    "$(DEVICE):Borderlow",
+    "$(DEVICE):Borderup",
+    "$(DEVICE):Compteur1",
+    "$(DEVICE):Debscanl",
+    "$(DEVICE):Deltav",
+    "$(DEVICE):Emitext",
+    "$(DEVICE):Emufic",
+    "$(DEVICE):Energy",
+    "$(DEVICE):Finscanl",
+    "$(DEVICE):HARD_LIM_VIO",
+    "$(DEVICE):I",
+    "$(DEVICE):Iwf",
+    "$(DEVICE):IwfGraph",
+    "$(DEVICE):Limdet",
+    "$(DEVICE):Lower",
+    "$(DEVICE):MOTOR",
+    "$(DEVICE):Mstep",
+    "$(DEVICE):Nptdet",
+    "$(DEVICE):Nptemit",
+    "$(DEVICE):Nptscanl",
+    "$(DEVICE):Pasald",
+    "$(DEVICE):Pasmotdet",
+    "$(DEVICE):Passcanl",
+    "$(DEVICE):Pausemit",
+    "$(DEVICE):Position",
+    "$(DEVICE):Razgraph",
+    "$(DEVICE):Refresh",
+    "$(DEVICE):SOFT_LIM_VIO",
+    "$(DEVICE):Savemit",
+    "$(DEVICE):Savescan",
+    "$(DEVICE):Savewf",
+    "$(DEVICE):Scantext",
+    "$(DEVICE):Upper",
+    "$(DEVICE):Validate",
+    "$(DEVICE):Vend",
+    "$(DEVICE):Vht",
+    "$(DEVICE):VhtRdbk",
+    "$(DEVICE):Vpic",
+    "$(DEVICE):VpicEnd",
+    "$(DEVICE):Vstart",
+    "$(DEVICE):Vstep",
+    "$(DEVICE)_SERV:EnaDisa",
+    "$(DEVICE)_SERV:Refresh",
+    "$(DEVICE)_SERV:Status",
+    "$(SS):$(CC):$(AxeX)",
+    "$(SS):$(CC):$(Config)",
+    "$(SS):$(CC):$(FreqEch)",
+    "$(SS):$(CC):$(T0)",
+    "$(SS):$(CC):$(T1)",
+    "$(SS):$(CC):$(T2)",
+    "$(SS):$(CC):$(T3)",
+    "$(SS):$(CC):ConfigTrigger",
+    "$(SS):$(CC):LedActivite",
+    "$(SS):$(CC):Mode",
+    "$(SS):$(CC):START",
+    "$(SS):$(CC):Status",
+    "$(SS):$(CC):TriggerSoft",
+    "LEBT:$(DEVICE)_$(CNAME):Calcdly",
+    "LEBT:$(DEVICE)_$(CNAME):OnOffCmd",
+    "LEBT:$(DEVICE)_$(CNAME):Softbo",
+    "LEBT:$(DEVICE)_$(CNAME):VRdbk",
+    "LEBT:$(DEVICE)_$(CNAME):VSet"
+  ],
+  "sampled_formulas": [
+    {
+      "name": "LEBT:HV_PS:HTpas0",
+      "formula": "B#0?(A/B):C",
+      "source": "injectorApp/db/injectorActions_auto.db"
+    },
+    {
+      "name": "LEBT:HV_PS:HTpas1",
+      "formula": "B#0?(A-B)/C:D",
+      "source": "injectorApp/db/injectorActions_auto.db"
+    },
+    {
+      "name": "SRC:IE_PS:Vcalcpas",
+      "formula": "C#0?(A-B)/C:D",
+      "source": "injectorApp/db/injectorActions_auto.db"
+    },
+    {
+      "name": "LEBT:HV_PS:CalcVHT",
+      "formula": "A*C",
+      "source": "injectorApp/db/injectorFUG_120kV.db"
+    },
+    {
+      "name": "LEBT:HV_PS:CalcI",
+      "formula": "A/B",
+      "source": "injectorApp/db/injectorFUG_120kV.db"
+    },
+    {
+      "name": "LEBT:HV_PS:DelayI",
+      "formula": "((A=B)?1:0)",
+      "source": "injectorApp/db/injectorFUG_120kV.db"
+    },
+    {
+      "name": "LEBT:HV_PS:ScaleVHT",
+      "formula": "(A/B)",
+      "source": "injectorApp/db/injectorFUG_120kV.db"
+    },
+    {
+      "name": "LEBT:HV_PS:ScaleIHT",
+      "formula": "(A*B)",
+      "source": "injectorApp/db/injectorFUG_120kV.db"
+    },
+    {
+      "name": "SRC:IE_PS:Vcalcout",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorIE_PS.db"
+    },
+    {
+      "name": "SRC:IE_PS:VRdbkcalc",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorIE_PS.db"
+    },
+    {
+      "name": "SRC:IE_PS:Icalcout",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorIE_PS.db"
+    },
+    {
+      "name": "SRC:IE_PS:IRdbkcalc",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorIE_PS.db"
+    },
+    {
+      "name": "SRC:IE_PS:RdbkCalcI",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorIE_PS.db"
+    },
+    {
+      "name": "SRC:RF_ATU:CalcModeXY",
+      "formula": "(A|(B<<1))",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:CalcOnOff",
+      "formula": "((A <<6)|(B & C))",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:CalcMot02",
+      "formula": "(A<<2|B<<3|C<<4|D<<5|E<<6)",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:CalcRAZ",
+      "formula": "(((A<<7)|(B))&(C))",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:MarcheRF",
+      "formula": "(A & B)>>6",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:PretRF",
+      "formula": "(A & B)>>7",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:DefRF",
+      "formula": "(A & B)>>3",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "SRC:RF_GENE:PwrRef",
+      "formula": "(A*B)",
+      "source": "injectorApp/db/injectorModbus_RF.db"
+    },
+    {
+      "name": "LEBT:RC_PS:Icalcout",
+      "formula": "(B*A)/C",
+      "source": "injectorApp/db/injectorRCPS.db"
+    },
+    {
+      "name": "LEBT:RC_PS:IRdbkcalc",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorRCPS.db"
+    },
+    {
+      "name": "LEBT:RC_PS:Vcalcout",
+      "formula": "(B*A)/C",
+      "source": "injectorApp/db/injectorRCPS.db"
+    },
+    {
+      "name": "LEBT:RC_PS:VRdbkcalc",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorRCPS.db"
+    },
+    {
+      "name": "LEBT:R_PS:Icalcout",
+      "formula": "(B*A)/C",
+      "source": "injectorApp/db/injectorRPS.db"
+    },
+    {
+      "name": "LEBT:R_PS:IRdbkcalc",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorRPS.db"
+    },
+    {
+      "name": "LEBT:R_PS:Vcalcout",
+      "formula": "(B*A)/C",
+      "source": "injectorApp/db/injectorRPS.db"
+    },
+    {
+      "name": "LEBT:R_PS:VRdbkcalc",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorRPS.db"
+    },
+    {
+      "name": "SRC:RF_GEN:PwrSet",
+      "formula": "A-B",
+      "source": "injectorApp/db/injectorSRC_RF.db"
+    },
+    {
+      "name": "SRC:RF_GEN:VRFcalcout",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorSRC_RF.db"
+    },
+    {
+      "name": "SRC:RF_GEN:CalcOffset",
+      "formula": "(A*B)/C",
+      "source": "injectorApp/db/injectorSRC_RF.db"
+    },
+    {
+      "name": "SRC:TIM:Cyclut",
+      "formula": "A/B",
+      "source": "injectorApp/db/injectorTiming.db"
+    },
+    {
+      "name": "SRC:TIM:DutyCycle",
+      "formula": "(B)?A:C",
+      "source": "injectorApp/db/injectorTiming.db"
+    },
+    {
+      "name": "LEBT:VAC01:PVOpenPrecond",
+      "formula": "(A&B)|C",
+      "source": "plcInjectorApp/db/plcInjector_StatusForOpi.db"
+    },
+    {
+      "name": "LEBT:VAC01:SVOpenPrecond",
+      "formula": "((((A&B)|D)|(E&F&G))&C)|H",
+      "source": "plcInjectorApp/db/plcInjector_StatusForOpi.db"
+    },
+    {
+      "name": "LEBT:VAC02:PVOpenPrecond",
+      "formula": "(A&B)|C",
+      "source": "plcInjectorApp/db/plcInjector_StatusForOpi.db"
+    },
+    {
+      "name": "LEBT:VAC02:SVOpenPrecond",
+      "formula": "(A&B&C&D)|E",
+      "source": "plcInjectorApp/db/plcInjector_StatusForOpi.db"
+    }
+  ]
+}
