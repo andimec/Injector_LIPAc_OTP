@@ -51,6 +51,9 @@ class SimulationPVState:
         """Explicitly mark a PV as writable by the local adapter/test harness."""
         self._writable_names.add(name)
 
+    def is_operator_writable(self, name: str) -> bool:
+        return name in self._writable_names
+
     def get(self, name: str) -> Any:
         return self._values[name].value
 
