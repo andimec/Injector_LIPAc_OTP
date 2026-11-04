@@ -31,7 +31,11 @@ a real accelerator.** The thin EPICS IOC is a transport/interface boundary.
 | `plant.py` | H2/D2 valves, source & LEBT MFC, VAC01/02 pumps and pressures | source topology + empirical equations | pumping curves and conductances uncalibrated |
 | `vacuum_opi.py` | VAC01/02 PV/SV help preconditions | exact OPI formulas | NOT PLC valve actuation authorization |
 | `calorimetry.py` | FC, BS, IC | exact source CALC/FLNK equations | input sensor calibration and physical duty remain uncertain |
-| `injector.py` | model composition | physical/logic execution ordering | some instrument families are interface-only |
+| `emu_geometry.py` | EMU plate geometry and global grid | exact SNL geometrical equations | slit field/acceptance uncalibrated |
+| `emu_hardware.py` | EMU MaxV/servo, PS1/2 and FACQ | SNL timing and training actuator response | speed, delays, acquisition synthetic |
+| `emu_sequencer.py` | EMU wide/edge/ROI scans | 2026 source transitions and verified sample guards | Fast/Full settings not yet mapped |
+| `emu_beam.py`, `emu_analysis.py` | optional beam fixture and RMS diagnostics | analytic second moments, opt-in Gaussian toy | not validated phase-space measurement |
+| `injector.py` | model composition | physical/logic execution ordering | other instrument families are still interface-only |
 | `subsystems.py` | older framework stubs | legacy scaffolding | not source-validated |
 
 ## Separation of commands and readbacks
@@ -82,3 +86,17 @@ separate integration work; no production CA/PVA endpoints are used.
 The GitHub Actions test pipeline checks Python simulation determinism and
 record-level equations. **It does not certify the live PLC, FPGA, OPI runtime,
 or beam physics.**
+
+## EMU instructions
+
+See [full EMU reconstruction](../../../docs/emu_reconstruction.md) for state
+transitions, original SNL equations, source inconsistencies, operator PVs and
+remaining calibration. Local demo with no EPICS network:
+
+```bash
+python -m pip install -e .
+python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_training.csv
+```
+
+This command runs only an in-memory Python simulation and never connects to
+real Injector PVs.
