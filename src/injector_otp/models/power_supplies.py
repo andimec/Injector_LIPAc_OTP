@@ -10,6 +10,7 @@ from dataclasses import dataclass
 
 from .base import SubsystemModel
 from .catalog import DeviceCatalog
+from .original_lcs_logic import to_analog_counts, from_analog_counts
 
 
 POWER_SUPPLY_PREFIXES = (
@@ -170,14 +171,50 @@ class PowerSupplyDevice(SubsystemModel):
         self._emit(context, int(s.auxiliary), "AuxStat")
 
         feedback_current = s.current_A * (1 - drift)
-        for suffix in ("IRdbk", "IRdbkcalc"):
-            self._emit(context, feedback_current, suffix)
-        for suffix in ("VRdbk", "VRdbkcalc"):
-            self._emit(context, s.voltage, suffix)
-        if self.prefix == "LEBT:HV_PS":
+
+        # Original EPICS DBs distinguish physical engineering values from raw
+        # Modbus analogue registers. Do not publish both with the same units.
+        analog_scales = {
+            "SRC:IE_PS": {"I": (20.0, 20.0), "V": (50.0, 50.0)},
+            "LEBT:R_PS": {"I": (20.0, 20.0), "V": (15.0, 15.0)},
+            # WARNING: original RC_PS IRdbkcalc scales raw by 1/30000 while
+            # Icalcout scales ISet by 30000/10. Preserve both, flag mismatch.
+            "LEBT:RC_PS": {"I": (10.0, 1.0), "V": (3.0, 3.0)},
+        }
+        factors = analog_scales.get(self.prefix)
+        if factors is not None:
+            icmd_scale, irdbk_scale = factors["I"]
+            vcmd_scale, vrdbk_scale = factors["V"]
+            raw_i = to_analog_counts(feedback_current, icmd_scale)
+            raw_v = to_analog_counts(s.voltage, vcmd_scale)
+            self._emit(context, raw_i, "IRdbk")
+            self._emit(context, raw_v, "VRdbk")
+            self._emit(context, from_analog_counts(raw_i, irdbk_scale), "IRdbkcalc")
+            self._emit(context, from_analog_counts(raw_v, vrdbk_scale), "VRdbkcalc")
+            self._emit(context, to_analog_counts(requested_current, icmd_scale), "Icalcout")
+            self._emit(context, to_analog_counts(requested_voltage, vcmd_scale), "Vcalcout")
+            if self.prefix == "SRC:IE_PS":
+                self._emit(context, raw_i, "ISetRdbk")
+                self._emit(context, from_analog_counts(raw_i, 20.0), "RdbkCalcI")
+        elif self.prefix == "LEBT:HV_PS":
+            # FUG protocol uses volts/amps, while OPI uses kV/mA.
+            # HV ICmd is a CURRENT LIMIT, not a demand for measured load.
+            self._emit(context, requested_voltage * 1000.0, "CalcVHT")
+            self._emit(context, self._read(context, "ICmd") / 1000.0, "CalcI")
+            self._emit(context, s.voltage * 1000.0, "LectVht")
             self._emit(context, s.voltage, "ScaleVHT")
-            # LectVht is device-specific raw readback and requires calibration;
-            # it is not silently overwritten with a fabricated raw value.
+            # Do not invent LectIht or ScaleIHT from ICmd alone.
+        else:
+            self._emit(context, feedback_current, "IRdbk", "IRdbkcalc")
+
+        # The original SOL*.db implements status bit0=on, bit1=off,
+        # bit2=ready. The asyn source is absent in OTP, so Python owns it.
+        if self.prefix in ("LEBT:SOL01_PS", "LEBT:SOL02_PS"):
+            status_word = (1 if s.powered else 2) | (4 if s.ready else 0)
+            self._emit(context, status_word, "Status")
+            self._emit(context, int(not s.powered), "OffStat")
         context.metrics[f"{self.prefix}.powered"] = float(s.powered)
-        context.metrics[f"{self.prefix}.current_A"] = s.current_A
+        # IE and repeller current units are mA in their source records;
+        # coil/solenoid current units are A. Retain a neutral metric name.
+        context.metrics[f"{self.prefix}.current_eng"] = s.current_A
         context.metrics[f"{self.prefix}.voltage"] = s.voltage
