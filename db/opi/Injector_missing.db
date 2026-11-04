@@ -93,10 +93,10 @@ record(ai, "LEBT:CHOP_IM:FbiVmon")
     field(PREC, "0")
 }
 
-record(bo, "LEBT:CHOP_IM:StmState")
+record(longin, "LEBT:CHOP_IM:StmState")
 {
     field(DTYP, "Soft Channel")
-    field(DESC, "OPI inferred; see audit")
+    field(DESC, "OPI state 0..6; longin required, bo cannot encode ARMED=2")
 }
 
 record(longout, "LEBT:CHOP_IM:StmStateSet")
