@@ -62,6 +62,11 @@ class InjectorModel(SubsystemModel):
             if catalog.contains_prefix(prefix):
                 self._add(GasFlowController(prefix, valve, catalog, self.parameters))
 
+        # The 2026 LCS user manual documents a separate PR4000B for
+        # auxiliary LEBT gas, distinct from H2/D2 on the HV platform.
+        if catalog.contains_prefix("LEBT:MFC"):
+            self._add(GasFlowController("LEBT:MFC", None, catalog, self.parameters))
+
         for region in ("LEBT:VAC01", "LEBT:VAC02"):
             if not catalog.contains_prefix(region):
                 continue
