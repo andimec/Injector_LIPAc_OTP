@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import Any, Protocol
 
 from ..pv.state import SimulationPVState
-from .contract import SimulationIOCContract
 
 
 class PVBridge(Protocol):
@@ -16,17 +15,12 @@ class PVBridge(Protocol):
 
 
 class SoftIOCAdapter(PVBridge, Protocol):
-    """Contract implemented by the real simulation Soft IOC adapter."""
-
+    """Future simulation Soft IOC transport, preserving native PV names."""
     pass
 
 
 class LocalPVBridge:
-    """Deterministic bridge used before the real EPICS Soft IOC exists.
-
-    It deliberately performs no network I/O. Its purpose is to exercise the
-    same ownership direction that the future IOC adapter will implement.
-    """
+    """In-process bridge, with no network I/O and no PV-name rewriting."""
 
     def __init__(self, state: SimulationPVState) -> None:
         self.state = state
@@ -43,11 +37,4 @@ class LocalPVBridge:
 
     def push_outputs(self, values: dict[str, Any]) -> None:
         for name, value in values.items():
-            source_name = self._source_name(name)
-            self.state.publish(source_name, value, source="epics-bridge")
-
-    @staticmethod
-    def _source_name(name: str) -> str:
-        if SimulationIOCContract.is_simulation_name(name):
-            return name[len(SimulationIOCContract.SIM_NAMESPACE):]
-        return name
+            self.state.publish(name, value, source="epics-bridge")
