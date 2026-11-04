@@ -278,6 +278,13 @@ class EmuScanSequencer(SubsystemModel):
 
     def _command_target(self, context) -> None:
         target = self.targets[self.target_index]
+        if self.mode == EmuMode.EMITTANCE and self.validated_roi is not None:
+            # SNL cmdMoteur updates the local ROI center for every motor row.
+            roi = self.validated_roi
+            vpic = roi.vpic_at(target.motor_mm)
+            self._emit(context, "LEBT:EMIT:Vpic", vpic)
+            self._emit(context, "LEBT:EMIT:Vstart", vpic + roi.delta_v_V / 2)
+            self._emit(context, "LEBT:EMIT:Vend", vpic - roi.delta_v_V / 2)
         self._input(context, "LEBT:EMIT:MOTOR.VAL", target.motor_mm)
         self._input(context, "LEBT:EMIT_PS1:VSet", target.voltage_difference_V / 2)
         self._input(context, "LEBT:EMIT_PS2:VSet", -target.voltage_difference_V / 2)
@@ -327,6 +334,17 @@ class EmuScanSequencer(SubsystemModel):
 
     def update(self, dt: float, context) -> None:
         super().update(dt)
+        # Original emitProcess.db Nptscanl/Nptdet expressions:
+        # (abs(Debscanl)+abs(Finscanl))/abs(step). These are legacy
+        # OPI calculator outputs, not necessarily actual sample counts.
+        begin = self._num(context, "Debscanl")
+        end = self._num(context, "Finscanl")
+        for step_key, out_key in (("Passcanl", "Nptscanl"),
+                                  ("Pasald", "Nptdet")):
+            delta = self._num(context, step_key)
+            if delta != 0:
+                self._emit(context, "LEBT:EMIT:" + out_key,
+                           (abs(begin) + abs(end)) / abs(delta))
         validation = bool(context.pv.get("LEBT:EMIT:Validate", 0))
         if validation and not self.previous_validate:
             try:
