@@ -64,7 +64,7 @@ class ValveDevice(SubsystemModel):
 class GasFlowController(SubsystemModel):
     """First-order MFC response in sccm, coupled to gas-valve status."""
 
-    def __init__(self, prefix: str, valve_prefix: str, catalog: DeviceCatalog, params: dict):
+    def __init__(self, prefix: str, valve_prefix: str | None, catalog: DeviceCatalog, params: dict):
         super().__init__()
         self.name = prefix
         self.prefix = prefix
@@ -79,7 +79,12 @@ class GasFlowController(SubsystemModel):
         cmd = self.catalog.pv(self.prefix, "OpenCmd")
         if cmd is not None:
             self.enabled = bool(context.pv.get(cmd, 0))
-        main_open = bool(context.metrics.get(f"{self.valve_prefix}.open", 0))
+        # The source MFCs sit behind H2/D2 safety valves. The separate
+        # LEBT PR4000B auxiliary MFC has no shared source-gas safety valve.
+        main_open = (
+            self.valve_prefix is None
+            or bool(context.metrics.get(f"{self.valve_prefix}.open", 0))
+        )
         target_pv = self.catalog.pv(self.prefix, "Debit")
         requested = max(0.0, float(context.pv.get(target_pv, 0) or 0)) if target_pv else 0.0
         if target_pv:
@@ -88,7 +93,7 @@ class GasFlowController(SubsystemModel):
         tau = max(0.001, float(self.params.get("gas", {}).get("response_tau_s", 0.5)))
         self.actual_sccm += (target - self.actual_sccm) * (1.0 - exp(-dt / tau))
         self.actual_sccm = max(0.0, self.actual_sccm)
-        suffix = "Deb1Mes" if self.prefix.endswith("MFCD") else "Deb2Mes"
+        suffix = "Deb2Mes" if self.prefix == "SRC:MFCH" else "Deb1Mes"
         readback = self.catalog.pv(self.prefix, suffix)
         if readback:
             context.emit(readback, self.actual_sccm, f"mfc:{self.prefix}")
@@ -169,7 +174,17 @@ class VacuumRegionModel(SubsystemModel):
         leak = float(settings.get("leak_rate_mbar_s", 2e-8))
         gas_gain = float(settings.get("gas_coupling_mbar_s_per_sccm", 2e-6))
         pump_tau = max(0.01, float(settings.get("pumping_tau_s", 10.0)))
-        gas = sum(float(v) for k, v in context.metrics.items() if k.endswith(".flow_sccm"))
+        # Distinguish gas supplied to the source chamber (VAC01) from
+        # auxiliary LEBT gas (VAC02). Shared-network conductance and GV
+        # coupling require measured volumes and are not represented here.
+        flow_sources = settings.get("flow_sources", {
+            "LEBT:VAC01": ["SRC:MFCD", "SRC:MFCH"],
+            "LEBT:VAC02": ["LEBT:MFC"],
+        })
+        gas = sum(
+            float(context.metrics.get(f"{name}.flow_sccm", 0.0))
+            for name in flow_sources.get(self.prefix, [])
+        )
         pump_factor = 1 if self.pp_on or self.tp_on else 0
         derivative = leak + gas_gain * gas
         if pump_factor:
