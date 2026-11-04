@@ -255,8 +255,9 @@ The intended dependency direction is:
 The reverse dependency is forbidden: physical models must not import EPICS
 libraries.
 
-All simulated PVs use the OTP: namespace. A future EPICS adapter must fail
-closed if configured with a production endpoint or production PV name.
+The isolated VM uses unmodified source PV names. Its EPICS adapter must
+be configured to bind only to private VM/training network interfaces and
+must never discover or route to the LIPAc control network.
 
 ## 13. Current verified pilot contract
 
