@@ -89,7 +89,10 @@ def build_roi(*, energy_keV: float, angle_init_mrad: float,
               angle_delta_mrad, border_up_mm, border_low_mm, motor_step_mm)
     if not all(isfinite(v) for v in values):
         raise ValueError("EMU ROI parameters must be finite")
-    if angle_init_mrad == -9999 or angle_end_mrad == 9999:
+    # Original emitProcess.db initializes both angles to +9999, while
+    # emitSnlEmu_v2.st checks initial == -9999 and end == +9999.
+    # Treat both sentinels as unconfigured to avoid an invalid training scan.
+    if abs(angle_init_mrad) == 9999 or abs(angle_end_mrad) == 9999:
         raise ValueError("Replace the source unset-angle sentinel before Validate")
     if border_up_mm <= border_low_mm:
         raise ValueError("Borderup must be greater than Borderlow")
