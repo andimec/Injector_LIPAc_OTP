@@ -1,0 +1,1043 @@
+{
+  "source_commit": "04a922247f0f25834d921cd9a3a68c96c4f71596",
+  "files": {
+    "db/asynRecord.db": {
+      "sha": "ea95137aea27e17dcf7f295868a5f021ecc8893b",
+      "records": [
+        {
+          "name": "$(P)$(R)",
+          "record_type": "asyn",
+          "fields": {
+            "DTYP": "asynRecordDevice",
+            "PORT": "$(PORT)",
+            "ADDR": "$(ADDR)",
+            "OMAX": "$(OMAX)",
+            "IMAX": "$(IMAX)"
+          },
+          "line": 1
+        }
+      ]
+    },
+    "db/emitApp/db/emitIcv150.db": {
+      "sha": "8920738c6300c832396dd94253982a55de5475c8",
+      "records": [
+        {
+          "name": "LEBT:EMIT_PS1:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "EMUPS1",
+            "SCAN": ".1 second",
+            "PREC": "0",
+            "EGUF": "10000",
+            "EGUL": "-10000",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "LINR": "LINEAR",
+            "SMOO": "0"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:EMIT_PS2:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "EMUPS2",
+            "SCAN": ".1 second",
+            "PREC": "0",
+            "EGUF": "10000",
+            "EGUL": "-10000",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "LINR": "LINEAR",
+            "SMOO": "0"
+          },
+          "line": 19
+        },
+        {
+          "name": "LEBT:EMIT_PSR:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "EMUPSR",
+            "SCAN": ".1 second",
+            "PREC": "0",
+            "EGUF": "200",
+            "EGUL": "-200",
+            "EGU": "V",
+            "HOPR": "200",
+            "LOPR": "0",
+            "LINR": "LINEAR",
+            "SMOO": "0"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:FGA_PS2:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "FGAPS2",
+            "SCAN": ".1 second",
+            "PREC": "0",
+            "EGUF": "1000",
+            "EGUL": "-1000",
+            "EGU": "V",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "LINR": "LINEAR",
+            "SMOO": "0"
+          },
+          "line": 49
+        },
+        {
+          "name": "LEBT:FGA_PS3:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "FGAPS3",
+            "SCAN": ".1 second",
+            "PREC": "0",
+            "EGUF": "1000",
+            "EGUL": "-1000",
+            "EGU": "V",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "LINR": "LINEAR",
+            "SMOO": "0"
+          },
+          "line": 64
+        },
+        {
+          "name": "LEBT:FGA_PS4:VRdbk",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "FGAPS4",
+            "SCAN": ".1 second",
+            "PREC": "0",
+            "EGUF": "200",
+            "EGUL": "-200",
+            "EGU": "V",
+            "HOPR": "200",
+            "LOPR": "0",
+            "LINR": "LINEAR",
+            "SMOO": "0"
+          },
+          "line": 79
+        }
+      ]
+    },
+    "db/emitApp/db/emitIcv196.db": {
+      "sha": "9d543bea8a05473478545f6f29e8a960eff785a7",
+      "records": [
+        {
+          "name": "LEBT:EMIT_PS1:OnOffCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS1-ON",
+            "ZNAM": "HV OFF",
+            "ONAM": "HV ON"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:EMIT_PS1:Softbo",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS1-ON",
+            "ZNAM": "HV Off",
+            "ONAM": "HV On"
+          },
+          "line": 12
+        },
+        {
+          "name": "LEBT:EMIT_PS1:Calcdly",
+          "record_type": "calcout",
+          "fields": {
+            "CALC": "(A=B)?30:0",
+            "ODLY": "30"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:EMIT_PS2:OnOffCmd",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS2-ON",
+            "ZNAM": "HV OFF",
+            "ONAM": "HV ON"
+          },
+          "line": 26
+        },
+        {
+          "name": "LEBT:EMIT_PS2:Softbo",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "PS2-ON",
+            "ZNAM": "HV Off",
+            "ONAM": "HV On"
+          },
+          "line": 34
+        },
+        {
+          "name": "LEBT:EMIT_PS2:Calcdly",
+          "record_type": "calcout",
+          "fields": {
+            "CALC": "(A=B)?30:0",
+            "ODLY": "30"
+          },
+          "line": 42
+        }
+      ]
+    },
+    "db/emitApp/db/emitIcv714.db": {
+      "sha": "e21ab767756de82a8c27785520c5fe59b4588422",
+      "records": [
+        {
+          "name": "LEBT:EMIT_PS1:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "EMUPS1",
+            "PREC": "0",
+            "EGUF": "10000",
+            "EGUL": "-10000",
+            "EGU": "V",
+            "DRVH": "10000",
+            "DRVL": "-10000",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:EMIT_PS2:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "EMUPS2",
+            "PREC": "0",
+            "EGUF": "10000",
+            "EGUL": "-10000",
+            "EGU": "V",
+            "DRVH": "10000",
+            "DRVL": "-10000",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 20
+        },
+        {
+          "name": "LEBT:EMIT_PSR:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "EMUPSR",
+            "PREC": "0",
+            "EGUF": "200",
+            "EGUL": "0",
+            "EGU": "V",
+            "DRVH": "200",
+            "DRVL": "0",
+            "HOPR": "200",
+            "LOPR": "0",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 36
+        },
+        {
+          "name": "LEBT:FGA_PS2:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "FGAPS2",
+            "PREC": "0",
+            "EGUF": "500",
+            "EGUL": "-500",
+            "EGU": "V",
+            "DRVH": "500",
+            "DRVL": "-500",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 52
+        },
+        {
+          "name": "LEBT:FGA_PS3:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "FGAPS3",
+            "PREC": "0",
+            "EGUF": "500",
+            "EGUL": "-500",
+            "EGU": "V",
+            "DRVH": "500",
+            "DRVL": "-500",
+            "HOPR": "500",
+            "LOPR": "-500",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 68
+        },
+        {
+          "name": "LEBT:FGA_PS4:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "FGAPS4",
+            "PREC": "0",
+            "EGUF": "200",
+            "EGUL": "0",
+            "EGU": "V",
+            "DRVH": "200",
+            "DRVL": "0",
+            "HOPR": "200",
+            "LOPR": "0",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 84
+        },
+        {
+          "name": "LEBT:CHOP_PS:VSet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "CHOPPER",
+            "PREC": "0",
+            "EGUF": "10000",
+            "EGUL": "0",
+            "EGU": "V",
+            "DRVH": "10000",
+            "DRVL": "0",
+            "HOPR": "10000",
+            "LOPR": "0",
+            "PINI": "NO",
+            "LINR": "LINEAR"
+          },
+          "line": 100
+        }
+      ]
+    },
+    "db/emitApp/db/emitMotor.db": {
+      "sha": "28df5b042b010abb687195a9106862dcb99af2a7",
+      "records": [
+        {
+          "name": "LEBT:EMIT:MOTOR",
+          "record_type": "motor",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "MOTOR",
+            "VELO": "20480",
+            "VBAS": "2048",
+            "ACCL": "0.01",
+            "BDST": "0",
+            "BVEL": "40960",
+            "BACC": "500",
+            "MRES": "0.00048828",
+            "PREC": "8",
+            "EGU": "mm",
+            "DHLM": "182",
+            "DLLM": "-3",
+            "TWV": "4",
+            "SREV": "2048",
+            "UREV": "2048",
+            "ERES": "0.00048828",
+            "RRES": "1",
+            "URIP": "No",
+            "RTRY": "1",
+            "VMAX": "40960",
+            "OMSL": "closed_loop",
+            "UEIP": "No",
+            "PCOF": "0.00005",
+            "JVEL": "40960",
+            "JAR": "3600",
+            "HVEL": "10",
+            "PINI": "NO",
+            "CNEN": "Disable",
+            "RDBD": "0.1"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:EMIT:HARD_LIM_VIO",
+          "record_type": "calcout",
+          "fields": {
+            "CALC": "A||B"
+          },
+          "line": 38
+        },
+        {
+          "name": "LEBT:EMIT:SOFT_LIM_VIO",
+          "record_type": "calcout",
+          "fields": {
+            "CALC": "A&&( !B && !C )"
+          },
+          "line": 43
+        },
+        {
+          "name": "LEBT:EMIT:Position",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "position",
+            "CALC": "(A*-1.)",
+            "EGU": "mm",
+            "PREC": "0",
+            "HOPR": "2",
+            "LOPR": "-181",
+            "HIHI": "2",
+            "LOLO": "-182",
+            "HIGH": "1",
+            "LOW": "-181",
+            "HHSV": "MAJOR",
+            "LLSV": "MAJOR",
+            "HSV": "MINOR",
+            "LSV": "MINOR",
+            "SCAN": ".1 second"
+          },
+          "line": 48
+        },
+        {
+          "name": "LEBT:EMIT:Refresh",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "SCAN": "Passive",
+            "VAL": "1"
+          },
+          "line": 67
+        }
+      ]
+    },
+    "db/emitApp/db/emitProcess.db": {
+      "sha": "6eed261db71bec79ac13f0fd7a0d437afead03d0",
+      "records": [
+        {
+          "name": "LEBT:EMIT:Vht",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "VHT",
+            "CALC": "A-B",
+            "SCAN": ".1 second",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:EMIT:Vpic",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vpic",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "NO",
+            "VAL": "0"
+          },
+          "line": 14
+        },
+        {
+          "name": "LEBT:EMIT:VpicEnd",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "VpicEnd",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "NO",
+            "VAL": "-9999"
+          },
+          "line": 25
+        },
+        {
+          "name": "LEBT:EMIT:VhtRdbk",
+          "record_type": "calc",
+          "fields": {
+            "DESC": "VHT",
+            "CALC": "A-B",
+            "SCAN": ".1 second",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "-10000"
+          },
+          "line": 36
+        },
+        {
+          "name": "LEBT:EMIT:Vstart",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vstart",
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 46
+        },
+        {
+          "name": "LEBT:EMIT:Energy",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vstart",
+            "EGU": "keV",
+            "PINI": "YES",
+            "DRVH": "200",
+            "HOPR": "200"
+          },
+          "line": 55
+        },
+        {
+          "name": "LEBT:EMIT:Vend",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vstart",
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 65
+        },
+        {
+          "name": "LEBT:EMIT:Vstep",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vstart",
+            "EGU": "V",
+            "HOPR": "1000",
+            "LOPR": "0"
+          },
+          "line": 74
+        },
+        {
+          "name": "LEBT:EMIT:Mstep",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vstart",
+            "EGU": "mm",
+            "HOPR": "20",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 83
+        },
+        {
+          "name": "LEBT:EMIT:Debscanl",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "debut",
+            "PINI": "YES",
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 93
+        },
+        {
+          "name": "LEBT:EMIT:Finscanl",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "fin",
+            "PINI": "YES",
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "5000",
+            "LOPR": "-5000"
+          },
+          "line": 104
+        },
+        {
+          "name": "LEBT:EMIT:Passcanl",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "pas",
+            "PINI": "YES",
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "2000",
+            "LOPR": "1"
+          },
+          "line": 115
+        },
+        {
+          "name": "LEBT:EMIT:Pasald",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "pas",
+            "PINI": "YES",
+            "PREC": "0",
+            "EGU": "V",
+            "HOPR": "1000",
+            "LOPR": "1"
+          },
+          "line": 126
+        },
+        {
+          "name": "LEBT:EMIT:Nptscanl",
+          "record_type": "calcout",
+          "fields": {
+            "SCAN": "2 second",
+            "CALC": "(ABS(A)+ABS(B))/ABS(C)"
+          },
+          "line": 137
+        },
+        {
+          "name": "LEBT:EMIT:Nptdet",
+          "record_type": "calcout",
+          "fields": {
+            "SCAN": "2 second",
+            "CALC": "(ABS(A)+ABS(B))/ABS(C)"
+          },
+          "line": 143
+        },
+        {
+          "name": "LEBT:EMIT:Actemit",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "mesEmit",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 149
+        },
+        {
+          "name": "LEBT:EMIT:Actscan",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "scanLarge",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 157
+        },
+        {
+          "name": "LEBT:EMIT:Actupper",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "detectUp",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 165
+        },
+        {
+          "name": "LEBT:EMIT:Actlower",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "findBeamLow",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 173
+        },
+        {
+          "name": "LEBT:EMIT:Pasmotdet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "pas",
+            "PINI": "YES",
+            "EGU": "mm",
+            "HOPR": "150",
+            "LOPR": "0",
+            "PREC": "1"
+          },
+          "line": 181
+        },
+        {
+          "name": "LEBT:EMIT:Razgraph",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "raz",
+            "HOPR": "100",
+            "LOPR": "0",
+            "PINI": "YES"
+          },
+          "line": 192
+        },
+        {
+          "name": "LEBT:EMIT:Deltav",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "deltaV",
+            "EGU": "V",
+            "HOPR": "10000",
+            "LOPR": "0",
+            "PINI": "YES"
+          },
+          "line": 201
+        },
+        {
+          "name": "LEBT:EMIT:Borderup",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "border",
+            "EGU": "mm",
+            "HOPR": "130",
+            "LOPR": "-50",
+            "PINI": "YES"
+          },
+          "line": 211
+        },
+        {
+          "name": "LEBT:EMIT:Limdet",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "limit",
+            "PINI": "YES",
+            "EGU": "mm",
+            "HOPR": "180",
+            "LOPR": "0"
+          },
+          "line": 221
+        },
+        {
+          "name": "LEBT:EMIT:Pausemit",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "pause",
+            "ZNAM": "pause",
+            "ONAM": "pause"
+          },
+          "line": 231
+        },
+        {
+          "name": "LEBT:EMIT:Borderlow",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "border",
+            "EGU": "mm",
+            "HOPR": "130",
+            "LOPR": "-50",
+            "PINI": "YES"
+          },
+          "line": 239
+        },
+        {
+          "name": "LEBT:EMIT:Savescan",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "save",
+            "ZNAM": "save",
+            "ONAM": "save"
+          },
+          "line": 249
+        },
+        {
+          "name": "LEBT:EMIT:Scantext",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "scan"
+          },
+          "line": 257
+        },
+        {
+          "name": "LEBT:EMIT:Savemit",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "save",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 263
+        },
+        {
+          "name": "LEBT:EMIT:Savewf",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "save waveform",
+            "ZNAM": "OFF",
+            "ONAM": "ON"
+          },
+          "line": 271
+        },
+        {
+          "name": "LEBT:EMIT:Emitext",
+          "record_type": "stringin",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "scan"
+          },
+          "line": 279
+        },
+        {
+          "name": "LEBT:EMIT:Emufic",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "ibeam"
+          },
+          "line": 285
+        },
+        {
+          "name": "LEBT:EMIT:Upper",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "upper",
+            "EGU": "mm",
+            "HOPR": "200",
+            "LOPR": "-200"
+          },
+          "line": 291
+        },
+        {
+          "name": "LEBT:EMIT:Lower",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Vstart",
+            "EGU": "mm",
+            "HOPR": "200",
+            "LOPR": "-200"
+          },
+          "line": 300
+        },
+        {
+          "name": "LEBT:EMIT:Validate",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "validate",
+            "ZNAM": "validate",
+            "ONAM": "validate"
+          },
+          "line": 309
+        },
+        {
+          "name": "LEBT:EMIT:Nptemit",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Npoints",
+            "HOPR": "500",
+            "LOPR": "0",
+            "PINI": "YES"
+          },
+          "line": 317
+        },
+        {
+          "name": "LEBT:EMIT:Compteur1",
+          "record_type": "calc",
+          "fields": {
+            "SCAN": "1 second",
+            "CALC": "(A<B?A+1:A=0)",
+            "EGU": "sec"
+          },
+          "line": 326
+        },
+        {
+          "name": "LEBT:EMIT:AnglePicInit",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "AnglePicInit",
+            "EGU": "mrad",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "YES"
+          },
+          "line": 333
+        },
+        {
+          "name": "LEBT:EMIT:AnglePicEnd",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "AnglePicEnd",
+            "EGU": "mrad",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "YES"
+          },
+          "line": 343
+        },
+        {
+          "name": "LEBT:EMIT:AngleDelta",
+          "record_type": "ao",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "AngleDelta",
+            "EGU": "mrad",
+            "HOPR": "10000",
+            "LOPR": "-10000",
+            "PINI": "YES"
+          },
+          "line": 353
+        }
+      ]
+    },
+    "db/emitApp/db/emitServo.db": {
+      "sha": "337acfd8f4900a493760491f44e3c41e0c86c0be",
+      "records": [
+        {
+          "name": "LEBT:EMIT_SERV:EnaDisa",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "Enable",
+            "ZNAM": "DIS",
+            "ONAM": "EN"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:EMIT_SERV:Refresh",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "status",
+            "PINI": "NO",
+            "ZNAM": "refresh",
+            "ONAM": "refresh"
+          },
+          "line": 12
+        },
+        {
+          "name": "LEBT:EMIT_SERV:Status",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "STATUS",
+            "SCAN": "Passive",
+            "PINI": "NO"
+          },
+          "line": 21
+        },
+        {
+          "name": "LEBT:EMIT:Actenable",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "enable",
+            "ZNAM": "enable",
+            "ONAM": "enable"
+          },
+          "line": 29
+        },
+        {
+          "name": "LEBT:EMIT:Actdisable",
+          "record_type": "bo",
+          "fields": {
+            "DTYP": "Soft Channel",
+            "DESC": "disable",
+            "ZNAM": "disable",
+            "ONAM": "disable"
+          },
+          "line": 37
+        }
+      ]
+    },
+    "db/emitApp/db/emitServoProto.db": {
+      "sha": "17b67e717dbe6375b6258bde5123a744b132b55e",
+      "records": []
+    },
+    "db/emitApp/db/emitVxStats.db": {
+      "sha": "7f5af614afdaaed477666502476cea16b822f377",
+      "records": [
+        {
+          "name": "LEBT:VMEStats:cpuUsedPercent",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "SCAN": "I/O Intr",
+            "HIHI": "90.0",
+            "HIGH": "60.0",
+            "HHSV": "MAJOR",
+            "HSV": "MINOR",
+            "EGU": "%"
+          },
+          "line": 4
+        },
+        {
+          "name": "LEBT:VMEStats:memoryUsedPercent",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "SCAN": "I/O Intr",
+            "HIHI": "90.0",
+            "HIGH": "60.0",
+            "HHSV": "MAJOR",
+            "HSV": "MINOR",
+            "EGU": "%"
+          },
+          "line": 15
+        },
+        {
+          "name": "LEBT:VMEStats:memoryTotal",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "SCAN": "I/O Intr"
+          },
+          "line": 26
+        },
+        {
+          "name": "LEBT:VMEStats:memoryUsed",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "SCAN": "I/O Intr"
+          },
+          "line": 32
+        },
+        {
+          "name": "LEBT:VMEStats:memoryFree",
+          "record_type": "ai",
+          "fields": {
+            "DTYP": "Injector Soft Channel",
+            "SCAN": "I/O Intr"
+          },
+          "line": 38
+        }
+      ]
+    },
+    "db/emitApp/db/extraPV.db": {
+      "sha": "b770cb39f690ac818f1014366f3798890f9feefd",
+      "records": []
+    }
+  }
+}
