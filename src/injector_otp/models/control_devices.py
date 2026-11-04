@@ -55,7 +55,16 @@ class RFSystemModel(SubsystemModel):
         if "RF_FAILURE" in context.faults:
             fault = True
         self._on = bool(self.read(context, "MOCmdOn")) and ready and permit and not fault
-        request = max(0.0, self.read(context, "RfPwr") + self.read(context, "RfOffset"))
+        # The original LCS provides RF power and offset as DISTINCT Modbus
+        # registers. Their influence on measured forward power is not defined
+        # by the RF_GENE EPICS DB. Do not silently assume P_rf + P_offset.
+        # The analog SRC:RF_GEN channel uses Pwr-Offset, which is a different
+        # control path. Offset contribution here is a configurable hypothesis.
+        requested_rf_W = self.read(context, "RfPwr")
+        offset_W = self.read(context, "RfOffset")
+        offset_gain = float(p.get("rf_offset_effect_gain", 0.0))
+        request = max(0.0, requested_rf_W + offset_gain * offset_W)
+        context.metrics["rf.offset_setting_W"] = offset_W
         tau = max(0.001, float(p.get("power_tau_s", 0.5)))
         self.forward_W += ((request if self._on else 0.0) - self.forward_W) * (
             1.0 - exp(-dt / tau)
