@@ -230,6 +230,12 @@ class EmuPlatePSModel(SubsystemModel):
             context.metrics[f"emu.{key}.on"] = float(supply.on)
             context.metrics[f"emu.{key}.V"] = supply.voltage_V
         difference = self.supplies["PS1"].voltage_V - self.supplies["PS2"].voltage_V
+        set_difference = (_float(context.pv.get("LEBT:EMIT_PS1:VSet", 0))
+                          - _float(context.pv.get("LEBT:EMIT_PS2:VSet", 0)))
+        # Source emitProcess.db Vht = PS1:VSet - PS2:VSet, whereas
+        # VhtRdbk = PS1:VRdbk - PS2:VRdbk.
+        if self.catalog.has("LEBT:EMIT:Vht"):
+            context.emit("LEBT:EMIT:Vht", set_difference, "emu_plates")
         if self.catalog.has("LEBT:EMIT:VhtRdbk"):
             context.emit("LEBT:EMIT:VhtRdbk", difference, "emu_plates")
         context.metrics["emu.VhtRdbk"] = difference
