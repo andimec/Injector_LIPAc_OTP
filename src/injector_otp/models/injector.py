@@ -13,6 +13,7 @@ from .control_devices import (
     PositionerModel, RFSystemModel, TimingSystemModel,
 )
 from .plant import CoolingSkidModel, GasFlowController, VacuumRegionModel, ValveDevice
+from .vacuum_opi import VacuumOPIPreconditions
 from .power_supplies import POWER_SUPPLY_PREFIXES, PowerSupplyDevice
 
 
@@ -67,6 +68,8 @@ class InjectorModel(SubsystemModel):
                 if catalog.has(subprefix + "OpenCmd"):
                     self._add(ValveDevice(subprefix, catalog))
             self._add(VacuumRegionModel(region, catalog, self.parameters))
+
+        self._add(VacuumOPIPreconditions(catalog), "exact_opi_formula_only")
 
         for prefix in POWER_SUPPLY_PREFIXES:
             if catalog.contains_prefix(prefix):
