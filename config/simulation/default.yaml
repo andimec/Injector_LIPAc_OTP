@@ -40,6 +40,27 @@ initial_pvs:
   PPS:CHOP:PermStat: true
   PPS:ACCL:PermStat: true
   PPS:BEAM:InhibitStat: false
+  # EMU-specific *simulated* external safety status. Current real PLC
+  # mapping of ExtSec has not yet been verified.
+  LEBT:EMIT:ExtSec: true
+  LEBT:EMIT:FSDefStat: true
+  LEBT:EMIT:MOTOR.CNEN: "Disable"
+  LEBT:EMIT:MOTOR.SPMG: "Go"
+  LEBT:EMIT:MOTOR.DLLM: -3.0
+  LEBT:EMIT:MOTOR.DHLM: 182.0
+  LEBT:EMIT:Energy: 100.0
+  LEBT:EMIT:Debscanl: 5000.0
+  LEBT:EMIT:Finscanl: -5000.0
+  LEBT:EMIT:Passcanl: 100.0
+  LEBT:EMIT:Pasald: 100.0
+  LEBT:EMIT:Pasmotdet: 1.0
+  LEBT:EMIT:Limdet: 50.0
+  LEBT:EMIT:Nptemit: 100
+  LEBT:EMIT:AnglePicInit: -9999.0
+  LEBT:EMIT:AnglePicEnd: 9999.0
+  LEBT:EMIT:AngleDelta: 15.0
+  LEBT:EMIT:Borderup: 120.0
+  LEBT:EMIT:Borderlow: 40.0
   # LCS User Manual v4.0 section 4.4.2. These are configurable
   # operator threshold inputs to a TRAINING CIM, not FPGA comparisons.
   LEBT:CHOP_IM:VmonOff: 1000.0
