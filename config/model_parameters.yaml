@@ -30,6 +30,11 @@ vacuum:
   leak_rate_mbar_s: 2.0e-8
   gas_coupling_mbar_s_per_sccm: 2.0e-6
   fault_inrush_mbar_s: 1.0e-3
+  # Training hypothesis: no cross-region conductance until a network
+  # model has volumes, pump curves and GV conductance data.
+  flow_sources:
+    LEBT:VAC01: [SRC:MFCD, SRC:MFCH]
+    LEBT:VAC02: [LEBT:MFC]
 
 gas:
   response_tau_s: 0.5
