@@ -1,0 +1,6190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <width>1060</width>
+  <height>890</height>
+  <background_color>
+    <color name="Button_Background" red="210" green="210" blue="210">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_10</name>
+    <x>178</x>
+    <y>340</y>
+    <width>1</width>
+    <height>90</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="89.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_8</name>
+    <x>79</x>
+    <y>216</y>
+    <width>220</width>
+    <height>51</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="219.0" y="0.0">
+      </point>
+      <point x="219.0" y="50.0">
+      </point>
+      <point x="0.0" y="50.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Vac01</text>
+    <x>128</x>
+    <y>222</y>
+    <width>103</width>
+    <height>37</height>
+    <font>
+      <font family="Courier" style="BOLD" size="23.762376237623762">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>IVV01</text>
+    <x>189</x>
+    <y>287</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_11</name>
+    <x>282</x>
+    <y>184</y>
+    <width>1</width>
+    <height>32</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="31.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_12</name>
+    <x>113</x>
+    <y>181</y>
+    <width>1</width>
+    <height>35</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="34.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_13</name>
+    <x>216</x>
+    <y>181</y>
+    <width>1</width>
+    <height>35</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="34.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_14</name>
+    <x>282</x>
+    <y>100</y>
+    <width>1</width>
+    <height>32</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="31.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>NIV</text>
+    <x>309</x>
+    <y>133</y>
+    <width>41</width>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>IVG02</text>
+    <x>168</x>
+    <y>66</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>IVG01</text>
+    <x>51</x>
+    <y>66</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_15</name>
+    <x>22</x>
+    <y>240</y>
+    <width>58</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="57.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_16</name>
+    <x>299</x>
+    <y>240</y>
+    <width>109</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="108.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>514</x>
+    <y>240</y>
+    <width>25</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="24.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_3</name>
+    <x>407</x>
+    <y>240</y>
+    <width>53</width>
+    <height>1</height>
+    <points>
+      <point x="52.0" y="0.0">
+      </point>
+      <point x="52.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon</name>
+    <x>459</x>
+    <y>225</y>
+    <width>56</width>
+    <height>26</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="55.0" y="25.0">
+      </point>
+      <point x="55.0" y="0.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Blue" red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1 ==1">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1 &amp;&amp; pv1 ==0">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==0">
+          <value>
+            <color red="240" green="240" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1 &amp;&amp; pv1==1">
+          <value>
+            <color red="240" green="240" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:GV:OpenStat</pv_name>
+        <pv_name>ca://LEBT:GV:CloseStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_22</name>
+    <x>469</x>
+    <y>215</y>
+    <width>37</width>
+    <height>25</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <width>37</width>
+      <height>11</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="36.0" y="0.0">
+        </point>
+        <point x="36.0" y="10.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>4</x>
+      <y>4</y>
+      <width>29</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="28.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <x>18</x>
+      <y>4</y>
+      <width>1</width>
+      <height>19</height>
+      <points>
+        <point x="0.0" y="18.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_17</name>
+    <x>641</x>
+    <y>430</y>
+    <width>110</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="109.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_18</name>
+    <x>693</x>
+    <y>429</y>
+    <width>1</width>
+    <height>130</height>
+    <points>
+      <point x="0.0" y="129.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>IVG08</text>
+    <x>727</x>
+    <y>342</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_4</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>721</x>
+    <y>381</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 1E-10)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 5E-3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC02:VacSGTP</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_21</name>
+    <x>594</x>
+    <y>216</y>
+    <width>220</width>
+    <height>51</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="219.0" y="0.0">
+      </point>
+      <point x="219.0" y="50.0">
+      </point>
+      <point x="0.0" y="50.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Vac02</text>
+    <x>643</x>
+    <y>222</y>
+    <width>103</width>
+    <height>37</height>
+    <font>
+      <font family="Courier" style="BOLD" size="23.762376237623762">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_22</name>
+    <x>693</x>
+    <y>266</y>
+    <width>1</width>
+    <height>23</height>
+    <points>
+      <point x="0.0" y="22.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_23</name>
+    <x>693</x>
+    <y>340</y>
+    <width>1</width>
+    <height>90</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="89.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>IVV04</text>
+    <x>704</x>
+    <y>287</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_25</name>
+    <x>628</x>
+    <y>181</y>
+    <width>1</width>
+    <height>35</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="34.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_26</name>
+    <x>731</x>
+    <y>181</y>
+    <width>1</width>
+    <height>35</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="34.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>IVG06</text>
+    <x>683</x>
+    <y>66</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>IVG05</text>
+    <x>566</x>
+    <y>66</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>IVG07</text>
+    <x>565</x>
+    <y>342</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_28</name>
+    <x>537</x>
+    <y>240</y>
+    <width>58</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="57.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_29</name>
+    <x>813</x>
+    <y>240</y>
+    <width>61</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="60.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_7</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>560</x>
+    <y>381</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 8E-4)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 1E3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC02:VacPGTP</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_11</name>
+    <x>678</x>
+    <y>288</y>
+    <width>31</width>
+    <height>56</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+      <point x="30.0" y="55.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:SVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>693</x>
+    <y>297</y>
+    <width>24</width>
+    <height>37</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <x>13</x>
+      <width>11</width>
+      <height>37</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+        <point x="10.0" y="36.0">
+        </point>
+        <point x="0.0" y="36.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>18</x>
+      <y>6</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <y>18</y>
+      <width>19</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="18.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_47</name>
+    <x>831</x>
+    <y>240</y>
+    <width>31</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="30.0" y="0.0">
+      </point>
+    </points>
+    <line_width>10</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>IGV01</text>
+    <x>437</x>
+    <y>258</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_34</name>
+    <text>FC</text>
+    <x>392</x>
+    <y>295</y>
+    <width>41</width>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_6</name>
+    <pv_name>ca://LEBT:GV:OpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>463</x>
+    <y>150</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_7</name>
+    <pv_name>ca://LEBT:GV:CloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>463</x>
+    <y>174</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_10</name>
+    <pv_name>ca://LEBT:VAC01:SVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>103</x>
+    <y>280</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_11</name>
+    <pv_name>ca://LEBT:VAC01:SVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>103</x>
+    <y>304</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_14</name>
+    <pv_name>ca://LEBT:VAC02:SVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>618</x>
+    <y>280</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_15</name>
+    <pv_name>ca://LEBT:VAC02:SVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>618</x>
+    <y>304</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_22</name>
+    <pv_name>ca://LEBT:VAC01:NIVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>315</x>
+    <y>73</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_23</name>
+    <pv_name>ca://LEBT:VAC01:NIVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>315</x>
+    <y>97</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_20</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>397</x>
+    <y>225</y>
+    <width>31</width>
+    <height>30</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="transparent" out_exp="false">
+        <exp bool_exp="(pv0==0)&amp;&amp; (pv1==1)">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="(pv0==1) &amp;&amp; (pv1==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:FC:InStat</pv_name>
+        <pv_name>ca://LEBT:FC:OutStat</pv_name>
+      </rule>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="(pv0==1) &amp;&amp;(pv1==0)">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:FC:InStat</pv_name>
+        <pv_name>ca://LEBT:FC:OutStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_21</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>397</x>
+    <y>260</y>
+    <width>31</width>
+    <height>30</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="(pv0==0)&amp;&amp;(pv1==1)">
+          <value>
+            <color name="MainBackground" red="120" green="120" blue="120">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:FC:OutStat</pv_name>
+        <pv_name trigger="false">ca://LEBT:FC:InStat</pv_name>
+      </rule>
+      <rule name="Rule" prop_id="transparent" out_exp="false">
+        <exp bool_exp="(pv0==1)&amp;&amp;(pv1==0)">
+          <value>true</value>
+        </exp>
+        <pv_name>ca://LEBT:FC:InStat</pv_name>
+        <pv_name>ca://LEBT:FC:OutStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_47</name>
+    <text>VACUUM : SV in forcing mode!                            </text>
+    <y>828</y>
+    <width>1060</width>
+    <height>51</height>
+    <font>
+      <font family="Segoe UI" style="BOLD" size="21.782178217821784">
+      </font>
+    </font>
+    <background_color>
+      <color red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC:SVForcing</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_36</name>
+    <pv_name>ca://LEBT:FC:InCmd</pv_name>
+    <bit>-1</bit>
+    <x>393</x>
+    <y>187</y>
+    <width>40</width>
+    <height>20</height>
+    <off_label>IN</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>IN</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_37</name>
+    <pv_name>ca://LEBT:FC:OutCmd</pv_name>
+    <bit>-1</bit>
+    <x>393</x>
+    <y>166</y>
+    <width>40</width>
+    <height>20</height>
+    <off_label>OUT</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>OUT</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_52</name>
+    <text>Chopper</text>
+    <x>296</x>
+    <y>295</y>
+    <width>87</width>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_22</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>341</x>
+    <y>225</y>
+    <width>31</width>
+    <height>30</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="transparent" out_exp="false">
+        <exp bool_exp="(pv0==0)&amp;&amp; (pv1==1)">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="(pv0==1) &amp;&amp; (pv1==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:CHOP:InStat</pv_name>
+        <pv_name>ca://LEBT:CHOP:OutStat</pv_name>
+      </rule>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="(pv0==1) &amp;&amp;(pv1==0)">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:CHOP:InStat</pv_name>
+        <pv_name>ca://LEBT:CHOP:OutStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_23</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>341</x>
+    <y>260</y>
+    <width>31</width>
+    <height>30</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="(pv0==0)&amp;&amp;(pv1==1)">
+          <value>
+            <color name="MainBackground" red="120" green="120" blue="120">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:CHOP:OutStat</pv_name>
+        <pv_name trigger="false">ca://LEBT:CHOP:InStat</pv_name>
+      </rule>
+      <rule name="Rule" prop_id="transparent" out_exp="false">
+        <exp bool_exp="(pv0==1)&amp;&amp;(pv1==0)">
+          <value>true</value>
+        </exp>
+        <pv_name>ca://LEBT:CHOP:InStat</pv_name>
+        <pv_name>ca://LEBT:CHOP:OutStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_38</name>
+    <pv_name>ca://LEBT:CHOP:InCmd</pv_name>
+    <bit>-1</bit>
+    <x>337</x>
+    <y>186</y>
+    <width>40</width>
+    <height>20</height>
+    <off_label>IN</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>IN</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_39</name>
+    <pv_name>ca://LEBT:CHOP:OutCmd</pv_name>
+    <bit>-1</bit>
+    <x>337</x>
+    <y>166</y>
+    <width>40</width>
+    <height>20</height>
+    <off_label>OUT</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>OUT</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_40</name>
+    <pv_name>ca://LEBT:VAC:SVForcing</pv_name>
+    <bit>-1</bit>
+    <x>357</x>
+    <y>790</y>
+    <width>120</width>
+    <off_label>SV Forcing</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>SV Forcing</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_confirm_dialog>2</show_confirm_dialog>
+    <password>rjGobin</password>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_56</name>
+    <text>IVR01</text>
+    <x>129</x>
+    <y>249</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>IVV05</text>
+    <x>605</x>
+    <y>504</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>ITP02</text>
+    <x>571</x>
+    <y>574</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_19</name>
+    <x>693</x>
+    <y>623</y>
+    <width>1</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="39.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>IPP02</text>
+    <x>571</x>
+    <y>761</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_20</name>
+    <x>693</x>
+    <y>717</y>
+    <width>1</width>
+    <height>29</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="28.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <macros>
+      <pv_name>ca://LEBT:VAC02:PPOnStat</pv_name>
+    </macros>
+    <x>659</x>
+    <y>745</y>
+    <width>68</width>
+    <height>66</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:PPOnStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_2</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>667</x>
+    <y>752</y>
+    <width>52</width>
+    <height>52</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_3</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>671</x>
+    <y>756</y>
+    <width>44</width>
+    <height>44</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_30</name>
+    <x>630</x>
+    <y>647</y>
+    <width>64</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="63.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_31</name>
+    <x>524</x>
+    <y>647</y>
+    <width>52</width>
+    <height>1</height>
+    <points>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_2</name>
+    <x>575</x>
+    <y>634</y>
+    <width>56</width>
+    <height>26</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="55.0" y="25.0">
+      </point>
+      <point x="55.0" y="0.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:LTVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_32</name>
+    <x>589</x>
+    <y>628</y>
+    <width>29</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="28.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_33</name>
+    <x>603</x>
+    <y>628</y>
+    <width>1</width>
+    <height>19</height>
+    <points>
+      <point x="0.0" y="18.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_22</name>
+    <text>IHV02</text>
+    <x>524</x>
+    <y>665</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <macros>
+      <pv_name>ca://LEBT:VAC02:TPSpeedStat</pv_name>
+    </macros>
+    <x>659</x>
+    <y>557</y>
+    <width>68</width>
+    <height>66</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:TPSpeedStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_12</name>
+    <x>667</x>
+    <y>564</y>
+    <width>51</width>
+    <height>51</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="arc" version="2.0.0">
+      <name>Arc</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <width>51</width>
+      <height>51</height>
+      <total_angle>360.0</total_angle>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Grouping Container_20</name>
+      <x>6</x>
+      <y>19</y>
+      <width>39</width>
+      <height>14</height>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline</name>
+        <y>7</y>
+        <width>39</width>
+        <height>1</height>
+        <points>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="38.0" y="0.0">
+          </point>
+          <point x="38.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_3</name>
+        <x>5</x>
+        <width>1</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="13.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_4</name>
+        <x>33</x>
+        <width>1</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="13.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_5</name>
+        <x>18</x>
+        <width>1</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="13.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_11</name>
+    <x>678</x>
+    <y>662</y>
+    <width>31</width>
+    <height>56</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+      <point x="30.0" y="55.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:PVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>693</x>
+    <y>671</y>
+    <width>24</width>
+    <height>37</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <x>13</x>
+      <width>11</width>
+      <height>37</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+        <point x="10.0" y="36.0">
+        </point>
+        <point x="0.0" y="36.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>18</x>
+      <y>6</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <y>18</y>
+      <width>19</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="18.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>670</x>
+    <y>489</y>
+    <width>25</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="24.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_3</name>
+    <x>563</x>
+    <y>489</y>
+    <width>52</width>
+    <height>1</height>
+    <points>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon</name>
+    <x>615</x>
+    <y>474</y>
+    <width>56</width>
+    <height>26</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="55.0" y="25.0">
+      </point>
+      <point x="55.0" y="0.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:AIVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_22</name>
+    <x>625</x>
+    <y>464</y>
+    <width>37</width>
+    <height>25</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <width>37</width>
+      <height>11</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="36.0" y="0.0">
+        </point>
+        <point x="36.0" y="10.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>4</x>
+      <y>4</y>
+      <width>29</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="28.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <x>18</x>
+      <y>4</y>
+      <width>1</width>
+      <height>19</height>
+      <points>
+        <point x="0.0" y="18.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_2</name>
+    <pv_name>ca://LEBT:VAC02:PVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>745</x>
+    <y>666</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_3</name>
+    <pv_name>ca://LEBT:VAC02:PVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>745</x>
+    <y>690</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_12</name>
+    <pv_name>ca://LEBT:VAC02:AIVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>570</x>
+    <y>506</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_13</name>
+    <pv_name>ca://LEBT:VAC02:AIVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>570</x>
+    <y>530</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_28</name>
+    <pv_name>ca://LEBT:VAC02:PPOnCmd</pv_name>
+    <bit>-1</bit>
+    <x>745</x>
+    <y>754</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>ON</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>ON</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_29</name>
+    <pv_name>ca://LEBT:VAC02:PPOffCmd</pv_name>
+    <bit>-1</bit>
+    <x>745</x>
+    <y>778</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>OFF</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>OFF</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_30</name>
+    <pv_name>ca://LEBT:VAC02:TPOnCmd</pv_name>
+    <bit>-1</bit>
+    <x>745</x>
+    <y>566</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>ON</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>ON</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_31</name>
+    <pv_name>ca://LEBT:VAC02:TPOffCmd</pv_name>
+    <bit>-1</bit>
+    <x>745</x>
+    <y>590</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>OFF</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>OFF</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_48</name>
+    <text>IVV06</text>
+    <x>599</x>
+    <y>679</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_71</name>
+    <text>(SV)</text>
+    <x>189</x>
+    <y>306</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_11</name>
+    <x>163</x>
+    <y>288</y>
+    <width>31</width>
+    <height>56</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+      <point x="30.0" y="55.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:SVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>178</x>
+    <y>297</y>
+    <width>24</width>
+    <height>37</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <x>13</x>
+      <width>11</width>
+      <height>37</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+        <point x="10.0" y="36.0">
+        </point>
+        <point x="0.0" y="36.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>18</x>
+      <y>6</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <y>18</y>
+      <width>19</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="18.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_5</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Vacuum_Cond_Vac01SV.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>&gt;&gt;</text>
+    <x>56</x>
+    <y>280</y>
+    <width>40</width>
+    <height>24</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_1</name>
+    <x>126</x>
+    <y>430</y>
+    <width>110</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="109.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_2</name>
+    <x>178</x>
+    <y>429</y>
+    <width>1</width>
+    <height>130</height>
+    <points>
+      <point x="0.0" y="129.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>IVG04</text>
+    <x>212</x>
+    <y>342</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>206</x>
+    <y>381</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 1E-10)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 5E-3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC01:VacSGTP</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>IVG03</text>
+    <x>50</x>
+    <y>342</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_3</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>45</x>
+    <y>381</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 8E-4)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 1E3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC01:VacPGTP</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>73</x>
+    <y>403</y>
+    <width>56</width>
+    <height>55</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:PGTPDefStat</pv_name>
+      </rule>
+    </rules>
+    <widget type="arc" version="2.0.0">
+      <name>Arc</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <width>56</width>
+      <height>55</height>
+      <total_angle>360.0</total_angle>
+      <line_width>2</line_width>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="foreground_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+          </exp>
+          <pv_name>ca://LEBT:VAC01:PGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <x>24</x>
+      <y>15</y>
+      <width>8</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="7.0" y="9.0">
+        </point>
+        <point x="0.0" y="12.0">
+        </point>
+        <point x="7.0" y="16.0">
+        </point>
+        <point x="0.0" y="19.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="line_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="Green" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ca://LEBT:VAC01:PGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>234</x>
+    <y>403</y>
+    <width>55</width>
+    <height>55</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:SGTPDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container</name>
+    <x>245</x>
+    <y>417</y>
+    <width>34</width>
+    <height>28</height>
+    <style>3</style>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline</name>
+      <width>34</width>
+      <height>22</height>
+      <points>
+        <point x="0.0" y="21.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="33.0" y="0.0">
+        </point>
+        <point x="33.0" y="21.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="line_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="Green" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ca://LEBT:VAC01:SGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>13</x>
+      <y>20</y>
+      <width>8</width>
+      <height>8</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="128" green="0" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="Green" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ca://LEBT:VAC01:SGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_57</name>
+    <text>(PGTP)</text>
+    <x>50</x>
+    <y>361</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_58</name>
+    <text>(SGTP)</text>
+    <x>212</x>
+    <y>361</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>IVV02</text>
+    <x>90</x>
+    <y>504</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_4</name>
+    <x>178</x>
+    <y>623</y>
+    <width>1</width>
+    <height>40</height>
+    <points>
+      <point x="0.0" y="39.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>IPP01</text>
+    <x>56</x>
+    <y>761</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_7</name>
+    <x>178</x>
+    <y>717</y>
+    <width>1</width>
+    <height>29</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="28.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <macros>
+      <pv_name>ca://LEBT:VAC01:PPOnStat</pv_name>
+    </macros>
+    <x>144</x>
+    <y>745</y>
+    <width>68</width>
+    <height>66</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:PPOnStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>152</x>
+    <y>752</y>
+    <width>52</width>
+    <height>52</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc_1</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>156</x>
+    <y>756</y>
+    <width>44</width>
+    <height>44</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>115</x>
+    <y>647</y>
+    <width>64</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="63.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_3</name>
+    <x>9</x>
+    <y>647</y>
+    <width>52</width>
+    <height>1</height>
+    <points>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon</name>
+    <x>60</x>
+    <y>634</y>
+    <width>56</width>
+    <height>26</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="55.0" y="25.0">
+      </point>
+      <point x="55.0" y="0.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:LTVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_41</name>
+    <x>74</x>
+    <y>628</y>
+    <width>29</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="28.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_42</name>
+    <x>88</x>
+    <y>628</y>
+    <width>1</width>
+    <height>19</height>
+    <points>
+      <point x="0.0" y="18.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>IHV01</text>
+    <x>9</x>
+    <y>665</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <macros>
+      <pv_name>ca://LEBT:VAC01:TPSpeedStat</pv_name>
+    </macros>
+    <x>144</x>
+    <y>557</y>
+    <width>68</width>
+    <height>66</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv1==1 &amp; pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0 &amp; pv1==1">
+          <value>
+            <color name="Yellow" red="255" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0 &amp; pv1==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:TPSpeedStat</pv_name>
+        <pv_name>ca://LEBT:VAC01:TPOnStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>152</x>
+    <y>564</y>
+    <width>51</width>
+    <height>51</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="arc" version="2.0.0">
+      <name>Arc</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <width>51</width>
+      <height>51</height>
+      <total_angle>360.0</total_angle>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Grouping Container_20</name>
+      <x>6</x>
+      <y>19</y>
+      <width>39</width>
+      <height>14</height>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline</name>
+        <y>7</y>
+        <width>39</width>
+        <height>1</height>
+        <points>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="38.0" y="0.0">
+          </point>
+          <point x="38.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_3</name>
+        <x>5</x>
+        <width>1</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="13.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_4</name>
+        <x>33</x>
+        <width>1</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="13.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>Polyline_5</name>
+        <x>18</x>
+        <width>1</width>
+        <height>14</height>
+        <points>
+          <point x="0.0" y="13.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+          <point x="0.0" y="0.0">
+          </point>
+        </points>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_24</name>
+    <pv_name>ca://LEBT:VAC01:PPOnCmd</pv_name>
+    <bit>-1</bit>
+    <x>230</x>
+    <y>754</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>ON</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>ON</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_25</name>
+    <pv_name>ca://LEBT:VAC01:PPOffCmd</pv_name>
+    <bit>-1</bit>
+    <x>230</x>
+    <y>778</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>OFF</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>OFF</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_26</name>
+    <pv_name>ca://LEBT:VAC01:TPOnCmd</pv_name>
+    <bit>-1</bit>
+    <x>230</x>
+    <y>566</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>ON</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>ON</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_27</name>
+    <pv_name>ca://LEBT:VAC01:TPOffCmd</pv_name>
+    <bit>-1</bit>
+    <x>230</x>
+    <y>590</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>OFF</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>OFF</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_69</name>
+    <text>(AIV)</text>
+    <x>90</x>
+    <y>523</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>ITP01</text>
+    <x>56</x>
+    <y>574</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_8</name>
+    <pv_name>ca://LEBT:VAC01:AIVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>55</x>
+    <y>506</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_9</name>
+    <pv_name>ca://LEBT:VAC01:AIVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>55</x>
+    <y>530</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>155</x>
+    <y>489</y>
+    <width>25</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="24.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_3</name>
+    <x>48</x>
+    <y>489</y>
+    <width>52</width>
+    <height>1</height>
+    <points>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="51.0" y="0.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_72</name>
+    <text>(LTV)</text>
+    <x>9</x>
+    <y>684</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_74</name>
+    <text>(PP)</text>
+    <x>56</x>
+    <y>780</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_75</name>
+    <text>(TP)</text>
+    <x>56</x>
+    <y>593</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon</name>
+    <x>100</x>
+    <y>474</y>
+    <width>56</width>
+    <height>26</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="55.0" y="25.0">
+      </point>
+      <point x="55.0" y="0.0">
+      </point>
+      <point x="0.0" y="25.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:AIVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_22</name>
+    <x>110</x>
+    <y>464</y>
+    <width>37</width>
+    <height>25</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <width>37</width>
+      <height>11</height>
+      <points>
+        <point x="0.0" y="10.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="36.0" y="0.0">
+        </point>
+        <point x="36.0" y="10.0">
+        </point>
+        <point x="0.0" y="10.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>4</x>
+      <y>4</y>
+      <width>29</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="28.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <x>18</x>
+      <y>4</y>
+      <width>1</width>
+      <height>19</height>
+      <points>
+        <point x="0.0" y="18.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>ca://LEBT:VAC01:PVOpenCmd</pv_name>
+    <bit>-1</bit>
+    <x>230</x>
+    <y>666</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Open</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Open</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>ca://LEBT:VAC01:PVCloseCmd</pv_name>
+    <bit>-1</bit>
+    <x>230</x>
+    <y>690</y>
+    <width>50</width>
+    <height>24</height>
+    <off_label>Close</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>Close</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_50</name>
+    <text>IVV03</text>
+    <x>84</x>
+    <y>679</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_73</name>
+    <text>(PV)</text>
+    <x>84</x>
+    <y>698</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_11</name>
+    <x>163</x>
+    <y>662</y>
+    <width>31</width>
+    <height>56</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+      <point x="30.0" y="55.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:PVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>178</x>
+    <y>671</y>
+    <width>24</width>
+    <height>37</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <x>13</x>
+      <width>11</width>
+      <height>37</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+        <point x="10.0" y="36.0">
+        </point>
+        <point x="0.0" y="36.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <x>18</x>
+      <y>6</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <y>18</y>
+      <width>19</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="18.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Vacuum_Cond_Vac01PV.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>&gt;&gt;</text>
+    <x>287</x>
+    <y>666</y>
+    <width>40</width>
+    <height>24</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_24</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>843</x>
+    <y>187</y>
+    <width>10</width>
+    <height>100</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Module 1</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>854</x>
+    <y>214</y>
+    <width>41</width>
+    <height>60</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="MainBackground" red="120" green="120" blue="120">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Error" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://RFQ:VAC_VG10:Alrm</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name) / $(pv_value)Module 1</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_39</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>895</x>
+    <y>187</y>
+    <width>10</width>
+    <height>100</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Module 1_1</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>904</x>
+    <y>214</y>
+    <width>41</width>
+    <height>60</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="MainBackground" red="120" green="120" blue="120">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Error" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://RFQ:VAC_VG10:Alrm</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name) / $(pv_value)Module 1</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_40</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>946</x>
+    <y>189</y>
+    <width>10</width>
+    <height>100</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Module 1_2</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>956</x>
+    <y>212</y>
+    <width>41</width>
+    <height>60</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="MainBackground" red="120" green="120" blue="120">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Error" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://RFQ:VAC_VG10:Alrm</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name) / $(pv_value)Module 1</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_41</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>997</x>
+    <y>189</y>
+    <width>10</width>
+    <height>100</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Module 1_3</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>1007</x>
+    <y>214</y>
+    <width>41</width>
+    <height>60</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="MainBackground" red="120" green="120" blue="120">
+      </color>
+    </background_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Error" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://RFQ:VAC_VG10:Alrm</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name) / $(pv_value)Module 1</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_79</name>
+    <text>RFQ</text>
+    <x>926</x>
+    <y>154</y>
+    <width>59</width>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_88</name>
+    <text>(PP)</text>
+    <x>571</x>
+    <y>780</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_89</name>
+    <text>(PV)</text>
+    <x>599</x>
+    <y>698</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_90</name>
+    <text>(LTV)</text>
+    <x>524</x>
+    <y>684</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_7</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Vacuum_Cond_Vac02PV.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>&gt;&gt;</text>
+    <x>802</x>
+    <y>666</y>
+    <width>40</width>
+    <height>24</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_91</name>
+    <text>(TP)</text>
+    <x>571</x>
+    <y>593</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_93</name>
+    <text>(AIV)</text>
+    <x>605</x>
+    <y>523</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_32</name>
+    <x>749</x>
+    <y>403</y>
+    <width>55</width>
+    <height>55</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="arc" version="2.0.0">
+      <name>Arc</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <width>55</width>
+      <height>55</height>
+      <total_angle>360.0</total_angle>
+      <line_width>2</line_width>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="foreground_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+          </exp>
+          <pv_name>ca://LEBT:VAC02:SGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline</name>
+      <x>11</x>
+      <y>14</y>
+      <width>34</width>
+      <height>22</height>
+      <points>
+        <point x="0.0" y="21.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="33.0" y="0.0">
+        </point>
+        <point x="33.0" y="21.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="line_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="Green" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ca://LEBT:VAC02:SGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>Ellipse</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>24</x>
+      <y>34</y>
+      <width>8</width>
+      <height>8</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="128" green="0" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="Green" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ca://LEBT:VAC02:SGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_33</name>
+    <x>588</x>
+    <y>403</y>
+    <width>56</width>
+    <height>55</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="arc" version="2.0.0">
+      <name>Arc</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <width>56</width>
+      <height>55</height>
+      <total_angle>360.0</total_angle>
+      <line_width>2</line_width>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="foreground_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+          </exp>
+          <pv_name>ca://LEBT:VAC02:PGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <x>24</x>
+      <y>15</y>
+      <width>8</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="5.0">
+        </point>
+        <point x="7.0" y="9.0">
+        </point>
+        <point x="0.0" y="12.0">
+        </point>
+        <point x="7.0" y="16.0">
+        </point>
+        <point x="0.0" y="19.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Rule" prop_id="line_color" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>
+              <color name="Major" red="255" green="0" blue="0">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>
+              <color name="Green" red="0" green="255" blue="0">
+              </color>
+            </value>
+          </exp>
+          <pv_name>ca://LEBT:VAC02:PGTPDefStat</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_94</name>
+    <text>(PGTP)</text>
+    <x>565</x>
+    <y>361</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_95</name>
+    <text>(SGTP)</text>
+    <x>727</x>
+    <y>361</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_96</name>
+    <text>(SV)</text>
+    <x>704</x>
+    <y>306</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_8</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Vacuum_Cond_Vac02SV.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>&gt;&gt;</text>
+    <x>571</x>
+    <y>280</y>
+    <width>40</width>
+    <height>24</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <width>1060</width>
+    <height>55</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Injector Vacuum</text>
+    <x>472</x>
+    <y>14</y>
+    <width>289</width>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Help_Vacuum.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>Help &gt;&gt;</text>
+    <x>936</x>
+    <y>9</y>
+    <width>115</width>
+    <height>31</height>
+    <background_color>
+      <color name="HelpPanel" red="181" green="249" blue="215">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Launcher.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Back</text>
+    <x>829</x>
+    <y>12</y>
+    <width>91</width>
+    <height>26</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_102</name>
+    <text>IVR02</text>
+    <x>644</x>
+    <y>249</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="11.881188118811881">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_103</name>
+    <text>(GV1)</text>
+    <x>437</x>
+    <y>277</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>ca://LEBT:VAC01:SVOpenPrecond</pv_name>
+    <x>33</x>
+    <y>283</y>
+    <width>18</width>
+    <height>18</height>
+    <off_color>
+      <color name="Red" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>ca://LEBT:VAC01:PVOpenPrecond</pv_name>
+    <x>332</x>
+    <y>669</y>
+    <width>18</width>
+    <height>18</height>
+    <off_color>
+      <color name="Red" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>ca://LEBT:VAC02:SVOpenPrecond</pv_name>
+    <x>548</x>
+    <y>283</y>
+    <width>18</width>
+    <height>18</height>
+    <off_color>
+      <color name="Red" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>ca://LEBT:VAC02:PVOpenPrecond</pv_name>
+    <x>847</x>
+    <y>669</y>
+    <width>18</width>
+    <height>18</height>
+    <off_color>
+      <color name="Red" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_104</name>
+    <text>Fault</text>
+    <x>659</x>
+    <y>557</y>
+    <width>68</width>
+    <height>66</height>
+    <font>
+      <font family="Sans" style="BOLD" size="15.841584158415841">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:TPDefStat</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_105</name>
+    <text>Fault</text>
+    <x>144</x>
+    <y>557</y>
+    <width>68</width>
+    <height>66</height>
+    <font>
+      <font family="Sans" style="BOLD" size="15.841584158415841">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:TPDefStat</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_1</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>163</x>
+    <y>105</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 1E-10)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 5E-3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC01:VacSGVC</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_2</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>46</x>
+    <y>105</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 8E-4)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 1E3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC01:VacPGVC</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_5</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>678</x>
+    <y>105</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 1E-10)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 5E-3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC02:VacSGVC</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Text Update_6</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <text>######</text>
+    <x>561</x>
+    <y>105</y>
+    <width>110</width>
+    <height>18</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <scripts>
+      <script file="EmbeddedJs">
+        <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var pv0 = PVUtil.getDouble(pvs[0]);
+if(pv0 &lt;= 8E-4)
+	widget.setPropertyValue("text","Underrange");
+else if(pv0 &gt;= 1E3)
+	widget.setPropertyValue("text","Overrange");
+else
+	widget.setPropertyValue("text",pv0.toExponential(2).toUpperCase() + " mbar");</text>
+        <pv_name>ca://LEBT:VAC02:VacPGVC</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>704</x>
+    <y>127</y>
+    <width>55</width>
+    <height>55</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:SGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>601</x>
+    <y>127</y>
+    <width>56</width>
+    <height>55</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:PGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_2</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>625</x>
+    <y>142</y>
+    <width>8</width>
+    <height>25</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="7.0" y="9.0">
+      </point>
+      <point x="0.0" y="12.0">
+      </point>
+      <point x="7.0" y="16.0">
+      </point>
+      <point x="0.0" y="19.0">
+      </point>
+      <point x="0.0" y="24.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:PGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>86</x>
+    <y>127</y>
+    <width>56</width>
+    <height>55</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:PGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_2</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>110</x>
+    <y>140</y>
+    <width>8</width>
+    <height>25</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="0.0" y="5.0">
+      </point>
+      <point x="7.0" y="9.0">
+      </point>
+      <point x="0.0" y="12.0">
+      </point>
+      <point x="7.0" y="16.0">
+      </point>
+      <point x="0.0" y="19.0">
+      </point>
+      <point x="0.0" y="24.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:PGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>Arc</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>189</x>
+    <y>127</y>
+    <width>55</width>
+    <height>55</height>
+    <total_angle>360.0</total_angle>
+    <line_width>2</line_width>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>&lt;color blue="0" green="0" red="255"/&gt;</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>&lt;color blue="0" green="255" red="0"/&gt;</value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:SGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>200</x>
+    <y>139</y>
+    <width>34</width>
+    <height>22</height>
+    <points>
+      <point x="0.0" y="21.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="33.0" y="0.0">
+      </point>
+      <point x="33.0" y="21.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:SGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>213</x>
+    <y>159</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:SGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>715</x>
+    <y>141</y>
+    <width>34</width>
+    <height>22</height>
+    <points>
+      <point x="0.0" y="21.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="33.0" y="0.0">
+      </point>
+      <point x="33.0" y="21.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="line_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:SGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>727</x>
+    <y>161</y>
+    <width>8</width>
+    <height>8</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC02:SGVCDefStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_54</name>
+    <text>(PGVC)</text>
+    <x>51</x>
+    <y>85</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_55</name>
+    <text>(SGVC)</text>
+    <x>168</x>
+    <y>85</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_98</name>
+    <text>(PGVC)</text>
+    <x>566</x>
+    <y>85</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_99</name>
+    <text>(SGVC)</text>
+    <x>683</x>
+    <y>85</y>
+    <height>22</height>
+    <font>
+      <font family="Courier" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polygon" version="2.0.0">
+    <name>Polygon_11</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>266</x>
+    <y>130</y>
+    <width>31</width>
+    <height>56</height>
+    <points>
+      <point x="30.0" y="0.0">
+      </point>
+      <point x="0.0" y="55.0">
+      </point>
+      <point x="30.0" y="55.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:VAC01:NIVOpenStat</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_21</name>
+    <x>281</x>
+    <y>139</y>
+    <width>24</width>
+    <height>37</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_40</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>13</x>
+      <width>11</width>
+      <height>37</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="10.0" y="0.0">
+        </point>
+        <point x="10.0" y="36.0">
+        </point>
+        <point x="0.0" y="36.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_41</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>18</x>
+      <y>6</y>
+      <width>1</width>
+      <height>25</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="24.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_42</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <y>18</y>
+      <width>19</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="18.0" y="0.0">
+        </point>
+      </points>
+      <line_width>2</line_width>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline_70</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>178</x>
+    <y>266</y>
+    <width>1</width>
+    <height>23</height>
+    <points>
+      <point x="0.0" y="22.0">
+      </point>
+      <point x="0.0" y="0.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+</display>

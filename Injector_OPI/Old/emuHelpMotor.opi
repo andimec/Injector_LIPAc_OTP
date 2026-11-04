@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0">
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <wuid>-5c361547:136b9e4f461:-7ddc</wuid>
+  <boy_version>4.0.103.201506301920</boy_version>
+  <scripts />
+  <show_ruler>true</show_ruler>
+  <height>700</height>
+  <name />
+  <snap_to_geometry>true</snap_to_geometry>
+  <show_grid>true</show_grid>
+  <background_color>
+    <color red="240" green="240" blue="240" />
+  </background_color>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <widget_type>Display</widget_type>
+  <show_close_button>true</show_close_button>
+  <width>530</width>
+  <rules />
+  <show_edit_range>true</show_edit_range>
+  <grid_space>6</grid_space>
+  <actions hook="false" hook_all="false" />
+  <y>-1</y>
+  <x>-1</x>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <wuid>-5c361547:136b9e4f461:-7dd7</wuid>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>650</height>
+    <name>Label</name>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <background_color>
+      <color name="HelpPanel" />
+    </background_color>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <widget_type>Label</widget_type>
+    <enabled>true</enabled>
+    <text>"UNLOCKING" motor motion controls  :
+*********************************
+(need to be 2 persons)
+power device for motor = ServoStar unit in LET8
+When HIGH (LP+) or LOW (LN+) limit is reached
+on ServoStar unit and no response from MaxV :
+ - power OFF the  ServoStar unit
+ - hold down the push button according to limit pos or neg
+ - power ON  the ServoStar unit (still holding down button)
+ - remote control command "MovAbs" to move from switch, 
+   depending on direction pos or neg.
+ - then Homing Procedure must be done to recover 
+   coordinates.
+
+Homing Procedure :
+*****************
+When switch "Home" is reached (green led lit) :
+ - ReadBack value must be "0.0"
+ - if not, press the "HOME rev" button to obtain 0.0
+   (rev=reverse), sometimes have to be done twice!
+
+NEVER use the "HOME rev" (or fwd) to reach the 
+reference "0.0 mm", but just the simple command :
+"MovAbs=0."
+
+Must be done when Measurement is over :
+**************************************
+1) Ensure that :
+     - "ReadBack" = 0.0mm
+     - switch "HOME" reached (see motor user interface for more details)
+ if not,  execute the command : "MovAbs" = 0.0mm
+2) "DISABLE" the motor control devices to obtain red leds on MAXV and SERVO
+
+- ServoStar unit can be POWERed OFF only when stages 1) and 2) are achieved.</text>
+    <font>
+      <opifont.name>Default</opifont.name>
+    </font>
+    <width>430</width>
+    <border_style>0</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <actions hook="false" hook_all="false" />
+    <y>24</y>
+    <wrap_words>true</wrap_words>
+    <tooltip />
+    <x>48</x>
+  </widget>
+</display>

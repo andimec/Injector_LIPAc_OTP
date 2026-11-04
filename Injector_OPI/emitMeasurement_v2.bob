@@ -1,0 +1,4203 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <name>EMU</name>
+  <width>1100</width>
+  <height>900</height>
+  <background_color>
+    <color name="Read_Background" red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>69</x>
+    <y>494</y>
+    <width>153</width>
+    <height>230</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Devices</name>
+    <x>24</x>
+    <y>733</y>
+    <width>1069</width>
+    <height>138</height>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:MOTOR.RBV</pv_name>
+      <x>135</x>
+      <y>15</y>
+      <width>110</width>
+      <height>32</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>MovAbs</text>
+      <x>6</x>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_5</name>
+      <pv_name>ca://LEBT:EMIT:MOTOR.VAL</pv_name>
+      <x>7</x>
+      <y>16</y>
+      <width>108</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>EMUPS2</text>
+      <x>717</x>
+      <width>110</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>EMUPS1</text>
+      <x>594</x>
+      <width>110</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>ReadBack</text>
+      <x>142</x>
+      <width>103</width>
+      <height>25</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT_PS1:VRdbk</pv_name>
+      <x>594</x>
+      <y>17</y>
+      <width>110</width>
+      <height>35</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>ca://LEBT:EMIT_PS2:VRdbk</pv_name>
+      <x>717</x>
+      <y>17</y>
+      <width>110</width>
+      <height>35</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>540</x>
+      <width>1</width>
+      <height>102</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="101.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_43</name>
+      <text>intlck</text>
+      <x>383</x>
+      <y>21</y>
+      <width>40</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>ca://LEBT:EMIT_PS:ExtSec</pv_name>
+      <x>395</x>
+      <y>2</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>ca://LEBT:EMIT:MOTOR.CNEN</pv_name>
+      <x>445</x>
+      <y>2</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_44</name>
+      <text>maxv</text>
+      <x>433</x>
+      <y>21</y>
+      <width>40</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>ca://LEBT:EMIT_SERV:Status</pv_name>
+      <x>498</x>
+      <y>2</y>
+      <width>16</width>
+      <height>16</height>
+      <off_color>
+        <color name="Major" red="255" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </on_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_43</name>
+      <text>servo</text>
+      <x>486</x>
+      <y>21</y>
+      <width>40</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>270</x>
+      <y>57</y>
+      <width>262</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="261.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT_PSR:VRdbk</pv_name>
+      <x>840</x>
+      <y>17</y>
+      <width>110</width>
+      <height>35</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_44</name>
+      <text>EMUPSR</text>
+      <x>840</x>
+      <width>110</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>Spinner</name>
+      <pv_name>ca://LEBT:EMIT_PS1:VSet</pv_name>
+      <x>594</x>
+      <y>64</y>
+      <width>110</width>
+      <height>25</height>
+      <format>0</format>
+      <precision>-1</precision>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <minimum>-10000.0</minimum>
+      <maximum>10000.0</maximum>
+      <limits_from_pv>true</limits_from_pv>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>Spinner</name>
+      <pv_name>ca://LEBT:EMIT_PS2:VSet</pv_name>
+      <x>717</x>
+      <y>64</y>
+      <width>110</width>
+      <height>25</height>
+      <format>0</format>
+      <precision>-1</precision>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <minimum>-10000.0</minimum>
+      <maximum>10000.0</maximum>
+      <limits_from_pv>true</limits_from_pv>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>Spinner</name>
+      <pv_name>ca://LEBT:EMIT_PSR:VSet</pv_name>
+      <x>840</x>
+      <y>64</y>
+      <width>110</width>
+      <height>25</height>
+      <format>0</format>
+      <precision>-1</precision>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <minimum>0.0</minimum>
+      <maximum>200.0</maximum>
+      <limits_from_pv>true</limits_from_pv>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_1</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>710</x>
+      <y>20</y>
+      <width>1</width>
+      <height>69</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="68.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>833</x>
+      <y>20</y>
+      <width>1</width>
+      <height>69</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="68.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Servo/MaxV</text>
+      <x>270</x>
+      <y>70</y>
+      <width>90</width>
+      <height>25</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>ca://LEBT:EMIT:Actenable</pv_name>
+      <bit>-1</bit>
+      <x>377</x>
+      <y>67</y>
+      <width>60</width>
+      <height>31</height>
+      <off_label>enable</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>sending</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_1</name>
+      <pv_name>ca://LEBT:EMIT:Actdisable</pv_name>
+      <bit>-1</bit>
+      <x>462</x>
+      <y>67</y>
+      <width>60</width>
+      <height>31</height>
+      <off_label>disable</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>sending</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>258</x>
+      <width>1</width>
+      <height>105</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="104.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>ca://LEBT:EMIT_PS1:OnOffCmd</pv_name>
+      <x>686</x>
+      <y>1</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>ca://LEBT:EMIT_PS2:OnOffCmd</pv_name>
+      <x>809</x>
+      <y>1</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_8</name>
+      <pv_name>ca://LEBT:EMIT:MOTOR.TWV</pv_name>
+      <x>103</x>
+      <y>68</y>
+      <width>98</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>tweak</text>
+      <x>6</x>
+      <y>68</y>
+      <width>48</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_4</name>
+      <pv_name>ca://LEBT:EMIT:MOTOR.TWR</pv_name>
+      <bit>-1</bit>
+      <x>60</x>
+      <y>68</y>
+      <width>35</width>
+      <off_label>- &lt;&lt;</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>- &lt;&lt;</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_5</name>
+      <pv_name>ca://LEBT:EMIT:MOTOR.TWF</pv_name>
+      <bit>-1</bit>
+      <x>210</x>
+      <y>68</y>
+      <width>35</width>
+      <off_label>&gt;&gt;+</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>&gt;&gt;+</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emuHelpMotor.bob</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>help Motor &gt;</text>
+      <x>270</x>
+      <y>11</y>
+      <width>90</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="77" green="77" blue="77">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="HelpPanel" red="181" green="249" blue="215">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>370</x>
+      <width>1</width>
+      <height>49</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="48.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>5</x>
+      <y>57</y>
+      <width>240</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="239.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Emittance</name>
+    <x>528</x>
+    <y>72</y>
+    <width>564</width>
+    <height>417</height>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_2</name>
+      <pv_name>ca://LEBT:EMIT:Actemit</pv_name>
+      <x>6</x>
+      <y>24</y>
+      <width>50</width>
+      <height>50</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <selected_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </selected_color>
+      <horizontal>false</horizontal>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>ca://LEBT:EMIT:Actemit</pv_name>
+      <x>23</x>
+      <y>2</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>measure</text>
+      <x>48</x>
+      <width>90</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_5</name>
+      <pv_name>ca://LEBT:EMIT:Savemit</pv_name>
+      <label>save</label>
+      <x>180</x>
+      <y>35</y>
+      <width>53</width>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_4</name>
+      <pv_name>ca://LEBT:EMIT:Pausemit</pv_name>
+      <label>pause</label>
+      <x>100</x>
+      <y>35</y>
+      <width>60</width>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>upper</text>
+      <x>7</x>
+      <y>85</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>motor step</text>
+      <x>7</x>
+      <y>157</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_2</name>
+      <pv_name>ca://LEBT:EMIT:Pasmotdet</pv_name>
+      <x>103</x>
+      <y>157</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>energy</text>
+      <x>7</x>
+      <y>193</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_1</name>
+      <pv_name>ca://LEBT:EMIT:Borderlow</pv_name>
+      <x>103</x>
+      <y>121</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_1</name>
+      <pv_name>ca://LEBT:EMIT:Borderup</pv_name>
+      <x>103</x>
+      <y>85</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>lower</text>
+      <x>7</x>
+      <y>121</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>angle peak
+(init)</text>
+      <x>277</x>
+      <y>85</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>angle delta</text>
+      <x>277</x>
+      <y>157</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_6</name>
+      <pv_name>ca://LEBT:EMIT:AngleDelta</pv_name>
+      <x>379</x>
+      <y>157</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_7</name>
+      <pv_name>ca://LEBT:EMIT:AnglePicEnd</pv_name>
+      <x>379</x>
+      <y>121</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_8</name>
+      <pv_name>ca://LEBT:EMIT:AnglePicInit</pv_name>
+      <x>379</x>
+      <y>85</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>angle peak
+(end)</text>
+      <x>277</x>
+      <y>121</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_9</name>
+      <pv_name>ca://LEBT:EMIT:Energy</pv_name>
+      <x>103</x>
+      <y>193</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>ca://LEBT:EMIT:Validate</pv_name>
+      <bit>-1</bit>
+      <x>407</x>
+      <y>225</y>
+      <height>31</height>
+      <off_label>validate</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>ON</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <scripts>
+        <script file="EmbeddedPy">
+          <text>from org.csstudio.opibuilder.scriptUtil import PVUtil
+from javax.swing import JOptionPane
+
+# Get the current value of the trigger PV (pvs[0])
+trigger_val = PVUtil.getDouble(pvs[0])
+
+# Get the previously stored value (if any)
+last_val = widget.getVar("last_trigger_val")
+
+# Only trigger on rising edge: 0 to 1
+if last_val != 1 and trigger_val == 1:
+
+    # Get other PV values
+    init_val = PVUtil.getDouble(pvs[1])
+    end_val = PVUtil.getDouble(pvs[2])
+    upper = PVUtil.getDouble(pvs[3])
+    lower = PVUtil.getDouble(pvs[4])
+
+    if upper &lt; lower:
+        JOptionPane.showMessageDialog(None, 
+            "Value for 'upper' needs to be higher than value for 'lower'", 
+            "WARNING", 
+            JOptionPane.INFORMATION_MESSAGE)
+
+    if init_val == -9999 or end_val == 9999:
+        JOptionPane.showMessageDialog(None, 
+            "Values for 'angle peak (init)' and 'angle peak(end)' must be given before measurement starts!", 
+            "WARNING", 
+            JOptionPane.INFORMATION_MESSAGE)
+
+# Store the current value for next time
+widget.setVar("last_trigger_val", trigger_val)</text>
+          <pv_name>ca://LEBT:EMIT:Validate</pv_name>
+          <pv_name trigger="false">ca://LEBT:EMIT:AnglePicInit</pv_name>
+          <pv_name trigger="false">ca://LEBT:EMIT:AnglePicEnd</pv_name>
+          <pv_name trigger="false">ca://LEBT:EMIT:Borderup</pv_name>
+          <pv_name trigger="false">ca://LEBT:EMIT:Borderlow</pv_name>
+        </script>
+      </scripts>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>end</text>
+      <x>211</x>
+      <y>258</y>
+      <width>85</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>start</text>
+      <x>102</x>
+      <y>258</y>
+      <width>85</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:Vstart</pv_name>
+      <x>95</x>
+      <y>354</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:Vend</pv_name>
+      <x>204</x>
+      <y>354</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>V1 - V2</text>
+      <x>6</x>
+      <y>357</y>
+      <width>78</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>ca://LEBT:EMIT:Lower</pv_name>
+      <x>204</x>
+      <y>318</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>motor axis</text>
+      <x>6</x>
+      <y>321</y>
+      <width>78</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>ca://LEBT:EMIT:Upper</pv_name>
+      <x>95</x>
+      <y>318</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>ca://LEBT:EMIT:Mstep</pv_name>
+      <x>417</x>
+      <y>318</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>delta</text>
+      <x>319</x>
+      <y>258</y>
+      <width>85</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>ca://LEBT:EMIT:Vstep</pv_name>
+      <x>417</x>
+      <y>354</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>132</x>
+      <y>240</y>
+      <width>264</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="263.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>EMU params</text>
+      <x>23</x>
+      <y>226</y>
+      <width>105</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>3</x>
+      <y>240</y>
+      <width>23</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="22.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_1</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>516</x>
+      <y>240</y>
+      <width>23</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="22.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>3</x>
+      <y>78</y>
+      <width>460</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="459.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>HV points</text>
+      <x>277</x>
+      <y>193</y>
+      <width>78</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_6</name>
+      <pv_name>ca://LEBT:EMIT:Nptemit</pv_name>
+      <x>379</x>
+      <y>193</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:Vpic</pv_name>
+      <x>95</x>
+      <y>281</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>ca://LEBT:EMIT:VpicEnd</pv_name>
+      <x>204</x>
+      <y>281</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>Vpic</text>
+      <x>6</x>
+      <y>284</y>
+      <width>78</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>ca://LEBT:EMIT:Deltav</pv_name>
+      <x>312</x>
+      <y>281</y>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box</name>
+      <pv_name>ca://LEBT:EMIT:Savewf</pv_name>
+      <label>save waveform</label>
+      <x>261</x>
+      <y>35</y>
+      <width>124</width>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>step</text>
+      <x>424</x>
+      <y>258</y>
+      <width>85</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>beam detection</name>
+    <x>24</x>
+    <y>72</y>
+    <width>499</width>
+    <height>417</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button</name>
+      <pv_name>ca://LEBT:EMIT:Actupper</pv_name>
+      <x>149</x>
+      <y>23</y>
+      <width>50</width>
+      <height>50</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <selected_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </selected_color>
+      <horizontal>false</horizontal>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_1</name>
+      <pv_name>ca://LEBT:EMIT:Actlower</pv_name>
+      <x>228</x>
+      <y>23</y>
+      <width>50</width>
+      <height>50</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <selected_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </selected_color>
+      <horizontal>false</horizontal>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_1</name>
+      <pv_name>ca://LEBT:EMIT:Pasmotdet</pv_name>
+      <x>150</x>
+      <y>90</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>V1 start</text>
+      <x>27</x>
+      <y>270</y>
+      <width>58</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:Nptdet</pv_name>
+      <x>149</x>
+      <y>215</y>
+      <width>120</width>
+      <height>32</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_1</name>
+      <pv_name>ca://LEBT:EMIT:Pasald</pv_name>
+      <x>150</x>
+      <y>132</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_2</name>
+      <pv_name>ca://LEBT:EMIT:Limdet</pv_name>
+      <x>150</x>
+      <y>174</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>HV  step</text>
+      <x>22</x>
+      <y>132</y>
+      <width>83</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_4</name>
+      <pv_name>ca://LEBT:EMIT:Debscanl</pv_name>
+      <x>96</x>
+      <y>270</y>
+      <width>98</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>wide scan</text>
+      <x>333</x>
+      <width>75</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_3</name>
+      <pv_name>ca://LEBT:EMIT:Passcanl</pv_name>
+      <x>302</x>
+      <y>132</y>
+      <width>118</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>ca://LEBT:EMIT:Nptscanl</pv_name>
+      <x>301</x>
+      <y>215</y>
+      <width>120</width>
+      <height>32</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>motor step</text>
+      <x>22</x>
+      <y>90</y>
+      <width>83</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>lower</text>
+      <x>228</x>
+      <width>60</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>ca://LEBT:EMIT:Actlower</pv_name>
+      <x>214</x>
+      <y>1</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>ca://LEBT:EMIT:Actscan</pv_name>
+      <x>301</x>
+      <y>1</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>V1 end</text>
+      <x>27</x>
+      <y>308</y>
+      <width>58</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="choice" version="2.0.0">
+      <name>Choice Button_2</name>
+      <pv_name>ca://LEBT:EMIT:Actscan</pv_name>
+      <x>311</x>
+      <y>23</y>
+      <width>50</width>
+      <height>50</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <selected_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </selected_color>
+      <horizontal>false</horizontal>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>upper</text>
+      <x>149</x>
+      <width>60</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>ca://LEBT:EMIT:Actupper</pv_name>
+      <x>137</x>
+      <y>1</y>
+      <width>15</width>
+      <height>15</height>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <foreground_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Nb points</text>
+      <x>22</x>
+      <y>216</y>
+      <width>83</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>det. limit</text>
+      <x>22</x>
+      <y>174</y>
+      <width>83</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_5</name>
+      <pv_name>ca://LEBT:EMIT:Finscanl</pv_name>
+      <x>96</x>
+      <y>308</y>
+      <width>98</width>
+      <height>30</height>
+      <font>
+        <font family="Courier" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <format>1</format>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_width>1</border_width>
+    </widget>
+    <widget type="checkbox" version="2.0.0">
+      <name>Check Box_5</name>
+      <pv_name>ca://LEBT:EMIT:Savescan</pv_name>
+      <label>save</label>
+      <x>371</x>
+      <y>53</y>
+      <width>55</width>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>13</x>
+      <y>78</y>
+      <width>410</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="409.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>208</x>
+      <width>1</width>
+      <height>83</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="82.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>289</x>
+      <width>1</width>
+      <height>260</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="259.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>16</x>
+      <y>259</y>
+      <width>410</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="409.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>208</x>
+      <y>266</y>
+      <width>1</width>
+      <height>75</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="74.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_1</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>128</x>
+      <width>1</width>
+      <height>260</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="0.0" y="259.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:Vht</pv_name>
+      <x>311</x>
+      <y>269</y>
+      <height>32</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="KeyboardEntry" red="0" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>ca://LEBT:EMIT:VhtRdbk</pv_name>
+      <x>311</x>
+      <y>307</y>
+      <height>32</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>V1 - V2</text>
+      <x>229</x>
+      <y>270</y>
+      <width>58</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline_2</name>
+      <macros>
+        <pv_name />
+      </macros>
+      <x>17</x>
+      <y>347</y>
+      <width>410</width>
+      <height>1</height>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="409.0" y="0.0">
+        </point>
+      </points>
+      <line_width>1</line_width>
+      <line_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_2</name>
+      <actions>
+        <action type="command">
+          <description>Execute Command</description>
+          <command>/home/ifmif/data/scan//./scan.sh</command>
+        </action>
+      </actions>
+      <text>edit &gt;</text>
+      <x>366</x>
+      <y>354</y>
+      <width>45</width>
+      <height>25</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>scan file</text>
+      <x>25</x>
+      <y>355</y>
+      <width>83</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="panelArea" red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_width>1</border_width>
+      <border_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input</name>
+      <pv_name>ca://LEBT:EMIT:Scantext</pv_name>
+      <x>137</x>
+      <y>354</y>
+      <width>160</width>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <format>6</format>
+      <precision>0</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="fileselector" version="2.0.0">
+      <pv_name>ca://LEBT:EMIT:Scantext</pv_name>
+      <x>297</x>
+      <y>354</y>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>24</x>
+    <y>12</y>
+    <width>1069</width>
+    <height>50</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="26" green="26" blue="26">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Emittance Measurement Unit</text>
+    <x>357</x>
+    <y>27</y>
+    <width>403</width>
+    <font>
+      <font name="Header2" family="Sans" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="command">
+        <description>Execute Command</description>
+        <command>/bin/bash Scripts/emitShell_v2.sh</command>
+      </action>
+    </actions>
+    <text>Start SNL</text>
+    <x>50</x>
+    <y>22</y>
+    <font>
+      <font family="Sans" style="BOLD" size="9.900990099009901">
+      </font>
+    </font>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>ca://LEBT:EMIT:MOTOR.LLS</pv_name>
+    <x>184</x>
+    <y>505</y>
+    <width>12</width>
+    <height>12</height>
+    <off_color>
+      <color name="MainBackground" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_1</name>
+    <pv_name>ca://LEBT:EMIT:MOTOR.ATHM</pv_name>
+    <x>184</x>
+    <y>526</y>
+    <width>12</width>
+    <height>12</height>
+    <off_color>
+      <color name="MainBackground" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="TextDinamic" red="0" green="244" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>ca://LEBT:EMIT:MOTOR.HLS</pv_name>
+    <x>184</x>
+    <y>674</y>
+    <width>12</width>
+    <height>12</height>
+    <off_color>
+      <color name="MainBackground" red="150" green="150" blue="150">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="progressbar" version="2.0.0">
+    <name>Progress Bar</name>
+    <pv_name>ca://LEBT:EMIT:MOTOR.VAL</pv_name>
+    <x>120</x>
+    <y>510</y>
+    <width>52</width>
+    <height>191</height>
+    <fill_color>
+      <color name="TextDinamic" red="0" green="244" blue="0">
+      </color>
+    </fill_color>
+    <background_color>
+      <color red="26" green="26" blue="26">
+      </color>
+    </background_color>
+    <horizontal>false</horizontal>
+    <actions>
+    </actions>
+    <limits_from_pv>false</limits_from_pv>
+    <minimum>200.0</minimum>
+    <maximum>0.0</maximum>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>XY Graph</name>
+    <x>245</x>
+    <y>494</y>
+    <width>464</width>
+    <height>230</height>
+    <background_color>
+      <color name="TextStatic" red="0" green="160" blue="0">
+      </color>
+    </background_color>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_legend>false</show_legend>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule0" prop_id="trace_0_buffer_size" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>1</value>
+        </exp>
+        <pv_name>ca://LEBT:EMIT:Razgraph</pv_name>
+      </rule>
+    </rules>
+    <tooltip />
+    <x_axis>
+      <title>V1 - V2 (Volts)</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>-5000.0</minimum>
+      <maximum>5000.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </title_font>
+      <scale_font>
+        <font family="Sans" style="REGULAR" size="7.920792079207921">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>EMU FC (mV)</title>
+        <autoscale>false</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-10000.0</minimum>
+        <maximum>10000.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Arial" style="BOLD" size="8.910891089108912">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name />
+        <x_pv>ca://LEBT:EMIT:Vht</x_pv>
+        <y_pv>ca://LEBT:EMIT_FC:I</y_pv>
+        <err_pv />
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Yellow" red="255" green="255" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>4</point_type>
+        <point_size>5</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>TOP</text>
+    <x>126</x>
+    <y>495</y>
+    <width>45</width>
+    <height>18</height>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_44</name>
+    <text>BOTTOM</text>
+    <x>107</x>
+    <y>705</y>
+    <width>82</width>
+    <height>18</height>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>emuHelp.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>help EMU &gt;</text>
+    <x>978</x>
+    <y>25</y>
+    <width>90</width>
+    <height>23</height>
+    <font>
+      <font family="Sans" style="ITALIC" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="HelpPanel" red="181" green="249" blue="215">
+      </color>
+    </background_color>
+    <tooltip />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_45</name>
+    <text>H</text>
+    <x>199</x>
+    <y>520</y>
+    <width>23</width>
+    <height>23</height>
+    <font>
+      <font family="Sans" style="BOLD" size="7.920792079207921">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_46</name>
+    <text>LL</text>
+    <x>198</x>
+    <y>501</y>
+    <width>23</width>
+    <height>21</height>
+    <font>
+      <font family="Sans" style="BOLD" size="7.920792079207921">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_47</name>
+    <text>HL</text>
+    <x>199</x>
+    <y>669</y>
+    <width>23</width>
+    <height>23</height>
+    <font>
+      <font family="Sans" style="BOLD" size="7.920792079207921">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_49</name>
+    <text>LP+</text>
+    <x>76</x>
+    <y>709</y>
+    <width>25</width>
+    <height>14</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="7.920792079207921">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container</name>
+    <x>718</x>
+    <y>494</y>
+    <width>139</width>
+    <height>230</height>
+    <style>2</style>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Diag.</text>
+      <x>36</x>
+      <y>3</y>
+      <width>65</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_51</name>
+      <text>Trig.Ext.</text>
+      <x>36</x>
+      <y>163</y>
+      <width>65</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>EMU FC</text>
+      <x>33</x>
+      <y>79</y>
+      <width>66</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>ca://LEBT:FACQ:Cfg</pv_name>
+      <x>12</x>
+      <y>24</y>
+      <width>108</width>
+      <height>26</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>ca://SRC:TIM:Trep</pv_name>
+      <x>12</x>
+      <y>186</y>
+      <width>110</width>
+      <height>35</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>ca://LEBT:EMIT_FC:I</pv_name>
+      <x>11</x>
+      <y>102</y>
+      <width>110</width>
+      <height>35</height>
+      <font>
+        <font family="Sans" style="REGULAR" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Yellow" red="255" green="255" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>-1</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container</name>
+    <x>864</x>
+    <y>494</y>
+    <width>229</width>
+    <height>230</height>
+    <style>2</style>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>VME CPU Stats:</text>
+      <x>36</x>
+      <y>3</y>
+      <width>151</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_51</name>
+      <text>Mem Usage %</text>
+      <y>90</y>
+      <width>121</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>CPU %</text>
+      <x>18</x>
+      <y>36</y>
+      <width>79</width>
+      <height>30</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>ca://LEBT:VMEStats:memoryUsedPercent</pv_name>
+      <x>132</x>
+      <y>84</y>
+      <width>74</width>
+      <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>ca://LEBT:VMEStats:cpuUsedPercent</pv_name>
+      <x>132</x>
+      <y>33</y>
+      <width>74</width>
+      <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_51</name>
+      <text>Mem Total</text>
+      <y>138</y>
+      <width>121</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>ca://LEBT:VMEStats:memoryTotal</pv_name>
+      <x>132</x>
+      <y>132</y>
+      <width>74</width>
+      <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_51</name>
+      <text>Mem Free</text>
+      <y>186</y>
+      <width>103</width>
+      <height>23</height>
+      <font>
+        <font family="Sans" style="BOLD" size="9.900990099009901">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>ca://LEBT:VMEStats:memoryFree</pv_name>
+      <x>132</x>
+      <y>180</y>
+      <width>74</width>
+      <height>35</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextDinamic" red="0" green="244" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </background_color>
+      <precision>0</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_48</name>
+    <text>LN+</text>
+    <x>77</x>
+    <y>496</y>
+    <width>25</width>
+    <height>17</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="7.920792079207921">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+</display>

@@ -1,0 +1,1202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <width>1200</width>
+  <height>700</height>
+  <background_color>
+    <color name="MainBackground" red="120" green="120" blue="120">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>130</x>
+    <y>30</y>
+    <width>667</width>
+    <height>32</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Calorimetric Measurements</text>
+    <x>230</x>
+    <y>36</y>
+    <width>402</width>
+    <font>
+      <font name="Header2" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text_Update_FC_Tincalc</name>
+    <pv_name>ca://LEBT:FC:Tincalc</pv_name>
+    <x>245</x>
+    <y>141</y>
+    <width>52</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>Faraday 
+Cup</text>
+    <x>246</x>
+    <y>86</y>
+    <width>79</width>
+    <height>37</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>°C</text>
+    <x>296</x>
+    <y>141</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text_Update_FC_Toutcalc</name>
+    <pv_name>ca://LEBT:FC:Toutcalc</pv_name>
+    <x>245</x>
+    <y>187</y>
+    <width>52</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>°C</text>
+    <x>296</x>
+    <y>187</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>ca://LEBT:FC:ICalc.INPE</pv_name>
+    <x>245</x>
+    <y>244</y>
+    <width>42</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_39</name>
+    <text>l/mn</text>
+    <x>286</x>
+    <y>244</y>
+    <width>40</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>ca://LEBT:FC:I</pv_name>
+    <x>235</x>
+    <y>289</y>
+    <width>62</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>ca://LEBT:FC:ICalc</pv_name>
+    <x>235</x>
+    <y>334</y>
+    <width>62</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_40</name>
+    <text>I Calc (mA)</text>
+    <x>135</x>
+    <y>334</y>
+    <width>91</width>
+    <height>28</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_41</name>
+    <text>I Mes (mA)</text>
+    <x>135</x>
+    <y>289</y>
+    <width>91</width>
+    <height>28</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_45</name>
+    <text>FC in the Beam !!!</text>
+    <x>640</x>
+    <y>85</y>
+    <width>216</width>
+    <height>41</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="13.861386138613861">
+      </font>
+    </font>
+    <background_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:FC:InStat</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_46</name>
+    <text>FC out of the Beam !!!</text>
+    <x>640</x>
+    <y>133</y>
+    <width>216</width>
+    <height>41</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="13.861386138613861">
+      </font>
+    </font>
+    <background_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>false</value>
+        </exp>
+        <pv_name>ca://LEBT:FC:OutStat</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>FC_Comp_Text</name>
+    <pv_name>ca://LEBT:FC:Comp</pv_name>
+    <x>220</x>
+    <y>430</y>
+    <width>96</width>
+    <height>31</height>
+    <format>0</format>
+    <precision>-1</precision>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <minimum>-10.0</minimum>
+    <maximum>10.0</maximum>
+    <increment>0.2</increment>
+    <limits_from_pv>true</limits_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_47</name>
+    <text>Compensation (Tout-Tin w/o beam)</text>
+    <x>170</x>
+    <y>380</y>
+    <width>146</width>
+    <height>40</height>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_10</name>
+    <pv_name>ca://LEBT:HV_PS:HTCmd</pv_name>
+    <x>800</x>
+    <y>216</y>
+    <width>61</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_48</name>
+    <text>kV</text>
+    <x>865</x>
+    <y>216</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_49</name>
+    <text>High Voltage</text>
+    <x>641</x>
+    <y>215</y>
+    <width>135</width>
+    <height>29</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_11</name>
+    <pv_name>ca://SRC:TIM:DutyCycle</pv_name>
+    <x>800</x>
+    <y>269</y>
+    <width>95</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_50</name>
+    <text>Duty Cycle</text>
+    <x>641</x>
+    <y>268</y>
+    <width>135</width>
+    <height>29</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Help_Calorimetry.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Help &gt;&gt;</text>
+    <x>650</x>
+    <y>30</y>
+    <width>115</width>
+    <height>31</height>
+    <background_color>
+      <color name="HelpPanel" red="181" green="249" blue="215">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text_Update_IC_Toutcalc</name>
+    <pv_name>ca://LEBT:IC:Toutcalc</pv_name>
+    <x>525</x>
+    <y>187</y>
+    <width>54</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_51</name>
+    <text>°C</text>
+    <x>578</x>
+    <y>187</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_52</name>
+    <text>Injection
+Cône.</text>
+    <x>528</x>
+    <y>86</y>
+    <width>72</width>
+    <height>37</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_width>1</border_width>
+    <border_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_53</name>
+    <text>Water Tout</text>
+    <x>420</x>
+    <y>183</y>
+    <width>91</width>
+    <height>36</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_55</name>
+    <text>Water Tout</text>
+    <x>145</x>
+    <y>187</y>
+    <width>91</width>
+    <height>28</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_56</name>
+    <text>Water Flow</text>
+    <x>142</x>
+    <y>244</y>
+    <width>91</width>
+    <height>28</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_57</name>
+    <text>mA</text>
+    <x>296</x>
+    <y>289</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_13</name>
+    <pv_name>ca://LEBT:FC:ICalc.INPE</pv_name>
+    <x>525</x>
+    <y>244</y>
+    <width>46</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_58</name>
+    <text>l/mn</text>
+    <x>570</x>
+    <y>244</y>
+    <width>38</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_14</name>
+    <pv_name>ca://LEBT:ACCT:I</pv_name>
+    <x>525</x>
+    <y>289</y>
+    <width>54</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_15</name>
+    <pv_name>ca://LEBT:IC:Icalc</pv_name>
+    <x>525</x>
+    <y>334</y>
+    <width>54</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_59</name>
+    <text>IC calc</text>
+    <x>425</x>
+    <y>330</y>
+    <width>91</width>
+    <height>36</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_60</name>
+    <text>I ACCT</text>
+    <x>425</x>
+    <y>285</y>
+    <width>91</width>
+    <height>36</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_61</name>
+    <text>Water Flow</text>
+    <x>422</x>
+    <y>244</y>
+    <width>91</width>
+    <height>36</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_62</name>
+    <text>mA</text>
+    <x>578</x>
+    <y>289</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_64</name>
+    <text>mA</text>
+    <x>296</x>
+    <y>334</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_65</name>
+    <text>mA</text>
+    <x>578</x>
+    <y>334</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_68</name>
+    <text>Water Tin</text>
+    <x>142</x>
+    <y>141</y>
+    <width>91</width>
+    <height>28</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions execute_as_one="true">
+      <action type="execute">
+        <description>FC compensation execute on demand</description>
+        <script file="EmbeddedJs">
+          <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+importPackage(Packages.org.eclipse.jface.dialogs);
+
+var tincalcPV = display.getWidget("Text_Update_FC_Tincalc").getPV();
+var toutcalcPV = display.getWidget("Text_Update_FC_Toutcalc").getPV();
+var compPV = widget.getPV();
+
+var tincalcVal = PVUtil.getDouble(tincalcPV);
+var toutcalcVal = PVUtil.getDouble(toutcalcPV);
+var compVal = toutcalcVal - tincalcVal;
+
+compPV.setValue(compVal);
+
+</text>
+        </script>
+      </action>
+    </actions>
+    <pv_name>ca://LEBT:FC:Comp</pv_name>
+    <text>Set</text>
+    <x>165</x>
+    <y>430</y>
+    <width>46</width>
+    <height>31</height>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <tooltip />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text_Update_IC_Tincalc</name>
+    <pv_name>ca://LEBT:IC:Tincalc</pv_name>
+    <x>525</x>
+    <y>141</y>
+    <width>54</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>-1</precision>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_73</name>
+    <text>°C</text>
+    <x>578</x>
+    <y>141</y>
+    <width>30</width>
+    <height>28</height>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_74</name>
+    <text>Water Tin</text>
+    <x>425</x>
+    <y>141</y>
+    <width>91</width>
+    <height>28</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner_2</name>
+    <pv_name>ca://LEBT:IC:Comp</pv_name>
+    <x>500</x>
+    <y>430</y>
+    <width>96</width>
+    <height>31</height>
+    <format>0</format>
+    <precision>-1</precision>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <minimum>-10.0</minimum>
+    <maximum>10.0</maximum>
+    <increment>0.2</increment>
+    <limits_from_pv>true</limits_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_75</name>
+    <text>Compensation (Tout-Tin w/o beam)</text>
+    <x>450</x>
+    <y>380</y>
+    <width>146</width>
+    <height>40</height>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="execute">
+        <description>IC compensation execute on demad</description>
+        <script file="EmbeddedJs">
+          <text>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+importPackage(Packages.org.eclipse.jface.dialogs);
+
+var tincalcPV = display.getWidget("Text_Update_IC_Tincalc").getPV();
+var toutcalcPV = display.getWidget("Text_Update_IC_Toutcalc").getPV();
+var compPV = widget.getPV();
+
+var tincalcVal = PVUtil.getDouble(tincalcPV);
+var toutcalcVal = PVUtil.getDouble(toutcalcPV);
+var compVal = toutcalcVal - tincalcVal;
+
+compPV.setValue(compVal);
+
+</text>
+        </script>
+      </action>
+    </actions>
+    <pv_name>ca://LEBT:IC:Comp</pv_name>
+    <text>Set</text>
+    <x>448</x>
+    <y>430</y>
+    <width>46</width>
+    <height>31</height>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <tooltip />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <name>launcher</name>
+  <width>760</width>
+  <height>530</height>
+  <background_color>
+    <color name="panelArea" red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+    <action type="open_display">
+      <description>Open Display</description>
+      <file />
+      <target>window</target>
+    </action>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <y>91</y>
+    <width>760</width>
+    <height>373</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Devices</name>
+    <x>432</x>
+    <y>104</y>
+    <width>322</width>
+    <height>276</height>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <bit>-1</bit>
+      <x>220</x>
+      <y>174</y>
+      <width>46</width>
+      <off_label>&gt;&gt;</off_label>
+      <off_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </off_color>
+      <on_label>&gt;&gt;</on_label>
+      <on_color>
+        <color red="192" green="192" blue="192">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emuMotor.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <tooltip>need Password</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <mode>1</mode>
+      <show_confirm_dialog>2</show_confirm_dialog>
+      <confirm_message />
+      <password>rjGobin</password>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>double click to enter text</text>
+      <x>54</x>
+      <y>215</y>
+      <width>150</width>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>MaxV controls for expert :</text>
+      <x>12</x>
+      <y>176</y>
+      <width>200</width>
+      <height>25</height>
+      <font>
+        <font family="Sans" style="BOLD_ITALIC" size="12.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emuAlims.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>High Voltage Power Suppies</text>
+      <x>12</x>
+      <y>18</y>
+      <width>250</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emuFacq.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>Diagnostics - Icv108/178 - FACQ</text>
+      <x>12</x>
+      <y>72</y>
+      <width>250</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_2</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emuMotorUser_v2.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>Motor controls for user</text>
+      <x>12</x>
+      <y>126</y>
+      <width>250</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Tools</name>
+    <x>12</x>
+    <y>289</y>
+    <width>320</width>
+    <height>151</height>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_5</name>
+      <actions>
+        <action type="command">
+          <description>connection to VME</description>
+          <command>/home/ifmifmgr/topIFMIF_INJ/bin/linux-x86_64/./emitIocShell.sh</command>
+        </action>
+      </actions>
+      <text>iocShell &gt;&gt;</text>
+      <x>12</x>
+      <y>30</y>
+      <width>110</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_6</name>
+      <actions>
+        <action type="command">
+          <description>connection to servoStar</description>
+          <command>/home/ifmifmgr/topIFMIF_INJ/bin/linux-x86_64/./Scripts/emitServoShell.sh</command>
+        </action>
+      </actions>
+      <text>servoStar &gt;&gt;</text>
+      <x>152</x>
+      <y>30</y>
+      <width>110</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_3</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>../../vxStatsApp/vxStats.opi</file>
+          <target>window</target>
+        </action>
+      </actions>
+      <text>vxStats &gt;&gt;</text>
+      <x>12</x>
+      <y>72</y>
+      <width>110</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <enabled>false</enabled>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>E M U</name>
+    <x>12</x>
+    <y>104</y>
+    <width>320</width>
+    <height>102</height>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_4</name>
+      <actions>
+        <action type="open_display">
+          <description>Open Display</description>
+          <file>emitMeasurement_v2.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <text>Emittance Measurement Process</text>
+      <x>2</x>
+      <y>18</y>
+      <width>268</width>
+      <font>
+        <font family="Sans" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TextBackground" red="70" green="70" blue="70">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <tooltip />
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <width>760</width>
+    <height>91</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Emittance Measurement Unit user Interfaces</text>
+    <x>148</x>
+    <y>30</y>
+    <width>478</width>
+    <height>31</height>
+    <font>
+      <font name="Header2" family="Sans" style="BOLD" size="13.861386138613861">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text />
+    <y>464</y>
+    <width>760</width>
+    <height>66</height>
+    <font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="29" green="40" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

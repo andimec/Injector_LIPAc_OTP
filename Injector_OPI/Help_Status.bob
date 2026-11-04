@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <background_color>
+    <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Magnets  :Slew rate (in A/ms)  must be adjust  at each start of the power         supply. 
+                Imax (maximum current in A) can be modified at any time but in case of restart of the power supply you must st Imax.
+
+Water Status :</text>
+    <x>48</x>
+    <y>78</y>
+    <width>541</width>
+    <height>493</height>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

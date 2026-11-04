@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <width>1400</width>
+  <height>800</height>
+  <background_color>
+    <color red="240" green="240" blue="240">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_3</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>54</x>
+    <y>192</y>
+    <width>5</width>
+    <height>489</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_8</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>54</x>
+    <y>294</y>
+    <width>770</width>
+    <height>5</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_9</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>816</x>
+    <y>294</y>
+    <width>223</width>
+    <height>5</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle</name>
+    <macros>
+      <pv_name>ca://LEBT:HV_PS:ExtSec</pv_name>
+    </macros>
+    <x>1029</x>
+    <y>275</y>
+    <width>169</width>
+    <height>43</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Rule" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>
+            <color name="Major" red="255" green="0" blue="0">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Green" red="0" green="255" blue="0">
+            </color>
+          </value>
+        </exp>
+        <pv_name>ca://LEBT:HV_PS:ExtSec</pv_name>
+      </rule>
+    </rules>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>HVPS power permit</text>
+    <x>423</x>
+    <y>96</y>
+    <width>311</width>
+    <height>50</height>
+    <font>
+      <font name="Header 2" family="Liberation Sans" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_26</name>
+    <pv_name>ca://PPS:HV:PermStat</pv_name>
+    <x>854</x>
+    <y>274</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_27</name>
+    <pv_name>ca://SRC:RF:FSDefStat</pv_name>
+    <x>751</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_28</name>
+    <pv_name>ca://SRC:COIL02:FSDefStat</pv_name>
+    <x>671</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_29</name>
+    <pv_name>ca://SRC:COIL01:FSDefStat</pv_name>
+    <x>591</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_30</name>
+    <pv_name>ca://INJ:WS:ResPCDefStat</pv_name>
+    <x>511</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_31</name>
+    <pv_name>ca://SRC:IE_PS:OnStat</pv_name>
+    <x>431</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_32</name>
+    <pv_name>ca://LEBT:HV:RlyCloseStat</pv_name>
+    <x>351</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Green" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_33</name>
+    <pv_name>ca://LEBT:VAC01:SGVCDefStat</pv_name>
+    <x>271</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_34</name>
+    <pv_name>ca://LEBT:HV:RlyRmtStat</pv_name>
+    <x>191</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_35</name>
+    <pv_name>ca://LEBT:HV:RoomKeyA1</pv_name>
+    <x>111</x>
+    <y>273</y>
+    <width>45</width>
+    <height>45</height>
+    <off_color>
+      <color name="Major" red="255" green="0" blue="0">
+      </color>
+    </off_color>
+    <foreground_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions execute_as_one="true">
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>injector_Help_RF_Beam_Plasma.bob</file>
+        <target>window</target>
+      </action>
+    </actions>
+    <text>Help &gt;&gt;</text>
+    <x>1158</x>
+    <y>38</y>
+    <width>115</width>
+    <height>31</height>
+    <background_color>
+      <color name="HelpPanel" red="181" green="249" blue="215">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>CtrlRoom KeyA1</text>
+    <x>78</x>
+    <y>234</y>
+    <width>111</width>
+    <height>30</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>HV Relay RmtStat</text>
+    <x>158</x>
+    <y>330</y>
+    <width>111</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_27</name>
+    <text>VAC01_SGVC
+ DefStat</text>
+    <x>238</x>
+    <y>228</y>
+    <width>111</width>
+    <height>36</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_26</name>
+    <text>(NC) HV Relay
+CloseStat</text>
+    <x>318</x>
+    <y>330</y>
+    <width>111</width>
+    <height>30</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_28</name>
+    <text>IEPS OnStat</text>
+    <x>404</x>
+    <y>248</y>
+    <width>106</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_29</name>
+    <text>RESTCP DefStat</text>
+    <x>462</x>
+    <y>330</y>
+    <width>144</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_30</name>
+    <text>COIL1 DefStat</text>
+    <x>550</x>
+    <y>241</y>
+    <width>144</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_31</name>
+    <text>COIL2 DefStat</text>
+    <x>638</x>
+    <y>330</y>
+    <width>111</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_32</name>
+    <text>RF FS DefStat</text>
+    <x>702</x>
+    <y>240</y>
+    <width>163</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_33</name>
+    <text>PPS_8 HV PermitStat</text>
+    <x>795</x>
+    <y>319</y>
+    <width>163</width>
+    <height>24</height>
+    <font>
+      <font name="Small" family="Sans" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>HVPS Authorization</text>
+    <x>1038</x>
+    <y>328</y>
+    <width>151</width>
+    <height>49</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

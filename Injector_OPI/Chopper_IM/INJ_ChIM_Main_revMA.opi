@@ -1,0 +1,3302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <show_close_button>false</show_close_button>
+  <rules />
+  <wuid>-3f01d0ac:14420672259:-7eb3</wuid>
+  <show_grid>false</show_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <scripts />
+  <height>760</height>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <boy_version>4.0.103.201506301920</boy_version>
+  <show_edit_range>true</show_edit_range>
+  <widget_type>Display</widget_type>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <background_color>
+    <color name="MainBackground" red="120" green="120" blue="120" />
+  </background_color>
+  <width>760</width>
+  <x>0</x>
+  <name></name>
+  <grid_space>6</grid_space>
+  <show_ruler>true</show_ruler>
+  <y>0</y>
+  <snap_to_geometry>true</snap_to_geometry>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <actions hook="false" hook_all="false" />
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>c2f2e9f:16192074b35:-7d49</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>FBI Trigger Threshold</text>
+    <scripts />
+    <height>35</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>400</width>
+    <x>350</x>
+    <name>Label_FBI Trigger Configuration</name>
+    <y>430</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="12" style="1">Header 3</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-4e9e32c2:1604fc30691:-7d0f</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>Current Status</text>
+    <scripts />
+    <height>35</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>310</width>
+    <x>10</x>
+    <name>Label_Operation_Status</name>
+    <y>60</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="12" style="1">Header 3</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7b37</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>Snapshot at FBI Interlocked</text>
+    <scripts />
+    <height>35</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>400</width>
+    <x>350</x>
+    <name>Label_FBI Configuration</name>
+    <y>60</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="12" style="1">Header 3</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>c2f2e9f:16192074b35:-7d50</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Chopper HV OFF</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>150</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:VmonOff</name>
+    <y>510</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>c2f2e9f:16192074b35:-7d4a</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>ACCT ON</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>150</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:AcctThr</name>
+    <y>590</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>c2f2e9f:16192074b35:-7d4d</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Chopper HV ON</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>150</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:VmonThr</name>
+    <y>550</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="State name" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>  0: CONFIGURATION</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>  1: PRE-ARM</value>
+        </exp>
+        <exp bool_exp="pv0==2">
+          <value>  2: ARMED</value>
+        </exp>
+        <exp bool_exp="pv0==3">
+          <value>  3: GATE OFF</value>
+        </exp>
+        <exp bool_exp="pv0==4">
+          <value>  4: GATE ON: RISING</value>
+        </exp>
+        <exp bool_exp="pv0==5">
+          <value>  5: GATE ON</value>
+        </exp>
+        <exp bool_exp="pv0==6">
+          <value>  6: GATE OFF: DECREASING</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:FbiStmState</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color name="TextDynamic" red="0" green="244" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f4a</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>  StmState</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>true</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name></pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>1</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>230</width>
+    <x>420</x>
+    <name>Text Update_LEBT:CHOP_IM:FbiStmState</name>
+    <y>110</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <fontdata fontName="Sans" height="10" style="0" />
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f49</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>State</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>112</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiStmState</name>
+    <y>110</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f51</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Faraday Cup</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>112</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiFaraday</name>
+    <y>200</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f59</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Pulse length</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>112</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiDPulse</name>
+    <y>280</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f71</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Repetition</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>114</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiDPeriod</name>
+    <y>240</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f7d</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Chopper Gate</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>112</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiCGate</name>
+    <y>160</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color name="TextDynamic" red="0" green="244" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f96</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:FbiAcct</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>1</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>100</width>
+    <x>470</x>
+    <name>Text Update_LEBT:CHOP_IM:FbiAcct</name>
+    <y>360</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7f95</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>ACCT</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>160</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiAcct</name>
+    <y>360</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color name="TextDynamic" red="0" green="244" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7fc1</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:FbiVmon</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>1</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>100</width>
+    <x>470</x>
+    <name>Text Update_LEBT:CHOP_IM:FbiVmon</name>
+    <y>320</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-6e86f59d:160545931c0:-7fc0</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Chopper HV</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>160</width>
+    <x>356</x>
+    <name>Label_LEBT:CHOP_IM:FbiVmon</name>
+    <y>320</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+    <alarm_pulsing>false</alarm_pulsing>
+    <tooltip></tooltip>
+    <rules />
+    <effect_3d>true</effect_3d>
+    <bit>-1</bit>
+    <pv_value />
+    <height>30</height>
+    <border_width>1</border_width>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:Fbi</pv_name>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <widget_type>LED</widget_type>
+    <name>LED_LEBT:CHOP_IM:Fbi</name>
+    <actions hook="false" hook_all="false" />
+    <show_boolean_label>true</show_boolean_label>
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <enabled>true</enabled>
+    <wuid>-4e9e32c2:1604fc30691:-7beb</wuid>
+    <on_color>
+      <color name="Green" red="0" green="255" blue="0" />
+    </on_color>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <on_label>Normal</on_label>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>true</keep_wh_ratio>
+    </scale_options>
+    <off_color>
+      <color red="255" green="0" blue="0" />
+    </off_color>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <square_led>true</square_led>
+    <width>100</width>
+    <x>130</x>
+    <data_type>0</data_type>
+    <y>200</y>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </foreground_color>
+    <font>
+      <fontdata fontName="Sans" height="9" style="0" />
+    </font>
+    <off_label>Interlocked</off_label>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-4e9e32c2:1604fc30691:-7bea</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>FBI status</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>101</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:Fbi</name>
+    <y>200</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="State name" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>  0: CONFIGURATION</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>  1: PRE-ARM</value>
+        </exp>
+        <exp bool_exp="pv0==2">
+          <value>  2: ARMED</value>
+        </exp>
+        <exp bool_exp="pv0==3">
+          <value>  3: GATE OFF</value>
+        </exp>
+        <exp bool_exp="pv0==4">
+          <value>  4: GATE ON: RISING</value>
+        </exp>
+        <exp bool_exp="pv0==5">
+          <value>  5: GATE ON</value>
+        </exp>
+        <exp bool_exp="pv0==6">
+          <value>  6: GATE OFF: DECREASING</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>-4e9e32c2:1604fc30691:-7e30</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>  StmState</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name></pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>false</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>1</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>230</width>
+    <x>80</x>
+    <name>Text Update_LEBT:CHOP_IM:StmState</name>
+    <y>110</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <fontdata fontName="Sans" height="10" style="0" />
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-4e9e32c2:1604fc30691:-7d79</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>State</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>103</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:StmState</name>
+    <y>110</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+    <alarm_pulsing>false</alarm_pulsing>
+    <tooltip></tooltip>
+    <rules />
+    <effect_3d>true</effect_3d>
+    <bit>-1</bit>
+    <pv_value />
+    <height>30</height>
+    <border_width>1</border_width>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:DbgChop</pv_name>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <widget_type>LED</widget_type>
+    <name>LED_LEBT:CHOP_IM:DbgChop</name>
+    <actions hook="false" hook_all="false" />
+    <show_boolean_label>true</show_boolean_label>
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d35</wuid>
+    <on_color>
+      <color name="Green" red="0" green="255" blue="0" />
+    </on_color>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <on_label>ON</on_label>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>true</keep_wh_ratio>
+    </scale_options>
+    <off_color>
+      <color red="77" green="77" blue="77" />
+    </off_color>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <square_led>true</square_led>
+    <width>100</width>
+    <x>130</x>
+    <data_type>0</data_type>
+    <y>240</y>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </foreground_color>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+    <off_label>OFF</off_label>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d34</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Chopper PS</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>99</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:DbgChop</name>
+    <y>240</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+    <alarm_pulsing>false</alarm_pulsing>
+    <tooltip></tooltip>
+    <rules />
+    <effect_3d>true</effect_3d>
+    <bit>-1</bit>
+    <pv_value />
+    <height>30</height>
+    <border_width>1</border_width>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:DbgFaraday</pv_name>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <widget_type>LED</widget_type>
+    <name>LED_LEBT:CHOP_IM:DbgFaraday</name>
+    <actions hook="false" hook_all="false" />
+    <show_boolean_label>true</show_boolean_label>
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d11</wuid>
+    <on_color>
+      <color red="229" green="229" blue="229" />
+    </on_color>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <on_label>Out</on_label>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <off_color>
+      <color red="229" green="229" blue="229" />
+    </off_color>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="229" green="229" blue="229" />
+    </background_color>
+    <square_led>true</square_led>
+    <width>100</width>
+    <x>130</x>
+    <data_type>0</data_type>
+    <y>280</y>
+    <foreground_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </foreground_color>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+    <off_label>In</off_label>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d10</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Faraday Cup</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>108</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:DbgFaraday</name>
+    <y>280</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>3</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d2e</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>='LEBT:CHOP_IM:DbgDPeriod'/1000</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>false</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>100</width>
+    <x>130</x>
+    <name>Text Update_LEBT:CHOP_IM:DbgDPeriod</name>
+    <y>320</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d2d</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Repetition</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>160</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:DbgDPeriod</name>
+    <y>320</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>3</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d17</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>='LEBT:CHOP_IM:DbgDPulse'/1000</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>false</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>100</width>
+    <x>130</x>
+    <name>Text Update_LEBT:CHOP_IM:DbgDPulse</name>
+    <y>360</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d16</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Pulse length</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>160</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:DbgDPulse</name>
+    <y>360</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d31</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>ACCT</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>160</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:DbgAcct</name>
+    <y>440</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-5df5557e:1618e5360f7:-7d13</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Chopper HV</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>160</width>
+    <x>16</x>
+    <name>Label_LEBT:CHOP_IM:DbgVmon</name>
+    <y>400</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7d0b</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> msec</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>50</width>
+    <x>230</x>
+    <name></name>
+    <y>320</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <fontdata fontName="Sans" height="8" style="0" />
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7d01</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> msec</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>50</width>
+    <x>230</x>
+    <name></name>
+    <y>360</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <fontdata fontName="Sans" height="8" style="0" />
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7cf7</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:CurrentVmon</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>100</width>
+    <x>130</x>
+    <name></name>
+    <y>400</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip></tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7ced</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:CurrentAcct</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>100</width>
+    <x>130</x>
+    <name></name>
+    <y>440</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7ce3</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> V</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>50</width>
+    <x>230</x>
+    <name></name>
+    <y>400</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7cd9</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> mA</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>50</width>
+    <x>230</x>
+    <name></name>
+    <y>440</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+    <toggle_button>false</toggle_button>
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <push_action_index>0</push_action_index>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1 || pv0==2">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1 &amp;&amp; pv0!= 2">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7cc4</wuid>
+    <pv_value />
+    <text>To ARMED</text>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>35</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <image></image>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:StmStateSet</pv_name>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Action Button</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <width>100</width>
+    <x>80</x>
+    <name>Action Button</name>
+    <y>150</y>
+    <style>0</style>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false">
+      <action type="WRITE_PV">
+        <pv_name>$(pv_name)</pv_name>
+        <value>2</value>
+        <timeout>10</timeout>
+        <confirm_message></confirm_message>
+        <description></description>
+      </action>
+    </actions>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+    <toggle_button>false</toggle_button>
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <push_action_index>0</push_action_index>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1 || pv0==2">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1 &amp;&amp; pv0!= 2">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7cba</wuid>
+    <pv_value />
+    <text>To PRE-ARM</text>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>35</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <image></image>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:StmStateSet</pv_name>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Action Button</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color red="240" green="240" blue="240" />
+    </background_color>
+    <width>100</width>
+    <x>186</x>
+    <name>Action Button_1</name>
+    <y>150</y>
+    <style>0</style>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false">
+      <action type="WRITE_PV">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <timeout>10</timeout>
+        <confirm_message></confirm_message>
+        <description></description>
+      </action>
+    </actions>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7ca7</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:VmonOffRdbk</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>68</width>
+    <x>490</x>
+    <name>Text Update</name>
+    <y>510</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c9d</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:VmonThrRdbk</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>68</width>
+    <x>490</x>
+    <name>Text Update_1</name>
+    <y>550</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <border_style>0</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c93</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <scripts />
+    <border_alarm_sensitive>true</border_alarm_sensitive>
+    <show_units>false</show_units>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:AcctThrRdbk</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Update</widget_type>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <wrap_words>false</wrap_words>
+    <format_type>0</format_type>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>68</width>
+    <x>490</x>
+    <name>Text Update_2</name>
+    <y>590</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c89</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Readback</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>80</width>
+    <x>490</x>
+    <name></name>
+    <y>475</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c7f</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text>Set value</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240" />
+    </background_color>
+    <width>80</width>
+    <x>610</x>
+    <name></name>
+    <y>475</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Black" red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <show_units>false</show_units>
+    <height>30</height>
+    <multiline_input>false</multiline_input>
+    <border_width>1</border_width>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:VmonOff</pv_name>
+    <selector_type>0</selector_type>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Input</widget_type>
+    <confirm_message></confirm_message>
+    <name>Text Input</name>
+    <style>0</style>
+    <actions hook="false" hook_all="false" />
+    <border_style>3</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c72</wuid>
+    <transparent>false</transparent>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <format_type>0</format_type>
+    <limits_from_pv>false</limits_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <width>68</width>
+    <x>610</x>
+    <y>510</y>
+    <maximum>1.7976931348623157E308</maximum>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <minimum>-1.7976931348623157E308</minimum>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Black" red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>
+            <color red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c68</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text> V</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>40</width>
+    <x>678</x>
+    <name></name>
+    <y>510</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c5e</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> V</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>40</width>
+    <x>558</x>
+    <name></name>
+    <y>510</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c54</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> V</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>40</width>
+    <x>558</x>
+    <name></name>
+    <y>550</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c4a</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> mA</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>40</width>
+    <x>558</x>
+    <name></name>
+    <y>590</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Black" red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <show_units>false</show_units>
+    <height>30</height>
+    <multiline_input>false</multiline_input>
+    <border_width>1</border_width>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:VmonThr</pv_name>
+    <selector_type>0</selector_type>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Input</widget_type>
+    <confirm_message></confirm_message>
+    <name></name>
+    <style>0</style>
+    <actions hook="false" hook_all="false" />
+    <border_style>3</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c40</wuid>
+    <transparent>false</transparent>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <format_type>0</format_type>
+    <limits_from_pv>false</limits_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <width>68</width>
+    <x>610</x>
+    <y>550</y>
+    <maximum>1.7976931348623157E308</maximum>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <minimum>-1.7976931348623157E308</minimum>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Black" red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <pv_value />
+    <auto_size>false</auto_size>
+    <text>######</text>
+    <rotation_angle>0.0</rotation_angle>
+    <show_units>false</show_units>
+    <height>30</height>
+    <multiline_input>false</multiline_input>
+    <border_width>1</border_width>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:AcctThr</pv_name>
+    <selector_type>0</selector_type>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>true</precision_from_pv>
+    <widget_type>Text Input</widget_type>
+    <confirm_message></confirm_message>
+    <name></name>
+    <style>0</style>
+    <actions hook="false" hook_all="false" />
+    <border_style>3</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c36</wuid>
+    <transparent>false</transparent>
+    <scripts />
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <format_type>0</format_type>
+    <limits_from_pv>false</limits_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <width>68</width>
+    <x>610</x>
+    <y>590</y>
+    <maximum>1.7976931348623157E308</maximum>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <minimum>-1.7976931348623157E308</minimum>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Black" red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>
+            <color red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c2c</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text> V</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>40</width>
+    <x>678</x>
+    <name></name>
+    <y>550</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>
+            <color name="Black" red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>
+            <color red="77" green="77" blue="77" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c22</wuid>
+    <transparent>true</transparent>
+    <auto_size>false</auto_size>
+    <text> mA</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>40</width>
+    <x>678</x>
+    <name></name>
+    <y>590</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.spinner" version="1.0.0">
+    <border_style>3</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c19</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <scripts />
+    <buttons_on_left>false</buttons_on_left>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:VmonOff</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <format>0</format>
+    <horizontal_buttons_layout>false</horizontal_buttons_layout>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>false</precision_from_pv>
+    <widget_type>Spinner</widget_type>
+    <step_increment>100.0</step_increment>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <page_increment>10.0</page_increment>
+    <width>22</width>
+    <x>716</x>
+    <name>Spinner</name>
+    <y>510</y>
+    <maximum>1.7976931348623157E308</maximum>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <minimum>-1.7976931348623157E308</minimum>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.spinner" version="1.0.0">
+    <border_style>3</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c0f</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <scripts />
+    <buttons_on_left>false</buttons_on_left>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:VmonThr</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <format>0</format>
+    <horizontal_buttons_layout>false</horizontal_buttons_layout>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>false</precision_from_pv>
+    <widget_type>Spinner</widget_type>
+    <step_increment>100.0</step_increment>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <page_increment>10.0</page_increment>
+    <width>22</width>
+    <x>716</x>
+    <name>Spinner_1</name>
+    <y>550</y>
+    <maximum>1.7976931348623157E308</maximum>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <minimum>-1.7976931348623157E308</minimum>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.spinner" version="1.0.0">
+    <border_style>3</border_style>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <alarm_pulsing>false</alarm_pulsing>
+    <precision>0</precision>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <horizontal_alignment>2</horizontal_alignment>
+    <rules>
+      <rule name="Enabled" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="pv0!=1">
+          <value>false</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7c05</wuid>
+    <transparent>false</transparent>
+    <pv_value />
+    <scripts />
+    <buttons_on_left>false</buttons_on_left>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <pv_name>LEBT:CHOP_IM:AcctThr</pv_name>
+    <vertical_alignment>1</vertical_alignment>
+    <format>0</format>
+    <horizontal_buttons_layout>false</horizontal_buttons_layout>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <precision_from_pv>false</precision_from_pv>
+    <widget_type>Spinner</widget_type>
+    <step_increment>1.0</step_increment>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <limits_from_pv>false</limits_from_pv>
+    <background_color>
+      <color red="255" green="255" blue="255" />
+    </background_color>
+    <page_increment>10.0</page_increment>
+    <width>22</width>
+    <x>716</x>
+    <name>Spinner_2</name>
+    <y>590</y>
+    <maximum>1.7976931348623157E308</maximum>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <minimum>-1.7976931348623157E308</minimum>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color name="TextDynamic" red="0" green="244" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7bfb</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> V</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>50</width>
+    <x>570</x>
+    <name></name>
+    <y>320</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
+    <rules>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color name="TextDynamic" red="0" green="244" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7bf1</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text> mA</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70" />
+    </background_color>
+    <width>50</width>
+    <x>570</x>
+    <name></name>
+    <y>360</y>
+    <foreground_color>
+      <color name="TextDynamic" red="0" green="244" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules>
+      <rule name="Background" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==1 &amp;&amp; pv1==0 &amp;&amp; (pv2==3 || pv2==6) &amp;&amp; pv3==0">
+          <value>
+            <color red="55" green="255" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1 &amp;&amp; pv1==0 &amp;&amp; (pv2==4 || pv2==5) &amp;&amp; pv3==1">
+          <value>
+            <color red="55" green="255" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1 &amp;&amp; pv1==0 &amp;&amp; (pv2==3 || pv2==6) &amp;&amp; pv3==1">
+          <value>
+            <color red="255" green="55" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==1 &amp;&amp; pv1==0 &amp;&amp; (pv2==4 || pv2==5) &amp;&amp; pv3==0">
+          <value>
+            <color red="255" green="55" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=1 || pv1!=0 || pv2==0 || pv2==1|| pv2==2">
+          <value>
+            <color red="191" green="191" blue="191" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:FbiStmState</pv>
+        <pv trig="true">LEBT:CHOP_IM:FbiCGate</pv>
+      </rule>
+      <rule name="Text" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>OFF</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>ON</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:FbiCGate</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7bdd</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>OFF</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color red="191" green="191" blue="191" />
+    </background_color>
+    <width>100</width>
+    <x>470</x>
+    <name>Label</name>
+    <y>160</y>
+    <foreground_color>
+      <color red="127" green="127" blue="127" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules>
+      <rule name="Background" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1 &amp;&amp; pv2==0">
+          <value>
+            <color red="255" green="55" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1 &amp;&amp; pv2==1">
+          <value>
+            <color red="55" green="255" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="191" green="191" blue="191" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+        <pv trig="true">LEBT:CHOP_IM:FbiFaraday</pv>
+      </rule>
+      <rule name="Text" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>In</value>
+        </exp>
+        <exp bool_exp="pv0==1">
+          <value>Out</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:FbiFaraday</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7bd3</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>In</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color red="191" green="191" blue="191" />
+    </background_color>
+    <width>100</width>
+    <x>470</x>
+    <name></name>
+    <y>200</y>
+    <foreground_color>
+      <color red="127" green="127" blue="127" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules>
+      <rule name="Background" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1 &amp;&amp; pv2==1">
+          <value>
+            <color red="55" green="255" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1 &amp;&amp; pv2==0">
+          <value>
+            <color red="255" green="55" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="191" green="191" blue="191" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+        <pv trig="true">LEBT:CHOP_IM:FbiDPeriod</pv>
+      </rule>
+      <rule name="Text" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>Normal</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>Error</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:FbiDPeriod</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7bc5</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>Error</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color red="191" green="191" blue="191" />
+    </background_color>
+    <width>100</width>
+    <x>470</x>
+    <name></name>
+    <y>240</y>
+    <foreground_color>
+      <color red="127" green="127" blue="127" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules>
+      <rule name="Background" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1 &amp;&amp; pv2==1">
+          <value>
+            <color red="55" green="255" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1 &amp;&amp; pv2==0">
+          <value>
+            <color red="255" green="55" blue="55" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="191" green="191" blue="191" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+        <pv trig="true">LEBT:CHOP_IM:FbiDPulse</pv>
+      </rule>
+      <rule name="Text" prop_id="text" out_exp="false">
+        <exp bool_exp="pv0==1">
+          <value>Normal</value>
+        </exp>
+        <exp bool_exp="pv0==0">
+          <value>Error</value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:FbiDPulse</pv>
+      </rule>
+      <rule name="Foreground" prop_id="foreground_color" out_exp="false">
+        <exp bool_exp="pv0==0 &amp;&amp; pv1==1">
+          <value>
+            <color red="0" green="0" blue="0" />
+          </value>
+        </exp>
+        <exp bool_exp="pv0!=0 || pv1!=1">
+          <value>
+            <color red="127" green="127" blue="127" />
+          </value>
+        </exp>
+        <pv trig="true">LEBT:CHOP_IM:Fbi</pv>
+        <pv trig="true">LEBT:CHOP_IM:StmState</pv>
+      </rule>
+    </rules>
+    <enabled>true</enabled>
+    <wuid>6b096f3b:1804a02d602:-7bbb</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>Error</text>
+    <scripts />
+    <height>30</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color red="191" green="191" blue="191" />
+    </background_color>
+    <width>100</width>
+    <x>470</x>
+    <name></name>
+    <y>280</y>
+    <foreground_color>
+      <color red="127" green="127" blue="127" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <font>
+      <opifont.name fontName="Sans" height="11" style="0">Default</opifont.name>
+    </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <horizontal_alignment>1</horizontal_alignment>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-47171664:1442116107a:7dfb</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
+    <text>CHOPPER Interlock Module - Main Panel</text>
+    <scripts />
+    <height>50</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <border_color>
+      <color name="Black" red="0" green="0" blue="0" />
+    </border_color>
+    <widget_type>Label</widget_type>
+    <wrap_words>true</wrap_words>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224" />
+    </background_color>
+    <width>760</width>
+    <x>0</x>
+    <name>Label_CHOPPER_IM_Main_Panel</name>
+    <y>0</y>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="Sans" height="18" style="1">Title</opifont.name>
+    </font>
+  </widget>
+</display>

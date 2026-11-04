@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0">
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <wuid>5ff3874a:1361a861d1e:-6d79</wuid>
+  <boy_version>4.0.103.201506301920</boy_version>
+  <scripts />
+  <show_ruler>true</show_ruler>
+  <height>700</height>
+  <name>help-emu</name>
+  <snap_to_geometry>true</snap_to_geometry>
+  <show_grid>true</show_grid>
+  <background_color>
+    <color red="240" green="240" blue="240" />
+  </background_color>
+  <foreground_color>
+    <color red="192" green="192" blue="192" />
+  </foreground_color>
+  <widget_type>Display</widget_type>
+  <show_close_button>true</show_close_button>
+  <width>530</width>
+  <rules />
+  <show_edit_range>true</show_edit_range>
+  <grid_space>6</grid_space>
+  <actions hook="false" hook_all="false" />
+  <y>-1</y>
+  <x>-1</x>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <wuid>5ff3874a:1361a861d1e:-69b7</wuid>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>650</height>
+    <name>Help</name>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <background_color>
+      <color name="HelpPanel" />
+    </background_color>
+    <foreground_color>
+      <color name="TextBackground" />
+    </foreground_color>
+    <widget_type>Label</widget_type>
+    <enabled>true</enabled>
+    <text>start SNL = start stand-alone SNL program that holds the whole EMU process
+
+upper = detection of the upper edge of the beam
+lower = detection of the lower edge  of the beam
+wide scan = detection of Vpeak and deltaV at one precise position
+
+Vpeak = V for Ibeam maximum
+deltaV = beam width in Volt
+upper-lower = beam width in mm
+
+Vstart  = Vpeak + deltaV/2.
+Vend  = Vpeak  - deltaV/2.
+Vstep = ( Vstart - Vend ) / (HV points*2)
+              - value for each power supply -
+V1 = emups1 :  from (+Vstart / 2) to  (+Vend / 2)
+V2 = emups2 :  from (-Vstart  / 2) to  (-Vend / 2)
+
+Example :
+V1         : progression from start =  +5000 V  to end =  -5000 V
+V2         : progression from start =  -5000 V   to end = +5000V
+(V1-V2) : progression from start = +10000V to end  = -10000V
+
+Beam acquisition during process (see FACQ panel) :
+- emittance measurement only works with an external trigger.
+- the external trigger is provided by the Timing System (TREP).
+- end of acquisition must be less or equal than TREP.
+- only one acquisition can be defined in a display.
+
+Motor motions controls through the MaxV VME card :
+ - to use it for the EMU process
+    1) servo / maxv "Enable" to obtain green leds on maxv and servo
+    2) use "MoveAbs" or "tweak" for simple motions
+ - when measurement is over
+    1) "MoveAbs" =0   *** never use "home" cmd on expert panel ***
+    2)  servo / maxv "Disable" to obtain red leds on maxv and servo
+
+(if you have lost the control of the mechanism after having reach a 
+ switch limit on the servostar system (LET8), see Help on  motor panel)</text>
+    <font>
+      <fontdata fontName="Arial" height="10" style="0" />
+    </font>
+    <width>500</width>
+    <border_style>13</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <horizontal_alignment>0</horizontal_alignment>
+    <actions hook="false" hook_all="false" />
+    <y>24</y>
+    <wrap_words>true</wrap_words>
+    <tooltip />
+    <x>18</x>
+  </widget>
+</display>

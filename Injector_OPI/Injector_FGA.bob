@@ -1,0 +1,731 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<display version="2.0.0">
+  <width>1400</width>
+  <height>800</height>
+  <background_color>
+    <color name="MainBackground" red="120" green="120" blue="120">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rounded Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>66</x>
+    <y>120</y>
+    <width>1150</width>
+    <height>581</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <corner_width>16</corner_width>
+    <corner_height>16</corner_height>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name />
+    </macros>
+    <x>66</x>
+    <y>24</y>
+    <width>619</width>
+    <height>52</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Space Charge Compensation Measurement (FGA)</text>
+    <x>96</x>
+    <y>36</y>
+    <width>583</width>
+    <font>
+      <font name="Header2" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <background_color>
+      <color name="HeaderPanel" red="158" green="196" blue="224">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider</name>
+    <pv_name>ca://LEBT:FGA_PS2:VSet</pv_name>
+    <x>165</x>
+    <y>185</y>
+    <width>544</width>
+    <height>136</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <major_tick_step_hint>50</major_tick_step_hint>
+    <scale_format />
+    <show_hihi>false</show_hihi>
+    <show_high>false</show_high>
+    <show_low>false</show_low>
+    <show_lolo>false</show_lolo>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <minimum>-500.0</minimum>
+    <maximum>500.0</maximum>
+    <limits_from_pv>true</limits_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>G2</text>
+    <x>75</x>
+    <y>215</y>
+    <width>76</width>
+    <height>76</height>
+    <font>
+      <font family="Courier" style="BOLD" size="25.742574257425744">
+      </font>
+    </font>
+    <background_color>
+      <color name="TextStatic" red="67" green="63" blue="61">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider_1</name>
+    <pv_name>ca://LEBT:FGA_PS3:VSet</pv_name>
+    <x>165</x>
+    <y>360</y>
+    <width>544</width>
+    <height>136</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <major_tick_step_hint>50</major_tick_step_hint>
+    <scale_format />
+    <show_hihi>false</show_hihi>
+    <show_high>false</show_high>
+    <show_low>false</show_low>
+    <show_lolo>false</show_lolo>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <minimum>-500.0</minimum>
+    <maximum>500.0</maximum>
+    <limits_from_pv>true</limits_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>G3</text>
+    <x>75</x>
+    <y>390</y>
+    <width>76</width>
+    <height>76</height>
+    <font>
+      <font family="Courier" style="BOLD" size="25.742574257425744">
+      </font>
+    </font>
+    <background_color>
+      <color name="TextStatic" red="67" green="63" blue="61">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Scaled Slider_2</name>
+    <pv_name>ca://LEBT:FGA_PS4:VSet</pv_name>
+    <x>165</x>
+    <y>540</y>
+    <width>544</width>
+    <height>136</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <major_tick_step_hint>50</major_tick_step_hint>
+    <scale_format />
+    <show_hihi>false</show_hihi>
+    <show_high>false</show_high>
+    <show_low>false</show_low>
+    <show_lolo>false</show_lolo>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <minimum>0.0</minimum>
+    <maximum>200.0</maximum>
+    <limits_from_pv>true</limits_from_pv>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>G4</text>
+    <x>75</x>
+    <y>570</y>
+    <width>76</width>
+    <height>76</height>
+    <font>
+      <font family="Courier" style="BOLD" size="25.742574257425744">
+      </font>
+    </font>
+    <background_color>
+      <color name="TextStatic" red="67" green="63" blue="61">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_1</name>
+    <pv_name>ca://LEBT:FGA_PS3:Vdeb</pv_name>
+    <x>935</x>
+    <y>150</y>
+    <width>55</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <show_units>false</show_units>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+    <precision>-1</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_1</name>
+    <pv_name>ca://LEBT:FGA_PS3:Vfin</pv_name>
+    <x>935</x>
+    <y>215</y>
+    <width>55</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <show_units>false</show_units>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+    <precision>-1</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_2</name>
+    <pv_name>ca://LEBT:FGA_PS3:Npas</pv_name>
+    <x>935</x>
+    <y>270</y>
+    <width>55</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <show_units>false</show_units>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_3</name>
+    <pv_name>ca://LEBT:FGA:CalculDV</pv_name>
+    <x>935</x>
+    <y>320</y>
+    <width>55</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <show_units>false</show_units>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>InitialVoltage</text>
+    <x>775</x>
+    <y>150</y>
+    <width>128</width>
+    <height>28</height>
+    <font>
+      <font family="Courier" style="BOLD" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>Delta V</text>
+    <x>775</x>
+    <y>320</y>
+    <width>128</width>
+    <height>28</height>
+    <font>
+      <font family="Courier" style="BOLD" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Final voltage</text>
+    <x>775</x>
+    <y>215</y>
+    <width>128</width>
+    <height>28</height>
+    <font>
+      <font family="Courier" style="BOLD" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Number of Steps</text>
+    <x>775</x>
+    <y>270</y>
+    <width>128</width>
+    <height>28</height>
+    <font>
+      <font family="Courier" style="BOLD" size="9.900990099009901">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="panelArea" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_11</name>
+    <pv_name>ca://LEBT:FGA:StartMes</pv_name>
+    <bit>-1</bit>
+    <x>715</x>
+    <y>370</y>
+    <width>151</width>
+    <height>32</height>
+    <off_label>Start Measurement</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>.........</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_1</name>
+    <pv_name>ca://LEBT:FGA:StopMes</pv_name>
+    <bit>-1</bit>
+    <x>875</x>
+    <y>370</y>
+    <width>151</width>
+    <height>32</height>
+    <off_label>Stop Measurement</off_label>
+    <off_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </off_color>
+    <on_label>.........</on_label>
+    <on_color>
+      <color red="192" green="192" blue="192">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>ca://LEBT:FGA:Dialog</pv_name>
+    <x>540</x>
+    <y>710</y>
+    <width>396</width>
+    <height>49</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="13.861386138613861">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="TextDynamic" red="67" green="63" blue="61">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_4</name>
+    <pv_name>ca://LEBT:FGA_PS2:VSet</pv_name>
+    <x>635</x>
+    <y>158</y>
+    <width>74</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+    <precision>-1</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_5</name>
+    <pv_name>ca://LEBT:FGA_PS4:VSet</pv_name>
+    <x>635</x>
+    <y>513</y>
+    <width>74</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+    <precision>-1</precision>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input_6</name>
+    <pv_name>ca://LEBT:FGA_PS3:VSet</pv_name>
+    <x>635</x>
+    <y>333</y>
+    <width>74</width>
+    <height>28</height>
+    <font>
+      <font name="TextEntry" family="Arial" style="REGULAR" size="8.910891089108912">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="KeyboardEntry" red="0" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="TextBackground" red="70" green="70" blue="70">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+    <precision>-1</precision>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>XY Graph</name>
+    <x>715</x>
+    <y>419</y>
+    <width>481</width>
+    <height>267</height>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_toolbar>true</show_toolbar>
+    <actions>
+    </actions>
+    <x_axis>
+      <title>Vgrid3</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>-200.0</minimum>
+      <maximum>200.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font family="Arial" style="BOLD" size="8.910891089108912">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>Icf(mA)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>-300.0</minimum>
+        <maximum>300.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font family="Arial" style="BOLD" size="8.910891089108912">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>ca://LEBT:FGA_PS3:Vgrid</x_pv>
+        <y_pv>ca://LEBT:FGA_PS3:Vgrid</y_pv>
+        <err_pv />
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color name="Major" red="255" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_19</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>Injector_Launcher.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Back</text>
+    <x>588</x>
+    <y>37</y>
+    <width>91</width>
+    <height>26</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <height>700</height>
+  <background_color>
+    <color name="HelpPanel" red="181" green="249" blue="215">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Measurement of Ibeam(mA) by a calorimetric method :
+
+We measure the power dissipated by the beam in LEBT Faraday Cup or in the Beam Stopper.
+
+Acquisition :  Temp of Input water ( in the Faraday cup circuit.
+                     Temp of Output water ( in the FC and the BS).
+                      High Voltage 
+                      Duty Cycle (1 if CW)
+
+
+The water flow is constant ( 40 l/mn )
+
+The formula to calculate Ibeam is :
+    
+
+     (((40/60) * 4186,8 * DeltaT) / Vht) * DutyCycle
+        
+Duty Cycle = 1 if CW mode
+
+Signal    |   K633   |  ICV150l
+--------------------------------------
+GE            K633_1   channel 6    with threshold Relay
+FC_IN       K633_2   channel 0
+FC_OUT   K633_3   channel 1
+IC_IN        K633_5   channel 4      Not Used
+IC_OUT    K633-6   channel 5      Not Used
+BS_IN       K633_7   channel 3   (----   IC_OUT  -----)
+BS_OUT   K633_8   channel 2
+
+FGA                        channel 7</text>
+    <x>48</x>
+    <y>78</y>
+    <width>541</width>
+    <height>600</height>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

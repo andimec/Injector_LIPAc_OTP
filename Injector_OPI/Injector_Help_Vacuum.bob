@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <width>700</width>
+  <background_color>
+    <color name="DISCONNECTED" red="200" green="0" blue="200" alpha="200">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>PP : Primary Pump
+TP : Turbomolecular pump
+PV : Primary Valve
+TP : Turbomolecular Valve
+SV : Secondary Valve
+
+
+
+AIV : Air Input Valve
+NIV : Nitrogen Input Valve
+LTV : Leak Test Valve
+
+PGTP : Primary Gauge Turbo Pump
+SGTP : Secondary Gauge Turbo Pump
+PGVC : Primary Gauge Vacuum Chamber
+SGVC : Secondary Gauge Vacuum Chamber
+
+
+SV Forcing : In case of problem it could be necessary to force the opening of at least one SV (secondary Valve). In this case the validation of the SV Forcing button will send to the PLC an information to tell : " Please let me Open SV !"
+
+When you have solve all the problems you must deselect the SV Forcing condition.</text>
+    <x>48</x>
+    <y>78</y>
+    <width>600</width>
+    <height>500</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="11.881188118811881">
+      </font>
+    </font>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>
