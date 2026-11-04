@@ -98,6 +98,21 @@ def test_default_interlock_logic_is_wired_into_application():
     assert engine.context.interlocks["RF:BEAM:ENABLE"] is False
 
 
+def _evaluate_interlock_equations_without_plant(engine):
+    """Unit-test authorization equations without advancing equipment dynamics.
+
+    Previously these tests manually published model-owned status PVs and then
+    ran engine.step(), which now correctly replaces those values with device
+    model outputs. Test equations and end-to-end plant response separately.
+    """
+    from injector_otp.interlocks.logic import InjectorInterlockLogic
+
+    engine.context.pv = engine.pv_state.values()
+    engine.context.device_faults = dict(engine.control_plane.device_faults)
+    InjectorInterlockLogic().evaluate(engine.context, engine.control_plane)
+    engine.context.interlocks = dict(engine.control_plane.interlocks)
+
+
 def test_hv_interlock_requires_all_documented_conditions():
     engine, pv, _ = build_application()
     values = {
@@ -114,11 +129,11 @@ def test_hv_interlock_requires_all_documented_conditions():
         "LEBT:HV_PS:ExtSec": True,
     }
     _publish_many(pv, values)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["HV:ENABLE"] is True
 
     pv.publish("SRC:COIL02:FSDefStat", False)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["HV:ENABLE"] is False
 
 
@@ -137,11 +152,11 @@ def test_rf_plasma_interlock_uses_d2_gas_configuration():
         "PPS:PLSM:PermStat": True,
     }
     _publish_many(pv, values)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["RF:PLASMA:ENABLE"] is True
 
     pv.publish("SRC:SVL:D2OpenStat", False)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["RF:PLASMA:ENABLE"] is False
 
 
@@ -170,11 +185,11 @@ def test_rf_beam_interlock_requires_documented_beam_conditions():
         "PPS:BEAM:InhibitStat": False,
     }
     _publish_many(pv, values)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["RF:BEAM:ENABLE"] is True
 
     pv.publish("PPS:BEAM:InhibitStat", True)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["RF:BEAM:ENABLE"] is False
 
 
@@ -195,11 +210,11 @@ def test_external_device_fault_can_block_authorization_without_changing_pv_state
         "LEBT:HV_PS:ExtSec": True,
     }
     _publish_many(pv, values)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["HV:ENABLE"] is True
 
     controls.set_device_fault("hv", True)
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
     assert engine.context.interlocks["HV:ENABLE"] is False
     assert pv.get("SRC:RF:FSDefStat") is True
 
@@ -220,7 +235,7 @@ def test_legacy_relationships_are_exposed_separately():
             "LEBT:CHOP_PS:OnStat": True,
         },
     )
-    engine.step()
+    _evaluate_interlock_equations_without_plant(engine)
 
     assert engine.context.interlocks["LEGACY:MPS:FOCALIZATION:OK"] is True
     assert engine.context.interlocks["LEGACY:MPS:VACUUM:OK"] is True
