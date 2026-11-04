@@ -163,17 +163,17 @@ class SimulationEngine:
             self.pv_state.publish(name, value, source=source)
 
     def _publish_state(self) -> None:
-        if self.pv_state is not None and "OTP:STATE" in self.pv_state.names():
+        if self.pv_state is not None and "SIM:STATE" in self.pv_state.names():
             self.pv_state.publish(
-                "OTP:STATE",
+                "SIM:STATE",
                 self.context.state.value,
                 source="engine",
             )
 
     def _publish_time(self) -> None:
-        if self.pv_state is not None and "OTP:SIM_TIME" in self.pv_state.names():
+        if self.pv_state is not None and "SIM:TIME" in self.pv_state.names():
             self.pv_state.publish(
-                "OTP:SIM_TIME",
+                "SIM:TIME",
                 self.context.time,
                 source="engine",
             )
