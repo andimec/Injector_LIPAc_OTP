@@ -1,0 +1,48 @@
+# Initial training-model assumptions. NOT calibrated hardware properties.
+#
+# Sources for reference operating points:
+# - BA_D_2E9QH7 v2.0 (2026), Injector CW operating procedure:
+#   source coils 41.6/87.8 A, solenoids 280/0 A, HV 100 kV,
+#   RF 880 W and approximately 2.3 sccm D2.
+# - BA_D_2E2GU7 v1.0 (2026), startup after maintenance.
+#
+# The initial rates below are training defaults, not measured power
+# electronics transfer functions. Each can be replaced by fit/validation.
+supplies:
+  SRC:COIL01_PS:
+    current_rate_per_s: 1.0
+  SRC:COIL02_PS:
+    current_rate_per_s: 1.0
+  LEBT:SOL01_PS:
+    current_rate_per_s: 2.0
+  LEBT:SOL02_PS:
+    current_rate_per_s: 2.0
+  LEBT:HV_PS:
+    voltage_rate_per_s: 1.0
+  SRC:IE_PS:
+    voltage_rate_per_s: 1.0
+
+vacuum:
+  initial_pressure_mbar: 1.0e-6
+  base_pressure_mbar: 1.0e-8
+  vacuum_ok_threshold_mbar: 1.0e-5
+  pumping_tau_s: 10.0
+  leak_rate_mbar_s: 2.0e-8
+  gas_coupling_mbar_s_per_sccm: 2.0e-6
+  fault_inrush_mbar_s: 1.0e-3
+
+gas:
+  response_tau_s: 0.5
+
+rf:
+  warmup_s: 4.0
+  power_tau_s: 0.5
+  reference_stub_x: 1860
+  reference_stub_y: 2756
+  minimum_reflection_fraction: 0.02
+
+beam:
+  nominal_faraday_current_mA: 145.0
+  reference_rf_W: 880.0
+  reference_d2_sccm: 2.3
+  reference_hv_kV: 100.0
