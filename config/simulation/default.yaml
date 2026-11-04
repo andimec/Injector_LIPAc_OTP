@@ -1,6 +1,7 @@
 # Default simulation startup configuration.
 # This file defines initial conditions only.
 # Calculated interlock outputs and model readbacks must not be configured here.
+# Raw PPS permits and physical safety signals are external scenario conditions.
 
 simulation:
   initial_state: "OFF"
@@ -24,12 +25,17 @@ initial_pvs:
   LEBT:HV:RlyCloseStat: true
   LEBT:VAC01:SGVCDefStat: true
   LEBT:VAC02:SGVCDefStat: true
-  SRC:IE_PS:OnStat: true
+  SRC:IE_PS:ExtSec: true
+  LEBT:HV_PS:ExtSec: true
+  LEBT:HV:RlyDefOpen: true
   INJ:WS:ResPCDefStat: true
   SRC:COIL01:FSDefStat: true
   SRC:COIL02:FSDefStat: true
   SRC:RF:FSDefStat: true
   PPS:HV:PermStat: true
+  PPS:SVL:D2PermStat: true
+  PPS:SVL:H2PermStat: true
+  PPS:GV:OpenPermStat: true
   PPS:PLSM:PermStat: true
   PPS:CHOP:PermStat: true
   PPS:ACCL:PermStat: true
