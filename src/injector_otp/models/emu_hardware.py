@@ -12,6 +12,8 @@ from dataclasses import dataclass
 
 from .base import SubsystemModel
 from .catalog import DeviceCatalog
+from .emu_geometry import EmuGeometry
+from .emu_beam import SyntheticPhaseSpace
 
 
 def _bool(value: object) -> bool:
@@ -248,6 +250,12 @@ class EmuAcquisitionModel(SubsystemModel):
         p = params or {}
         self.period_s = max(0.001, float(p.get("synthetic_period_s", 0.1)))
         self.synthetic_enabled = bool(p.get("synthetic_enabled", True))
+        fixture = p.get("synthetic_phase_space", {})
+        self.fixture_enabled = bool(fixture.get("enabled", False))
+        self.fixture = SyntheticPhaseSpace(**{
+            k: v for k, v in fixture.items() if k != "enabled"
+        }) if self.fixture_enabled else None
+        self.geometry = EmuGeometry()
         self.elapsed_s = 0.0
         self.number = 0
 
@@ -260,9 +268,20 @@ class EmuAcquisitionModel(SubsystemModel):
             return
         self.elapsed_s = 0.0
         self.number += 1
-        # Synthetic event is periodic for exercising WAIT_SAMPLE logic.
-        # Actual value may be supplied by a scenario or beam model.
+        # A scenario may inject real-like samples via the local PV adapter;
+        # the optional Gaussian fixture is *explicitly synthetic* and off by
+        # default. A future live acquisition adapter will publish true events.
         current = _float(context.pv.get("LEBT:EMIT_FC:I", 0))
+        if self.fixture is not None:
+            motor = float(context.metrics.get("emu.motor_position_mm", 0))
+            vht = float(context.metrics.get("emu.VhtRdbk", 0))
+            energy = _float(context.pv.get("LEBT:EMIT:Energy", 100), 100)
+            angle_mrad = self.geometry.vht_to_angle_rad(vht, energy) * 1000
+            current = self.fixture.current_mA(motor, angle_mrad)
         if self.catalog.has("LEBT:EMIT_FC:I"):
-            context.emit("LEBT:EMIT_FC:I", current, "emu_facq_synthetic_clock")
+            context.emit(
+                "LEBT:EMIT_FC:I", current,
+                "emu_facq_uncalibrated_gaussian" if self.fixture is not None
+                else "emu_facq_synthetic_clock",
+            )
         context.metrics["emu.facq_sample_id"] = float(self.number)
