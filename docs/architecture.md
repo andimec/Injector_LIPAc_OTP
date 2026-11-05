@@ -1,6 +1,6 @@
 # Injector LIPAc OTP: current software architecture
 
-> **Baseline:** 5 November 2026. Repository `main` after the native-name PV/readback integration (commit `062cdd8`). This is an offline Python training simulator, not a deployed or validated replica of LIPAc hardware.
+> **Baseline:** 5 November 2026. Native-name PV models plus offline EMU Fast/Full experimental replay. This is not a deployed or validated replica of LIPAc hardware.
 
 ## 1. Design and deployment rules
 
@@ -54,7 +54,8 @@ The engine reads the current PV state, applies faults, evaluates pre-model autho
 | RF generator, ATU encoding and timing | `models/control_devices.py` | Source register/bit calculations plus synthetic dynamics; not a full RF/coupling model |
 | Chopper/CIM | `models/chopper_cim.py` | Synthetic PRE-ARM/ARMED/FBI and snapshots; FPGA logic unverified |
 | Faraday cup, positioners and calorimetry | `models/control_devices.py`; `calorimetry.py` | Qualitative beam signal and recovered legacy equations |
-| EMU motor, servo, HV plates, FACQ and scans | `models/emu_hardware.py`; `emu_sequencer.py`; `emu_geometry.py`; `emu_analysis.py` | Executable offline SNL-inspired reconstruction; waveform, motor and hardware realism unvalidated |
+| EMU motor, servo, HV plates, FACQ and scans | `models/emu_hardware.py`; `emu_sequencer.py`; `emu_geometry.py`; `emu_analysis.py` | Source-derived in-memory SNL model; synthetic FACQ, motor/plate dynamics unvalidated |
+| EMU archived Fast/Full scan playback | `models/emu_replay.py`; `scripts/launch_emu_snl_replay.sh`; `Injector_OPI/Scripts/emitShell_v2.sh` | Standalone xterm replay of three archived datasets, legacy TXT output plus provenance; no PV bridge |
 | Current authorization and selected historical PLC equations | `interlocks/logic.py`; `original_lcs_logic.py` | Training logic, not an implementation of the real safety system |
 
 Model registration and maturity labels are in `src/injector_otp/models/injector.py` and `src/injector_otp/models/README.md`. Some source signals are **interface-only** and deliberately have no fabricated readback.
@@ -79,7 +80,9 @@ A registry entry may represent a record field, a macro-dependent name, an OPI re
 |---|---|
 | Architecture, local Python state and tests | Implemented |
 | V2.0 PV inventory and Python models | Implemented in varying levels of maturity |
-| EMU offline scanning and provisional analysis | Implemented; physical/OPI validation pending |
+| EMU offline scanning and provisional analysis | Implemented in memory; physical calibration pending |
+| EMU recorded-data replay in xterm | CLI and OPI Start SNL script hook implemented, GUI on Debian unverified |
+| OPI Validate/ON linked to the Python replay via a Soft IOC | **Pending** |
 | Native PV naming and local write authorization | Implemented in Python |
 | Generated dumb IOC records with record-field fidelity | **Pending** |
 | EPICS 7 CA/PVA + Python bidirectional bridge | **Pending** |
@@ -89,4 +92,21 @@ A registry entry may represent a record field, a macro-dependent name, an OPI re
 
 ## 8. Related documents
 
-[Configuration](configuration.md) · [EPICS architecture](epics_architecture.md) · [IOC contract](simulation_ioc_contract.md) · [PV runtime contract](pv_runtime_contract.md) · [Readback matrix](pv_readback_traceability.md) · [Modeling baseline](modeling_baseline.md) · [Original LCS provenance](original_lcs_model_logic.md) · [EMU reconstruction](emu_reconstruction.md).
+[Configuration](configuration.md) · [EPICS architecture](epics_architecture.md) · [IOC contract](simulation_ioc_contract.md) · [PV runtime contract](pv_runtime_contract.md) · [Readback matrix](pv_readback_traceability.md) · [Modeling baseline](modeling_baseline.md) · [Original LCS provenance](original_lcs_model_logic.md) · [EMU reconstruction](emu_reconstruction.md) · [EMU archived Fast Scan replay](emu_fast_scan_replay.md).
+
+### Separate EMU recorded-data path
+
+```text
+Training Phoebus OPI Start SNL (command action)
+  -> Injector_OPI/Scripts/emitShell_v2.sh
+  -> scripts/launch_emu_snl_replay.sh
+  -> xterm + Python models/emu_replay.py
+  -> read-only Data/EMU/emit*_optm.txt
+  -> local output/emu/emitYYYYMMDD-HHmm_optm.txt + *.replay.json
+```
+
+This path **does not run the in-memory `EmuScanSequencer` or
+`SimulationPVBackend`**, and does not write EPICS PVs. The OPI
+Validate and ON controls remain unconnected to it; the terminal
+accepts `validate` and `on` instead. Isolation and provenance are
+required to avoid confusing replay output with a fresh beam acquisition.

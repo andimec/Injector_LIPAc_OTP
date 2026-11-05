@@ -102,3 +102,23 @@ are kept separate from explicitly uncalibrated movement/response parameters.
 See [EMU reconstruction](emu_reconstruction.md) and [readback traceability](pv_readback_traceability.md). The in-memory simulator must
 not be interpreted as a deployed interlock, real FACQ waveform acquisition or
 calibrated transverse emittance measurement.
+
+## EMU recorded measurements: file replay is not a dynamic model
+
+The independent `emu_replay.py` application reads three archived
+experimental datasets (Fast: **1,395** samples; full-coverage:
+**4,343** and **6,413** samples). It validates the archived geometry
+against `emu_geometry.build_roi`, shows each saved point in xterm,
+and exports SNL-compatible five-column TXT plus provenance.
+
+The reference 2026 Fast Scan uses upper 46 / lower -42 mm, motor step
+2 mm, 100 keV deuterons, peaks -37/+45 mrad, delta 20 mrad and 30
+voltage intervals. Full Scan uses 60/-44 mm, step 2 mm, 100 keV,
+peaks 0/0 mrad, delta 100 mrad and 120 voltage intervals. Both are
+operator configurations of the generic emittance scan action.
+
+The replay **does not** drive the Python motor, plate, synthetic FACQ
+or EPICS state. It cannot validate machine physics or represent a
+new acquisition. OPI Start SNL invokes the training shell hook;
+its Validate/ON PV link is outstanding. See [EMU reconstruction](emu_reconstruction.md)
+and [EMU Fast Scan replay](emu_fast_scan_replay.md).

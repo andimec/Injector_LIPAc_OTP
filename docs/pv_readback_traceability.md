@@ -64,6 +64,18 @@ The following names and generation rules are implemented in `src/injector_otp/mo
 | `LEBT:EMIT:Pausemit` | paused sequencer state | same | **GAP:** not all state is exposed as an OPI-facing status PV |
 | FACQ timing/acquisition commands | `LEBT:EMIT_FC:I` | `EmuAcquisitionModel` | PARTIAL, synthetic current; waveform realism unvalidated |
 
+**EMU experimental replay boundary:** the training
+`Injector_OPI/emitMeasurement_v2.bob` **Start SNL** command opens
+`models/emu_replay.py` through `Injector_OPI/Scripts/emitShell_v2.sh`.
+That is a **local shell invocation**, not an EPICS PV writer.
+The program emits a legacy TXT plus JSON provenance; it **does not
+publish** any `LEBT:EMIT_FC:I`, motor/plate readback, status or
+waveform PV. The OPI's `Validate` and `Actemit` controls remain
+unconnected to the standalone xterm replay pending an isolated
+Soft IOC bridge. The matrix above applies to the **in-memory
+sequencer**, not the recorded-data replay. See
+[Fast Scan replay](emu_fast_scan_replay.md).
+
 **EPICS detail:** `MOTOR.RBV`, `MOTOR.DMOV` and `OnOffCmd.RVAL` represent *fields of existing records*, not independent records to generate with literal dots in `.db` record names. Verify the Soft IOC record-field implementation and OPI bindings.
 
 ## 3. Gas, safety valves, pumping and vacuum
