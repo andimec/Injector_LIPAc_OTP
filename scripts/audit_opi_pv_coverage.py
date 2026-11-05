@@ -53,6 +53,25 @@ def pv_registry_match(pv: str, registry: set[str]) -> str:
     return "missing"
 
 
+def binding_pvs(raw: str) -> list[tuple[str, str]]:
+    """Extract quoted PVs from Phoebus expressions; ignore constant literals.
+
+    Examples: ='LEBT:CHOP_IM:DbgDPulse'/1000 -> one PV, =1 -> no PV.
+    Dynamic/unquoted expressions remain explicit unresolved bindings.
+    """
+    value = normalize_pv(raw)
+    if not value.startswith("="):
+        return [("direct", value)]
+    quoted = re.findall(r"""['"]([^'"]+)['"]""", value)
+    names = [normalize_pv(item) for item in quoted
+             if ":" in item or MACRO.search(item)]
+    if names:
+        return [("expression_reference", name) for name in names]
+    if re.fullmatch(r"=\\s*[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)\\s*", value):
+        return [("constant_expression", "")]
+    return [("unresolved_expression", "")]
+
+
 def widget_role(widget_type: str, in_write_action: bool = False) -> str:
     if in_write_action or any(part in widget_type.lower().replace(" ", "") for part in WRITE_WIDGET_PARTS):
         return "potential_write"
@@ -77,21 +96,20 @@ def collect_opi_references(path: Path, root: Path) -> list[dict[str, str]]:
         if tagname(node) == "pv_name" and not any(tagname(child) == "pv_name" for child in node):
             raw = (node.text or "").strip()
             if raw:
-                name = normalize_pv(raw)
-                # Do not count generic macro-only placeholders as concrete PVs;
-                # preserve unresolved expressions for separate review.
-                if name:
-                    widget_type = ""
-                    widget_name = ""
-                    if widget is not None:
-                        widget_type = widget.get("type") or widget.get("typeId", "").split(".")[-1]
-                        if not widget_type:
-                            widget_type = widget.findtext("widget_type", default="") or ""
-                        widget_name = widget.findtext("name", default="") or ""
+                widget_type = ""
+                widget_name = ""
+                if widget is not None:
+                    widget_type = widget.get("type") or widget.get("typeId", "").split(".")[-1]
+                    if not widget_type:
+                        widget_type = widget.findtext("widget_type", default="") or ""
+                    widget_name = widget.findtext("name", default="") or ""
+                for binding, name in binding_pvs(raw):
                     rows.append({
                         "file": path.relative_to(root).as_posix(),
                         "generation": "legacy" if path.suffix == ".opi" else "phoebus",
                         "pv": name,
+                        "raw_binding": raw,
+                        "binding": binding,
                         "widget_type": widget_type,
                         "widget_name": widget_name,
                         "role": widget_role(widget_type, action_write),
@@ -217,7 +235,7 @@ def build_report(repo: Path, include_legacy: bool = True,
     producers = runtime_producers(repo) if probe_runtime else {}
     for row in rows:
         name = row["pv"]
-        row["registry"] = pv_registry_match(name, registry)
+        row["registry"] = (pv_registry_match(name, registry) if name else row["binding"])
         row["runtime_owner"] = (
             "operator_input" if name in inputs else
             "external_condition" if name in external else
@@ -256,9 +274,9 @@ def build_report(repo: Path, include_legacy: bool = True,
             "in_legacy_opi": "yes" if historic else "no",
         })
 
-    unique = {r["pv"] for r in rows}
-    modern_unique = {r["pv"] for r in rows if r["generation"] == "phoebus"}
-    legacy_unique = {r["pv"] for r in rows if r["generation"] == "legacy"}
+    unique = {r["pv"] for r in rows if r["pv"]}
+    modern_unique = {r["pv"] for r in rows if r["generation"] == "phoebus" and r["pv"]}
+    legacy_unique = {r["pv"] for r in rows if r["generation"] == "legacy" and r["pv"]}
     missing = sorted({r["pv"] for r in rows if r["registry"] == "missing"})
     macros = sorted({r["pv"] for r in rows if r["registry"] == "macro_unresolved"})
     unallowlisted = sorted({r["pv"] for r in rows
@@ -287,6 +305,9 @@ def build_report(repo: Path, include_legacy: bool = True,
         "operator_allowlisted": len(inputs),
         "referenced_registry_unique": len(referenced),
         "missing_pvs": len(missing),
+        "expression_pv_references": sum(r["binding"] == "expression_reference" for r in rows),
+        "constant_expressions": sum(r["binding"] == "constant_expression" for r in rows),
+        "unresolved_expressions": sum(r["binding"] == "unresolved_expression" for r in rows),
         "unresolved_macros": len(macros),
         "phoebus_potential_writes_not_allowlisted": len(unallowlisted),
         "phoebus_readback_like_not_observed_in_OFF_probe": len(unobserved_monitors),
@@ -362,7 +383,7 @@ def main() -> int:
     dest = args.output_dir.resolve()
     dest.mkdir(parents=True, exist_ok=True)
     _write_csv(dest / "opi_pv_references.csv", report["references"], [
-        "file", "generation", "pv", "widget_type", "widget_name", "role",
+        "file", "generation", "pv", "raw_binding", "binding", "widget_type", "widget_name", "role",
         "registry", "runtime_owner", "producer", "runtime_observation", "write_acl",
     ])
     _write_csv(dest / "operator_readback_pairs.csv", report["pairs"], [
