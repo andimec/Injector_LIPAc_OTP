@@ -391,7 +391,7 @@ def main() -> int:
     p.add_argument("--exclude-legacy", action="store_true")
     p.add_argument("--skip-runtime", action="store_true")
     p.add_argument("--check", action="store_true",
-                   help="Fail only on XML parse errors or impossible registry/ACL references; known coverage gaps remain report-only.")
+                   help="Fail on XML parse errors, concrete OPI PVs missing from V2.0, or unregistered input allowlist PVs; model realism gaps remain report-only.")
     args = p.parse_args()
 
     report = build_report(args.repo.resolve(), not args.exclude_legacy, not args.skip_runtime)
@@ -433,9 +433,11 @@ def main() -> int:
                            (args.repo / "config/pv_registry_v2_0.json").read_text(encoding="utf-8")
                        )["pvs"]
                    }]
-        if report["parse_errors"] or invalid:
+        if report["parse_errors"] or invalid or report["missing"]:
             print(f"Audit failure: {len(report['parse_errors'])} XML errors, "
-                  f"{len(invalid)} unregistered allowlist PVs", file=sys.stderr)
+                  f"{len(invalid)} unregistered allowlist PVs, "
+                  f"{len(report['missing'])} concrete OPI PVs absent from V2.0",
+                  file=sys.stderr)
             return 1
     return 0
 
