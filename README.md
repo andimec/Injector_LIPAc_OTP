@@ -147,7 +147,9 @@ The EMU provides **two distinct offline workflows**:
 - **Recorded-data replay:** `emu_replay.py` reads the 2026 experimental
   five-column `_optm.txt` files, prints the saved samples in `xterm`,
   and generates a compatible `emitYYYYMMDD-HHmm_optm.txt` result with
-  an additional `*.replay.json` provenance file. This adapter does not
+  an additional `*.replay.json` provenance file **only when
+  `LEBT:EMIT:Savemit=ON`**. With Save OFF, the full console replay runs
+  without creating any result file. This adapter does not
   publish EPICS PVs, run the physical model or fabricate waveforms.
 
 The archived **Fast Scan** (6 July 2026) has **45 motor positions × 31
@@ -169,10 +171,14 @@ through the EPICS bridge. Do not install the OTP script on LIPAc.
 python3 -m pip install -e ".[dev]"
 # Synthetic internal model
 python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_training.csv
-# Recorded Fast Scan with xterm on a local X11 desktop (about 3 minutes)
+# Recorded Fast Scan with xterm on a local X11 desktop (about 3 minutes).
+# Type "save on" to enable file output, then "validate" and "on".
+# Without save on, only the console is displayed.
 ./scripts/launch_emu_snl_replay.sh --duration 180
-# Immediate headless reproduction with output + provenance
-python3 -m injector_otp.models.emu_replay --auto --output-dir output/emu
+# Immediate headless reproduction WITH output + provenance
+python3 -m injector_otp.models.emu_replay --auto --save on --output-dir output/emu
+# Immediate headless reproduction WITHOUT creating files
+python3 -m injector_otp.models.emu_replay --auto --save off
 # Regression checks
 pytest tests/test_emu_replay.py tests/test_emu_sequences.py tests/test_emu_geometry.py
 ```
@@ -185,3 +191,12 @@ Documentation: [Fast Scan experimental replay](docs/emu_fast_scan_replay.md),
 **Boundary:** Neither path contacts production LIPAc CA/PVA endpoints;
 the future Soft IOC must be isolated. CI tests do not validate xterm
 rendering, OPI-to-PV connectivity or calibrated machine physics.
+
+The source SNL v2 forces `Savemit` from 0 to 1 when measurement begins.
+That legacy behavior is **intentionally not reproduced** in the OTP:
+`Savemit=OFF` must mean no output files. The Python sequencer accepts
+`Validate=1` as a rising-edge trigger, `Actemit=ON` to start and
+`Actemit=OFF` to abort; it latches `Savemit` at scan start, without
+writing to disk itself. A local storage/EPICS bridge is still required for
+**OPI checkbox -> file creation**; the console's `save on/off` is an
+explicit offline stand-in, not an active CA connection.

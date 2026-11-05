@@ -273,3 +273,27 @@ that requires a separate bridge to the isolated Soft IOC.
 
 Do not deploy the modified script on the real LIPAc workstation or
 route the native-name training PVs to the machine's CA network.
+
+## Operator PV: Validate, Actemit and Savemit
+
+The training OPI defines **three distinct controls**:
+
+1. `LEBT:EMIT:Validate` is a boolean push/toggle command; the Python
+   sequencer validates the ROI on a rising edge and resets it to zero.
+2. `LEBT:EMIT:Actemit` is an ON/OFF choice: ON starts only after
+   validation, and OFF aborts the running sequence.
+3. `LEBT:EMIT:Savemit` is a checkbox: the current ON/OFF value is
+   latched as `EmuScanSequencer.save_requested` when Actemit starts.
+   The runtime also exposes `emu.scan_save_requested` in local
+   metrics. It does **not** silently change Savemit from 0 to 1.
+
+This intentionally differs from legacy `emitSnlEmu_v2.st`, which
+explicitly forced Save ON at the start of a measurement. The OTP
+implements the operator's requested OFF = no new files policy.
+
+The in-memory motor/scan model has **no filesystem side effects**;
+`save_requested` is a contract for the future persistence bridge.
+Meanwhile the standalone `emu_replay.py` honors the same binary
+meaning via a local `--save on/off` parameter or interactive
+`save on/off` console command, OFF by default. It cannot read
+Phoebus PVs until the isolated IOC integration is completed.

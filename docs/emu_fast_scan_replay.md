@@ -47,8 +47,9 @@ python3 -m pip install -e .
 ~~~
 
 The `Start SNL` action opens a 110x60 terminal and enters
-**waiting**. In this version type `validate` and then `on`
-in the terminal. `--duration 180` spreads the default 1,395 points
+**waiting**. In this version type `save on` if you want a file
+(default: Save OFF), then `validate` and `on` in the terminal.
+When Save is OFF, **only the terminal output is produced**. `--duration 180` spreads the default 1,395 points
 over roughly three minutes, matching the procedure's order of magnitude.
 Use `--duration 0` (default) for immediate testing.
 
@@ -56,9 +57,11 @@ Without an X11 server:
 
 ~~~bash
 python3 -m injector_otp.models.emu_replay --list
-python3 -m injector_otp.models.emu_replay --auto --duration 0 \
+python3 -m injector_otp.models.emu_replay --auto --save on --duration 0 \
   --source src/injector_otp/Data/EMU/emit20260706-1434_optm.txt \
   --output-dir output/emu
+# Identical console display but no TXT, JSON or partial output:
+python3 -m injector_otp.models.emu_replay --auto --save off
 ~~~
 
 The launcher sets `EPICS_CA_MAX_ARRAY_BYTES=10485760` for script
@@ -73,8 +76,15 @@ the same order **in the standalone console**: `Start SNL` launches the
 Python process and prints `Emit: waiting`; `validate` checks the
 archived profile; `on` starts a time-scaled printing of saved samples.
 
-The actual Phoebus buttons for Validate and ON still write their own
-source PVs and are **not connected to this standalone replay**.
+The actual Phoebus controls `LEBT:EMIT:Validate` (bool button),
+`LEBT:EMIT:Actemit` (choice ON/OFF) and
+`LEBT:EMIT:Savemit` (checkbox ON/OFF) write their source PVs but
+are **not connected to this standalone replay**. The console equivalent
+is `validate`, `on` and `save on/off`. The in-memory sequencer
+reads the first two actions and latches Savemit at the start; it
+also aborts on Actemit=OFF. The replay accepts a stop callback for
+a future isolated EPICS bridge but the GUI buttons cannot yet stop
+a running replay.
 The file reader imports the existing ROI geometry and `EmuSample`
 structure, but does not call the in-memory simulation's state machine,
 publish FC current PVs or write plate/motor commands.
@@ -92,7 +102,9 @@ by default or the explicitly configured `--output-dir` in the
 **isolated training filesystem**. Do not set a real acquisition directory.
 
 The output retains the legacy header and five numeric columns.
-Only the run's `date` and `file` header lines are updated.
+Only the run's `date` and `file` header lines are updated, and this
+happens **only when Save is ON**. When Save is OFF no output folder,
+TXT, JSON or partial result is created.
 A separate `*.replay.json` sidecar identifies the archived input,
 number of samples, and `live_beam: false`, preventing confusion
 with a new measurement. Same-minute file collisions are never
@@ -136,8 +148,10 @@ for that later integration.
 
 ## Regression tests and rollout checklist
 
-Run `pytest tests/test_emu_replay.py`. GitHub Actions tests validate the
-three archived datasets, the default Fast Scan count and geometry,
+Run `pytest tests/test_emu_replay.py tests/test_emu_sequences.py`.
+GitHub Actions tests validate the OPI widget types for the three
+control PVs, Savemit=ON file creation, Savemit=OFF console-only mode,
+Actemit=OFF stop semantics, three archived datasets, the Fast Scan geometry,
 recorded columns, console Validate/ON ordering, source-compatible
 filename/header, provenance and no-overwrite handling. Tests also
 check the command path from the OTP OPI to the shell launcher.
@@ -152,3 +166,24 @@ The actual GUI working directory must be verified; CI cannot check X11.
 within xterm, local EPICS IOC readback publication, replayed FACQ
 waveform arrays and connection to production. Output files are replay
 artifacts, **not new beam measurements**.
+
+### Original SNL Save behavior and the OTP policy
+
+The original `emitSnlEmu_v2.st`, `state wait`, contains a block that
+**forces `saveEmit=1` whenever `actionEmit==1` and saveEmit was 0**.
+This conflicts with the requested Save-checkbox behavior. The OTP
+**deliberately removes this forced transition**.
+
+| OPI PV | Type | OTP model action | Standalone xterm action |
+|---|---|---|---|
+| `LEBT:EMIT:Validate` | Boolean | Rising-edge ROI validation | `validate` |
+| `LEBT:EMIT:Actemit` | Choice ON/OFF | ON start; OFF stop | `on` starts; stop callback available for future PV bridge |
+| `LEBT:EMIT:Savemit` | Checkbox | Preserved and latched at start; never forced ON | `save on` / `save off`; CLI `--save on/off` |
+
+The memory sequencer does not directly write files, because output
+storage belongs in an adapter. The standalone replay does write
+files if and only if Save is ON. The present terminal interface has
+no EPICS CA/PVA listener: it **cannot** read the current value of
+Savemit in Phoebus. In the absence of that connection it defaults
+to OFF, avoiding accidental output. Active replay stopping via
+the OPI's Actemit OFF still needs an isolated bridge.
