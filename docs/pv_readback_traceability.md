@@ -23,9 +23,9 @@ The following names and generation rules are implemented in `src/injector_otp/mo
 | `SRC:COIL02_PS:ISet` | `SRC:COIL02_PS:IRdbk` | same | MODEL |
 | `LEBT:SOL01_PS:ISet` | `LEBT:SOL01_PS:IRdbk` | same | MODEL |
 | `LEBT:SOL02_PS:ISet` | `LEBT:SOL02_PS:IRdbk` | same | MODEL |
-| `LEBT:STH01_PS:ISet` | `LEBT:STH01_PS:IRdbk` | same | MODEL, conditional on registry |
-| `LEBT:STH02_PS:ISet` | `LEBT:STH02_PS:IRdbk` | same | MODEL, conditional on registry |
-| `LEBT:STV01_PS:ISet` | `LEBT:STV01_PS:IRdbk` | same | MODEL, conditional on registry |
+| `LEBT:STH01_PS:ISet` | `LEBT:STH01_PS:IRdbkcalc` | same | MODEL, uncalibrated training current |
+| `LEBT:STH02_PS:ISet` | `LEBT:STH02_PS:IRdbkcalc` | same | MODEL, uncalibrated training current |
+| `LEBT:STV01_PS:ISet` | `LEBT:STV01_PS:IRdbk` | same | PARTIAL, `IRdbkcalc` has unresolved source `(A*B)/C` scaling |
 | `LEBT:STV02_PS:ISet` | `LEBT:STV02_PS:IRdbk` | same | MODEL, conditional on registry |
 | `SRC:IE_PS:ISet` | `SRC:IE_PS:IRdbk`, `IRdbkcalc`, `ISetRdbk`, `RdbkCalcI` | same | MODEL, raw analog vs engineering units differ |
 | `SRC:IE_PS:VSet` | `SRC:IE_PS:VRdbk`, `VRdbkcalc` | same | MODEL, raw vs engineering |
@@ -40,6 +40,8 @@ The following names and generation rules are implemented in `src/injector_otp/mo
 | Power-supply `RESET` / `RstCmd` / `Reset` | same prefix `:RdyStat` | same | MODEL, resets simulated fault latch only |
 | `LEBT:SOL01_PS:Rampe`, `SOL02_PS:Rampe`; coil `:Rampe` | respective `:IRdbk` rate of change | same | MODEL, manual rate is applied when positive |
 | `LEBT:AUTO:UptoHT`, `StopHT` | HV/IE/repeller readbacks above | `models/hv_auto_ramp.py` `HVAutoRampSequencer` | DERIVED supervisory command; no unique readback pair |
+
+**Horizontal steerers:** `LEBT:STH01_PS:VSet` and `LEBT:STH02_PS:VSet` now drive separate simulated `:VRdbkcalc` readbacks in volts. The model applies its configured voltage slew rate, power-on gating and shutdown. These values are **not** verified hardware voltmeter calibration; see [measured OPI coverage](opi_pv_coverage.md).
 
 **Caution:** never treat a raw `:IRdbk`/ `:VRdbk` Modbus analog value as an engineering-unit display when the model explicitly provides `:IRdbkcalc` / `:VRdbkcalc`. HV `:ICmd` is a current limit, not load-current measurement.
 

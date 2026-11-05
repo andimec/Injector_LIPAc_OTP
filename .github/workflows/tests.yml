@@ -16,3 +16,12 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: pip install -e ".[dev]"
       - run: pytest
+      - name: Audit OPI/PV registry and model readbacks
+        run: python scripts/audit_opi_pv_coverage.py --check --output-dir reports/pv_opi_coverage
+      - name: Upload PV audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pv-opi-coverage
+          path: reports/pv_opi_coverage/
+          if-no-files-found: warn

@@ -206,6 +206,12 @@ class PowerSupplyDevice(SubsystemModel):
             # Do not invent LectIht or ScaleIHT from ICmd alone.
         else:
             self._emit(context, feedback_current, "IRdbk", "IRdbkcalc")
+            # Original STH01/STH02 DBs expose an engineering-unit (V)
+            # ai "VRdbkcalc" alongside the operator's VSet. Their measured
+            # power-supply transfer function is not provided, so publish the
+            # reduced-order training voltage, never an instantaneous echo.
+            if self.prefix in ("LEBT:STH01_PS", "LEBT:STH02_PS"):
+                self._emit(context, s.voltage, "VRdbkcalc")
 
         # The original SOL*.db implements status bit0=on, bit1=off,
         # bit2=ready. The asyn source is absent in OTP, so Python owns it.
