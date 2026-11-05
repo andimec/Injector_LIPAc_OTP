@@ -90,3 +90,15 @@ def test_output_filename_is_jst():
     from datetime import timezone
     when = datetime(2026, 11, 5, 2, 59, tzinfo=timezone.utc)
     assert output_filename(when) == "emit20261105-1159_optm.txt"
+
+
+def test_otp_opi_start_snl_invokes_python_replay():
+    """The existing Phoebus button keeps using the same OTP shell entrypoint."""
+    root = DATA_DIRECTORY.parents[3]
+    opi = (root / "Injector_OPI" / "emitMeasurement_v2.bob").read_text()
+    wrapper = (root / "Injector_OPI" / "Scripts" / "emitShell_v2.sh").read_text()
+    launcher = (root / "scripts" / "launch_emu_snl_replay.sh").read_text()
+    assert "/bin/bash Scripts/emitShell_v2.sh" in opi
+    assert "launch_emu_snl_replay.sh" in wrapper
+    assert "python3 -m injector_otp.models.emu_replay" in launcher
+    assert "emitSnlEmu_v2 -s" not in wrapper
