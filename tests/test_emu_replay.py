@@ -178,7 +178,8 @@ def test_otp_opi_control_pvs_and_widget_types():
         if pv.startswith("ca://LEBT:EMIT:") and pv.split(":")[-1] in {
             "Validate", "Actemit", "Savemit"
         }:
-            controls[pv] = widget.attrib["type"]
-    assert controls["ca://LEBT:EMIT:Validate"] == "bool_button"
-    assert controls["ca://LEBT:EMIT:Actemit"] == "choice"
-    assert controls["ca://LEBT:EMIT:Savemit"] == "checkbox"
+            controls.setdefault(pv, set()).add(widget.attrib["type"])
+    assert "bool_button" in controls["ca://LEBT:EMIT:Validate"]
+    assert "choice" in controls["ca://LEBT:EMIT:Actemit"]
+    assert "led" in controls["ca://LEBT:EMIT:Actemit"]
+    assert "checkbox" in controls["ca://LEBT:EMIT:Savemit"]
