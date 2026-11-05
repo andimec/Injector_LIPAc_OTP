@@ -1,6 +1,6 @@
 # Injector LIPAc digital twin: EPICS write / readback traceability
 
-**Scope:** Python runtime on `main` (November 2026), PV registry V2.0 (1052 references), and the explicit operator input allowlist in `config/pv_runtime_overrides.yaml`.
+**Scope:** Python runtime on `main` (5 November 2026), PV registry V2.0 (1052 references), and the explicit operator input allowlist in `config/pv_runtime_overrides.yaml`.
 
 **Naming:** The VM is disconnected from LIPAc; Python, Soft IOC and Phoebus must use **unmodified source PV names**. `SIM:STATE` and `SIM:TIME` are the only special runtime indicators, not LIPAc PVs. There is no `OTP:` name translation.
 
@@ -107,7 +107,13 @@ The following names and generation rules are implemented in `src/injector_otp/mo
 | Beam enable, RF, gas, HV, FC position | `LEBT:FC:I` | `models/control_devices.py:BeamDiagnosticsModel` | MODEL, qualitative synthetic current |
 | calorimetry inputs / temperature readbacks | `:Tincalc`, `:Toutcalc`, `:DeltaT`, power results | `models/calorimetry.py:CalorimetryModel` | DERIVED, real thermal transport not simulated |
 
-## 5. Critical checks to improve OPI realism
+## 5. Interpretation and source coverage
+
+This table is an audited **model-mapping inventory**, not a list of 1,052 verified input/readback pairs. In particular, power-supply suffixes are constructed conditionally through `DeviceCatalog` and may not resolve for every device. Source `.db` record fields (e.g. `MOTOR.RBV`) have a different EPICS implementation requirement from standalone records. Model-published status can reflect simplified training behavior even when its name coincides with the actual LIPAc signal.
+
+No OPI-to-Soft-IOC end-to-end test has yet established correct widget read/write processing, alarm fields, scan rates or all readbacks. The Python model's own tests establish in-process behavior, **not** physical or IOC fidelity.
+
+## 6. Critical checks to improve OPI realism
 
 1. **Registry coverage:** confirm each row's exact PV names, field types, units, DB metadata and existence in `config/pv_registry_v2_0.json`; groups labeled conditional are not individually certified.
 2. **Ownership:** confirm each OPI input is allowlisted and each monitor is simulation-owned, with no readback exposed to `put()`.
@@ -117,7 +123,7 @@ The following names and generation rules are implemented in `src/injector_otp/mo
 6. **Integration:** verify `Phoebus -> private EPICS IOC -> Python -> monitor` on an isolated VM, separately from Python unit tests.
 7. **Network:** verify no route, CA broadcast, multicast/PVA discovery, bridged NIC or VPN path into LIPAc. Native PV names are safe only under that isolation assumption.
 
-## 6. Locations
+## 7. Locations
 
 | Layer | Location |
 |---|---|
