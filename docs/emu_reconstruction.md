@@ -1,4 +1,4 @@
-# EMU digital twin: SNL reconstruction (first executable baseline)
+# EMU digital twin: SNL v2 reconstruction and recorded-data replay
 
 **Status:** executable Python training model; **not** a validated EMU
 plant model, live EPICS IOC or protection implementation.
@@ -16,8 +16,10 @@ plant model, live EPICS IOC or protection implementation.
   Full Scan, positioning and acquisition). Additional source procedures cited
   by that manual: `EMU_LIPAC_User_Manual (2E7XBQ v1.0)`,
   `EMU_Optimization_Maintenance_Manual (22BCRE v2.1)` and
-  `BA_D_2E98YT v1.0`. These three specialized manuals were **not provided
-  in full** for this implementation, so their specifications were not invented.
+  `BA_D_2E98YT v1.0`. These EMU references, the optimization report and
+  the original `emitSnlEmu_v2.st` source were subsequently available for
+  the Fast/Full operator settings and the recorded-data replay. This
+  does not validate hardware calibration.
 - Motor field semantics: [EPICS motorRecord reference](https://github.com/epics-modules/motor/blob/master/docs/motorRecord.html)
   explains that `DMOV` and `MOVN` are independent (DMOV completion does
   not equal simply `not MOVN`).
@@ -125,11 +127,41 @@ Actual plate field maps and slit transmission require calibration.
 | `Actlower` | Decrement motor from 180 mm toward `Limdet`, wide scan at each position |
 | `Validate` | Check peak angles, borders, positive energy/steps, 4096-bin limit and travel |
 
-The manual's operator terms **Fast Scan** and **Full Scan** are not yet
-reliably mapped to distinct SNL `Actemit` parameter profiles. They must
-be resolved from the 2026 optimized EMU procedure or actual OPI script,
-rather than fabricated. Both can later reuse this general ROI sequencer
-with a validated configuration profile.
+Fast Scan and Full Scan are two operator parameter profiles for the same
+`Actemit` emittance measurement action, rather than different
+`EmuMode` enum values. Their **documented parameter sets** are now
+available and can be compared with the archived experiments. The
+in-memory `EmuScanSequencer` still takes generic ROI inputs; it does not
+yet implement a named Fast/Full profile selector.
+
+### Fast/Full settings and comparison with archived 2026 measurements
+
+| Parameter | Fast Scan, steps 22–30 | Full Scan, steps 32–40 |
+|---|---:|---:|
+| OPI upper / lower (mm) | 46 / -42 | 60 / -44 |
+| Motor step (mm) | 2 | 2 |
+| Beam energy D+ (keV) | 100 | 100 |
+| Peak angle init / end (mrad) | -37 / +45 | 0 / 0 |
+| Angle delta (mrad) | 20 | 100 |
+| HVpoints (voltage intervals) | 30 | 120 |
+| Approximate run time | 3 min | 10 min |
+
+The procedure specifies 50 keV for proton beams. The SNL transforms OPI
+border coordinates to motor position by `motor = 130 - border`.
+
+Archived test data:
+- `emit20260706-1434_optm.txt`: **Fast Scan** reference, 45 motor rows
+  (84–172 mm) × 31 points = **1,395** samples.
+- `emit20260610-1611_optm.txt`: **Full Scan** reference, 53 rows
+  (70–174 mm) × 121 points = **6,413** samples.
+- `emit20260604-1847_optm.txt`: full-coverage *variant*, 43 rows
+  (90–174 mm) × 101 points = **4,343** samples; not identical to
+  the procedural Full Scan defaults.
+
+The archived signals and format validate the replay parser. They do
+**not** validate the reduced-order motor dynamics, plate transients or
+beam physics. The console workflow is described in
+[Fast Scan experimental replay](emu_fast_scan_replay.md).
 
 ### Acquisition and results
 
@@ -137,8 +169,14 @@ The original SNL waits on an event flag synchronized to `EMIT_FC:I`:
 `sync iFaisc flagFaisc` / `efTestAndClear(flagFaisc)`.
 It stores per-sample position, commanded VHT, angle, collected current
 and measured VHT. Optional waveforms are saved to a hardcoded path in the
-source; the Python model has no filesystem side effects and returns a CSV
-string through `EmuScanSequencer.results_csv()`.
+source; the *in-memory sequencer* has no filesystem side effects and
+returns CSV through `EmuScanSequencer.results_csv()`. A **separate**
+`models/emu_replay.py` adapter validates archived headers with
+`emu_geometry.build_roi()`, creates compatible `EmuSample` objects,
+prints historical measurements in xterm and writes legacy five-column
+`emitYYYYMMDD-HHmm_optm.txt` files plus `*.replay.json` provenance.
+It does not run `build_application()`, drive PVs, or generate a new beam
+distribution. Set and measured VHT columns remain separate.
 
 An explicit *synthetic scalar FACQ clock* is enabled for training,
 `config/model_parameters.yaml -> emu.facq.synthetic_period_s`.
@@ -207,12 +245,31 @@ Read the [write/readback traceability matrix](pv_readback_traceability.md) for t
 - `test_emu_sequences.py`: full ROI, wide scan, both edge searches,
   stop, pause, loss of safety, motor hold and synthetic timeout.
 - `test_emu_analysis.py`: Gaussian training fixture, CSV and Twiss/RMS.
+- `test_emu_replay.py`: experimental sample counts, geometry, replay
+  ordering, original five-column format, provenance, collision guard,
+  and repository Start SNL script wiring.
 - Existing `test_simulation_config.py` / `test_architecture.py`:
   operator ACL and computed-PV ownership.
 
-All tests operate in-process; no FIBUS6, Debian 13, EPICS 7, VM I/O,
-live hardware or OPC server is contacted.
+All tests run **offline** and do not contact the live IOC. The
+experimental replay tests also write local temporary files and inspect
+the OPI script link; they do **not** prove xterm rendering or the
+Phoebus-to-EPICS-bridge operation on Debian.
 
 ## Questions to close with the machine team
 
-The supplied EMU references **2E7XBQ**, **22BCRE v2.1**, **2E98YT v1.0** and the 2026 optimization test report are available for documentary comparison. The optimized EMU user/maintenance material describes ROI acquisition, a global voltage grid and optional waveform logging. However, **having the manuals is not the same as validating the simulator against real acquisition**. Still obtain current motor/servo speed and homing calibration, plate polarity/field traces, the actual `ExtSec` PLC mapping, PS1/PS2 turn-on/ramp traces, FACQ timing/waveform datasets and operator-approved Fast/Full parameter presets.
+The supplied EMU references **2E7XBQ**, **22BCRE v2.1**, **2E98YT v1.0** and the 2026 optimization test report are available for documentary comparison. The optimized EMU user/maintenance material describes ROI acquisition, a global voltage grid and optional waveform logging. However, **having the manuals is not the same as validating the simulator against real acquisition**. Still obtain current motor/servo speed and homing calibration, plate polarity/field traces, the actual `ExtSec` PLC mapping, PS1/PS2 turn-on/ramp traces, FACQ timing/waveform datasets and confirmation of deployed OPI presets. The **documented** Fast/Full reference parameters are recorded above; automated selection and real OPI-button integration in the OTP remain pending.
+
+## Start SNL deployment boundary
+
+The OTP `Injector_OPI/emitMeasurement_v2.bob` executes
+`/bin/bash Scripts/emitShell_v2.sh` when the operator clicks **Start
+SNL**. In the repository's **training copy**, that shell entrypoint
+starts `scripts/launch_emu_snl_replay.sh` and Python in xterm. The
+standalone replay waits for the operator to type `validate` and `on`
+at the terminal. The OPI's own `LEBT:EMIT:Validate` and
+`LEBT:EMIT:Actemit` buttons do **not yet send data to the xterm process**;
+that requires a separate bridge to the isolated Soft IOC.
+
+Do not deploy the modified script on the real LIPAc workstation or
+route the native-name training PVs to the machine's CA network.

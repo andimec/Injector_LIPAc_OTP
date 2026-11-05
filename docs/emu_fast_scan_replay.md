@@ -23,8 +23,8 @@ Source references:
 | Archived file | Profile | Motor rows | Points/row | Total |
 |---|---|---:|---:|---:|
 | `emit20260706-1434_optm.txt` | Fast ROI | 45 | 31 | 1,395 |
-| `emit20260604-1847_optm.txt` | Full | 43 | 101 | 4,343 |
-| `emit20260610-1611_optm.txt` | Full | 53 | 121 | 6,413 |
+| `emit20260604-1847_optm.txt` | Full-coverage variant | 43 | 101 | 4,343 |
+| `emit20260610-1611_optm.txt` | Full Scan reference | 53 | 121 | 6,413 |
 
 The July 6 Fast Scan recording gives `Upper=84`, `Lower=172` motor
 coordinates and `Mstep=2`. The operator coordinates are therefore
@@ -46,7 +46,7 @@ python3 -m pip install -e .
 ./scripts/launch_emu_snl_replay.sh --duration 180
 ~~~
 
-The `Start SNL` equivalent opens a 110x60 terminal and enters
+The `Start SNL` action opens a 110x60 terminal and enters
 **waiting**. In this version type `validate` and then `on`
 in the terminal. `--duration 180` spreads the default 1,395 points
 over roughly three minutes, matching the procedure's order of magnitude.
@@ -64,6 +64,20 @@ python3 -m injector_otp.models.emu_replay --auto --duration 0 \
 The launcher sets `EPICS_CA_MAX_ARRAY_BYTES=10485760` for script
 compatibility but **does not use EPICS**. Unlike the original
 `ps | grep xterm` guard, an unrelated xterm does not block its launch.
+
+## Start SNL, Validate and ON are separate steps
+
+The original operational procedure separates starting the sequencer,
+validating the ROI settings and starting measurement. The OTP implements
+the same order **in the standalone console**: `Start SNL` launches the
+Python process and prints `Emit: waiting`; `validate` checks the
+archived profile; `on` starts a time-scaled printing of saved samples.
+
+The actual Phoebus buttons for Validate and ON still write their own
+source PVs and are **not connected to this standalone replay**.
+The file reader imports the existing ROI geometry and `EmuSample`
+structure, but does not call the in-memory simulation's state machine,
+publish FC current PVs or write plate/motor commands.
 
 ## Output fidelity
 
@@ -93,12 +107,13 @@ waveform export. That extension requires genuine waveform recordings.
 
 In the OTP repository, `Injector_OPI/emitMeasurement_v2.bob` already
 runs `/bin/bash Scripts/emitShell_v2.sh` for the **Start SNL** button.
-This PR replaces only that **repository copy** of `emitShell_v2.sh` with
+The OTP implementation replaces only its **training repository copy** of `emitShell_v2.sh` with
 a path-independent launcher for the offline Python xterm replay. The OPI
 must be launched with `Injector_OPI` as its working directory (as for
 other relative Phoebus scripts). This edit must **never** be copied over
-the real LIPAc installation. Starting the replay with the OPI button is
-wired, but no live PV bridge is supplied.
+the real LIPAc installation. Starting the replay from the OPI button is wired via a shell command,
+but actual Phoebus launch behavior on the Debian VM has not been
+confirmed and no PV bridge is supplied.
 
 The manual `validate` / `on` console inputs currently stand in
 for the corresponding OPI action buttons. To control the scan via Phoebus/CSS,
@@ -118,3 +133,22 @@ for that later integration.
 4. The generated `_optm.txt` retains each original 5-column sample.
 5. Replay provenance is recorded separately; existing data is not overwritten.
 6. No live IOC access, actual hardware commands or production OPI edits occur.
+
+## Regression tests and rollout checklist
+
+Run `pytest tests/test_emu_replay.py`. GitHub Actions tests validate the
+three archived datasets, the default Fast Scan count and geometry,
+recorded columns, console Validate/ON ordering, source-compatible
+filename/header, provenance and no-overwrite handling. Tests also
+check the command path from the OTP OPI to the shell launcher.
+
+For a manual Debian/X11 check, launch the training OPI
+`Injector_OPI/emitMeasurement_v2.bob` with the `Injector_OPI/`
+working directory, click **Start SNL**, check `Emit: waiting`,
+type `validate` followed by `on`, then inspect `output/emu/`.
+The actual GUI working directory must be verified; CI cannot check X11.
+
+**Not yet implemented:** OPI Validate/ON/Pause/Save PV event handling
+within xterm, local EPICS IOC readback publication, replayed FACQ
+waveform arrays and connection to production. Output files are replay
+artifacts, **not new beam measurements**.
