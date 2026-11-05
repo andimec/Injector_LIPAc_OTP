@@ -89,11 +89,19 @@ Historical scalar data contain **no full FACQ waveform array**.
 Consequently, this adapter does not fabricate an `IwfGraph/Xwf`
 waveform export. That extension requires genuine waveform recordings.
 
-## Important integration distinction
+## OPI Start SNL wiring and remaining integration
 
-This PR provides the **console and file replay**, not a live OPI
-connection. The manual `validate` / `on` console inputs stand in
-for operator action buttons. To control the replay via Phoebus/CSS,
+In the OTP repository, `Injector_OPI/emitMeasurement_v2.bob` already
+runs `/bin/bash Scripts/emitShell_v2.sh` for the **Start SNL** button.
+This PR replaces only that **repository copy** of `emitShell_v2.sh` with
+a path-independent launcher for the offline Python xterm replay. The OPI
+must be launched with `Injector_OPI` as its working directory (as for
+other relative Phoebus scripts). This edit must **never** be copied over
+the real LIPAc installation. Starting the replay with the OPI button is
+wired, but no live PV bridge is supplied.
+
+The manual `validate` / `on` console inputs currently stand in
+for the corresponding OPI action buttons. To control the scan via Phoebus/CSS,
 a separate local bridge must route `LEBT:EMIT:Validate`,
 `LEBT:EMIT:Actemit`, `LEBT:EMIT:Savemit`, `Pausemit`
 and readback PVs to the Python engine in the **isolated OTP IOC**.
