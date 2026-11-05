@@ -20,6 +20,14 @@ def test_normalize_pv_preserves_native_names_and_record_fields():
     assert audit.normalize_pv("LEBT:HV_PS:OnStat") == "LEBT:HV_PS:OnStat"
 
 
+def test_phoebus_expression_parsing_distinguishes_pvs_from_constants():
+    assert audit.binding_pvs("='LEBT:CHOP_IM:DbgDPeriod'/1000") == [
+        ("expression_reference", "LEBT:CHOP_IM:DbgDPeriod")
+    ]
+    assert audit.binding_pvs("=1") == [("constant_expression", "")]
+    assert audit.binding_pvs("= 0.25") == [("constant_expression", "")]
+
+
 def test_registry_field_and_macro_classification():
     registry = {"LEBT:EMIT:MOTOR", "LEBT:HV_PS:OnStat"}
     assert audit.pv_registry_match("LEBT:HV_PS:OnStat", registry) == "exact"
