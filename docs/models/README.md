@@ -58,7 +58,7 @@ Esta documentación está orientada a lectores que conocen el inyector, pero no 
                    |
          futuro puente EPICS aislado
 
-**EMu_replay.py es una vía aparte.** Lee registros experimentales de archivo y no recibe muestras del EmuAcquisitionModel ni de la red CA/PVA.
+**emu_replay.py es una vía aparte.** Lee registros experimentales de archivo y no recibe muestras del EmuAcquisitionModel ni de la red CA/PVA.
 
 ## Hoja de ruta transversal
 

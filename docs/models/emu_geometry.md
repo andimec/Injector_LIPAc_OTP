@@ -43,6 +43,10 @@ Para que posiciones vecinas sean comparables en el análisis ROOT, se crea **una
         redondear ambos límites a índices de malla
         devolver secuencia descendente de tensiones
 
+## Ejemplo numérico: Fast Scan de 2026
+
+El procedimiento BA_D_2E98YT v1.0 propone **upper = +46 mm, lower = -42 mm, motor step = 2 mm, energy = 100 keV, ángulos -37/+45 mrad, angle delta = 20 mrad y HVpoints = 30**. Las coordenadas de motor pasan a 130-46=**84 mm** y 130-(-42)=**172 mm**. El barrido tiene (172-84)/2+1=**45 posiciones**. En los registros SNL optimizados, 30 intervalos de tensión dan habitualmente **31 valores por posición**, total **1.395 muestras**. El ejemplo ilustra la geometría y concuerda con el archivo Fast Scan archivado. No implica que cualquier ejecución temporal sintética reproduzca su adquisición real.
+
 ## Riesgos y mejoras
 
 La aproximación es geométrica de primer orden: no incluye fringe fields, ancho de rendija, aceptación angular finita, ni variación del campo entre placas. El valor 130 y las dimensiones son del software fuente: deben contrastarse con metrología y la convención real de coordenadas. Los límites admitidos están protegidos por guardas de software, no por PLC.

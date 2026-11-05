@@ -45,6 +45,10 @@ Se comprueba MOTOR.RBV próximo al objetivo, MOVN=0 y DMOV=1. Después PS1/PS2 d
     al abortar:
         ABORTED, solicitar placas a 0 y mantener motor en lectura actual
 
+## Ejemplo de operación del simulador
+
+Para representar el Fast Scan documentado, configurar las PV de emittance con upper=46, lower=-42, motor step=2, energy=100 keV, angle peak init=-37 mrad, angle peak end=45 mrad, angle delta=20 mrad, HVpoints=30. Emitir primero el flanco Validate y después Actemit=ON **con los permisos externos simulados activos**. El algoritmo genera los objetivos, espera readbacks de motor/placas y consume un evento FACQ por punto. Savemit=OFF no solicita almacenamiento; Savemit=ON solo guarda el indicador de autorización para un futuro adaptador. Las 1.395 muestras del archivo real no aparecen mágicamente en esta simulación, porque pertenecen al replay separado.
+
 ## Alcance y mejoras
 
 El secuenciador **no escribe archivos**. Solo mantiene samples y save_requested; results_csv devuelve texto, y preliminary_emittance invoca el estimador RMS sin corrección. El modo Fast/Full del procedimiento de julio de 2026 se expresa mediante parámetros, **todavía no hay presets con esos nombres**. El hecho de tener event id no sustituye la adquisición ICV108 real. Pausa/aborto debe contrastarse con riesgos y secuencias originales.
