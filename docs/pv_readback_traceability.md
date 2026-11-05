@@ -152,3 +152,19 @@ No OPI-to-Soft-IOC end-to-end test has yet established correct widget read/write
 | Relevant tests | `tests/test_power_supply_scaling.py`, `test_emu_hardware.py`, `test_gas_vacuum_topology.py`, `test_chopper_cim.py`, `test_simulation_ioc.py` |
 
 **Audit status:** this is a model-source traceability review, not proof of complete coverage of all 1052 registry references, nor a validated OPI/Soft IOC deployment. A future automated registry-to-model coverage report should count unresolved, readback-only and OPI-only references separately.
+
+## 8. EMU save-on-command contract
+
+The OPI `LEBT:EMIT:Validate` (boolean), `LEBT:EMIT:Actemit`
+(choice ON/OFF) and `LEBT:EMIT:Savemit` (checkbox) all appear
+in the Python allowlisted input inventory. The in-memory
+`EmuScanSequencer` processes a rising Validate edge, starts or aborts
+on Actemit ON/OFF, and latches Savemit as `save_requested` on
+scan start. It **does not** generate a file by itself. The archived
+`emu_replay.py` adapter controls file output separately using
+an explicit local boolean argument that corresponds to Savemit;
+OFF must never generate a file. It also offers a stop predicate
+for the future isolated OPI bridge. At present the operator
+checkbox has **no live connection** to the terminal replay, so
+this is a contract plus an offline test, not an end-to-end EPICS
+integration.

@@ -53,3 +53,21 @@ nueva de haz ni incluye los waveforms originales de FACQ.
 
 Detalles: [reproducción experimental](emu_fast_scan_replay.md) y
 [reconstrucción SNL](emu_reconstruction.md).
+
+## EMU: significado de las tres PV de operador
+
+- `LEBT:EMIT:Validate`: botón booleano. El secuenciador detecta el
+  flanco de subida, valida la región y devuelve el comando a 0.
+- `LEBT:EMIT:Actemit`: selector ON/OFF. ON inicia la medida una vez
+  validada; OFF interrumpe una secuencia activa.
+- `LEBT:EMIT:Savemit`: checkbox. ON autoriza producir el archivo
+  experimental de cinco columnas y el JSON de procedencia. OFF significa
+  **solo representación en terminal**, sin archivos nuevos.
+
+El SNL antiguo reactivaba `Savemit` de forma automática; el OTP no lo
+hace. El modelo Python lee la selección, pero la reproducción actual es
+independiente del IOC: la terminal permite `save on` / `save off`
+y el comando headless `--save on|off` (por defecto OFF). Todavía falta
+un puente EPICS aislado para que los tres controles de la OPI actúen
+directamente sobre esa terminal. Ver
+[emu_fast_scan_replay.md](emu_fast_scan_replay.md).

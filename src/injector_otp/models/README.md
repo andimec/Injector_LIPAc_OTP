@@ -111,7 +111,9 @@ archives. From the repository root:
 ```bash
 ./scripts/launch_emu_snl_replay.sh --duration 180
 # Without a display:
-python3 -m injector_otp.models.emu_replay --auto --output-dir output/emu
+python3 -m injector_otp.models.emu_replay --auto --save on --output-dir output/emu
+# Console only, do not create output directory or files:
+python3 -m injector_otp.models.emu_replay --auto --save off
 ```
 
 The OTP OPI `Start SNL` button uses
@@ -121,3 +123,16 @@ to OPI PV writes. These recorded samples do not enter the in-memory
 `EmuAcquisitionModel`; the experimental replay and synthetic scan are
 intentionally separate. See
 [Fast Scan replay](../../../docs/emu_fast_scan_replay.md).
+
+### EMU Save control
+
+The OPI boolean `Validate` initiates ROI checking, the ON/OFF
+`Actemit` selector starts/aborts the sequencer and the `Savemit`
+checkbox is latched as `EmuScanSequencer.save_requested` on starting
+a scan. The sequencer does not perform direct disk writes and does
+not force the checkbox to ON (unlike the original SNL).
+The standalone replay honors Save OFF with **zero output file
+creation**, and Save ON with SNL TXT + JSON provenance. To set
+the standalone choice, use `save on` or `save off` before
+`validate` and `on`, or `--save on/off` for headless runs.
+Real OPI-to-Python PV delivery is a separate pending integration.

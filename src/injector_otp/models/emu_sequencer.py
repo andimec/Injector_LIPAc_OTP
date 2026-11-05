@@ -94,6 +94,10 @@ class EmuScanSequencer(SubsystemModel):
         self.validated_roi: EmuROI | None = None
         self.targets: list[EmuTarget] = []
         self.samples: list[EmuSample] = []
+        # Operator Savemit selection at Actemit=ON. No forced 0 -> 1.
+        # The model remains free of filesystem I/O; a storage adapter
+        # must inspect this flag on COMPLETE and write only if True.
+        self.save_requested = False
         self.target_index = 0
         self.elapsed_s = 0.0
         self.previous_validate = False
@@ -241,6 +245,10 @@ class EmuScanSequencer(SubsystemModel):
             return
         self.mode = mode
         self.samples = []
+        self.save_requested = (
+            mode == EmuMode.EMITTANCE
+            and self._read(context, "LEBT:EMIT:Savemit", 0) == 1
+        )
         self.target_index = 0
         self._enable_requested = False
         self._supplies_requested = False
@@ -460,3 +468,4 @@ class EmuScanSequencer(SubsystemModel):
         context.metrics["emu.scan_points_total"] = float(len(self.targets))
         context.metrics["emu.scan_aborted"] = float(self.stage == EmuStage.ABORTED)
         context.metrics["emu.scan_complete"] = float(self.stage == EmuStage.COMPLETE)
+        context.metrics["emu.scan_save_requested"] = float(self.save_requested)
