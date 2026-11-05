@@ -180,79 +180,118 @@ def _updated_header(source_lines: tuple[str, ...], outpath: Path,
     return "".join(result)
 
 
+class EmuReplayStopped(Exception):
+    """Operator set Actemit=OFF while an offline replay was running."""
+
+
 def replay(measurement: EmuMeasurement, output_dir: str | Path,
            *, when: datetime | None = None, duration_s: float = 0.0,
+           save: bool = True,
+           should_continue: Callable[[], bool] | None = None,
            emit: Callable[[str], None] = print,
-           sleep: Callable[[float], None] = time.sleep) -> Path:
-    """Print recorded SNL points and write the unchanged 5-column result.
+           sleep: Callable[[float], None] = time.sleep) -> Path | None:
+    """Replay unchanged experimental points; write files only for Savemit=ON.
 
-    The filename/date are newly generated. Experimental numbers are copied
-    and never recalculated. A provenance sidecar identifies the output.
+    This adapter does not connect to EPICS. The save argument represents
+    LEBT:EMIT:Savemit. A future isolated PV bridge may use should_continue
+    to stop when Actemit becomes OFF. With save=False, no output is created.
     """
     if duration_s < 0:
         raise ValueError("duration_s must be nonnegative")
     measurement.validate()
-    instant = when or datetime.now(ZoneInfo("Asia/Tokyo"))
-    instant = instant.astimezone(ZoneInfo("Asia/Tokyo"))
-    folder = Path(output_dir).expanduser().resolve()
-    folder.mkdir(parents=True, exist_ok=True)
-    target = folder / output_filename(instant)
-    provenance_path = target.with_suffix(".replay.json")
-    if target.exists() or provenance_path.exists():
-        raise FileExistsError(f"EMU output already exists: {target}")
+
+    target: Path | None = None
+    provenance_path: Path | None = None
+    part: Path | None = None
+    instant: datetime | None = None
+    if save:
+        instant = when or datetime.now(ZoneInfo("Asia/Tokyo"))
+        instant = instant.astimezone(ZoneInfo("Asia/Tokyo"))
+        folder = Path(output_dir).expanduser().resolve()
+        target = folder / output_filename(instant)
+        provenance_path = target.with_suffix(".replay.json")
+        part = target.with_name(target.name + ".partial")
+        if target.exists() or provenance_path.exists() or part.exists():
+            raise FileExistsError(f"EMU output already exists: {target}")
+        folder.mkdir(parents=True, exist_ok=True)
+
     emit("EMU REPLAY [OFFLINE]: saved experimental samples, NO LIVE BEAM")
     emit("Emit: emittance measurement action received")
     emit("Emit: process started!!")
     emit(f"Recorded source = {measurement.source}")
     emit(f"Energy = {measurement.energy_keV:g} keV; D2 = {measurement.d2_status}")
     emit(f"Global voltage grid built: HVpoints = {measurement.hv_points}")
-    emit(f"Data storing: {target}")
+    emit(f"Data storing: {target}" if save else
+         "Data storing: disabled (LEBT:EMIT:Savemit=OFF)")
     written = 0
     last_motor = None
-    part = target.with_name(target.name + ".partial")
-    if part.exists():
-        raise FileExistsError(f"Stale partial EMU output exists: {part}")
+
+    from contextlib import nullcontext
     try:
-        with part.open("x", encoding="utf-8", newline="") as handle:
-            handle.write(_updated_header(measurement.source_header, target, instant))
+        with (part.open("x", encoding="utf-8", newline="")
+              if part is not None else nullcontext(None)) as handle:
+            if handle is not None:
+                assert target is not None and instant is not None
+                handle.write(_updated_header(measurement.source_header, target, instant))
             for point in measurement.points:
+                if should_continue is not None and not should_continue():
+                    raise EmuReplayStopped("LEBT:EMIT:Actemit=OFF")
                 if last_motor is not None and point.motor_mm != last_motor:
-                    handle.write("\n")
+                    if handle is not None:
+                        handle.write("\n")
                     emit(f"Emit: scan {last_motor:7.1f} mm completed")
                 last_motor = point.motor_mm
                 emit(f"Vht = {point.vht_set_V:7.1f} ({point.vht_real_V:7.1f}) "
                      f"Pos = {point.motor_mm:6.1f} I = {point.current_mA:7.1f} "
                      f"yp = {point.angle_rad:7.4f}")
-                handle.write(
-                    f"{point.motor_mm:7.1f}  \t {point.vht_set_V:7.0f} \t "
-                    f"{point.angle_rad:7.4f}  \t {point.current_mA:7.0f} \t "
-                    f"{point.vht_real_V:7.0f}\n"
-                )
-                handle.flush()
+                if handle is not None:
+                    handle.write(
+                        f"{point.motor_mm:7.1f}  \t {point.vht_set_V:7.0f} \t "
+                        f"{point.angle_rad:7.4f}  \t {point.current_mA:7.0f} \t "
+                        f"{point.vht_real_V:7.0f}\n"
+                    )
+                    handle.flush()
                 written += 1
                 if duration_s:
                     sleep(duration_s / len(measurement.points))
-            handle.write("\n")
-        part.rename(target)
-        provenance = {
-            "kind": "offline_experimental_replay",
-            "live_beam": False,
-            "source_file": measurement.source.name,
-            "points": written,
-            "motor_rows": measurement.motor_rows,
-            "output_file": target.name,
-            "timestamp_jst": instant.isoformat(),
-            "data_policy": "experimental scalar samples preserved from source",
-        }
-        provenance_path.write_text(json.dumps(provenance, indent=2) + "\n",
-                                   encoding="utf-8")
-    except BaseException:
-        emit(f"Emit: interrupted; partial replay retained: {part}")
+            if handle is not None:
+                handle.write("\n")
+        if save:
+            assert part is not None and target is not None
+            assert provenance_path is not None and instant is not None
+            part.rename(target)
+            provenance = {
+                "kind": "offline_experimental_replay",
+                "live_beam": False,
+                "source_file": measurement.source.name,
+                "points": written,
+                "motor_rows": measurement.motor_rows,
+                "output_file": target.name,
+                "timestamp_jst": instant.isoformat(),
+                "save_pv": "LEBT:EMIT:Savemit",
+                "save_value": 1,
+                "data_policy": "experimental scalar samples preserved from source",
+            }
+            provenance_path.write_text(
+                json.dumps(provenance, indent=2) + "\n", encoding="utf-8"
+            )
+    except EmuReplayStopped:
+        emit(f"Emit: OFF received, stopped after {written} points")
+        if part is not None:
+            emit(f"Emit: interrupted; partial replay retained: {part}")
         raise
-    emit(f"Emit: scan {last_motor:7.1f} mm completed")
-    emit(f"Emit: measurement completed. Saved {written} points")
-    emit(f"Output file = {target}")
-    emit(f"Replay provenance = {provenance_path}")
+    except BaseException:
+        if part is not None:
+            emit(f"Emit: interrupted; partial replay retained: {part}")
+        raise
+    if last_motor is not None:
+        emit(f"Emit: scan {last_motor:7.1f} mm completed")
+    emit(f"Emit: measurement completed. Processed {written} points")
+    if save:
+        emit(f"Output file = {target}")
+        emit(f"Replay provenance = {provenance_path}")
+    else:
+        emit("Emit: Savemit=OFF, no TXT, JSON or partial output created")
     return target
 
 
@@ -264,6 +303,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="Playback duration in seconds; 0 = immediate")
     parser.add_argument("--auto", action="store_true",
                         help="Validate and start without interactive commands")
+    parser.add_argument("--save", choices=("on", "off"), default="off",
+                        help="Offline Savemit setting (default: OFF)")
     parser.add_argument("--list", action="store_true",
                         help="List available archived EMU experiments")
     args = parser.parse_args(argv)
@@ -280,9 +321,10 @@ def main(argv: list[str] | None = None) -> int:
     print("Emit: waiting")
     print(f"Loaded {measurement.source.name}: "
           f"{measurement.motor_rows} positions, {len(measurement.points)} samples")
+    save_enabled = args.save == "on"
     if not args.auto:
         validated = False
-        print("Offline commands: validate, on, status, quit")
+        print("Offline commands: validate, on, off, save on, save off, status, quit")
         while True:
             try:
                 command = input("emu> ").strip().lower()
@@ -293,7 +335,13 @@ def main(argv: list[str] | None = None) -> int:
                 print("Emit: stopped")
                 return 0
             if command == "status":
-                print("Emit: waiting" if not validated else "Emit: ROI validated, waiting for ON")
+                state = "ROI validated, waiting for ON" if validated else "waiting"
+                print(f"Emit: {state}; Savemit={'ON' if save_enabled else 'OFF'}")
+            elif command in ("save on", "save off"):
+                save_enabled = command == "save on"
+                print(f"Emit: LEBT:EMIT:Savemit={'ON' if save_enabled else 'OFF'}")
+            elif command == "off":
+                print("Emit: Actemit already OFF; waiting")
             elif command == "validate":
                 measurement.validate()
                 validated = True
@@ -304,12 +352,13 @@ def main(argv: list[str] | None = None) -> int:
                     continue
                 break
             else:
-                print("Unknown command. Use validate, on, status, quit")
+                print("Unknown command. Use validate, on, off, save on, save off, status, quit")
     else:
         print("Emit: validate action received. ROI validated")
     try:
-        replay(measurement, args.output_dir, duration_s=args.duration)
-    except (OSError, ValueError, KeyboardInterrupt) as exc:
+        replay(measurement, args.output_dir, duration_s=args.duration,
+               save=save_enabled)
+    except (OSError, ValueError, EmuReplayStopped, KeyboardInterrupt) as exc:
         print(f"EMU replay error: {exc}", file=sys.stderr)
         return 1
     return 0
