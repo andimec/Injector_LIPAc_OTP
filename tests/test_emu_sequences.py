@@ -178,3 +178,31 @@ def test_emu_abort_holds_motor_position_after_motion_started():
     assert pv.get("LEBT:EMIT:MOTOR.VAL") == pytest.approx(
         pv.get("LEBT:EMIT:MOTOR.RBV")
     )
+
+
+
+@pytest.mark.parametrize("savemit, expected", [(0, False), (1, True)])
+def test_savemit_is_latched_without_forcing_it_on(savemit, expected):
+    engine, pv, _ = ready_engine()
+    configure_roi(pv)
+    engine.step()
+    pv.put("LEBT:EMIT:Savemit", savemit)
+    pv.put("LEBT:EMIT:Actemit", 1)
+    engine.step()
+    scan = emu(engine)
+    assert scan.save_requested is expected
+    assert bool(engine.context.metrics["emu.scan_save_requested"]) is expected
+    assert int(pv.get("LEBT:EMIT:Savemit")) == savemit
+
+
+def test_actemit_off_aborts_active_scan():
+    engine, pv, _ = ready_engine()
+    configure_roi(pv)
+    engine.step()
+    pv.put("LEBT:EMIT:Actemit", 1)
+    engine.step()
+    assert emu(engine).stage not in {EmuStage.IDLE, EmuStage.ABORTED}
+    pv.put("LEBT:EMIT:Actemit", 0)
+    engine.step()
+    assert emu(engine).stage == EmuStage.ABORTED
+    assert "operator stop" in emu(engine).message

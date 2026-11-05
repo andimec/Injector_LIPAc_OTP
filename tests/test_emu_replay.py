@@ -43,7 +43,7 @@ def test_all_experimental_inputs_parse(filename, rows, nvolts, total):
 def test_replay_uses_original_samples_and_source_naming(tmp_path):
     source = load_measurement(DATA_DIRECTORY / FAST_SCAN_DEFAULT)
     when = datetime(2026, 11, 5, 11, 50, tzinfo=ZoneInfo("Asia/Tokyo"))
-    output = replay(source, tmp_path, when=when, emit=lambda _: None)
+    output = replay(source, tmp_path, when=when, save=True, emit=lambda _: None)
     assert output.name == "emit20261105-1150_optm.txt"
     body = output.read_text(encoding="utf-8")
     assert "processus = Emittance Measurement vers. 2.0.0" in body
@@ -65,11 +65,11 @@ def test_replay_uses_original_samples_and_source_naming(tmp_path):
     assert provenance["live_beam"] is False
     assert provenance["points"] == 1395
     with pytest.raises(FileExistsError):
-        replay(source, tmp_path, when=when, emit=lambda _: None)
+        replay(source, tmp_path, when=when, save=True, emit=lambda _: None)
 
 
 def test_interactive_wait_requires_validate(tmp_path, monkeypatch, capsys):
-    commands = iter(["on", "status", "validate", "on"])
+    commands = iter(["on", "status", "save on", "validate", "on"])
     monkeypatch.setattr("builtins.input", lambda _: next(commands))
     assert main(["--source", str(DATA_DIRECTORY / FAST_SCAN_DEFAULT),
                  "--output-dir", str(tmp_path)]) == 0
@@ -102,3 +102,83 @@ def test_otp_opi_start_snl_invokes_python_replay():
     assert "launch_emu_snl_replay.sh" in wrapper
     assert "python3 -m injector_otp.models.emu_replay" in launcher
     assert "emitSnlEmu_v2 -s" not in wrapper
+
+
+
+def test_savemit_off_runs_all_samples_without_creating_output(tmp_path):
+    from injector_otp.models.emu_replay import replay
+    source = load_measurement(DATA_DIRECTORY / FAST_SCAN_DEFAULT)
+    folder = tmp_path / "no-output"
+    messages = []
+    result = replay(source, folder, save=False, emit=messages.append)
+    assert result is None
+    assert not folder.exists()
+    assert sum(msg.startswith("Vht =") for msg in messages) == 1395
+    assert any("Savemit=OFF" in msg for msg in messages)
+
+
+def test_cli_default_savemit_off_runs_without_any_file(tmp_path, capsys):
+    folder = tmp_path / "no-output"
+    rc = main(["--auto", "--source", str(DATA_DIRECTORY / FAST_SCAN_DEFAULT),
+               "--output-dir", str(folder)])
+    assert rc == 0
+    assert not folder.exists()
+    assert "no TXT, JSON or partial output created" in capsys.readouterr().out
+
+
+def test_cli_explicit_save_on_creates_file(tmp_path, capsys):
+    rc = main(["--auto", "--save", "on",
+               "--source", str(DATA_DIRECTORY / FAST_SCAN_DEFAULT),
+               "--output-dir", str(tmp_path)])
+    assert rc == 0
+    assert len(list(tmp_path.glob("emit*_optm.txt"))) == 1
+    assert len(list(tmp_path.glob("*.replay.json"))) == 1
+
+
+def test_replay_stops_on_actemit_off_without_saving(tmp_path):
+    from injector_otp.models.emu_replay import EmuReplayStopped, replay
+    source = load_measurement(DATA_DIRECTORY / FAST_SCAN_DEFAULT)
+    folder = tmp_path / "stopped"
+    count = 0
+    def on_state():
+        nonlocal count
+        count += 1
+        return count <= 10
+    observed = []
+    with pytest.raises(EmuReplayStopped):
+        replay(source, folder, save=False,
+               should_continue=on_state, emit=observed.append)
+    assert not folder.exists()
+    assert sum(msg.startswith("Vht =") for msg in observed) == 10
+
+
+def test_replay_stops_with_partial_if_save_enabled(tmp_path):
+    from injector_otp.models.emu_replay import EmuReplayStopped, replay
+    source = load_measurement(DATA_DIRECTORY / FAST_SCAN_DEFAULT)
+    count = 0
+    def is_on():
+        nonlocal count
+        count += 1
+        return count <= 3
+    with pytest.raises(EmuReplayStopped):
+        replay(source, tmp_path, save=True,
+               should_continue=is_on, emit=lambda _: None)
+    assert len(list(tmp_path.glob("*.partial"))) == 1
+    assert not list(tmp_path.glob("emit*_optm.txt"))
+    assert not list(tmp_path.glob("*.replay.json"))
+
+
+def test_otp_opi_control_pvs_and_widget_types():
+    import xml.etree.ElementTree as ET
+    root = DATA_DIRECTORY.parents[3]
+    opi = ET.parse(root / "Injector_OPI" / "emitMeasurement_v2.bob")
+    controls = {}
+    for widget in opi.iter("widget"):
+        pv = widget.findtext("pv_name", default="")
+        if pv.startswith("ca://LEBT:EMIT:") and pv.split(":")[-1] in {
+            "Validate", "Actemit", "Savemit"
+        }:
+            controls[pv] = widget.attrib["type"]
+    assert controls["ca://LEBT:EMIT:Validate"] == "bool_button"
+    assert controls["ca://LEBT:EMIT:Actemit"] == "choice"
+    assert controls["ca://LEBT:EMIT:Savemit"] == "checkbox"

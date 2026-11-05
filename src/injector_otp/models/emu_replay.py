@@ -186,7 +186,7 @@ class EmuReplayStopped(Exception):
 
 def replay(measurement: EmuMeasurement, output_dir: str | Path,
            *, when: datetime | None = None, duration_s: float = 0.0,
-           save: bool = True,
+           save: bool = False,
            should_continue: Callable[[], bool] | None = None,
            emit: Callable[[str], None] = print,
            sleep: Callable[[float], None] = time.sleep) -> Path | None:
