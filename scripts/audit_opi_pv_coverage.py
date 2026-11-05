@@ -219,6 +219,7 @@ def build_report(repo: Path, include_legacy: bool = True,
     inputs = set(overrides["inputs"])
     external = set(overrides.get("external_conditions", []))
     explicit_outputs = set(overrides.get("outputs", []))
+    initial_pvs = set(yaml.safe_load((repo / "config/simulation/default.yaml").read_text(encoding="utf-8")).get("initial_pvs", {}))
 
     rows: list[dict[str, str]] = []
     parse_errors: list[dict[str, str]] = []
@@ -240,12 +241,13 @@ def build_report(repo: Path, include_legacy: bool = True,
             "operator_input" if name in inputs else
             "external_condition" if name in external else
             "declared_output" if name in explicit_outputs else
+            "scenario_initialized" if name in initial_pvs else
             "unclassified"
         )
         row["producer"] = producers.get(name, "")
         row["runtime_observation"] = (
             "model_observed" if name in producers else
-            "external_scenario" if name in external else
+            "external_scenario" if name in external or name in initial_pvs else
             "not_observed_in_OFF_probe"
         )
         row["write_acl"] = (
@@ -290,6 +292,14 @@ def build_report(repo: Path, include_legacy: bool = True,
         and r["pv"] not in inputs and r["pv"] not in external
         and any(marker in r["pv"] for marker in READBACK_MARKERS)
     })
+    # Do not confuse external machine-protection bitfields or scenario inputs
+    # with missing generated physical readbacks.
+    protection_monitors = sorted(x for x in unobserved_monitors
+                                 if x.startswith(("PPS:", "MPS:")))
+    initialized_monitors = sorted(x for x in unobserved_monitors
+                                  if x in initial_pvs)
+    equipment_gaps = sorted(set(unobserved_monitors) -
+                            set(protection_monitors) - set(initialized_monitors))
     files_by_generation = Counter(r["generation"] for r in rows)
     summary = {
         "registry_total": len(registry),
@@ -311,6 +321,9 @@ def build_report(repo: Path, include_legacy: bool = True,
         "unresolved_macros": len(macros),
         "phoebus_potential_writes_not_allowlisted": len(unallowlisted),
         "phoebus_readback_like_not_observed_in_OFF_probe": len(unobserved_monitors),
+        "external_protection_bitfield_monitors": len(protection_monitors),
+        "scenario_initialized_monitor_candidates": len(initialized_monitors),
+        "unobserved_equipment_readback_candidates": len(equipment_gaps),
         "parse_errors": len(parse_errors),
         "reference_occurrences_by_generation": dict(files_by_generation),
     }
@@ -318,6 +331,7 @@ def build_report(repo: Path, include_legacy: bool = True,
         "summary": summary, "references": rows, "pairs": pairs,
         "runtime_producers": producers, "missing": missing, "macros": macros,
         "unallowlisted": unallowlisted, "unobserved_monitors": unobserved_monitors,
+        "protection_monitors": protection_monitors, "equipment_gaps": equipment_gaps,
         "parse_errors": parse_errors,
     }
 
@@ -343,7 +357,8 @@ def markdown(report: dict[str, object]) -> str:
         ("Missing PV names (exact OPI expressions)", report["missing"]),
         ("Macro/dynamic PV names requiring resolution", report["macros"]),
         ("Phoebus potential write widgets not in operator allowlist", report["unallowlisted"]),
-        ("Readback-like Phoebus monitors not produced in OFF-state probe", report["unobserved_monitors"]),
+        ("Equipment readback candidates not produced in OFF-state probe", report["equipment_gaps"]),
+        ("External MPS/PPS bitfield monitors (separate safety-model scope)", report["protection_monitors"]),
     ]
     for title, values in groups:
         lines.extend(["", f"## {title} ({len(values)})", ""])
@@ -402,7 +417,8 @@ def main() -> int:
         ("Missing source PVs", "missing", 15),
         ("Unresolved OPI macros", "macros", 10),
         ("Possible Phoebus writes not allowlisted (review widget behavior)", "unallowlisted", 25),
-        ("Readback-like monitors unobserved in OFF probe", "unobserved_monitors", 25),
+        ("Equipment readback candidates unobserved in OFF probe", "equipment_gaps", 50),
+        ("Protection monitor bitfields outside Python plant scope", "protection_monitors", 15),
     ):
         values = report[key]
         print(f"\n{label} ({len(values)}):")
