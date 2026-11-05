@@ -103,6 +103,7 @@ def test_real_phoebus_emu_references_are_extracted():
 def test_report_is_reproducible_and_does_not_require_epics():
     report = audit.build_report(ROOT, probe_runtime=False)
     assert report["summary"]["registry_total"] == 1052
+    assert report["summary"]["missing_pvs"] == 0
     assert report["summary"]["file_count"] >= 76
     assert report["summary"]["phoebus_unique"] > 0
     assert "LEBT:EMIT:MOTOR.VAL" in {r["pv"] for r in report["references"]}
