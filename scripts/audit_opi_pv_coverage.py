@@ -67,7 +67,7 @@ def binding_pvs(raw: str) -> list[tuple[str, str]]:
              if ":" in item or MACRO.search(item)]
     if names:
         return [("expression_reference", name) for name in names]
-    if re.fullmatch(r"=\\s*[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)\\s*", value):
+    if re.fullmatch(r"=\s*[+-]?(?:\d+(?:\.\d*)?|\.\d+)\s*", value):
         return [("constant_expression", "")]
     return [("unresolved_expression", "")]
 
