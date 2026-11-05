@@ -70,3 +70,22 @@ def test_rc_ps_source_has_unresolved_current_scale_inconsistency():
     assert ctx.outputs["LEBT:RC_PS:IRdbkcalc"][0] == pytest.approx(
         ctx.outputs["LEBT:RC_PS:IRdbk"][0] / 30000
     )
+
+
+@pytest.mark.parametrize("prefix", ["LEBT:STH01_PS", "LEBT:STH02_PS"])
+def test_horizontal_steerer_voltage_readback_ramps_and_is_not_setpoint_echo(prefix):
+    device = PowerSupplyDevice(prefix, catalog(), {})
+    ctx = SimulationContext(
+        pv={f"{prefix}:ON": 1, f"{prefix}:VSet": 8.0, f"{prefix}:ISet": 10.0},
+        interlocks={"COOLING:READY": True},
+    )
+    device.update(0.5, ctx)
+    assert ctx.outputs[f"{prefix}:OnStat"][0] == 1
+    assert ctx.outputs[f"{prefix}:VRdbkcalc"][0] == pytest.approx(0.5)
+    assert ctx.outputs[f"{prefix}:VRdbkcalc"][0] != ctx.pv[f"{prefix}:VSet"]
+
+    ctx.pv[f"{prefix}:ON"] = 0
+    ctx.pv[f"{prefix}:OFF"] = 1
+    device.update(0.5, ctx)
+    assert ctx.outputs[f"{prefix}:OnStat"][0] == 0
+    assert ctx.outputs[f"{prefix}:VRdbkcalc"][0] == pytest.approx(0.0)
