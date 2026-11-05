@@ -1,0 +1,64 @@
+Summary LIPAc of injector parameters
+Date: 20260603-1741
+
+. Security aValve H2 : Close
+. Valve H2 : Close
+. Flow set H2 (sccm) : 0
+. Flow read H2 (sccm) : 0.017
+. Security Valve D2 : Open
+. Valve D2 : Open
+. Flow set D2 (sccm) : 1.5
+. Flow read D2 (sccm) : 1.503
+. Main HV : set V (kV) = 0
+. Main HV : read V(kV) = 0.00921513
+. Main HV : set I (mA) = 1
+. Main HV : read I (mA) = 0.0120104
+. C1 : set I (A) = 37.5
+. C1 : read I (A) = 37.4979
+. C2 : set I (A) = 93.6
+. C2 : read I (A) = 93.5937
+. IE_PS : Off
+. IE : set I (mA) = 5
+. IE : set V (kV) = 0
+. IE : read V(kV) = 0
+. RF Mode : Pulse
+. Generateur RF : ON
+. Generateur RF ( CW Mode ) P (W) : 0
+. Generateur RF ( Pulsed Mode ) P (W) : 500
+. Generateur RF ( Pulsed Mode ) Offset (W) : 0
+. ATU Mode : Remote
+. ATU (X) : 1384
+. ATU (Y) : 2379
+. Ground Electrode (GE): Temp(Deg C) = 32.0125
+. SOL01 : set I(A) : 0
+. SOL01 : read I(A) : 0.033514
+. SOL02 : set I(A) : 0
+. SOL02 : read I(A) : 0.03867
+. STH01 : set I(A) : 0
+. STV01 : set I(A) : 0
+. STH02 : set I(A) : 0
+. STV02 : set I(A) : 0
+. R_PS : set V(kV) : 0
+. R_PS : read V(kV) : 0.003
+. R_PS : read I(A) : 0.00666667
+. RC_PS : set V(kV) : 0
+. RC_PS : read V(kV) : 0.0001
+. Faraday Cup : In
+. Faraday Cup : I(mA) : 2.02191
+. Faraday Cup Water Temp. inlet (Deg C) : 50
+. Faraday Cup Water Temp. outlet (Deg C) : 23.4664
+. FC (EMU-FC, ACCT) Measurememt Start (ms) : 2.8
+. FC (EMU-FC, ACCT) Measurememt End (ms) : 3
+. SGVC #1 (mbar) : 3.7e-06
+. GV : Close
+. SGVC #2 (mbar) : 7.3e-06
+. Repetition (ms) : 1000
+. Source pulse width (ms) : 2.99998
+. Chopper Delay (us) : 15999.9
+. Chopper pulse width (us) : 99.999
+. Chopper HV Set (V) : 0
+. Valve Kr : Close
+. Flow set Kr (sccm) : 0
+. Flow read Kr (sccm) : 0.234
+. HV sparks count : 1
+. Repeller sparks count : 1
