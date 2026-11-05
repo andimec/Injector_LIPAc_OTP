@@ -213,7 +213,7 @@ Those items should be added after the corresponding authoritative signal or
 protection documentation is available.
 
 
-### 4.1 Legacy signal qualification (legacy equation context)
+### 6.1 Legacy signal qualification (legacy equation context)
 
 The legacy PLC equation refers to a dedicated Repeller fault condition. The
 current V2.0 registry exposes the Repeller power-supply ON status but does not
