@@ -4,6 +4,10 @@ This directory contains all simulation and original-LCS equation implementations
 **No model calls caput/caget, writes an EPICS database, or communicates with
 a real accelerator.** The thin EPICS IOC is a transport/interface boundary.
 
+## Detailed guides in Spanish
+
+A guide is available for **every Python implementation module**, with pseudocode, implemented equations, model limitations and development roadmap: [modelo por modelo](../../../docs/models/README.md). These guides distinguish original LCS formula equivalence, training assumptions and experimental validation.
+
 ## Evidence and version precedence
 
 1. Injector LCS User Manual **v4.0, 01-Oct-2026**: operating modes, security

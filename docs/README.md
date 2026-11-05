@@ -2,6 +2,8 @@
 
 **Estado de referencia:** 5 de noviembre de 2026. Incluye modelos Python de EMU y reproducción offline de los registros experimentales Fast/Full Scan. Los botones Validate/ON por EPICS siguen pendientes. Este índice describe el **estado del código**, no constituye una validación del funcionamiento físico ni del control de seguridad de LIPAc.
 
+**Guías explicativas de los 18 módulos Python:** [índice de modelos, lógica, pseudocódigo y próximos pasos](models/README.md).
+
 ## Cómo leer la documentación
 
 | Documento | Contenido y alcance |
