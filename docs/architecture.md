@@ -1,211 +1,92 @@
-# Injector OTP architecture
+# Injector LIPAc OTP: current software architecture
 
-## 1. Design principles
+> **Baseline:** 5 November 2026. Repository `main` after the native-name PV/readback integration (commit `062cdd8`). This is an offline Python training simulator, not a deployed or validated replica of LIPAc hardware.
 
-1. **Simulation first.** Physical models do not depend on EPICS or Phoebus.
-2. **PV contract first.** EPICS names and semantics form the interface between the model and operator layer.
-3. **No production writes.** The simulator is isolated from the real Injector control system.
-4. **Deterministic time.** A simulation step receives an explicit `dt`, enabling accelerated, real-time and replay modes.
-5. **Faults are first-class objects.** Fault injection modifies model state through an explicit interface rather than hidden test code.
-6. **PBS traceability.** PVs, models and training scenarios should carry the four-level PBS path.
+## 1. Design and deployment rules
 
-## 2. Runtime layers
+1. **Python owns Injector behaviour.** Physical/reduced-order models, state, fault propagation, ramp sequencing, authorization calculations, and readback values run in Python.
+2. **EPICS is a transport/interface.** A future thin Soft IOC exposes PV types, field metadata and CA/PVA subscriptions; it must not independently calculate machine behaviour.
+3. **Native source names.** Keep `SRC:...`, `LEBT:...`, `PPS:...` etc. unchanged across Python, the simulated IOC and Phoebus. Do **not** prepend `OTP:`.
+4. **Strict write ownership.** Only allowlisted operator commands/setpoints are writable. Readbacks and external PPS/PLC conditions are not writable through the operator backend.
+5. **Network isolation is mandatory.** The VM and its training interfaces must have no connection, route, broadcast, discovery or VPN path to the actual LIPAc controls. Identical PV names are acceptable only in that isolated environment.
+6. **Traceability and model maturity.** A source PV, source formula or OPI widget does not prove that a physically realistic Python model exists.
 
-### Model layer
-
-Owns physical behavior and subsystem state. Candidate model domains are:
-
-- ion source and gas injection
-- source coils
-- LEBT magnets
-- vacuum
-- high voltage
-- RF
-- chopper/timing
-- diagnostics and Faraday cup
-- water cooling
-- MPS/PPS/interlocks
-
-The first code only provides interfaces and a top-level placeholder. Physics is intentionally not embedded in the architecture skeleton.
-
-### Simulation engine
-
-Coordinates the models, simulation clock, state machine, faults and PV publication. The target update period is configurable. The initial default is 100 ms.
-
-### EPICS adapter
-
-The adapter translates model state into the EPICS PV contract and translates operator commands into model inputs. The current `PVStore` is an in-memory backend. A real EPICS backend should be added behind the same interface.
-
-Recommended future backends:
+## 2. Current data flow
 
 ```text
-PVStore (test)
-    |
-    +-- EPICS CA/PVA backend
-    |
-    +-- Replay backend
+Phoebus OPI  (future end-to-end integration)
+    |  EPICS CA/PVA, native Injector PV names
+    v
+Thin simulation Soft IOC  (not yet implemented end-to-end)
+    |  local bridge/adapter
+    v
+SimulationPVState (src/injector_otp/pv/state.py)
+    |  commands/setpoints, model-owned readbacks
+    v
+SimulationEngine (src/injector_otp/core/engine.py)
+    +-- SimulationControlPlane + InjectorInterlockLogic
+    +-- InjectorModel / device models
+    +-- FaultManager
+    +-- injector operating state
+    +-- internal SIM:STATE and SIM:TIME
 ```
 
-### Phoebus / OPI
+The **existing** `SimulationPVBackend` and `LocalPVBridge` are in-memory/local adapters. Neither is proof of a running networked Soft IOC. `SIM:STATE` and `SIM:TIME` are internal runtime indicators, not original Injector device PVs.
 
-Phoebus is an external operator interface. It should communicate only through the simulation EPICS IOC in training mode. OPI files are not part of the first architecture commit.
+## 3. Runtime implementation
 
-## 3. State machine
+- Entry point: `src/injector_otp/app.py:build_application()`. The default registry is `config/pv_registry_v2_0.json`.
+- PV metadata, original DB fields and clamping: `models/catalog.py`.
+- Time-step and publication: `core/engine.py`. The default step is **0.1 s**, not an EPICS network publication guarantee.
+- Operator writes vs simulation publication: `pv/state.py` and `config/pv_runtime_overrides.yaml`.
+- Deterministic faults: `faults/manager.py`, injected through control/model states.
+- Injector state machine: `core/state.py`. Its state progression is a framework, not a validated operational procedure controller.
+- Pre/post model authorization: `interlocks/logic.py` and `core/control.py`.
 
-Initial states:
+The engine reads the current PV state, applies faults, evaluates pre-model authorization, advances models, evaluates authorization again, processes internal allowlisted command requests, publishes outputs, and advances its simulation clock. See [PV runtime contract](pv_runtime_contract.md) for the precise interface rules.
 
-`OFF -> GAS_READY -> VACUUM_READY -> HV_READY -> RF_READY -> BEAM_READY -> BEAM_ON`
+## 4. Implemented model families
 
-Fault paths:
+| Domain | Python implementation | Current maturity |
+|---|---|---|
+| HV, IE, repellers, coils, solenoids and steerers | `models/power_supplies.py`; `hv_auto_ramp.py` | Rate-limited responses, status and source scaling; no verified transient calibration |
+| H2/D2, LEBT gas, valves, vacuum and cooling | `models/plant.py`; `vacuum_opi.py` | Reduced-order gas/vacuum and OPI preconditions, largely uncalibrated |
+| RF generator, ATU encoding and timing | `models/control_devices.py` | Source register/bit calculations plus synthetic dynamics; not a full RF/coupling model |
+| Chopper/CIM | `models/chopper_cim.py` | Synthetic PRE-ARM/ARMED/FBI and snapshots; FPGA logic unverified |
+| Faraday cup, positioners and calorimetry | `models/control_devices.py`; `calorimetry.py` | Qualitative beam signal and recovered legacy equations |
+| EMU motor, servo, HV plates, FACQ and scans | `models/emu_hardware.py`; `emu_sequencer.py`; `emu_geometry.py`; `emu_analysis.py` | Executable offline SNL-inspired reconstruction; waveform, motor and hardware realism unvalidated |
+| Current authorization and selected historical PLC equations | `interlocks/logic.py`; `original_lcs_logic.py` | Training logic, not an implementation of the real safety system |
 
-`any operational state -> FAULT`
+Model registration and maturity labels are in `src/injector_otp/models/injector.py` and `src/injector_otp/models/README.md`. Some source signals are **interface-only** and deliberately have no fabricated readback.
 
-Protection paths:
+## 5. PV inventory and traceability
 
-`any operational state -> INHIBITED`
+- **Active:** `config/pv_registry_v2_0.json`, **1,052 PV/field references**, including six EMU SNL-related additions.
+- **Historical:** `config/pv_registry_v1_2.json`, 891 entries, kept for provenance, not selected by default.
+- Source evidence: copied DBs in `db/`, original-index audit in `audit/original_lcs/`, PV comparison in `audit/registry_v2/`, and historic/current OPI assets in `Injector_OPI/`.
+- Readback traceability and known missing pairs: [PV write/readback matrix](pv_readback_traceability.md).
+- Verified operator write allowlist: `config/pv_runtime_overrides.yaml`. PV access metadata must not be treated as proof of semantic write ownership.
 
-Shutdown is represented separately so procedures can later trace each transition to training steps.
+A registry entry may represent a record field, a macro-dependent name, an OPI reference, an old DB record or a physical process monitor. Presence alone is neither executable IOC coverage nor evidence of a calibrated model.
 
-The transition rules are intentionally permissive in v0.1. Procedure-specific guards will be implemented after the PV and interlock contracts are validated.
+## 6. Protection boundary
 
-## 4. PV ownership
+`PPS:*:PermStat` and related inhibit signals are simulated **external conditions** until authoritative PPS behaviour is implemented. Current and historical authorization equations are modeled separately. No part of this repository replaces PPS/MPS hardware. Consult [interlocks](interlocks.md).
 
-A PV should eventually have a unique owner model. Example:
+## 7. Development milestones
 
-```text
-SRC:COIL01_PS:ISet
-  -> PBS 04.04.01.02
-  -> coils model
-  -> operator command
-```
+| Area | Status as of baseline |
+|---|---|
+| Architecture, local Python state and tests | Implemented |
+| V2.0 PV inventory and Python models | Implemented in varying levels of maturity |
+| EMU offline scanning and provisional analysis | Implemented; physical/OPI validation pending |
+| Native PV naming and local write authorization | Implemented in Python |
+| Generated dumb IOC records with record-field fidelity | **Pending** |
+| EPICS 7 CA/PVA + Python bidirectional bridge | **Pending** |
+| Phoebus end-to-end operation on isolated Debian VM/Podman | **Pending** |
+| Calibrated beam, vacuum, RF, EMU, protections | **Pending** |
+| Procedures, logging/replay, complete automated PV/OPI coverage | Partial/planned |
 
-and:
+## 8. Related documents
 
-```text
-PPS:BEAM:InhibitStat
-  -> PBS 04.04.05.01 (provisional)
-  -> PPS/MPS logic
-  -> protection status
-```
-
-The same PV contract should be usable by a simulation IOC and, where appropriate, by an adapter to recorded real-machine data. This does not imply that the simulator is allowed to command the real IOC.
-
-## 5. Fault injection
-
-Fault IDs should be stable and scenario-oriented. Initial categories:
-
-- vacuum loss
-- RF failure
-- HV trip
-- magnet/current drift
-- cooling fault
-- diagnostic/sensor fault
-- communication/PV fault
-- MPS/PPS trip
-
-Each fault should define trigger conditions, affected PVs, model effect, recovery behavior and expected operator response.
-
-## 6. Data and traceability
-
-The future authoritative registry should connect:
-
-```text
-PV <-> PBS <-> model variable <-> procedure step <-> fault scenario <-> OPI widget
-```
-
-The V1.1 Excel matrix is the working source for the current PV/PBS cross-check. It should later be converted into machine-readable CSV/YAML generated from a controlled source, rather than manually maintaining two independent lists.
-
-## 7. Proposed repository evolution
-
-```text
-Phase 1  Architecture skeleton                 [current]
-Phase 2  Complete PV registry + PBS mapping
-Phase 3  EPICS simulation IOC
-Phase 4  Subsystem behavioral models
-Phase 5  Injector startup/CW procedure engine
-Phase 6  MPS/PPS and fault injection
-Phase 7  Phoebus OPIs
-Phase 8  Logging, replay and scenario validation
-Phase 9  Real/virtual IOC interchangeability
-```
-
-
-## 8. Interlock architecture
-
-The interlock layer is an external simulation-logic component. Physical
-subsystem models do not contain the Injector authorization equations.
-
-The SimulationEngine evaluates external logic before the physical-model update:
-
-```
-PV state
-   |
-   v
-InjectorInterlockLogic
-   |
-   +--> normalized authorization signals
-   |
-   +--> SimulationControlPlane
-             |
-             +--> physical models
-             +--> state/protection observers
-```
-
-The internal authorization convention is:
-
-- True: authorized / allowed.
-- False: blocked.
-
-The logic integrates the available documentation as complementary evidence.
-The current LCS User Manual v4.0 supplies the main authorization chains, while
-the PLC maintenance documentation contributes legacy signal relationships and
-Boolean equations. A legacy relationship is never silently substituted for a
-current authorization chain.
-
-The implemented authorization groups are:
-
-1. HVPS authorization.
-2. IEPS authorization.
-3. RF-for-Plasma authorization.
-4. RF-for-Beam authorization.
-5. normalized beam authorization including the available FBI status.
-
-The legacy relationships are exposed separately under the normalized
-LEGACY:MPS namespace.
-
-### 8.1 Source-to-model traceability
-
-Each implemented condition should be traceable to:
-
-```
-source document
-    -> documented condition / signal
-    -> PV registry entry
-    -> interlock expression
-    -> normalized control-plane signal
-    -> test case
-```
-
-If the documentation does not define a complete Boolean equation, the
-implementation records the missing information rather than inventing a rule.
-
-### 8.2 Fault separation
-
-Device faults are independent from authorization signals. The external
-control plane may contain, for example:
-
-```
-device_faults["hv"] = True
-interlocks["HV:ENABLE"] = False
-```
-
-This separation is required so that training scenarios can exercise fault
-injection, interlock response and recovery independently.
-
-### 8.3 Protection boundary
-
-The OTP reproduces observable protection and authorization behaviour for
-training and simulation. It does not replace the real Injector PPS/MPS
-hardware. Detailed latching, timing, reset and recovery behaviour should only
-be implemented when supported by the corresponding authoritative
-documentation.
+[Configuration](configuration.md) · [EPICS architecture](epics_architecture.md) · [IOC contract](simulation_ioc_contract.md) · [PV runtime contract](pv_runtime_contract.md) · [Readback matrix](pv_readback_traceability.md) · [Modeling baseline](modeling_baseline.md) · [Original LCS provenance](original_lcs_model_logic.md) · [EMU reconstruction](emu_reconstruction.md).
