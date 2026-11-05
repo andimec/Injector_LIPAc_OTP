@@ -8,7 +8,7 @@
 |---|---|
 | [architecture.md](architecture.md) | Arquitectura vigente, módulos Python, estados de implementación y tareas pendientes |
 | [configuration.md](configuration.md) | Registro PV activo V2.0, parámetros, propiedad de entradas y condiciones iniciales |
-| [pv_readback_traceability.md](pv_readback_traceability.md) | Mapeo de PV de escritura/readback, responsables Python, conversiones y lagunas identificadas |
+| [opi_pv_coverage.md](opi_pv_coverage.md) | Auditoría automática de OPIs, cobertura del registro V2.0 y productores Python; exporta CSV/JSON |\n| [pv_readback_traceability.md](pv_readback_traceability.md) | Mapeo de PV de escritura/readback, responsables Python, conversiones y lagunas identificadas |
 | [pv_runtime_contract.md](pv_runtime_contract.md) | Control de propiedad y permisos de PV, secuencia de simulación, límites del runtime |
 | [epics_architecture.md](epics_architecture.md) | Diseño Phoebus ↔ Soft IOC ↔ puente ↔ Python. El despliegue real sigue pendiente |
 | [simulation_ioc_contract.md](simulation_ioc_contract.md) | Contrato del adaptador local, nombres originales y requisitos de red aislada |
