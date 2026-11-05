@@ -259,13 +259,13 @@ The isolated VM uses unmodified source PV names. Its EPICS adapter must
 be configured to bind only to private VM/training network interfaces and
 must never discover or route to the LIPAc control network.
 
-## 13. Current verified pilot contract
+## 13. Current verified pilot contract (Python-side)
 
-The first end-to-end slice should use:
+The first **future end-to-end** slice should use the following names, provided they are verified against the source V2.0 catalog and the current input allowlist:
 
-    LEBT:HV_PS:OnCmd
+    LEBT:HV_PS:HTOnCmd
     LEBT:HV_PS:OnStat
-    LEBT:HV_PS:VMon
+    LEBT:HV_PS:ScaleVHT
     SRC:COIL01_PS:ISet
     SRC:COIL01_PS:IRdbk
     PPS:HV:PermStat
@@ -281,6 +281,8 @@ The acceptance path is:
       -> Python output state
       -> Soft IOC
       -> Phoebus monitor
+
+The internal indicators `SIM:STATE` and `SIM:TIME` are **not** LIPAc equipment PVs. The read/write matrices, known readback gaps, and source scaling caveats are detailed in [PV write/readback traceability](pv_readback_traceability.md). The local backend currently preserves native names without a prefix.
 
 ## Source traceability
 

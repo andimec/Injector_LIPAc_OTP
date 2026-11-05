@@ -110,7 +110,7 @@ The current manual lists the required beam-side categories:
 - Repeller;
 - PPS beam permission.
 
-The V1.2 PV registry contains PPS:ACCL:PermStat and PPS:BEAM:InhibitStat,
+The reconciled V2.0 PV registry retains PPS:ACCL:PermStat and PPS:BEAM:InhibitStat,
 rather than a PV named PPS:BEAM:PermStat. Engine 2.0 therefore represents
 the beam-side PPS condition as:
 
@@ -213,10 +213,10 @@ Those items should be added after the corresponding authoritative signal or
 protection documentation is available.
 
 
-### 4.1 Legacy signal qualification
+### 6.1 Legacy signal qualification (legacy equation context)
 
 The legacy PLC equation refers to a dedicated Repeller fault condition. The
-current V1.2 registry exposes the Repeller power-supply ON status but does not
+current V2.0 registry exposes the Repeller power-supply ON status but does not
 provide a dedicated Repeller FSDefStat signal in the same naming family.
 
 For that reason the implementation uses Repeller availability as a readiness
@@ -224,3 +224,8 @@ proxy in LEGACY:MPS:FOCALIZATION:OK. This signal must not be interpreted as a
 literal reconstruction of the historical MPS fault bit. It can be replaced by
 the exact Repeller fault PV when the authoritative current signal definition
 is available.
+
+
+## 7. Current scope and PV naming
+
+The Python interlock layer uses native PV names from the active V2.0 registry. External PPS permits/inhibits are scenario conditions, **not operator-write PVs**. The normalized `LEGACY:MPS:*` signals are internal diagnostic logic, not a mandate to publish corresponding EPICS records. The real PPS/MPS hardware and PLC timing/latching behavior remain outside the currently validated simulator. Running Phoebus and the Soft IOC on a VM isolated from LIPAc is still pending. Consult [architecture](architecture.md), [PV ownership](pv_runtime_contract.md) and [source logic](original_lcs_model_logic.md).

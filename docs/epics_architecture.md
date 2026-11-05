@@ -36,7 +36,7 @@ Phoebus contains no simulation logic.
 
 ### Simulation Soft IOC
 
-The Soft IOC is intentionally simple:
+The Soft IOC is **planned**, not yet an end-to-end deployed CA/PVA interface. Its intended responsibilities are:
 
 - define PVs;
 - expose EPICS data types and metadata;
@@ -120,7 +120,7 @@ The physical model never calls EPICS directly.
 
 ## Timing
 
-The initial simulation timestep is 0.1 s.
+The configured default simulation timestep is 0.1 s.
 
 Simulation and EPICS publication frequencies are independent. A future model may
 run at a finer internal timestep while EPICS publication remains slower.
@@ -151,12 +151,11 @@ The dependency direction is:
         v
     Soft IOC
 
-The old in-memory SimulationPVBackend is retained as a compatibility adapter
-for tests and pre-IOC development. The engine no longer imports it.
+The existing in-memory `SimulationPVBackend` is used by Python tests and local callers; the `LocalPVBridge` is likewise in-process. The engine does not depend on either transport. Both preserve source PV names without a namespace transform.
 
 ## First integration milestone
 
-Use only PVs verified to exist in the current V1.2 registry. The initial pilot
+Use only PVs verified to exist in the active V2.0 registry, with confirmed ownership and correct EPICS record-field semantics. The initial pilot
 should be based on:
 
     LEBT:HV_PS:HTOnCmd
@@ -169,8 +168,7 @@ should be based on:
     PPS:HV:PermStat
     PPS:BEAM:InhibitStat
 
-The exact semantic classification of PVs not covered by the runtime override
-file remains unresolved.
+The exact semantic classification of PVs not covered by the runtime override file remains unresolved. The examples are model/contract checks, not proof of OPI connectivity. Detailed write/readback pairs and known gaps are in [PV traceability](pv_readback_traceability.md).
 
 Acceptance path:
 

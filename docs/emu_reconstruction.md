@@ -190,11 +190,16 @@ The Python model uses those names as logical interfaces. For a true
 EPICS 7 IOC, `MOTOR.DMOV` and `OnOffCmd.RVAL` are *record field*
 references, not independent base record names. Their implementation
 requires a field-compatible server/mapping rather than blindly creating
-new records named `*.DMOV` or `*.RVAL`. All future network-visible PVs
-must remain isolated in the `OTP:` namespace.
+new records named `*.DMOV` or `*.RVAL`. The eventual Soft IOC must expose **the same original LIPAc PV names** on a VM isolated from the production network; there is no `OTP:` prefix.
 
 The existing `db/emitApp/db/` still contains copied `calc` records.
 They must not execute competing EMU calculations in the final thin IOC.
+
+### Current naming and maturity
+
+The Python `SimulationPVBackend` and `LocalPVBridge` preserve native PV names, e.g. `LEBT:EMIT_PS1:VSet` and `LEBT:EMIT_PS1:VRdbk`. The source records with fields such as `MOTOR.DMOV` and `OnOffCmd.RVAL` must be implemented as **record fields**, not ad hoc names of independent EPICS records. Only a private VM/training network is permitted. The current code does not implement a networked Soft IOC or validate its record-field semantics.
+
+Read the [write/readback traceability matrix](pv_readback_traceability.md) for the OPI-facing EMU commands and model-generated monitor ownership.
 
 ### Current acceptance tests
 
@@ -210,8 +215,4 @@ live hardware or OPC server is contacted.
 
 ## Questions to close with the machine team
 
-Before claiming quantitative and operational equivalence, obtain the
-EMU manuals **2E7XBQ**, **22BCRE v2.1** and **2E98YT v1.0**; current
-motor/servo speed and homing calibration, field/polarity of plate supplies,
-the real `ExtSec` PLC channel, PS1/PS2 turn-on/ramp traces, FACQ
-event/waveform acquisition rules and the validated Fast/Full presets.
+The supplied EMU references **2E7XBQ**, **22BCRE v2.1**, **2E98YT v1.0** and the 2026 optimization test report are available for documentary comparison. The optimized EMU user/maintenance material describes ROI acquisition, a global voltage grid and optional waveform logging. However, **having the manuals is not the same as validating the simulator against real acquisition**. Still obtain current motor/servo speed and homing calibration, plate polarity/field traces, the actual `ExtSec` PLC mapping, PS1/PS2 turn-on/ramp traces, FACQ timing/waveform datasets and operator-approved Fast/Full parameter presets.

@@ -51,15 +51,19 @@ The documentation establishes several dependencies that should become model inte
 
 The SimulationEngine should evolve from a list of independent update(dt) calls into an ordered deterministic cycle:
 
-1. Read operator commands and setpoints from the simulation PV namespace.
-2. Evaluate external authorization/interlock logic from the current observed state.
-3. Apply active synthetic faults and synchronize fault state.
-4. Update physical/reduced-order subsystem models.
-5. Evaluate MPS/PPS effects and beam inhibition.
-6. Evaluate the injector operating state.
-7. Publish calculated/readback/status PVs.
-8. Record a simulation snapshot.
-9. Advance the simulation clock.
+The **implemented** cycle in `SimulationEngine.step()` is:
+
+1. Refresh context from operator commands/setpoints and scenario PVs using **native PV names**.
+2. Synchronize synthetic faults.
+3. Evaluate pre-model interlocks and the control plane.
+4. Advance physical/reduced-order Python models.
+5. Re-evaluate authorization after model changes.
+6. Synchronize the Python state machine and increment simulation time.
+7. Apply internal sequencer commands through the input allowlist.
+8. Publish simulation-generated readbacks and runtime indicators (`SIM:STATE`, `SIM:TIME`).
+9. Refresh the context PV snapshot.
+
+A networked Soft IOC and deterministic log/replay integration are separate pending steps.
 
 The order is intentional. In particular, authorization is derived from subsystem conditions and must not be represented as an arbitrary operator-controlled status PV.
 
@@ -85,7 +89,7 @@ These are modelling references. They are not automatically interpreted as hard p
 
 ## Deferred physics
 
-The engine will initially use reduced-order deterministic models. Detailed plasma physics, beam transport, RF electromagnetic simulation, thermal-fluid CFD and detailed vacuum conductance networks remain separate model implementations and can later be coupled through the same interfaces.
+The engine **currently uses** reduced-order deterministic models. Detailed plasma physics, beam transport, RF electromagnetic simulation, thermal-fluid CFD and detailed vacuum conductance networks remain separate model implementations and can later be coupled through the same interfaces.
 
 This keeps the OTP useful for operator training and control integration without inventing undocumented physical behaviour.
 
@@ -95,6 +99,6 @@ The EMU is now executable as separate Python models for MAXv motor and servo
 coordination, ICV plate supplies, FACQ scalar event and the original
 measurement state machine. Exact geometry and SNL voltage-grid calculations
 are kept separate from explicitly uncalibrated movement/response parameters.
-See [EMU reconstruction](emu_reconstruction.md). The in-memory simulator must
+See [EMU reconstruction](emu_reconstruction.md) and [readback traceability](pv_readback_traceability.md). The in-memory simulator must
 not be interpreted as a deployed interlock, real FACQ waveform acquisition or
 calibrated transverse emittance measurement.
