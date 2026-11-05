@@ -1,70 +1,57 @@
-# Simulation configuration
+# Configuration of the Injector LIPAc offline simulator
 
-The simulation uses four separate concepts.
+> **Baseline:** 5 November 2026, after PV registry V2.0, EMU reconstruction and native PV-name integration. All paths are relative to the repository root.
 
-## 1. PV registry
+## 1. Active and historical PV registries
 
-config/pv_registry_v1_2.json answers:
+- **Active default:** `config/pv_registry_v2_0.json` (1,052 PV/field references). `src/injector_otp/app.py:build_application()` loads this file unless explicitly overridden.
+- **Historical archive:** `config/pv_registry_v1_2.json` (891 entries), retained for reproducibility, not the default.
+- `config/pv_registry.yaml` is a historical/initial contract and **does not supersede** the reconciled V2.0 JSON.
+- The V2.0 registry combines historical PV snapshot, copied EPICS DB files, original LCS audit and OPI references. Record fields and unresolved macro names require special care when generating a future IOC.
 
-Which EPICS PVs exist in the source Injector snapshot?
+Source EPICS read/write metadata is **not** the same as model command/write ownership.
 
-It is the machine-readable interface inventory.
+## 2. Runtime PV ownership
 
-The source read_access / write_access flags describe the source EPICS
-transport interface. They do not uniquely determine Digital Twin ownership.
+`config/pv_runtime_overrides.yaml` defines:
 
-## 2. Runtime ownership overrides
+- `inputs`: approved operator-write commands/setpoints, including EMU scan parameters and motor/plate commands.
+- `external_conditions`: simulated PPS/PLC/operational conditions, not operator-writable in Phoebus.
+- `outputs`: selected simulation-owned readbacks/status values.
 
-config/pv_runtime_overrides.yaml answers:
+Only explicitly allowed inputs can be changed with `SimulationPVBackend.put()`. The Python engine uses `context.emit()` for readbacks and `context.request_command()` for **allowlisted** internal sequencer commands. The V2.0 registry contains many entries beyond this verified set; do not infer write permissions by name suffix alone.
 
-Which PVs have a verified semantic role in the Python runtime?
+## 3. Model parameters vs operating references
 
-Only verified pilot inputs are made operator-writable here.
+- `config/model_parameters.yaml`: numerical training parameters, e.g. ramp rates, gas response times, vacuum pressure balance, RF response/ATU hypotheses and EMU motor/plate/FACQ synthetic settings. These are not generally calibrated device constants.
+- `config/injector_operating_parameters.yaml`: reference values from operator procedures/manuals, not automatically enforced safety thresholds.
+- `docs/original_lcs_model_logic.md`: source-derived calculations and their limitations.
 
-Unlisted read/write PVs remain unresolved rather than being silently treated as
-commands.
+## 4. Initial conditions
 
-## 3. Operating parameters
+`config/simulation/default.yaml` specifies:
 
-config/injector_operating_parameters.yaml answers:
+- `simulation.initial_state` and `simulation.timestep_s` (default 0.1 s);
+- `external_conditions` for scenario setup;
+- `initial_pvs` for startup values and EMU input defaults;
+- `device_faults` for scenario fault flags.
 
-Which physical/operating values are useful as modelling references?
+Startup values are **not** proof that the real machine is ready. Configuration cannot replace dynamic model-owned readbacks or PPS logic; internally generated model outputs take precedence once the engine advances.
 
-It is not a startup-state database and does not define EPICS ownership.
+## 5. Native PV names and VM network configuration
 
-## 4. Simulation configuration
+Source names are unchanged: `SRC:COIL01_PS:ISet` is also the simulated IOC/Phoebus name. There is **no `OTP:` prefix or mapping**.
 
-config/simulation/default.yaml answers:
+The intended deployment is a VM disconnected from the real LIPAc control network. Do not configure a production IOC host, CA address list, PVA beacon destination, bridged interface or VPN into LIPAc. Restrict future CA/PVA access to the loopback or dedicated offline training network. Network isolation is a necessary **deployment check**, not a feature proven by the current Python tests.
 
-In which initial external condition should this simulation instance start?
+Internal runtime-only indicators: `SIM:STATE`, `SIM:TIME`. They are not source LIPAc equipment PVs.
 
-It contains initial conditions required by the simulation but not yet generated
-by a physical model.
+## 6. Practical local check
 
-Calculated values do not belong here.
+```bash
+python -m pip install -e ".[dev]"
+pytest
+python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_training.csv
+```
 
-The Python runtime generates dynamic state and calculated outputs.
-
-## Separation of sources of truth
-
-    PV registry
-        -> interface inventory
-
-    Runtime overrides
-        -> verified ownership semantics
-
-    Operating parameters
-        -> modelling reference
-
-    Simulation config
-        -> initial conditions
-
-    Python runtime
-        -> dynamic state and calculated outputs
-
-## Configuration safety
-
-Configuration must never contain a production IOC address or production PV
-endpoint.
-
-The network-facing simulation namespace is always OTP:.
+This exercises **Python-only behavior**; it does not start the EPICS Soft IOC or prove Phoebus connectivity. See [architecture](architecture.md), [readback traceability](pv_readback_traceability.md) and [IOC contract](simulation_ioc_contract.md).
