@@ -375,6 +375,20 @@ def main() -> int:
         json.dumps(summary_payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (dest / "AUDIT.md").write_text(markdown(report), encoding="utf-8")
     print(json.dumps(report["summary"], indent=2, sort_keys=True))
+    # Keep the CI log useful without downloading artifacts or asserting that
+    # heuristic candidates are confirmed faults.
+    for label, key, limit in (
+        ("Missing source PVs", "missing", 15),
+        ("Unresolved OPI macros", "macros", 10),
+        ("Possible Phoebus writes not allowlisted (review widget behavior)", "unallowlisted", 25),
+        ("Readback-like monitors unobserved in OFF probe", "unobserved_monitors", 25),
+    ):
+        values = report[key]
+        print(f"\n{label} ({len(values)}):")
+        for name in values[:limit]:
+            print(f"  {name}")
+        if len(values) > limit:
+            print(f"  ... {len(values) - limit} more in audit artifact")
     if args.check:
         invalid = [r["command"] for r in report["pairs"]
                    if r["command"] not in {
