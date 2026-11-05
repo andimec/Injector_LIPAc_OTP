@@ -50,7 +50,7 @@ Every behavioural calculation is evaluated in Python, never inside the Soft IOC.
 | Steerers DV/DH 1/2 | `injectorSTV01/02.db`, `injectorSTH01/02.db` | `PowerSupplyDevice` | Command/readback interface, rate-limited response | Different PS families, polarity, readback gains and optics |
 | H2/D2 shutoff valves | `plcInjector_Output.db`, `plcInjector_Input.db` | `ValveDevice` | Open/close command, position feedback and PPS permit input | PLC ladder-specific movement time, fault/timeout, valve interlocks |
 | H2/D2 MFC | `injectorMKS_SRC_D2/H2.db`, StreamDevice protocol | `GasFlowController` | Valve command, setpoint, lag and flow readback | MKS controller behavior, local/remote, response constants, zero/span |
-| LEBT MFC | `injectorMKS_LEBT.db` | Interface-only | PV inventory and original command chain | Gas species, operational function, calibration |
+| LEBT MFC | `injectorMKS_LEBT.db` | `GasFlowController` (when the V2.0 prefix is present) | A provisional flow/valve-enable response, sharing the reduced-order gas model | Gas species, actual operating function, source suffix/units and calibration |
 | VAC01/VAC02 pumping | `plcInjector_Input/Output.db` | `VacuumRegionModel` | Pump commands, pump state, approximate pressure evolution | Conductance, pump curves, gauge ranges, volume, valve conductance |
 | Vacuum PV/SV/AIV/NIV | `plcInjector_StatusForOpi.db` | `ValveDevice` + `VacuumOPIPreconditions` | Valve positions; exact **OPI precondition displays** | Mandatory distinction from actual PLC authorization logic |
 | Gate valve GV | `plcInjector_Input/Output.db` | `ValveDevice` | Open/close and external PPS permit | Actual protection logic and fail-safe travel behavior |
@@ -62,7 +62,7 @@ Every behavioural calculation is evaluated in Python, never inside the Soft IOC.
 | Chopper drive | `plcInjector_Output.db` | `PositionerModel` | Insert/remove and position state | Movement time, MPS permit and thermal thresholds |
 | Chopper CIM / FBI | `Resources/Chopper_Interlock_Module/` | `ChopperCIMModel` | PRE-ARM/ARMED and injected FBI event snapshot | FPGA/cRIO thresholds, time windows, latch reset state machine |
 | Cooling skid | `plcInjector_Input.db` | `CoolingSkidModel` | External sensor state and injected failure | Temperatures, flow/pressure dynamics, PLC alarms and delays |
-| Faraday cup / beam stop | `plcInjector_Output.db`, `emitApp/db/injectorFC/BS_Calorimetry.db` | `PositionerModel` + beam qualitative observable | Position/synthetic signal | Calorimetry, intercept geometry and precise charge collection |
+| Faraday cup / beam stop | `plcInjector_Output.db`, `emitApp/db/injectorFC/BS_Calorimetry.db` | `PositionerModel`, `BeamTransportModel`, `LegacyCalorimetryModel` | Position/synthetic signal and recovered calorimetry calculations | Calorimetric calibration, intercept geometry and precise charge collection |
 | ACCT / fast acquisition | `facqApp/db`, `emitApp/db/emitIcv*` | Interface-only | PV inventory | Acquisition timing, normalization, calibration and waveforms |
 | Emittance measurement unit | `emitSnlEmu_v2.st`, `emitSnlMotor.st`, `emitSnlAlims.st` | `EmuMotorModel`, `EmuPlatePSModel`, `EmuScanSequencer`, `EmuAcquisitionModel` | Wide/upper/lower and ROI scan sequences, motor and plate readbacks, synthetic FACQ event, global 4096-point grid, preliminary RMS | Current Fast/Full presets, live FACQ waveform and physical calibration; [full audit](emu_reconstruction.md) |
 | FGA / RGA / diagnostics | `injectorFGA.db`, EMU and fast-acq records | Interface-only | PV inventory and equations | Sweep parameters, physics and acquisition model |
@@ -163,7 +163,7 @@ depending on power-supply on/off state.
 
 ## Inputs required for physical calibration
 
-The IOC code provides setpoint ranges and scaling, not actual dynamics.
+The source IOC code provides setpoint ranges and scaling, not validated plant dynamics.
 For realistic model behaviour we still require:
 
 - Per-device ramp/settling times, repeatability, limits and fault recovery.
@@ -175,5 +175,4 @@ For realistic model behaviour we still require:
 - Time-series traces of start-up, CW operation, sparks and fault scenarios.
 - EMU calibration, motor movement times and scanner trajectories.
 
-Do not expose this simulator to production PV endpoints. Only `OTP:`
-namespace must be network-visible.
+The simulator runs on an **isolated VM using unchanged source PV names**. No `OTP:` prefix is applied in the runtime or planned IOC. The VM must not have network reachability to the production LIPAc system; confirm routing, CA/PVA discovery and interface binding before enabling any IOC listener. See [EPICS architecture](epics_architecture.md) and [readback traceability](pv_readback_traceability.md).
