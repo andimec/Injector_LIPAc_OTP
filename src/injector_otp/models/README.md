@@ -33,8 +33,9 @@ a real accelerator.** The thin EPICS IOC is a transport/interface boundary.
 | `calorimetry.py` | FC, BS, IC | exact source CALC/FLNK equations | input sensor calibration and physical duty remain uncertain |
 | `emu_geometry.py` | EMU plate geometry and global grid | exact SNL geometrical equations | slit field/acceptance uncalibrated |
 | `emu_hardware.py` | EMU MaxV/servo, PS1/2 and FACQ | SNL timing and training actuator response | speed, delays, acquisition synthetic |
-| `emu_sequencer.py` | EMU wide/edge/ROI scans | 2026 source transitions and verified sample guards | Fast/Full settings not yet mapped |
+| `emu_sequencer.py` | EMU wide/edge/ROI scans | 2026 source transitions and verified sample guards | documented Fast/Full profiles identified; named preset selection not implemented |
 | `emu_beam.py`, `emu_analysis.py` | optional beam fixture and RMS diagnostics | analytic second moments, opt-in Gaussian toy | not validated phase-space measurement |
+| `emu_replay.py` | recorded experimental EMU scans | validates archived geometry, displays five-column samples, exports legacy TXT and provenance | standalone file replay; no EPICS PV bridge, live acquisition or waveform arrays |
 | `injector.py` | model composition | physical/logic execution ordering | other instrument families are still interface-only |
 | `subsystems.py` | older framework stubs | legacy scaffolding | not source-validated |
 
@@ -82,6 +83,7 @@ separate integration work; no production CA/PVA endpoints are used.
 - `tests/test_calorimetry.py`: original FC/BS/IC equations.
 - `tests/test_power_supply_scaling.py`: original FuG and MCPS conversions.
 - `tests/test_architecture.py`: authorization separate from actuator physics.
+- `tests/test_emu_replay.py`: experimental Fast/Full sample counts, export compatibility, provenance, interactive sequence and Start SNL script.
 
 The GitHub Actions test pipeline checks Python simulation determinism and
 record-level equations. **It does not certify the live PLC, FPGA, OPI runtime,
@@ -100,3 +102,22 @@ python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_tr
 
 This command runs only an in-memory Python simulation and never connects to
 real Injector PVs.
+
+### Experimental SNL v2 playback
+
+A separate **offline** application replays the actual 2026 EMU experiment
+archives. From the repository root:
+
+```bash
+./scripts/launch_emu_snl_replay.sh --duration 180
+# Without a display:
+python3 -m injector_otp.models.emu_replay --auto --output-dir output/emu
+```
+
+The OTP OPI `Start SNL` button uses
+`Injector_OPI/Scripts/emitShell_v2.sh`, which invokes this local launcher.
+`Validate` and `ON` are **manual terminal commands**, not yet connected
+to OPI PV writes. These recorded samples do not enter the in-memory
+`EmuAcquisitionModel`; the experimental replay and synthetic scan are
+intentionally separate. See
+[Fast Scan replay](../../../docs/emu_fast_scan_replay.md).

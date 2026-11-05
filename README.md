@@ -135,18 +135,53 @@ real PPS/MPS hardware.
 Detailed design decisions and source traceability are documented in
 docs/interlocks.md and docs/pv_runtime_contract.md.
 
-## EMU SNL reconstruction
+## EMU: SNL v2 simulation and experimental Fast Scan replay
 
-The EMU sub-system now has a Python-owned motor/servo/plate-supply model,
-full/wide/edge SNL scan sequencing, bounded acquisition and in-memory points.
-No real EPICS IOC or hardware connection is used. The actual Fast/Full scan
-preset mappings and fast acquisition waveform remain to be validated.
+The EMU provides **two distinct offline workflows**:
 
-- [EMU source reconstruction](docs/emu_reconstruction.md)
-- [EMU offline demo](scripts/demo_emu.py)
-- [Model inventory](src/injector_otp/models/README.md)
+- **Python device/state models:** `emu_geometry.py`, `emu_hardware.py`,
+  `emu_sequencer.py`, `emu_beam.py`, and `emu_analysis.py` reproduce
+  SNL-derived geometry, the motor/plate/FACQ *training* responses, the scan
+  sequence, and provisional RMS diagnostics. Acquisition is synthetic by
+  default, not a calibrated beam measurement.
+- **Recorded-data replay:** `emu_replay.py` reads the 2026 experimental
+  five-column `_optm.txt` files, prints the saved samples in `xterm`,
+  and generates a compatible `emitYYYYMMDD-HHmm_optm.txt` result with
+  an additional `*.replay.json` provenance file. This adapter does not
+  publish EPICS PVs, run the physical model or fabricate waveforms.
+
+The archived **Fast Scan** (6 July 2026) has **45 motor positions × 31
+voltage points = 1,395 samples**. Its operator parameters are upper 46 mm,
+lower -42 mm, step 2 mm, 100 keV (D+), angle peaks -37/+45 mrad, angular
+width 20 mrad, and 30 HV intervals. A Full Scan reference uses upper 60 mm,
+lower -44 mm, step 2 mm, 0/0 mrad, angular width 100 mrad and 120 HV
+intervals. The Python sequencer uses a generic ROI scan; it does not yet
+offer named Fast/Full preset selection.
+
+The OTP OPI `Injector_OPI/emitMeasurement_v2.bob` retains its **Start SNL**
+action, calling `Injector_OPI/Scripts/emitShell_v2.sh`. That **training
+copy** now opens the Python replay in xterm. It initially shows **waiting**,
+then accepts `validate` and `on` typed in the terminal. The actual
+Phoebus **Validate/ON** controls are not yet connected to this process
+through the EPICS bridge. Do not install the OTP script on LIPAc.
 
 ```bash
-python -m pip install -e .
+python3 -m pip install -e ".[dev]"
+# Synthetic internal model
 python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_training.csv
+# Recorded Fast Scan with xterm on a local X11 desktop (about 3 minutes)
+./scripts/launch_emu_snl_replay.sh --duration 180
+# Immediate headless reproduction with output + provenance
+python3 -m injector_otp.models.emu_replay --auto --output-dir output/emu
+# Regression checks
+pytest tests/test_emu_replay.py tests/test_emu_sequences.py tests/test_emu_geometry.py
 ```
+
+Documentation: [Fast Scan experimental replay](docs/emu_fast_scan_replay.md),
+[SNL v2 reconstruction](docs/emu_reconstruction.md),
+[model inventory](src/injector_otp/models/README.md),
+[technical documentation index](docs/README.md).
+
+**Boundary:** Neither path contacts production LIPAc CA/PVA endpoints;
+the future Soft IOC must be isolated. CI tests do not validate xterm
+rendering, OPI-to-PV connectivity or calibrated machine physics.
