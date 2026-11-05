@@ -30,6 +30,12 @@ snapshots. The bridge does not implement machine logic.
 The local runtime uses `SIM:STATE` and `SIM:TIME` for internal indicators.
 These are **not** source LIPAc equipment PVs.
 
+## Relationship to current code and PV inventory
+
+The active V2.0 registry contains 1,052 PV/field references; historical V1.2 contains 891 entries. `build_application()` loads V2.0 by default. The local `SimulationPVBackend` and `LocalPVBridge` now preserve names identically and use `SimulationPVState`'s write ownership rules. The copied historical `db/` files are **not** a production-ready thin IOC database: they contain legacy processing and source device drivers.
+
+Read [architecture](architecture.md), [configuration](configuration.md), [PV runtime contract](pv_runtime_contract.md) and [readback matrix](pv_readback_traceability.md) for the full implementation boundaries.
+
 ## Validation limits
 
 This contract does not certify that the VM is isolated. Isolation is a
