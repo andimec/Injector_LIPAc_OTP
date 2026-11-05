@@ -55,3 +55,27 @@ python scripts/demo_emu.py --mode emittance --synthetic-signal --out /tmp/emu_tr
 ```
 
 This exercises **Python-only behavior**; it does not start the EPICS Soft IOC or prove Phoebus connectivity. See [architecture](architecture.md), [readback traceability](pv_readback_traceability.md) and [IOC contract](simulation_ioc_contract.md).
+
+## 7. EMU archived-data playback
+
+`src/injector_otp/models/emu_replay.py` is a standalone **replay adapter**.
+It does not inherit the in-memory engine's synthetic FACQ signal and is
+not affected by `config/model_parameters.yaml` response parameters.
+Its default input is the 6 July 2026 Fast Scan in
+`src/injector_otp/Data/EMU/emit20260706-1434_optm.txt` (1,395 points).
+Other saved experiments can be selected with `--source`.
+
+```bash
+python3 -m injector_otp.models.emu_replay --list
+python3 -m injector_otp.models.emu_replay --auto --duration 0 --output-dir output/emu
+./scripts/launch_emu_snl_replay.sh --duration 180
+```
+
+Output is local `output/emu/` by default, following the
+`emitYYYYMMDD-HHmm_optm.txt` convention with a `*.replay.json`
+sidecar. The source archive is never overwritten. The shell launcher
+sets `EPICS_CA_MAX_ARRAY_BYTES` for compatibility but does **not**
+connect to a CA/PVA server. The OTP OPI **Start SNL** action executes
+`Injector_OPI/Scripts/emitShell_v2.sh`; the later **Validate/ON**
+buttons still need an isolated PV bridge. See
+[EMU Fast Scan replay](emu_fast_scan_replay.md).

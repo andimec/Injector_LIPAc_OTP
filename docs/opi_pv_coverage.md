@@ -97,3 +97,18 @@ Resolve missing **concrete Phoebus** PV names first. Review **potential writes n
 **No `OTP:` name transformation is used.** Native LIPAc names are safe in this project only because the future VM/Soft IOC must be isolated from the production network. The audit uses no Channel Access or PVAccess endpoint.
 
 Related: [architecture](architecture.md), [runtime contract](pv_runtime_contract.md), [readback matrix](pv_readback_traceability.md), [EPICS integration](epics_architecture.md).
+
+## EMU Start SNL is not the same as an OPI-to-PV readback
+
+The OTP's `Injector_OPI/emitMeasurement_v2.bob` uses an **action command**,
+`/bin/bash Scripts/emitShell_v2.sh`, to open the Python replay
+terminal. The script now starts `models/emu_replay.py` through the
+local xterm launcher. This is **not an EPICS PV producer** and should
+not change any OPI/PV registry coverage statistics. `Validate` and
+`ON` are currently manual console commands in this replay mode.
+
+The in-memory `models/emu_sequencer.py` handles its own allowlisted
+command PVs, but it is **not** driven by the standalone recorded-data
+replay. No experimental replay readback or FACQ waveform PV is
+published to the OPI. A verified bridge to the isolated Soft IOC
+remains pending. See [EMU Fast Scan replay](emu_fast_scan_replay.md).
