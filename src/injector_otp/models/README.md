@@ -32,7 +32,9 @@ A guide is available for **every Python implementation module**, with pseudocode
 | `hv_auto_ramp.py` | automatic HV/IE/Repeller startup | 2026 procedure-based command sequence | feedback timeouts and repeller dwell are provisional |
 | `chopper_cim.py` | CIM | actual OPI PRE-ARM/ARMED commands, manual thresholds, FBI snapshots | FPGA trigger logic and reset not reconstructed |
 | `control_devices.py` | RF, ATU, timing, FC, chopper positions, beam | exact RF bits + qualitative dynamics | ECR plasma/transport not yet solved |
-| `plant.py` | H2/D2 valves, source & LEBT MFC, VAC01/02 pumps and pressures | source topology + empirical equations | pumping curves and conductances uncalibrated |
+| `plant.py` | Gas/safety valves, source and LEBT MFC, cooling; legacy independent VAC class | first-order flow and device-specific fault flag | legacy `VacuumRegionModel` is not instantiated by InjectorModel |
+| `vacuum_network.py` | VAC01/VAC02 C/T/F pressure volumes, pumps, GV, venting and gases | configurable coupled training network and individual faults | gas transport/calibration, gauge corrections, actual PLC permits unknown |
+| `vacuum_calibration.py` | pumpdown target/ultimate pressure and hours, measured flow-pressure curves | reference time constants and SCCM throughput/CSV interpolation | effective calibration, not OEM or measured pump physics |
 | `vacuum_opi.py` | VAC01/02 PV/SV help preconditions | exact OPI formulas | NOT PLC valve actuation authorization |
 | `calorimetry.py` | FC, BS, IC | exact source CALC/FLNK equations | input sensor calibration and physical duty remain uncertain |
 | `emu_geometry.py` | EMU plate geometry and global grid | exact SNL geometrical equations | slit field/acceptance uncalibrated |
@@ -75,15 +77,22 @@ separate integration work; no production CA/PVA endpoints are used.
   physically meaningful pulse width divided by period.
 - Calorimetric PV results are original **legacy calculation outputs** and
   should not be interpreted as validated beam power.
-- VAC01 uses H2/D2 source injection; VAC02 uses separate auxiliary LEBT
-  PR4000B flow. No cross-region conductance is assumed yet.
+- VAC01 uses H2/D2 source injection; VAC02 receives Kr from the auxiliary
+  LEBT PR4000B. The new `VacuumNetworkModel` couples chambers through
+  `LEBT:GV` and maintains separate partial-pressure states; the six volumes
+  and gas delivery fractions still require measurement.
+- VAC02 has **no physical NIV**. Legacy `LEBT:VAC02:NIV*` DB entries remain
+  historical interfaces, not active equipment.
+- `VacuumRegionModel` remains in `plant.py` for earlier standalone tests only.
+  The runtime has one network writer for VAC01/VAC02 pump/gauge readbacks.
 
 ## Regression tests
 
 - `tests/test_original_lcs_logic.py`: record equations, RF bitmap, timing.
 - `tests/test_hv_auto_ramp.py`: documented HV sequence and failsafe abort.
 - `tests/test_chopper_cim.py`: CIM state, thresholds and injected FBI snapshot.
-- `tests/test_gas_vacuum_topology.py`: gas injection topology.
+- `tests/test_gas_vacuum_topology.py`: gas injection topology and legacy compatibility.
+- `tests/test_vacuum_network.py`: calibrated pumpdown hours, pressure floor, GV coupling, device faults, MFC throughput, CSV equilibrium and atmospheric offline demo.
 - `tests/test_calorimetry.py`: original FC/BS/IC equations.
 - `tests/test_power_supply_scaling.py`: original FuG and MCPS conversions.
 - `tests/test_architecture.py`: authorization separate from actuator physics.
@@ -92,6 +101,26 @@ separate integration work; no production CA/PVA endpoints are used.
 The GitHub Actions test pipeline checks Python simulation determinism and
 record-level equations. **It does not certify the live PLC, FPGA, OPI runtime,
 or beam physics.**
+
+## Vacuum quickstart (offline only)
+
+```bash
+python scripts/demo_vacuum_pumpdown.py --hours 1 --csv /tmp/vacuum_1h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 2 --csv /tmp/vacuum_2h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 3 --csv /tmp/vacuum_3h.csv
+```
+
+The `pumpdown_time_h` value in `config/model_parameters.yaml` is an
+effective **reference calibration**, not a timed pressure override.
+`target_pressure_mbar` differs from the asymptotic
+`ultimate_pressure_mbar`. Experimental CSV inputs can be enabled using
+`vacuum.flow_pressure_csv`, with measured *delta pressure* versus MFC flow
+at a fixed pumping configuration. Device faults are addressed by native
+identifiers such as `LEBT:VAC01:TP` via
+`engine.control_plane.set_device_fault(device, True)`.
+See [full vacuum model](../../../docs/vacuum_model.md),
+[network guide](../../../docs/models/vacuum_network.md) and
+[calibration guide](../../../docs/models/vacuum_calibration.md).
 
 ## EMU instructions
 

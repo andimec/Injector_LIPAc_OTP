@@ -39,7 +39,7 @@ Para la SV de VAC02:
 
 ## Restricciones
 
-Estos valores son compatibles con la presentación histórica; no son permisos de seguridad ni reconstrucciones verificadas de lógica Siemens. Las conversiones bool de cualquier valor no nulo pueden esconder calidad INVALID o stale. Los estados de bombas calculados por plant.py pueden diferir de señales reales.
+Estos valores son compatibles con la presentación histórica; no son permisos de seguridad ni reconstrucciones verificadas de lógica Siemens. Las conversiones bool de cualquier valor no nulo pueden esconder calidad INVALID o stale. Los estados PP/TP proceden ahora de `VacuumNetworkModel` y pueden diferir de señales reales sin calibración.
 
 ## Siguientes pasos
 
@@ -49,3 +49,14 @@ Estos valores son compatibles con la presentación histórica; no son permisos d
 4. **P2:** correlacionar decisiones de válvulas con presión real, velocidades de TP y enclavamientos de operación, sin trasladar una fórmula de OPI al control activo.
 
 **Prueba:** [test_original_lcs_logic.py](../../tests/test_original_lcs_logic.py). **Fuente:** plcInjector_StatusForOpi.db, según la documentación del proyecto.
+
+## Relación con la red de vacío V1.4
+
+El módulo mantiene **solo visualización**. La fórmula de SV02
+contiene `TPSpeedStat` y aún no está reconciliada con la apertura
+de SV durante bombeo primario a través de TP detenida.
+`SVForcing` es una solicitud excepcional descrita por la OPI,
+pero no se usa como autorización física ni se activa
+automáticamente en el simulador. Solo VAC01 tiene NIV física.
+El nuevo modelo [vacuum_network.py](vacuum_network.md) calcula las
+presiones y estados, pero no inventa la lógica PLC ausente.

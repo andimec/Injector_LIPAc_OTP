@@ -30,14 +30,74 @@ vacuum:
   leak_rate_mbar_s: 2.0e-8
   gas_coupling_mbar_s_per_sccm: 2.0e-6
   fault_inrush_mbar_s: 1.0e-3
-  # Training hypothesis: no cross-region conductance until a network
-  # model has volumes, pump curves and GV conductance data.
+  # New network parameters supersede gas_coupling and pumping_tau_s
+  # above. Legacy keys are intentionally retained for the old standalone
+  # VacuumRegionModel unit tests; the live InjectorModel uses the network.
+  atmospheric_pressure_mbar: 1013.25
+  gv_conductance_l_s: 500.0  # TRAINING hypothesis; not measured
+  # Optional user-provided measured CSV (flow_sccm,delta_pressure_mbar).
+  # Key is an existing MFC prefix. See docs/vacuum_model.md.
+  flow_pressure_csv: {}
+  gas_sources:
+    SRC:MFCH: {species: H2, station: VAC01, delivery_fraction: 1.0}
+    SRC:MFCD: {species: D2, station: VAC01, delivery_fraction: 1.0}
+    LEBT:MFC: {species: Kr, station: VAC02, delivery_fraction: 1.0}
+  stations:
+    VAC01:
+      mode: detailed
+      initial_pressure_mbar: 1.0e-6 # set to 1013.25 for atmospheric start
+      temperature_K: 293.15
+      volumes_l: {C: 180.0, T: 30.0, F: 20.0}  # uncalibrated
+      sv_conductance_l_s: 10000.0                 # uncalibrated
+      stopped_tp_conductance_l_s: 10000.0         # uncalibrated
+      vent_tau_s: 120.0                           # uncalibrated
+      leak_throughput_mbar_l_s: 0.0
+      fault_leak_throughput_mbar_l_s: 1.0e-3
+      max_foreline_start_mbar: 3.0 # MAG W 2800 water-cooled N2 reference
+      tp_acceleration_s: 600.0  # configurable; catalog gives max runup
+      tp_deceleration_s: 600.0  # TRAINING assumption
+      nominal_speed_rpm: 28800  # MAG W 2800 conventional
+      # N2 and H2 catalog data. D2/Kr provisional surrogates ONLY.
+      gas_pumping_speed_l_s: {H2: 2100.0, D2: 2100.0, Kr: 2400.0, N2: 2400.0}
+      pumpdown:
+        pumpdown_time_h: 2.0       # set to 1.0, 2.0, or 3.0
+        reference_start_pressure_mbar: 1013.25
+        roughing_end_pressure_mbar: 0.05
+        roughing_floor_mbar: 0.005
+        roughing_time_fraction: 0.40
+        target_pressure_mbar: 1.0e-6 # reference target AT configured time
+        ultimate_pressure_mbar: 1.0e-8 # asymptotic gas-free floor
+    VAC02:
+      mode: simplified
+      initial_pressure_mbar: 1.0e-6
+      temperature_K: 293.15
+      volumes_l: {C: 120.0, T: 30.0, F: 20.0}  # uncalibrated
+      sv_conductance_l_s: 10000.0
+      stopped_tp_conductance_l_s: 10000.0
+      vent_tau_s: 120.0
+      leak_throughput_mbar_l_s: 0.0
+      fault_leak_throughput_mbar_l_s: 1.0e-3
+      max_foreline_start_mbar: 3.0 # provisional until VAC02 OEM checked
+      tp_acceleration_s: 600.0
+      tp_deceleration_s: 600.0
+      gas_pumping_speed_l_s: {H2: 2100.0, D2: 2100.0, Kr: 2400.0, N2: 2400.0}
+      pumpdown:
+        pumpdown_time_h: 2.0
+        reference_start_pressure_mbar: 1013.25
+        roughing_end_pressure_mbar: 0.05
+        roughing_floor_mbar: 0.005
+        roughing_time_fraction: 0.40
+        target_pressure_mbar: 1.0e-6
+        ultimate_pressure_mbar: 1.0e-8
+  # Backward compatible legacy standalone unit-test mapping only:
   flow_sources:
     LEBT:VAC01: [SRC:MFCD, SRC:MFCH]
     LEBT:VAC02: [LEBT:MFC]
 
 gas:
   response_tau_s: 0.5
+  reference_pressure_mbar: 1013.25
+  reference_temperature_K: 273.15
 
 rf:
   warmup_s: 4.0

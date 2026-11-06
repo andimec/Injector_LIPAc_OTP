@@ -229,3 +229,26 @@ is available.
 ## 7. Current scope and PV naming
 
 The Python interlock layer uses native PV names from the active V2.0 registry. External PPS permits/inhibits are scenario conditions, **not operator-write PVs**. The normalized `LEGACY:MPS:*` signals are internal diagnostic logic, not a mandate to publish corresponding EPICS records. The real PPS/MPS hardware and PLC timing/latching behavior remain outside the currently validated simulator. Running Phoebus and the Soft IOC on a VM isolated from LIPAc is still pending. Consult [architecture](architecture.md), [PV ownership](pv_runtime_contract.md) and [source logic](original_lcs_model_logic.md).
+
+## 7. Vacuum device faults and unresolved PLC permissions
+
+VAC01/VAC02 now have device-specific simulated faults:
+`LEBT:VAC01:TP` affects TP01 only; `LEBT:VAC02:TP` affects TP02;
+`LEBT:VAC01:SV` freezes SV01; `LEBT:GV` freezes the GV actuator;
+`LEBT:VAC01:SGVC` simulates gauge failure; and
+`LEBT:VAC01:CHAMBER_LEAK` creates a chamber gas load.
+These flags are read from `SimulationControlPlane.device_faults`.
+They do **not** override real PPS/MPS or publish operator commands.
+
+The original VAC02 visual `SVOpenPrecond` formula includes
+`TPSpeedStat`, which has not been reconciled with a primary
+pumpdown via a stopped turbo. This is an unresolved PLC-specific
+operation gap. `SVForcing` remains an exceptional operator
+request shown in OPI formulas, **not** an actual valve-opening
+authorization in the training model. Likewise, the synthetic
+TP-start foreline pressure check is not a verified LIPAc PLC interlock,
+and the 70% TP speed condition is a read-only training metric.
+
+See [vacuum network](models/vacuum_network.md),
+[OPI preconditions](models/vacuum_opi.md) and
+[configuration](configuration.md).

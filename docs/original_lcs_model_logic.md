@@ -50,9 +50,9 @@ Every behavioural calculation is evaluated in Python, never inside the Soft IOC.
 | Steerers DV/DH 1/2 | `injectorSTV01/02.db`, `injectorSTH01/02.db` | `PowerSupplyDevice` | Command/readback interface, rate-limited response | Different PS families, polarity, readback gains and optics |
 | H2/D2 shutoff valves | `plcInjector_Output.db`, `plcInjector_Input.db` | `ValveDevice` | Open/close command, position feedback and PPS permit input | PLC ladder-specific movement time, fault/timeout, valve interlocks |
 | H2/D2 MFC | `injectorMKS_SRC_D2/H2.db`, StreamDevice protocol | `GasFlowController` | Valve command, setpoint, lag and flow readback | MKS controller behavior, local/remote, response constants, zero/span |
-| LEBT MFC | `injectorMKS_LEBT.db` | `GasFlowController` (when the V2.0 prefix is present) | A provisional flow/valve-enable response, sharing the reduced-order gas model | Gas species, actual operating function, source suffix/units and calibration |
-| VAC01/VAC02 pumping | `plcInjector_Input/Output.db` | `VacuumRegionModel` | Pump commands, pump state, approximate pressure evolution | Conductance, pump curves, gauge ranges, volume, valve conductance |
-| Vacuum PV/SV/AIV/NIV | `plcInjector_StatusForOpi.db` | `ValveDevice` + `VacuumOPIPreconditions` | Valve positions; exact **OPI precondition displays** | Mandatory distinction from actual PLC authorization logic |
+| LEBT MFC | `injectorMKS_LEBT.db`, OPI labelled Kr | `GasFlowController` | Kr SCCM readback, source of VAC02 ideal gas load | Verify calibration, delivery fraction and real injection path |
+| VAC01/VAC02 pumping | `plcInjector_Input/Output.db` | `VacuumNetworkModel` (`VacuumRegionModel` legacy only) | Per-device PP/TP status, coupled C/T/F volumes, species, GV, configurable target/ultimate and faults | Not OEM/PLC dynamics: pressure-dependent conductances, calibrated speed curves, measured transients, gauges |
+| Vacuum PV/SV/AIV/NIV | `plcInjector_StatusForOpi.db` | `ValveDevice` + `VacuumOPIPreconditions` | PV/SV/AIV for both, NIV **only VAC01**; OPI help formulas and per-device valve faults | Original DB contains inactive NIV02 commands; actual PLC authorization, travel and LTV actuation unknown |
 | Gate valve GV | `plcInjector_Input/Output.db` | `ValveDevice` | Open/close and external PPS permit | Actual protection logic and fail-safe travel behavior |
 | RF generator | `injectorModbus_RF.db` | `RFSystemModel` + pure original helpers | Command bit packing; Mot105 bit flags; Mot103 display scaling; synthetic power ramp | Heating times, pulse behavior, mismatch maps, beam/plasma mode, response times |
 | RF automatic tuning unit | `injectorModbus_RF.db` | `RFSystemModel` interface encoding | WrtX/WrtY, ModeXY/CalcModeXY | Real motor travel, reflected-power map and optimizers |
@@ -167,7 +167,7 @@ The source IOC code provides setpoint ranges and scaling, not validated plant dy
 For realistic model behaviour we still require:
 
 - Per-device ramp/settling times, repeatability, limits and fault recovery.
-- Pressure-volume-conductance/pump-speed curves for VAC01/VAC02.
+- Measured pressure-volume-conductance/pump-speed curves for VAC01/VAC02. A six-node training model already exists; its coefficients and data are not validated.
 - RF reflected/forward power versus stub position, gas pressure and species.
 - Coil field maps `B(z,r;I1,I2)` and solenoid/steerer optics calibration.
 - Siemens PLC revision currently deployed in 2026 and its safety test results.
@@ -176,3 +176,21 @@ For realistic model behaviour we still require:
 - EMU calibration, motor movement times and scanner trajectories.
 
 The simulator runs on an **isolated VM using unchanged source PV names**. No `OTP:` prefix is applied in the runtime or planned IOC. The VM must not have network reachability to the production LIPAc system; confirm routing, CA/PVA discovery and interface binding before enabling any IOC listener. See [EPICS architecture](epics_architecture.md) and [readback traceability](pv_readback_traceability.md).
+
+### Source logic versus new vacuum dynamics (6 November 2026)
+
+The 2026 model change introduces the independent modules
+`vacuum_network.py` and `vacuum_calibration.py`. These are **new
+training hypotheses**, not extracted Siemens functions. The source
+DB/OPI still supplies PV names and display preconditions; the Python
+network supplies pressure/flow and observed pump-state values.
+
+`SVForcing` remains an operator request/OPI display condition and is
+not used to grant SV movement. The source VAC02 SV precondition includes
+`TPSpeedStat` and has not been reconciled with the documented roughing
+path through a stationary turbo. This is an outstanding PLC-validation
+item, not a reason to invent an opening-permit equation.
+
+NIV is physically present only on VAC01; VAC02 legacy NIV commands in
+DBs are not active simulation actuators. MFC assignments are H₂/D₂ to
+VAC01 and Kr to VAC02. Details: [vacuum model](vacuum_model.md).

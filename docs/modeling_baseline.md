@@ -89,7 +89,7 @@ These are modelling references. They are not automatically interpreted as hard p
 
 ## Deferred physics
 
-The engine **currently uses** reduced-order deterministic models. Detailed plasma physics, beam transport, RF electromagnetic simulation, thermal-fluid CFD and detailed vacuum conductance networks remain separate model implementations and can later be coupled through the same interfaces.
+The engine **currently uses** reduced-order deterministic models. Detailed plasma physics, beam transport, RF electromagnetic simulation, and thermal-fluid CFD remain separate future implementations. A first six-volume VAC01/VAC02 vacuum network with configurable conductance and species throughput **is now implemented** in `vacuum_network.py`, but geometry, pressure-dependent conductance, real pump-speed curves and experimental calibration remain outstanding.
 
 This keeps the OTP useful for operator training and control integration without inventing undocumented physical behaviour.
 
@@ -122,3 +122,34 @@ or EPICS state. It cannot validate machine physics or represent a
 new acquisition. OPI Start SNL invokes the training shell hook;
 its Validate/ON PV link is outstanding. See [EMU reconstruction](emu_reconstruction.md)
 and [EMU Fast Scan replay](emu_fast_scan_replay.md).
+
+## Configurable vacuum network V1.4 (6 November 2026)
+
+The live `InjectorModel` now uses one coupled `VacuumNetworkModel`
+for VAC01/VAC02. Each station has chamber (C), turbo inlet (T) and
+foreline (F) nodes; the coupling between chambers is activated by the
+actual simulated `LEBT:GV` valve state. The source H2/D2 MFCs contribute
+to VAC01 and the LEBT Kr MFC to VAC02 as species-resolved ideal gas loads.
+VAC01 has NIV and VAC02 has **no physical NIV**. No RF chamber physics
+is modeled for VAC02.
+
+The configurable profile defines `pumpdown_time_h` (1/2/3 h or another
+positive number), `target_pressure_mbar` and
+`ultimate_pressure_mbar` independently. The values tune effective
+pumping constants, not an unconditional pressure trajectory; an open
+SV/PV path and a working PP/TP remain necessary. Optional CSV measurements
+of `flow_sccm,delta_pressure_mbar` calibrate equivalent gas throughput
+at nominal pumping, as a first approximation.
+
+The new `VacuumNetworkModel` is still **reduced-order, uncalibrated**.
+Legacy `VacuumRegionModel` is not instantiated by the running
+`InjectorModel`. Readbacks are ideal model outputs, not validated gauge
+responses; the pressure criterion of IV602 has not been mapped to
+`VacPGVC`/`VacSGVC`. Pump/valve/gauge/MFC fault flags are addressed by
+specific device identifiers, with external fault procedures controlling
+when they are injected. The observed OPI SVForcing formula is **not** a
+validated PLC opening bypass.
+
+See [vacuum model](vacuum_model.md), [network equations](models/vacuum_network.md),
+[calibration](models/vacuum_calibration.md) and
+[configuration](configuration.md).

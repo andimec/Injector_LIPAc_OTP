@@ -106,8 +106,6 @@ inputs:
   - LEBT:VAC01:TPOnCmd
   - LEBT:VAC02:AIVCloseCmd
   - LEBT:VAC02:AIVOpenCmd
-  - LEBT:VAC02:NIVCloseCmd
-  - LEBT:VAC02:NIVOpenCmd
   - LEBT:VAC02:PPOffCmd
   - LEBT:VAC02:PPOnCmd
   - LEBT:VAC02:PVCloseCmd

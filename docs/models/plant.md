@@ -1,62 +1,73 @@
-# plant.py | Gases, válvulas, vacío y refrigeración
+# plant.py | Válvulas, MFC, refrigeración y clase legacy de vacío
 
-**Categoría:** modelos de proceso reducidos para entrenamiento.
-**Código:** [plant.py](../../src/injector_otp/models/plant.py). **Parámetros:** [model_parameters.yaml](../../config/model_parameters.yaml).
+**Código:** [plant.py](../../src/injector_otp/models/plant.py).
+**Fidelidad:** dinámica reducida de entrenamiento. **Estado V1.4:** la red de
+presión activa se ha trasladado a [vacuum_network.py](vacuum_network.md).
 
-## Qué representa
+## ValveDevice
 
-El módulo aporta estados y una respuesta temporal comprensible para equipos de vacío y gas. No pretende resolver una red de conductancias moleculares ni un circuito termohidráulico.
+Lee flancos de `OpenCmd/CloseCmd` y emite `OpenStat/CloseStat` cuando
+existen en el catálogo. Un `permit_pv`, si está configurado, condiciona
+la apertura. Los prefijos de vacío concatenan directamente el sufijo,
+por ejemplo `LEBT:VAC01:SVOpenCmd`.
 
-### ValveDevice
+Un fallo interno `state.fault` se toma de
+`context.device_faults["LEBT:VAC01:SV"]` (o identificador correspondiente):
+el actuador **congela su última posición**. No se simulan recorridos
+intermedios, fuga de asiento, tiempo de actuación ni PLC real. Se crea
+NIV solo en VAC01. GV es `LEBT:GV` y su permiso externo de apertura
+procede de `PPS:GV:OpenPermStat`.
 
-Detecta **flancos de subida** de OpenCmd/CloseCmd, mantiene opened y publica OpenStat/CloseStat. En las válvulas con permit_pv, solo permite abrir cuando esa PV está activa. El cierre no requiere permiso. Los nombres de algunas PV de VAC se forman sin separador entre válvula y sufijo, a diferencia de otros equipos. El modelo no reproduce tiempos de carrera, válvulas atascadas ni toda la lógica del PLC.
+## GasFlowController
 
-### GasFlowController
+Los caudales responden en SCCM mediante:
 
-El caudal de un MFC responde al setpoint Debit solo cuando está habilitado y se cumple la condición de válvula. Su dinámica es:
+```text
+q(t+dt) = q(t) + (q_set-q(t))*(1-exp(-dt/gas.response_tau_s))
+```
 
-    q(t+dt) = q(t) + (q_obj - q(t)) * (1 - exp(-dt/tau_gas))
+`SRC:MFCH` (H₂) y `SRC:MFCD` (D₂) exigen la válvula de seguridad
+de la fuente correspondiente; `LEBT:MFC` suministra Kr auxiliar.
+Se publican `Deb1Mes`, `Deb2Mes` y `StsVanne` si existen.
+El modelo de vacío usa `<prefix>.flow_sccm` para convertir a
+throughput. Los flags `context.device_faults["SRC:MFCD"]`,
+`"SRC:MFCH"` o `"LEBT:MFC"` reducen a cero el caudal objetivo
+con la constante de respuesta. No se modela calibración MKS real.
 
-Los MFC SRC:MFCD y SRC:MFCH dependen respectivamente de las válvulas de D2 y H2. LEBT:MFC representa una alimentación auxiliar independiente de esas válvulas de fuente. Se publican Deb1Mes/Deb2Mes y StsVanne si existen en catálogo.
+## CoolingSkidModel
 
-### VacuumRegionModel
+El skid observa `INJ:WS:ResPCDefStat`, reproduce un fallo sintético
+de refrigeración y expone `cooling.healthy`; no integra ecuaciones
+de flujo de agua o temperatura.
 
-Para VAC01 y VAC02 calcula, con integración Euler y presión mínima p_base:
+## VacuumRegionModel: histórico, NO usado en ejecución principal
 
-    dp/dt = fuga + Kgas * suma_caudales - bombeo * (p - p_base) / tau
-            + entrada_fallo
-    p_siguiente = max(p_base, p_actual + dt * dp/dt)
+La clase antigua integra una presión por estación:
 
-Se usa bombeo si PP o TP están activadas. VAC01 recibe q de SRC:MFCD/MFCH; VAC02 de LEBT:MFC. No se supone conductancia entre ambas regiones. Los sensores de presión disponibles reciben un valor común simplificado. SGVCDefStat compara con el umbral configurado.
+```text
+dp/dt = leak + Kgas*flow_sccm - (p-floor)/pumping_tau
+```
 
-### CoolingSkidModel
+Se conserva **solo por compatibilidad con tests anteriores**. Las claves
+legacy `gas_coupling_mbar_s_per_sccm` y `pumping_tau_s` de
+`config/model_parameters.yaml` **no gobiernan** VAC01/VAC02 en
+`InjectorModel`. No debe registrarse simultáneamente con
+`VacuumNetworkModel`, porque competiría por las mismas PV de presión
+y bombas.
 
-No resuelve balances térmicos: observa INJ:WS:ResPCDefStat, lo fuerza a cero ante fallo sintético de refrigeración y publica una métrica cooling.healthy.
+La red nueva dispone de seis nodos C/T/F, conecta las cámaras por GV,
+reproduce el bombeo primario a través de TP detenida, inyección
+H₂/D₂/Kr, presión parcial, bombeo configurado por tiempo y
+presión última, y fallos individuales. Véase
+[red de vacío](vacuum_network.md) y
+[calibración](vacuum_calibration.md).
 
-## Pseudocódigo combinado
+## Pruebas y límites
 
-    leer órdenes de válvulas y actualizar estado binario
-    si válvula de gas y MFC habilitados:
-        filtrar caudal hacia Debit
-    si no:
-        filtrar caudal hacia cero
-    para cada región VAC:
-        leer caudales que le corresponden
-        comprobar estado PP/TP
-        calcular fuente de gas + fugas - extracción + fallo
-        integrar presión y actualizar indicadores
-    actualizar estado externo de refrigeración
+```bash
+pytest -q tests/test_gas_vacuum_topology.py tests/test_vacuum_network.py
+```
 
-## Precisión y riesgos
-
-Los valores de Kgas, tau, fuga, vacío base y respuesta MFC son **hipótesis**, no curvas de equipo. Para dt comparable o superior a tau, Euler puede generar errores numéricos importantes. Los sensores reales no necesariamente comparten presión. Las PV OPI de precondición **no prueban** permisos efectivos del PLC.
-
-## Mejoras priorizadas
-
-1. **P1 software:** proteger dt/tau, modelar fallo de sensor, comando bloqueado, retardo de válvula y consistencia de readbacks.
-2. **P1 medición:** ajustar tau de MFC y caída/subida de presión con registros de transitorios reales.
-3. **P2 física:** construir red de nodos con volumen V, conductancia C y velocidad de bombeo S(p), gases H2/D2 y estados de GV.
-4. **P2 física:** diferenciar lecturas de ion gauges, Pirani y vacuómetros por rango, calibración y ruido.
-5. **P3:** añadir circuito térmico del skid con masa térmica, caudal, temperatura y alarmas.
-
-**Pruebas:** [test_gas_vacuum_topology.py](../../tests/test_gas_vacuum_topology.py), [test_architecture.py](../../tests/test_architecture.py). **Criterio de aceptación:** evolución estable de presión, caudales correctos por región y fallos reproducibles.
+Estas pruebas de software no validan el PLC Siemens, bombas Leybold,
+conductancias reales ni medidas de presión de LIPAc.
+Pendiente calibrar respuesta MFC, válvulas, sensores y equipos.

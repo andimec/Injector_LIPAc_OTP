@@ -1,8 +1,8 @@
 # Documentación técnica del gemelo digital del inyector LIPAc
 
-**Estado de referencia:** 5 de noviembre de 2026. Incluye modelos Python de EMU y reproducción offline de los registros experimentales Fast/Full Scan. Los botones Validate/ON por EPICS siguen pendientes. Este índice describe el **estado del código**, no constituye una validación del funcionamiento físico ni del control de seguridad de LIPAc.
+**Estado de referencia:** 6 de noviembre de 2026, rama de desarrollo del modelo configurable de vacío (PR #11), además de EMU y su reproducción offline Fast/Full. Los botones Validate/ON por EPICS siguen pendientes. Esta documentación describe el **código de entrenamiento**, no valida los equipos, los permisos PLC ni el funcionamiento físico de LIPAc.
 
-**Guías explicativas de los 18 módulos Python:** [índice de modelos, lógica, pseudocódigo y próximos pasos](models/README.md).
+**Guías explicativas de los 20 módulos Python:** [índice de modelos, lógica, pseudocódigo y próximos pasos](models/README.md).
 
 ## Cómo leer la documentación
 
@@ -16,6 +16,9 @@
 | [epics_architecture.md](epics_architecture.md) | Diseño Phoebus ↔ Soft IOC ↔ puente ↔ Python. El despliegue real sigue pendiente |
 | [simulation_ioc_contract.md](simulation_ioc_contract.md) | Contrato del adaptador local, nombres originales y requisitos de red aislada |
 | [modeling_baseline.md](modeling_baseline.md) | Modelo físico reducido, dependencias y parámetros orientativos |
+| [vacuum_model.md](vacuum_model.md) | Modelo VAC01/VAC02 V1.4: topología, parámetros de bombeo, MFC, fallos y límites |
+| [models/vacuum_network.md](models/vacuum_network.md) | Detalle del balance de presión por seis nodos, bombas, GV, NIV y señales EPICS |
+| [models/vacuum_calibration.md](models/vacuum_calibration.md) | Ajuste de 1/2/3 h, presión objetivo/última, conversión SCCM y CSV experimentales |
 | [original_lcs_model_logic.md](original_lcs_model_logic.md) | Procedencia de cálculos de DB/SNL/PLC históricos y madurez de modelos |
 | [interlocks.md](interlocks.md) | Autorizaciones implementadas, relaciones PLC históricas y límites de PPS/MPS |
 | [emu_reconstruction.md](emu_reconstruction.md) | Geometría SNL v2, motor, placas, FACQ sintético, estados y parámetros Fast/Full |
@@ -27,6 +30,7 @@
 - **Nombres:** se preservan nombres originales `SRC:...`, `LEBT:...`, `PPS:...` en Python y en el futuro IOC. No se exige `OTP:`. `SIM:STATE` y `SIM:TIME` son indicadores internos, no PV de equipo.
 - **Responsabilidades:** Python genera la dinámica y readbacks; el IOC previsto será una capa de transporte. Los `calc` históricos de `db/` no deben competir con cálculos Python.
 - **Aislamiento:** el entorno previsto es una VM sin ninguna conectividad o descubrimiento EPICS hacia LIPAc. Esta condición debe verificarse al desplegarla; las pruebas Python no la demuestran.
+- **Red de vacío:** `VacuumNetworkModel` sustituye a los dos `VacuumRegionModel` del `InjectorModel`; seis nodos C/T/F conectados por GV, H₂/D₂/Kr, NIV solo en VAC01 y fallo individual por dispositivo. El modelo antiguo persiste únicamente como clase histórica de compatibilidad.
 - **Validación:** las pruebas unitarias verifican implementaciones de Python. Un IOC EPICS 7 con Phoebus, la fidelidad de campos EPICS y los parámetros físicos calibrados aún no se han verificado extremo a extremo.
 - **Protecciones:** PPS/MPS reales son externos. Las señales de autorización del simulador sirven para entrenamiento, no para protección de maquinaria real.
 
@@ -73,3 +77,16 @@ y el comando headless `--save on|off` (por defecto OFF). Todavía falta
 un puente EPICS aislado para que los tres controles de la OPI actúen
 directamente sobre esa terminal. Ver
 [emu_fast_scan_replay.md](emu_fast_scan_replay.md).
+
+## Ejecución rápida del bombeo (solo Python)
+
+```bash
+python scripts/demo_vacuum_pumpdown.py --hours 1 --csv /tmp/vacuum_1h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 2 --csv /tmp/vacuum_2h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 3 --csv /tmp/vacuum_3h.csv
+pytest -q tests/test_vacuum_network.py
+```
+
+Los tiempos son **referencias configurables**, no una predicción validada de la
+puesta en vacío real. Los CSV generados contienen trazas sintéticas. Para
+incorporar mediciones en la simulación véase [calibración](models/vacuum_calibration.md).

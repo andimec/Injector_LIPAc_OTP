@@ -47,18 +47,26 @@ class ValveDevice(SubsystemModel):
 
     def update(self, dt: float, context) -> None:
         super().update(dt)
-        if self._edge(context, "OpenCmd"):
-            permit = self.permit_pv is None or bool(context.pv.get(self.permit_pv, 0))
-            if permit:
-                self.valve.opened = True
-        if self._edge(context, "CloseCmd"):
-            self.valve.opened = False
+        # A fault injected through SimulationControlPlane freezes the actuator.
+        # Readback retains its LAST physical position. It does not imply a PLC
+        # interlock and does not publish a fictitious command.
+        self.state.fault = bool(context.device_faults.get(self.prefix, False))
+        open_edge = self._edge(context, "OpenCmd")
+        close_edge = self._edge(context, "CloseCmd")
+        if not self.state.fault:
+            if open_edge:
+                permit = self.permit_pv is None or bool(context.pv.get(self.permit_pv, 0))
+                if permit:
+                    self.valve.opened = True
+            if close_edge:
+                self.valve.opened = False
         for name, value in (("OpenStat", self.valve.opened),
                             ("CloseStat", not self.valve.opened)):
             pv = self._pv(name)
             if pv:
                 context.emit(pv, int(value), f"valve:{self.prefix}")
         context.metrics[f"{self.prefix}.open"] = float(self.valve.opened)
+        context.metrics[f"{self.prefix}.fault"] = float(self.state.fault)
 
 
 class GasFlowController(SubsystemModel):
@@ -89,7 +97,10 @@ class GasFlowController(SubsystemModel):
         requested = max(0.0, float(context.pv.get(target_pv, 0) or 0)) if target_pv else 0.0
         if target_pv:
             requested = self.catalog.clamp(target_pv, requested)
-        target = requested if self.enabled and main_open else 0.0
+        # Equipment-specific faults can be set from an external training
+        # scenario via control_plane.set_device_fault("SRC:MFCD", True).
+        self.state.fault = bool(context.device_faults.get(self.prefix, False))
+        target = requested if self.enabled and main_open and not self.state.fault else 0.0
         tau = max(0.001, float(self.params.get("gas", {}).get("response_tau_s", 0.5)))
         self.actual_sccm += (target - self.actual_sccm) * (1.0 - exp(-dt / tau))
         self.actual_sccm = max(0.0, self.actual_sccm)
@@ -101,6 +112,7 @@ class GasFlowController(SubsystemModel):
         if status:
             context.emit(status, int(self.enabled), f"mfc:{self.prefix}")
         context.metrics[f"{self.prefix}.flow_sccm"] = self.actual_sccm
+        context.metrics[f"{self.prefix}.fault"] = float(self.state.fault)
 
 
 class CoolingSkidModel(SubsystemModel):

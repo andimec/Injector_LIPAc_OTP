@@ -1,6 +1,6 @@
 # Injector LIPAc digital twin: EPICS write / readback traceability
 
-**Scope:** Python runtime on `main` (5 November 2026), PV registry V2.0 (1052 references), and the explicit operator input allowlist in `config/pv_runtime_overrides.yaml`.
+**Scope:** Python runtime on the PR #11 vacuum feature branch (6 November 2026), registry V2.0 (1052 references) and the explicit operator input allowlist in `config/pv_runtime_overrides.yaml`. The feature branch is not yet the `main` runtime.
 
 **Naming:** The VM is disconnected from LIPAc; Python, Soft IOC and Phoebus must use **unmodified source PV names**. `SIM:STATE` and `SIM:TIME` are the only special runtime indicators, not LIPAc PVs. There is no `OTP:` name translation.
 
@@ -89,14 +89,14 @@ sequencer**, not the recorded-data replay. See
 | `SRC:SVL:D2OpenCmd`, `D2CloseCmd` | `SRC:SVL:D2OpenStat`, `D2CloseStat` | `models/plant.py:ValveDevice` | MODEL |
 | `SRC:SVL:H2OpenCmd`, `H2CloseCmd` | `SRC:SVL:H2OpenStat`, `H2CloseStat` | same | MODEL |
 | `LEBT:GV:OpenCmd`, `CloseCmd` | `LEBT:GV:OpenStat`, `CloseStat` | same | MODEL |
-| `LEBT:VAC01:` / `VAC02:` `SV/PV/NIV/AIV` open/close commands | matching `SV/PV/NIV/AIV` `OpenStat`, `CloseStat` | `ValveDevice` | MODEL, registry-dependent concatenation |
-| `LEBT:VAC01:PPOnCmd`, `PPOffCmd`; VAC02 analogs | corresponding `:PPOnStat` | `models/plant.py:VacuumRegionModel` | MODEL |
-| `LEBT:VAC01:TPOnCmd`, `TPOffCmd`; VAC02 analogs | corresponding `:TPOnStat` | same | MODEL |
-| gas flows, pump states, vacuum fault | `LEBT:VAC01:VacSGVC` / `VacPGVC` / `VacSGTP` / `VacPGTP`, VAC02 equivalents | `VacuumRegionModel` | MODEL, **hypothesized** pressure balance |
-| vacuum model output | `LEBT:VAC01:SGVCDefStat`, VAC02 equivalent | same | DERIVED threshold indicator, not a physically calibrated gauge |
+| `LEBT:VAC01:` / `VAC02:` `SV/PV/AIV` commands; `VAC01:NIV` only | corresponding `OpenStat`, `CloseStat` if present | `models/plant.py:ValveDevice` | MODEL, individual fault flags. **VAC02 NIV does not physically exist**; legacy commands are excluded from runtime allowlist |
+| `LEBT:VAC01:PPOnCmd`, `PPOffCmd`; VAC02 equivalents | corresponding `PPOnStat` | `models/vacuum_network.py:VacuumNetworkModel` | MODEL, per-device running/fault state |
+| `LEBT:VAC01:TPOnCmd`, `TPOffCmd`; VAC02 equivalents | corresponding `TPOnStat`, `TPSpeedStat`, `TPDefStat` where registered | `VacuumNetworkModel` | MODEL, configurable speed fraction (internal metric); synthetic startup guard |
+| H₂/D₂/Kr MFC throughput, PP/TP, PV/SV/AIV/NIV01, GV, venting and leaks | `VacPGVC`, `VacSGVC`, `VacPGTP`, `VacSGTP` for each station | `VacuumNetworkModel` | MODEL, coupled six-volume species-resolved pressure; gauges report ideal total, not calibrated gas response |
+| Per-gauge fault inputs (`PGVC`, `SGVC`, `PGTP`, `SGTP`) | corresponding `*DefStat` where registered | `VacuumNetworkModel` | MODEL, synthetic **gauge health** (not pressure threshold), reading frozen on injected fault |
 | `PPS:*:PermStat`, `PPS:BEAM:InhibitStat` | no writable echo | `config/simulation/default.yaml` external conditions | EXTERNAL; do not use OPI writes |
 
-**Limitation:** the VM does not yet reproduce measured vacuum-network conductance, real turbo pump curves or calibrated source/MFC dynamics. Matching PV names does not validate those approximations.
+**Limitation:** the Python feature branch now includes a six-node conductance/gas-pressure network and an optional **measured delta-pressure/flow CSV interface**, but conductances, pump performance curves, sensor response and MFC delivery paths are **not calibrated** against LIPAc. Matching PV names does not validate these approximations. `VacuumRegionModel` remains as a legacy standalone class, not as the runtime writer.
 
 ## 4. RF, chopper, timing and diagnostics
 
@@ -149,7 +149,7 @@ No OPI-to-Soft-IOC end-to-end test has yet established correct widget read/write
 | Simulation publishing | `src/injector_otp/core/engine.py` |
 | Native-name transport | `src/injector_otp/epics/simulation_backend.py`, `bridge.py` |
 | Equipment models | `src/injector_otp/models/` |
-| Relevant tests | `tests/test_power_supply_scaling.py`, `test_emu_hardware.py`, `test_gas_vacuum_topology.py`, `test_chopper_cim.py`, `test_simulation_ioc.py` |
+| Relevant tests | `tests/test_power_supply_scaling.py`, `test_emu_hardware.py`, `test_gas_vacuum_topology.py`, **`test_vacuum_network.py`**, `test_chopper_cim.py`, `test_simulation_ioc.py` |
 
 **Audit status:** this is a model-source traceability review, not proof of complete coverage of all 1052 registry references, nor a validated OPI/Soft IOC deployment. A future automated registry-to-model coverage report should count unresolved, readback-only and OPI-only references separately.
 
@@ -168,3 +168,28 @@ for the future isolated OPI bridge. At present the operator
 checkbox has **no live connection** to the terminal replay, so
 this is a contract plus an offline test, not an end-to-end EPICS
 integration.
+
+## VAC01/VAC02 V1.4: medidas de presión, parámetros y límites
+
+Las lecturas `VacPGVC`/`VacSGVC` proceden del nodo **C** y
+`VacPGTP`/`VacSGTP` del nodo **T**. La presión de respaldo **F**
+no tiene un PV original identificado en esta tabla: se expone como
+`LEBT:VAC01.foreline_pressure_mbar` en `context.metrics`.
+`TP.speed_fraction` y el cruce de 70% son métricas internas, no
+nuevas señales EPICS de máquina.
+
+Los fallos de bombas, sensores y MFC pueden inyectarse mediante
+`SimulationControlPlane.set_device_fault("LEBT:VAC01:TP", True)` y
+análogos; son claves internas del escenario. La bandera `SVForcing`
+no autoriza apertura, solo altera el resultado de fórmula original
+`SVOpenPrecond` de la OPI. El modelo no implementa una protección
+PLC validada para esa maniobra. La relación IV602/sensores de cámara
+no se ha confirmado.
+
+Los comandos `LEBT:VAC02:NIV*` presentes en archivos DB antiguos
+no corresponden a una válvula física de VAC02. No hay nuevo productor
+para NIV02 ni autorización de escritura en el runtime.
+
+Ver [guía de red](models/vacuum_network.md),
+[calibración de caudales](models/vacuum_calibration.md),
+[modelo completo](vacuum_model.md) y [contrato de PV](pv_runtime_contract.md).

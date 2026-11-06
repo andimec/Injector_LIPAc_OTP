@@ -1,6 +1,6 @@
 # Injector LIPAc OTP: current software architecture
 
-> **Baseline:** 5 November 2026. Native-name PV models plus offline EMU Fast/Full experimental replay. This is not a deployed or validated replica of LIPAc hardware.
+> **Baseline:** 6 November 2026. Includes proposed VAC01/VAC02 coupled vacuum V1.4 on the PR #11 feature branch, as well as the offline EMU Fast/Full replay. Neither this model nor the Soft IOC is a deployed or physically validated replica of LIPAc.
 
 ## 1. Design and deployment rules
 
@@ -50,7 +50,8 @@ The engine reads the current PV state, applies faults, evaluates pre-model autho
 | Domain | Python implementation | Current maturity |
 |---|---|---|
 | HV, IE, repellers, coils, solenoids and steerers | `models/power_supplies.py`; `hv_auto_ramp.py` | Rate-limited responses, status and source scaling; no verified transient calibration |
-| H2/D2, LEBT gas, valves, vacuum and cooling | `models/plant.py`; `vacuum_opi.py` | Reduced-order gas/vacuum and OPI preconditions, largely uncalibrated |
+| H₂/D₂/Kr MFC, valves and cooling | `models/plant.py` | MFC first-order response, valve states and per-device synthetic faults; legacy `VacuumRegionModel` only for compatibility |
+| VAC01/VAC02 vacuum coupled by GV | `models/vacuum_network.py`; `vacuum_calibration.py`; `vacuum_opi.py` | Six C/T/F volumes, ideal partial pressures, configurable pumpdown hours/target/ultimate, flow-pressure CSV, PV states; uncalibrated training model, original PLC permits unresolved |
 | RF generator, ATU encoding and timing | `models/control_devices.py` | Source register/bit calculations plus synthetic dynamics; not a full RF/coupling model |
 | Chopper/CIM | `models/chopper_cim.py` | Synthetic PRE-ARM/ARMED/FBI and snapshots; FPGA logic unverified |
 | Faraday cup, positioners and calorimetry | `models/control_devices.py`; `calorimetry.py` | Qualitative beam signal and recovered legacy equations |
@@ -79,6 +80,8 @@ A registry entry may represent a record field, a macro-dependent name, an OPI re
 | Area | Status as of baseline |
 |---|---|
 | Architecture, local Python state and tests | Implemented |
+| VAC01/VAC02 coupled vacuum network + configurable pumpdown + fault injections | Implemented on PR #11 feature branch; OEM/procedure calibration pending |
+| Measured gas-flow/pressure CSV interface | Implemented for steady-state delta pressure at nominal pumping; calibration datasets pending |
 | V2.0 PV inventory and Python models | Implemented in varying levels of maturity |
 | EMU offline scanning and provisional analysis | Implemented in memory; physical calibration pending |
 | EMU recorded-data replay in xterm | CLI and OPI Start SNL script hook implemented, GUI on Debian unverified |
@@ -87,12 +90,12 @@ A registry entry may represent a record field, a macro-dependent name, an OPI re
 | Generated dumb IOC records with record-field fidelity | **Pending** |
 | EPICS 7 CA/PVA + Python bidirectional bridge | **Pending** |
 | Phoebus end-to-end operation on isolated Debian VM/Podman | **Pending** |
-| Calibrated beam, vacuum, RF, EMU, protections | **Pending** |
+| Calibrated beam, vacuum, RF, EMU, protections | **Pending**: pressure-network implementation does not equal LIPAc experimental validation |
 | Procedures, logging/replay, complete automated PV/OPI coverage | Partial/planned |
 
 ## 8. Related documents
 
-[Configuration](configuration.md) · [EPICS architecture](epics_architecture.md) · [IOC contract](simulation_ioc_contract.md) · [PV runtime contract](pv_runtime_contract.md) · [Readback matrix](pv_readback_traceability.md) · [Modeling baseline](modeling_baseline.md) · [Original LCS provenance](original_lcs_model_logic.md) · [EMU reconstruction](emu_reconstruction.md) · [EMU archived Fast Scan replay](emu_fast_scan_replay.md).
+[Vacuum network V1.4](vacuum_model.md) · [Vacuum physics](models/vacuum_network.md) · [Vacuum calibration](models/vacuum_calibration.md) · [Configuration](configuration.md) · [EPICS architecture](epics_architecture.md) · [IOC contract](simulation_ioc_contract.md) · [PV runtime contract](pv_runtime_contract.md) · [Readback matrix](pv_readback_traceability.md) · [Modeling baseline](modeling_baseline.md) · [Original LCS provenance](original_lcs_model_logic.md) · [EMU reconstruction](emu_reconstruction.md) · [EMU archived Fast Scan replay](emu_fast_scan_replay.md).
 
 ### Separate EMU recorded-data path
 
@@ -110,3 +113,32 @@ This path **does not run the in-memory `EmuScanSequencer` or
 Validate and ON controls remain unconnected to it; the terminal
 accepts `validate` and `on` instead. Isolation and provenance are
 required to avoid confusing replay output with a fresh beam acquisition.
+
+### Vacuum V1.4 state ownership and limitations
+
+```text
+Commands PV (operator owned)          MFC flow readbacks (plant.py)
+    |                                             |
+    +-- ValveDevice (PV, SV, AIV, NIV01, GV)      |
+    +-- Pump commands                             |
+              |                                  |
+              +---------------+------------------+
+                              v
+                     VacuumNetworkModel
+                C1/T1/F1 <--> GV <--> C2/T2/F2
+                              |
+                        Pump and gauge PVs
+                              |
+                    SimulationContext.emit()
+```
+
+`vacuum_calibration.py` supplies configurable pressure/time profiles,
+SCCM-to-throughput and optional steady-state MFC delta-pressure tables.
+An individual `device_faults["LEBT:VAC01:TP"]` affects TP01 rather than
+all vacuum devices. **VAC02 has no physical NIV**; the original DB command
+names are retained only as inactive historical references.
+
+**Training boundary:** the `VacuumOPIPreconditions` results reproduce
+OPI visual formulas. They must not authorize the real Siemens PLC or silently
+activate `SVForcing`. TP speed at 70% is observable internally but does
+not automatically close PV. See [red de vacío](models/vacuum_network.md).

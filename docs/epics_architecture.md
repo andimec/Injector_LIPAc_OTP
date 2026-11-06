@@ -189,3 +189,29 @@ firewall rules and CA/PVA discovery. PV command allowlisting applies even
 inside the isolated VM.
 
 The network-isolation requirement is not yet validated by end-to-end tests.
+
+## Vacuum V1.4: Python-only readback ownership
+
+The V1.4 feature branch registers a single `VacuumNetworkModel` instead
+of two independent `VacuumRegionModel` instances. The model computes
+VAC01/VAC02 PP/TP status, pressures at chamber/inlet, and internal
+foreline and species metrics for six C/T/F nodes linked by GV.
+
+Existing `ValveDevice` models continue to read command PVs, the three
+MFCs produce SCCM flow metrics, and the network consumes their state.
+`VacuumOPIPreconditions` calculates visual preconditions afterwards.
+**SVForcing is not a PLC valve permit**, and the 70% TP speed during
+shutdown does not issue a `PVCloseCmd` automatically.
+
+`config/model_parameters.yaml` configures pumpdown hours and
+target/ultimate pressures and can refer to experimental flow-pressure CSV.
+This is a Python configuration mechanism, not additional EPICS PVs.
+Individual faults are injected through the internal
+`SimulationControlPlane`, not by writing a device-status PV.
+
+VAC02 has **no physical NIV**: the historical NIV02 command PV records are
+excluded from the runtime input allowlist and no actuator is instantiated.
+The CA/PVA bridge and the isolated Soft IOC deployment are still pending.
+See [vacuum network](models/vacuum_network.md),
+[parameters](models/vacuum_calibration.md) and
+[readback contract](pv_readback_traceability.md).
