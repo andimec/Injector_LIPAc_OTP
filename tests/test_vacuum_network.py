@@ -198,3 +198,30 @@ def test_valve_fault_freezes_position_and_mfc_fault_zeros_flow():
                              device_faults={"LEBT:MFC": True})
     mfc.update(1.0, ctx3)
     assert mfc.state.fault and ctx3.metrics["LEBT:MFC.flow_sccm"] == 0.0
+
+
+def test_measured_flow_curve_sets_vacuum_equilibrium_without_gauge_override(tmp_path):
+    data = tmp_path / "measured_D2.csv"
+    data.write_text("flow_sccm,delta_pressure_mbar\n0,0\n2,0.000003\n",
+                    encoding="utf-8")
+    p = params()
+    p["vacuum"]["flow_pressure_csv"] = {"SRC:MFCD": str(data)}
+    network = VacuumNetworkModel(catalog(), p)
+    prefix = "LEBT:VAC01"
+    context = SimulationContext(
+        pv={f"{prefix}:PPOnCmd": 1, f"{prefix}:TPOnCmd": 1},
+        metrics={**valves(), "SRC:MFCD.flow_sccm": 2.0})
+    for _ in range(60):
+        network.update(0.1, context)
+    assert network.stations["VAC01"].pressure["C"]["D2"] == pytest.approx(
+        3e-6, rel=1e-3)
+    assert context.pv[f"{prefix}:VacPGVC"] >= 3e-6
+    assert context.metrics["SRC:MFCD.effective_load_mbar_l_s"] > 0
+
+
+def test_primary_pump_floor_is_not_a_gas_source():
+    model = VacuumNetworkModel(catalog(), params(initial_01=1e-8))
+    ctx = SimulationContext(pv={"LEBT:VAC01:PPOnCmd": 1},
+                            metrics=valves())
+    model.update(1.0, ctx)
+    assert ctx.metrics["LEBT:VAC01.pressure_mbar"] <= 1e-8 * 1.001

@@ -132,9 +132,15 @@ vacuum:
 ```
 
 La interpolación es lineal y fuera del rango mantiene la última medida.
-La integración de la presión por tabla es **un prototipo provisional**
-con hipótesis de aditividad entre especies; las futuras campañas deberán
-incorporar dependencia cruzada, estados de bombas y presión de respaldo.
+Cuando TP está nominal, se convierte el incremento experimental de presión
+en una **carga efectiva de gas** según
+`Q_cal = P_delta / (1/S_gas + 1/C_SV)`; el balance acoplado de
+C/T se integra mediante la solución exacta del sistema lineal de dos nodos.
+Esto ajusta la presión estacionaria sin escribir directamente el sensor.
+Las curvas siguen siendo **un prototipo provisional** con hipótesis de
+aditividad entre especies; las futuras campañas deberán incorporar
+dependencia cruzada, estados de bombas, rangos de presión y presión de
+respaldo, además de un tratamiento distinto de flujo viscoso y molecular.
 Si el archivo falta, se produce un error deliberado al inicializar, en lugar
 de inventar datos.
 
