@@ -1,6 +1,6 @@
 # Guía de modelos del Injector LIPAc OTP
 
-**Alcance:** los 18 módulos con código Python bajo [src/injector_otp/models](../../src/injector_otp/models/), excluyendo __init__.py, que es solo el inicializador del paquete. **Fecha de revisión:** 05-11-2026.
+**Alcance:** los 20 módulos con código Python bajo [src/injector_otp/models](../../src/injector_otp/models/), excluyendo __init__.py, que es solo el inicializador del paquete. **Fecha de revisión:** 06-11-2026, propuesta de red de vacío V1.4.
 
 Esta documentación está orientada a lectores que conocen el inyector, pero no necesariamente el código. Cada página contesta: **qué problema representa, de dónde procede la lógica, cómo se ejecuta, qué NO reproduce y qué se debe mejorar a continuación**. El README de [modelos de origen](../../src/injector_otp/models/README.md) y la [arquitectura](../architecture.md) explican el marco global.
 
@@ -21,7 +21,9 @@ Esta documentación está orientada a lectores que conocen el inyector, pero no 
 | [injector.py](injector.md) | Composición causal y mapa de madurez | Grafo de dependencias, propiedad de PV, multirrate |
 | [original_lcs_logic.py](original_lcs_logic.md) | Conversiones, máscaras RF, fórmulas de OPI/timing | Verificación de escalas y tablas de verdad |
 | [subsystems.py](subsystems.md) | Clases heredadas sin comportamiento | Retirar/aislar stubs para evitar falsa cobertura |
-| [plant.py](plant.md) | Válvulas, caudal MFC, presión VAC01/02, cooling | Conductancias, curvas de bomba, transitorios |
+| [plant.py](plant.md) | Válvulas, MFC y refrigeración; `VacuumRegionModel` antiguo solo para pruebas | Carrera de válvulas, calibrar respuesta y fallos |
+| [vacuum_network.py](vacuum_network.md) | Seis nodos de presión VAC01/VAC02, PP/TP, GV, gases y fallos | Conductancias, velocidad S(P,gas), calibración y SV real |
+| [vacuum_calibration.py](vacuum_calibration.md) | Perfiles de bombeo y curvas CSV presión/caudal, conversión SCCM | Validar ajuste con transitorios medidos |
 | [vacuum_opi.py](vacuum_opi.md) | Precondiciones de pantalla de vacío | PLC fuente y calidad del dato, sin autorización activa |
 | [power_supplies.py](power_supplies.md) | Rampas y readbacks de magnetos/HV/IE/R/RC | Caracterización dinámica y escalas por equipo |
 | [hv_auto_ramp.py](hv_auto_ramp.md) | Máquina de estados de arranque HV/IE/R | Política de aborto/retorno seguro y verificación real |
@@ -47,7 +49,7 @@ Esta documentación está orientada a lectores que conocen el inyector, pero no 
                    |
     +--------------+-------------------+
     |              |                   |
-    gases/vacío   PS/HV/RF/haz       EMU hardware
+    MFC + red     PS/HV/RF/haz       EMU hardware
     |              |                   |
     monitores     readbacks         EMU sequencer
     +--------------+-------------------+
@@ -67,7 +69,7 @@ Esta documentación está orientada a lectores que conocen el inyector, pero no 
 | **P1. Contrato y seguridad del OTP** | Un propietario por salida PV, lista de comandos permitidos, red aislada, fallos y abortos reproducibles | Tests sin producción, fallo por comando no permitido, registros de eventos y tests de abortos |
 | **P1. Datos de calibración** | Medir transitorios y factores de escala de PS, MFC, vacío, RF y EMU | Curvas de entrada/salida con incertidumbre, fecha, configuración y trazabilidad |
 | **P1. EMU operativo** | Presets Fast/Full y conexión de botones Phoebus a Python mediante Soft IOC aislado | Secuencias equivalentes, Save OFF sin archivos y readbacks observables |
-| **P2. Modelado físico** | Conductancias S/V, RL de bobinas, potencia RF/impedancia y óptica LEBT | Ecuaciones verificables, parámetros medidos, comparación independiente con datos |
+| **P2. Modelado físico** | Calibración de la red de conductancias ya implementada, S(P,gas), RL de bobinas, RF/impedancia y óptica LEBT | Ecuaciones verificables, parámetros medidos, comparación independiente con datos |
 | **P2. Diagnósticos** | Calorimetría física, scanner Allison y cálculo RMS con pesos/correcciones | Comparación con señales/calorimetría y herramientas de análisis existentes |
 | **P3. Física cinética avanzada** | ECR, menisco de extracción y especies, cuando la plataforma tenga datos adecuados | Validación separada y documentación de rango de aplicabilidad |
 
@@ -85,13 +87,14 @@ Esta documentación está orientada a lectores que conocen el inyector, pero no 
     python3 -m pip install -e ".[dev]"
     pytest -q
     pytest tests/test_emu_geometry.py tests/test_emu_sequences.py tests/test_emu_replay.py
-    pytest tests/test_hv_auto_ramp.py tests/test_gas_vacuum_topology.py
+    pytest tests/test_hv_auto_ramp.py tests/test_gas_vacuum_topology.py tests/test_vacuum_network.py
 
 Las pruebas de Python no prueban fidelidad del haz, funcionamiento del PLC/cRIO ni comunicación Phoebus ↔ EPICS. Para ello hacen falta ensayos independientes y una VM **sin ruta a la red de control de LIPAc**.
 
 ## Fuentes y documentos de apoyo
 
 - [README general](../../README.md), [arquitectura EPICS](../epics_architecture.md), [contrato de PV](../pv_runtime_contract.md), [lógica original](../original_lcs_model_logic.md).
+- [Modelo de vacío V1.4](../vacuum_model.md), [red de seis volúmenes](vacuum_network.md) y [calibración](vacuum_calibration.md).
 - [EMU reconstrucción SNL](../emu_reconstruction.md) y [replay experimental](../emu_fast_scan_replay.md).
 - Documentación operativa base citada por el proyecto: Injector LCS User Manual v4.0 (01-10-2026); BA_D_2E9QH7 v2.0 (09-07-2026); BA_D_2E2GU7 v1.0; BA_D_2E98YT v1.0; BA_D_22BCRE v2.1; y manual EMU BA_D_2EAHXV v1.0. El código fuente y los datos se deben usar como evidencia de implementación concreta, no las guías como validación experimental.
 

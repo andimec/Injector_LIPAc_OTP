@@ -40,3 +40,14 @@ No existe comprobación global de unidades, un ciclo de vida formal (initialize,
 4. **Validación:** probar dt negativo, fallos externos, ausencia de autorizaciones y compatibilidad con [core/engine.py](../../src/injector_otp/core/engine.py).
 
 **Criterio de aceptación:** un nuevo modelo se puede registrar sin añadir acceso EPICS y sin redefinir la política de seguridad.
+
+## Contrato de fallos por equipo en VAC01/VAC02
+
+`SimulationControlPlane.set_device_fault(device_id, True)` permite
+afectar dispositivos individuales de la red de vacío:
+`LEBT:VAC01:PP`, `LEBT:VAC01:TP`, `LEBT:VAC01:SV`,
+`LEBT:GV`, `LEBT:VAC01:SGVC`, `SRC:MFCD`, etc.
+`ValveDevice` y `GasFlowController` mantienen `state.fault`,
+mientras que `VacuumPump` y `VacuumGauge` exponen `fault`.
+Los identificadores no son nuevas PV de producción ni
+protecciones de Siemens. Véase [red de vacío](vacuum_network.md).

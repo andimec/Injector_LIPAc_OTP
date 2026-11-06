@@ -312,3 +312,37 @@ results.
 A future PPSModel may generate the raw PPS PVs once the authoritative PPS
 behaviour required for training has been specified. Until then, the simulator
 does not invent a hardware PPS implementation.
+
+## Vacuum V1.4: one readback writer and fault interface
+
+The new `VacuumNetworkModel` is the single source of the simulated
+VAC01/VAC02 pump and pressure readbacks. It emits existing catalogued
+`PPOnStat`, `TPOnStat`, `TPSpeedStat`, `TPDefStat`,
+`VacPGVC`, `VacSGVC`, `VacPGTP`, `VacSGTP` and
+available gauge health PVs. The legacy independent
+`VacuumRegionModel` instances are not registered by
+`InjectorModel`. Valve readbacks are still owned by `ValveDevice`.
+
+The input allowlist excludes `LEBT:VAC02:NIVOpenCmd` and
+`LEBT:VAC02:NIVCloseCmd` because there is **no NIV02 hardware**,
+despite historical DB definitions. No model writes an invented NIV02
+readback. The pressure of node F, partial gas pressures and TP speed
+fraction remain `context.metrics`, not original LIPAc PVs.
+
+Faults are causal model inputs, not direct writes to readbacks:
+
+```python
+engine.control_plane.set_device_fault("LEBT:VAC01:TP", True)
+engine.step()
+engine.control_plane.clear_device_fault("LEBT:VAC01:TP")
+```
+
+Other identifiers address individual PP, SV, PV, AIV, NIV01, GV, MFC,
+gauges and the chamber leak in either station. A device flag is not
+a Siemens permit, does not change the physical protection system, and
+cannot use `SVForcing` to bypass PLC logic.
+
+The pumpdown duration, ultimate pressure and CSV calibration are local
+YAML inputs, **not operator-owned equipment PVs**. The model's
+`context.emit()` calls publish only verified, catalogued readback names.
+See [model](vacuum_model.md) and [module design](models/vacuum_network.md).

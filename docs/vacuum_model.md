@@ -2,8 +2,14 @@
 
 Este módulo es **solo para simulación aislada y entrenamiento**. No implementa
 interlocks Siemens ni sustituye manuales OEM o procedimientos LIPAc aprobados.
-Los valores de volumes, conductancias, tiempos de respuesta y fracciones de
+Los valores de volúmenes, conductancias, tiempos de respuesta y fracciones de
 entrega de gas son hipótesis editables, no resultados experimentales.
+
+**Estado de revisión:** rama `feature/configurable-vacuum-network-v1`,
+[Pull Request #11](https://github.com/andimec/Injector_LIPAc_OTP/pull/11)
+pendiente de integrar en `main`. Consulta
+[red de presión y fallos](models/vacuum_network.md) y
+[perfil de calibración](models/vacuum_calibration.md).
 
 ## Arquitectura
 
@@ -209,3 +215,33 @@ simulado de TP y espera que el modelo alcance `target_pressure_mbar`.
 La autorización del PLC para abrir SV **no se emula** en esta demostración.
 El CSV permite comparar presiones de cámara, entrada TP y respaldo con
 registros reales más adelante. No hay conexión con ningún equipo.
+
+## 7. Estado de integración y aceptación
+
+`InjectorModel` instancia **un solo** `VacuumNetworkModel` después
+de válvulas y MFC. El `VacuumRegionModel` antiguo de `plant.py`
+no participa en el runtime, aunque permanece para pruebas
+históricas. Las claves legacy de `gas_coupling_mbar_s_per_sccm`
+y `pumping_tau_s` no determinan la nueva red.
+
+Los comandos siguen siendo PV de entrada, y los estados/presiones,
+salidas Python de catálogo. No se crean PV ficticias para
+presiones parciales, presión del respaldo, velocidad porcentual
+de TP ni fallos por dispositivo: esas magnitudes son
+`context.metrics` o entradas del plano de control interno.
+
+**LTV** solo utiliza el estado disponible `LTVOpenStat` para la
+condición de venteo del respaldo. No se ha reconstruido una secuencia
+de mando LTV sin comprobar su origen. No existe NIV en VAC02.
+No se ha establecido la equivalencia de IV602 con ningún vacuómetro
+simulado. Los permisos originales de apertura SV y SVForcing requieren
+validación independiente en el PLC.
+
+La suite CI valida el comportamiento Python, incluidas curvas de
+MFC, conexión GV, configuración de tiempos y fallos específicos,
+pero **no certifica** capacidades de bomba, tiempos reales,
+reguladores de N₂, enclavamientos ni funcionamiento en red EPICS.
+
+Más detalles: [README general](../README.md),
+[configuración](configuration.md) y
+[trazabilidad PV](pv_readback_traceability.md).

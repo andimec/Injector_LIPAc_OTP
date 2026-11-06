@@ -37,6 +37,82 @@ propagation, ramp algorithms, or the Injector state machine.
 The Python runtime can run without EPICS or Phoebus. The EPICS implementation
 is an adapter around the simulation-owned PV state.
 
+## Modelo de vacío configurable VAC01/VAC02 (implementación V1.4)
+
+Esta rama incorpora un **modelo Python de red de vacío** en
+[`src/injector_otp/models/vacuum_network.py`](src/injector_otp/models/vacuum_network.py)
+con seis nodos físicos aproximados (`C`: cámara, `T`: entrada de TP,
+`F`: línea de respaldo, para **VAC01** y **VAC02**) acoplados por
+`LEBT:GV`. El cálculo sustituye a los dos `VacuumRegionModel`
+independientes en `InjectorModel`. El módulo histórico sigue en `plant.py`
+solo para compatibilidad con pruebas.
+
+- **VAC01:** bombas primaria PP y turbomolecular TP, válvulas PV/SV/AIV/NIV,
+  estado de LTV y sensores PGVC/SGVC/PGTP/SGTP.
+- **VAC02:** estación simplificada con PP, TP, PV/SV/AIV/LTV y cuatro
+  sensores. **No existe NIV02 física**, aunque el archivo DB original
+  contenga comandos `LEBT:VAC02:NIV*`; no se modela, no recibe comandos
+  del runtime ni se simula su venteo. La cámara RF queda fuera del alcance.
+- **GV:** permite intercambio de gas entre cámaras si está abierta;
+  `PPS:GV:OpenPermStat` sigue siendo una autorización externa.
+- **Gas:** H₂ (`SRC:MFCH`) y D₂ (`SRC:MFCD`) a VAC01; Kr
+  (`LEBT:MFC`) a VAC02. Caudal SCCM → throughput de gas;
+  se mantienen presiones parciales idealizadas de residual/H₂/D₂/Kr/N₂.
+- **Fallos específicos:** PP, TP, válvulas, sensores, MFC y fugas,
+  inyectables a través de `SimulationControlPlane.set_device_fault()`.
+
+### Ajustar el tiempo y la presión del bombeo
+
+Editar [`config/model_parameters.yaml`](config/model_parameters.yaml)
+y reiniciar el motor para aplicar cambios:
+
+```yaml
+vacuum:
+  stations:
+    VAC01:
+      initial_pressure_mbar: 1013.25  # escenario desde atmósfera
+      pumpdown:
+        pumpdown_time_h: 2.0          # valor de referencia: 1, 2 o 3 h
+        target_pressure_mbar: 1.0e-6  # presión objetivo
+        ultimate_pressure_mbar: 1.0e-8 # límite asintótico, sin entrada de gas
+```
+
+`pumpdown_time_h` calibra **constantes efectivas de bombeo**, no un
+temporizador que garantice alcanzar la presión indicada. El tiempo
+efectivo cambia con los estados de PP/TP, SV/PV, rampas, fugas y caudales.
+La configuración distribuida comienza a `1e-6` mbar para no modificar
+el escenario por defecto del motor; el ejemplo de arriba inicia un
+**ensayo independiente** desde atmósfera.
+
+Prueba sin EPICS y exporta trazas en CSV:
+
+```bash
+python scripts/demo_vacuum_pumpdown.py --hours 1 --csv /tmp/vacuum_1h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 2 --csv /tmp/vacuum_2h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 3 --csv /tmp/vacuum_3h.csv
+pytest -q tests/test_vacuum_network.py tests/test_gas_vacuum_topology.py
+```
+
+Se pueden aportar **curvas reales** de incremento de presión frente a
+caudal en CSV (`flow_sccm,delta_pressure_mbar`) mediante la clave
+`vacuum.flow_pressure_csv` por MFC. Estas curvas solo se aplican en
+la condición de TP nominal y con bombeo habilitado, como carga gaseosa
+equivalente; no son lecturas medidas generadas por el simulador.
+
+**Limitaciones:** los volúmenes, conductancias, fracciones de llegada del
+gas a las cámaras, curvas de TP y calibraciones de vacuómetros aún
+requieren datos de LIPAc. Los parámetros de la TURBOVAC MAG W 2800 son
+una referencia editable; las cifras sustitutivas de D₂/Kr no están
+validadas. `SVForcing` sigue siendo una fórmula de **visualización**
+de la OPI, no un bypass de la lógica de seguridad ni una orden
+automática de apertura. El 70 % de velocidad durante la parada de VAC01
+es una **métrica**, no un cierre automático de PV.
+
+Documentación: [modelo de vacío y límites](docs/vacuum_model.md),
+[calibración y datos medidos](docs/models/vacuum_calibration.md),
+[red física y fallos](docs/models/vacuum_network.md) y
+[configuración detallada](docs/configuration.md).
+
 ## Iniciar el motor Python en la máquina virtual (Debian)
 
 **El motor y el IOC son procesos diferentes.** `src/injector_otp/app.py` contiene la función `build_application()`, pero `python3 -m injector_otp.app` ejecuta **solo un paso** y termina. El iniciador del motor continuo es ahora [`scripts/start_injector_engine.sh`](scripts/start_injector_engine.sh). El proceso sigue siendo **exclusivamente local y en memoria**, sin conexión CA/PVA a Phoebus ni al Soft IOC.
@@ -174,7 +250,7 @@ El replay todavía **no está conectado** a los botones Validate/ON/Save de Phoe
 - src/injector_otp/core: simulation clock, state machine and engine.
 - src/injector_otp/pv: authoritative simulation PV state and runtime ownership
   contract. This package has no EPICS dependency.
-- src/injector_otp/models: subsystem model interfaces and composition point.
+- src/injector_otp/models: subsystem models and composition; `vacuum_network.py` owns the coupled VAC01/VAC02 pressure calculations and `vacuum_calibration.py` holds configurable pumpdown/CSV utilities.
 - src/injector_otp/epics: transport contracts and adapters between Python PV
   state and the future simulation Soft IOC.
 - src/injector_otp/faults: deterministic fault definitions and injection manager.
@@ -188,8 +264,9 @@ El replay todavía **no está conectado** a los botones Validate/ON/Save de Phoe
   (891 entries); not used by the default application bootstrap.
 - config/pv_runtime_overrides.yaml: explicitly verified runtime ownership
   overrides for the pilot.
+- config/model_parameters.yaml: editable vacuum pumpdown targets, final pressure, gas species and training parameters.
 - config/simulation/default.yaml: startup conditions only.
-- tests/: architecture, registry, state and simulation tests.
+- tests/: architecture, registry, state and simulation tests, including `test_vacuum_network.py`.
 - docs/: architecture, runtime contract, interlock and configuration design.
 
 ## PV registry and runtime ownership
