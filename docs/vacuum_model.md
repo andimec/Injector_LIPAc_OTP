@@ -192,3 +192,20 @@ ruido de sensor o atasco parcial quedan para una ampliación posterior.
 operador-propiedad, los readbacks siguen siendo propiedad del motor Python,
 y `SVForcing` solo se representa como condición visual del OPI, no como
 permiso físico no validado.
+
+## 6. Demostración reproducible sin EPICS
+
+Tras instalar el proyecto (`pip install -e ".[dev]"`):
+
+```bash
+python scripts/demo_vacuum_pumpdown.py --hours 1 --csv /tmp/vacuum_1h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 2 --csv /tmp/vacuum_2h.csv
+python scripts/demo_vacuum_pumpdown.py --hours 3 --csv /tmp/vacuum_3h.csv
+```
+
+La demo parte a 1013.25 mbar, abre conceptualmente PV/SV y arranca PP.
+Cuando la cámara alcanza `roughing_end_pressure_mbar` envía el comando
+simulado de TP y espera que el modelo alcance `target_pressure_mbar`.
+La autorización del PLC para abrir SV **no se emula** en esta demostración.
+El CSV permite comparar presiones de cámara, entrada TP y respaldo con
+registros reales más adelante. No hay conexión con ningún equipo.

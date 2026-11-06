@@ -225,3 +225,18 @@ def test_primary_pump_floor_is_not_a_gas_source():
                             metrics=valves())
     model.update(1.0, ctx)
     assert ctx.metrics["LEBT:VAC01.pressure_mbar"] <= 1e-8 * 1.001
+
+
+def test_offline_reference_pumpdown_demo(tmp_path):
+    from runpy import run_path
+    from pathlib import Path
+    demo = run_path("scripts/demo_vacuum_pumpdown.py")
+    output = tmp_path / "trace.csv"
+    reached, p = demo["run"](
+        config=Path("config/model_parameters.yaml"), station="VAC01",
+        hours=1.0, start_pressure=1013.25, dt=1.0,
+        limit_hours=2.0, output_csv=output)
+    assert reached is not None
+    assert 0.7 * 3600 <= reached <= 1.6 * 3600
+    assert p <= 1e-6
+    assert "chamber_mbar" in output.read_text(encoding="utf-8")
