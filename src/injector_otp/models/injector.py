@@ -12,7 +12,8 @@ from .control_devices import (
     BeamTransportModel, InterfaceOnlyModel,
     PositionerModel, RFSystemModel, TimingSystemModel,
 )
-from .plant import CoolingSkidModel, GasFlowController, VacuumRegionModel, ValveDevice
+from .plant import CoolingSkidModel, GasFlowController, ValveDevice
+from .vacuum_network import VacuumNetworkModel
 from .vacuum_opi import VacuumOPIPreconditions
 from .chopper_cim import ChopperCIMModel
 from .hv_auto_ramp import HVAutoRampModel, HVRampSettings
@@ -74,11 +75,16 @@ class InjectorModel(SubsystemModel):
             if not catalog.contains_prefix(region):
                 continue
             for valve in ("PV", "SV", "AIV", "NIV", "LTV"):
+                if region == "LEBT:VAC02" and valve == "NIV":
+                    # No physical NIV on VAC02; legacy DB command is inert.
+                    continue
                 subprefix = f"{region}:{valve}"
                 if catalog.has(subprefix + "OpenCmd"):
                     self._add(ValveDevice(subprefix, catalog))
-            self._add(VacuumRegionModel(region, catalog, self.parameters))
-
+        # One network writer, not two independent pressure models. MFC and
+        # valve models run first so the network receives fresh flow/position.
+        self._add(VacuumNetworkModel(catalog, self.parameters),
+                  "configurable_unvalidated_network")
         self._add(VacuumOPIPreconditions(catalog), "exact_opi_formula_only")
 
         # Automation requests operator-setpoint inputs via the engine ACL.
