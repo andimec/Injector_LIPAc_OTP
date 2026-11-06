@@ -13,7 +13,7 @@ fractions and gauge gas corrections remain training assumptions.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from math import exp, isfinite
+from math import exp, isfinite, sqrt
 from pathlib import Path
 
 from .base import SubsystemModel
@@ -81,7 +81,49 @@ def _pump(p: dict[str, float], volume_l: float, speed_l_s: float,
     keys = [species] if species is not None else list(COMPONENTS)
     for gas in keys:
         floor = floor_mbar if gas == "residual" else 0.0
-        p[gas] = max(0.0, floor + (p[gas] - floor) * decay)
+        # Pumping does not produce gas when a node is already below its floor.
+        p[gas] = (p[gas] if p[gas] < floor
+                  else max(0.0, floor + (p[gas] - floor) * decay))
+
+
+
+def _pumped_pair(
+    a: dict[str, float], va: float, b: dict[str, float], vb: float,
+    conductance_l_s: float, speed_l_s: float, dt: float, species: str,
+    throughput_mbar_l_s: float = 0.0, floor_mbar: float = 0.0,
+) -> None:
+    """Exact two-node solution for SV conductance and turbo throughput.
+
+    V_a dP_a/dt = Q - C(P_a - P_b)
+    V_b dP_b/dt = C(P_a - P_b) - S(P_b - floor).
+
+    Using a stable 2x2 matrix exponential avoids the time-step-dependent
+    effective pumping speed of a split conductance/pump solver. The
+    constant incoming throughput is applied to the chamber node.
+    """
+    if min(va, vb) <= 0 or min(conductance_l_s, speed_l_s) <= 0:
+        raise ValueError("Volumes, conductance and pumping speed must be positive")
+    if throughput_mbar_l_s < 0 or floor_mbar < 0:
+        raise ValueError("Throughput and pressure floor must be nonnegative")
+    g = conductance_l_s
+    s = speed_l_s
+    aa, bb = -g / va, g / va
+    cc, dd = g / vb, -(g + s) / vb
+    mid = (aa + dd) / 2.0
+    gap = sqrt(((aa - dd) / 2.0)**2 + bb * cc)
+    lam_plus, lam_minus = mid + gap, mid - gap
+    divisor = lam_plus - lam_minus
+    e_plus, e_minus = exp(min(0.0, lam_plus * dt)), exp(min(0.0, lam_minus * dt))
+    m11 = (e_plus * (aa - lam_minus) + e_minus * (lam_plus - aa)) / divisor
+    m12 = bb * (e_plus - e_minus) / divisor
+    m21 = cc * (e_plus - e_minus) / divisor
+    m22 = (e_plus * (dd - lam_minus) + e_minus * (lam_plus - dd)) / divisor
+    # Steady state: P_b = floor + Q/S; P_a = P_b + Q/C.
+    pb_eq = floor_mbar + throughput_mbar_l_s / s
+    pa_eq = pb_eq + throughput_mbar_l_s / g
+    pa0, pb0 = a[species] - pa_eq, b[species] - pb_eq
+    a[species] = max(0.0, pa_eq + m11 * pa0 + m12 * pb0)
+    b[species] = max(0.0, pb_eq + m21 * pa0 + m22 * pb0)
 
 
 def _vent(p: dict[str, float], dt: float, tau_s: float,
@@ -189,23 +231,31 @@ class VacuumNetworkModel(SubsystemModel):
         context.metrics[f"{p}:TP.speed_70_percent_or_less"] = float(
             not tp.running and 0.0 < tp.speed_fraction <= 0.70)
 
-    def _apply_sources(self, station: VacuumStation, dt: float, context) -> None:
-        cfg = self.settings
-        default_sources = {
+    def _apply_sources(self, station: VacuumStation, context) -> dict[str, float]:
+        """Compute chamber throughputs for this step (mbar L/s).
+
+        The optional measured curve is converted to an equivalent chamber
+        gas throughput using Q = P_delta / (1/S + 1/C). This calibrates
+        the steady-state pressure without overwriting simulated gauges.
+        """
+        settings = self.settings
+        defaults = {
             "SRC:MFCH": {"species": "H2", "station": "VAC01"},
             "SRC:MFCD": {"species": "D2", "station": "VAC01"},
             "LEBT:MFC": {"species": "Kr", "station": "VAC02"},
         }
-        source_cfg = cfg.get("gas_sources", default_sources)
+        sources = settings.get("gas_sources", defaults)
         gas_cfg = self.params.get("gas", {})
-        reference_temperature = float(gas_cfg.get("reference_temperature_K", 273.15))
-        reference_pressure = float(gas_cfg.get("reference_pressure_mbar", 1013.25))
         temperature = float(station.config.get("temperature_K", 293.15))
-        turbo_ready = (station.tp.running and station.tp.speed_fraction >= 0.999999
-                       and station.pp.running
-                       and self._is_open(context, f"{station.prefix}:PV")
-                       and self._is_open(context, f"{station.prefix}:SV"))
-        for prefix, source in source_cfg.items():
+        speeds = station.config.get("gas_pumping_speed_l_s", {
+            "H2": 2100.0, "D2": 2100.0, "Kr": 2400.0, "N2": 2400.0})
+        conductance = float(station.config.get("sv_conductance_l_s", 10000.0))
+        nominal_turbo = (station.tp.running and station.tp.speed_fraction >= 0.999999
+                         and station.pp.running
+                         and self._is_open(context, f"{station.prefix}:PV")
+                         and self._is_open(context, f"{station.prefix}:SV"))
+        loads: dict[str, float] = {}
+        for prefix, source in sources.items():
             if source.get("station") != station.prefix.split(":")[-1]:
                 continue
             species = source["species"]
@@ -216,25 +266,24 @@ class VacuumNetworkModel(SubsystemModel):
             if not 0 <= fraction <= 1:
                 raise ValueError("delivery_fraction must lie within [0,1]")
             flow *= fraction
-            if prefix in self.curves and turbo_ready:
-                # Equilibrium data are pressure *increments* above no-flow.
-                target = self.curves[prefix].value(flow)
-                tau = float(station.config.get("flow_response_tau_s", 5.0))
-                if tau <= 0:
-                    raise ValueError("flow_response_tau_s must be positive")
-                current = station.pressure["C"][species]
-                station.pressure["C"][species] = (
-                    target + (current - target) * exp(-dt / tau))
-            else:
-                q = sccm_to_throughput(
-                    flow, reference_pressure_mbar=reference_pressure,
-                    reference_temperature_K=reference_temperature,
-                    gas_temperature_K=temperature)
-                station.pressure["C"][species] += q * dt / station.volume_l("C")
-            context.metrics[f"{prefix}.throughput_mbar_l_s"] = sccm_to_throughput(
-                flow, reference_pressure_mbar=reference_pressure,
-                reference_temperature_K=reference_temperature,
+            physical_q = sccm_to_throughput(
+                flow,
+                reference_pressure_mbar=float(
+                    gas_cfg.get("reference_pressure_mbar", 1013.25)),
+                reference_temperature_K=float(
+                    gas_cfg.get("reference_temperature_K", 273.15)),
                 gas_temperature_K=temperature)
+            equivalent_q = physical_q
+            if nominal_turbo and prefix in self.curves:
+                target_delta = self.curves[prefix].value(flow)
+                s = float(speeds.get(species, 2400.0))
+                if min(s, conductance) <= 0:
+                    raise ValueError("Measured calibration requires S and C > 0")
+                equivalent_q = target_delta / (1.0 / s + 1.0 / conductance)
+            loads[species] = loads.get(species, 0.0) + equivalent_q
+            context.metrics[f"{prefix}.throughput_mbar_l_s"] = physical_q
+            context.metrics[f"{prefix}.effective_load_mbar_l_s"] = equivalent_q
+        return loads
 
     def _evolve_station(self, station: VacuumStation, dt: float, context) -> None:
         p, cfg, prof = station.prefix, station.config, station.profile
@@ -245,7 +294,7 @@ class VacuumNetworkModel(SubsystemModel):
         pv = self._is_open(context, f"{p}:PV")
         sv = self._is_open(context, f"{p}:SV")
 
-        self._apply_sources(station, dt, context)
+        gas_loads = self._apply_sources(station, context)
         leak = float(cfg.get("leak_throughput_mbar_l_s", 0.0))
         if leak < 0:
             raise ValueError("Leak throughput must be nonnegative")
@@ -262,37 +311,51 @@ class VacuumNetworkModel(SubsystemModel):
         if bool(context.pv.get(f"{p}:LTVOpenStat", False)):
             _vent(F, dt, float(cfg.get("vent_tau_s", 120.0)), ambient)
 
-        if sv:
-            _equalize(C, vc, T, vt,
-                      float(cfg.get("sv_conductance_l_s", 10000.0)), dt)
-        if tp_speed <= 0.0:
-            _equalize(T, vt, F, vf,
-                      float(cfg.get("stopped_tp_conductance_l_s", 10000.0)), dt)
-
+        s_sv = float(cfg.get("sv_conductance_l_s", 10000.0))
+        if s_sv < 0:
+            raise ValueError("SV conductance must be nonnegative")
+        turbo_active = pp and pv and tp_speed >= 0.01
+        if turbo_active and sv and s_sv > 0:
+            # Coupled C/T evolution, stable even with fast TP and large C_SV.
+            background_speed = (vc + vt) / prof.turbo_tau_s * tp_speed
+            _pumped_pair(C, vc, T, vt, s_sv, background_speed, dt,
+                         "residual", floor_mbar=prof.ultimate_pressure_mbar)
+            speeds = cfg.get("gas_pumping_speed_l_s", {
+                "H2": 2100.0, "D2": 2100.0, "Kr": 2400.0, "N2": 2400.0})
+            for gas in ("H2", "D2", "Kr", "N2"):
+                speed = float(speeds.get(gas, 2400.0)) * tp_speed
+                if speed < 0:
+                    raise ValueError("Gas pumping speed must be nonnegative")
+                if speed > 0:
+                    _pumped_pair(C, vc, T, vt, s_sv, speed, dt, gas,
+                                 throughput_mbar_l_s=gas_loads.get(gas, 0.0))
+                else:
+                    C[gas] += gas_loads.get(gas, 0.0) * dt / vc
+        else:
+            # No pump connected to C: injected gases accumulate locally.
+            for gas, q in gas_loads.items():
+                C[gas] += q * dt / vc
+            if sv:
+                _equalize(C, vc, T, vt, s_sv, dt)
+            if turbo_active:
+                # SV closed. Turbo can still evacuate its own inlet.
+                _pump(T, vt, (vc + vt) / prof.turbo_tau_s * tp_speed, dt,
+                      floor_mbar=prof.ultimate_pressure_mbar,
+                      species="residual")
+                speeds = cfg.get("gas_pumping_speed_l_s", {
+                    "H2": 2100.0, "D2": 2100.0, "Kr": 2400.0, "N2": 2400.0})
+                for gas in ("H2", "D2", "Kr", "N2"):
+                    _pump(T, vt, float(speeds.get(gas, 2400.0))*tp_speed,
+                          dt, species=gas)
+            else:
+                # A stopped TP is a finite gas conductance to the foreline.
+                _equalize(T, vt, F, vf,
+                          float(cfg.get("stopped_tp_conductance_l_s", 10000.0)),
+                          dt)
         if pp and pv:
-            # Effective PP speed derived from configured roughing time.
             effective_rough_speed = (vc + vt + vf) / prof.roughing_tau_s
             _pump(F, vf, effective_rough_speed, dt,
                   floor_mbar=prof.roughing_floor_mbar)
-        if pp and pv and tp_speed > 0:
-            # Slow residual pumpdown reflects uncalibrated chamber outgassing,
-            # not the OEM 2400 L/s nominal throughput.
-            effective_turbo_speed = (vc + vt) / prof.turbo_tau_s * tp_speed
-            _pump(T, vt, effective_turbo_speed, dt,
-                  floor_mbar=prof.ultimate_pressure_mbar, species="residual")
-            speeds = cfg.get("gas_pumping_speed_l_s",
-                             {"H2": 2100.0, "D2": 2100.0,
-                              "Kr": 2400.0, "N2": 2400.0})
-            for gas in ("H2", "D2", "Kr", "N2"):
-                speed = float(speeds.get(gas, 2400.0))
-                if speed < 0:
-                    raise ValueError("Pumping speed must be nonnegative")
-                _pump(T, vt, speed * tp_speed, dt, species=gas)
-
-        # Additional diffusion after pumping: avoid a full-tick C/T lag.
-        if sv:
-            _equalize(C, vc, T, vt,
-                      float(cfg.get("sv_conductance_l_s", 10000.0)), dt)
 
     def _publish(self, station: VacuumStation, context) -> None:
         p = station.prefix
