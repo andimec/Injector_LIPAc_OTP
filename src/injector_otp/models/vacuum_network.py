@@ -55,7 +55,7 @@ class VacuumStation:
 
     def volume_l(self, volume: str) -> float:
         return float(self.config.get("volumes_l", {}).get(
-            {"C": 180.0, "T": 30.0, "F": 20.0}[volume], 0.0))
+            volume, {"C": 180.0, "T": 30.0, "F": 20.0}[volume]))
 
 
 def _equalize(
