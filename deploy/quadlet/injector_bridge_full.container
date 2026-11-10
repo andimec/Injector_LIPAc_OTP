@@ -1,0 +1,27 @@
+# Candidate REPLACEMENT for /etc/containers/systemd/injector_bridge.container
+# Install only after the read-only full-vacuum validation succeeds.
+# This unit remains OBSERVE ONLY on reboots. Do not set publish for autostart.
+[Unit]
+Description=LIPAc Python full-vacuum CA bridge (observe only)
+Requires=example_ioc.service
+After=example_ioc.service
+
+[Container]
+Image=localhost/injector-ca-bridge:vacuum-full
+ContainerName=injector-ca-bridge
+Network=internal.network
+Environment=EPICS_CA_AUTO_ADDR_LIST=NO
+Environment=EPICS_CA_ADDR_LIST=10.0.3.16
+Environment=BRIDGE_ALLOW_WRITES=NO
+Environment=BRIDGE_ISOLATED_ACK=NO
+Environment=BRIDGE_SCOPE_ACK=NO
+NoNewPrivileges=true
+ReadOnly=true
+Exec=python -m injector_otp.epics.vacuum_full_bridge --mode observe --ioc 10.0.3.16
+
+[Service]
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
