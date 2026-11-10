@@ -1,5 +1,8 @@
 # LIPAc Injector Python device models (OTP)
 
+> **Field integration note (2026-11-10):** isolated Debian/Podman EPICS bridge testing has reached `UNHEALTHY=0 of 39` for digital vacuum readbacks. This confirms EPICS value/alarm quality only; it does **not** certify Siemens/PPS interlocks, pump physics, analog channels or safe command sequencing. The actual IOC mount and Quadlet unit files live **outside** the Git checkout. See the [EPICS VM runbook](../../../docs/EPICS_VM_RUNBOOK.md) and the [subsystem replication prompt](../../../docs/SUBSYSTEM_REPLICATION_PROMPT.md).
+
+
 This directory contains all simulation and original-LCS equation implementations.
 **No model calls caput/caget, writes an EPICS database, or communicates with
 a real accelerator.** The thin EPICS IOC is a transport/interface boundary.
