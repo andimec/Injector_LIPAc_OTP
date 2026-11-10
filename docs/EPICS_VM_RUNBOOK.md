@@ -9,7 +9,7 @@
 | Elemento | Evidencia / resultado | Situación |
 |---|---|---|
 | Modelo de red VAC01/VAC02 | \`src/injector_otp/models/vacuum_network.py\` | Modelo reducido, no calibrado |
-| Puente CA integral | Ejecución local de \`injector_otp.epics.vacuum_full_bridge\` en \`injector_bridge.service\` | Comprobado en VM. Los archivos de despliegue deben versionarse y contrastarse con la VM |
+| Puente CA integral | Ejecución local de \`injector_otp.epics.vacuum_full_bridge\` en \`injector_bridge.service\` | Comprobado en VM; código recuperado de parches e incorporado a Git, contrastar con imagen en ejecución |
 | Cálculos de precondiciones | Cuatro \`calc\` con enlaces \`INPA...INPH\` recuperados del DB original | Reparación ejecutada en DB montada |
 | Readbacks digitales | \`UNHEALTHY=0 of 39\` con \`scripts/audit_vacuum_readbacks.py --scope bi\` | **Validado en VM** |
 | Readbacks analógicos | 11 \`ai\`; piloto \`LEBT:VAC01:VacSGVC\` identificado mediante dry-run | **No se ha comunicado validación completa** |
@@ -269,7 +269,7 @@ Secuencia segura de integración: guardar cambios locales; recuperar la rama act
 
 ## 10. Mejoras pendientes, con prioridad
 
-- Integrar en Git todas las fuentes locales exactas del puente, herramientas y tests, cotejándolas con este documento.
+- Comparar las fuentes del puente, herramientas y tests recuperadas en Git con los archivos y la imagen realmente instalados en la VM, e integrar cualquier diferencia local posterior.
 - Validar los 11 analógicos y la precisión de visualización de presiones de alto vacío.
 - Añadir manejo tolerante a entradas mal tipadas sin reiniciar todo el motor, con alarma y registro diagnóstico.
 - Diseñar checkpoint de estado del motor más política de restauración segura.
