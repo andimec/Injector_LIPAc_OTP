@@ -1,5 +1,8 @@
 # Guía de modelos del Injector LIPAc OTP
 
+> **Nota de integración EPICS (10-11-2026):** el modelo `vacuum_network.py` se ha enlazado con un Soft IOC aislado mediante un puente de pruebas. Sus 39 readbacks `bi` han superado la auditoría de calidad EPICS, pero siguen pendientes los 11 `ai`, la persistencia tras reinicio y la aplicación efectiva de los permisos `PVOpenPrecond/SVOpenPrecond` al accionamiento. Consultar [runbook de la VM](../EPICS_VM_RUNBOOK.md) y [prompt de replicación](../SUBSYSTEM_REPLICATION_PROMPT.md); no confundir cobertura de PV con validación física.
+
+
 **Alcance:** los 20 módulos con código Python bajo [src/injector_otp/models](../../src/injector_otp/models/), excluyendo __init__.py, que es solo el inicializador del paquete. **Fecha de revisión:** 06-11-2026, propuesta de red de vacío V1.4.
 
 Esta documentación está orientada a lectores que conocen el inyector, pero no necesariamente el código. Cada página contesta: **qué problema representa, de dónde procede la lógica, cómo se ejecuta, qué NO reproduce y qué se debe mejorar a continuación**. El README de [modelos de origen](../../src/injector_otp/models/README.md) y la [arquitectura](../architecture.md) explican el marco global.
