@@ -79,4 +79,5 @@ record(bi, "SRC:MFCD:StsVanne")
     field(SCAN, "Passive")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
