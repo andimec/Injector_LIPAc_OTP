@@ -2,7 +2,7 @@
 
 > **EPICS/Podman VM update (2026-11-10).** The isolated Debian training VM has exercised a full-vacuum Python-to-IOC bridge; the 39 digital model-owned vacuum readbacks passed the alarm-quality audit (`UNHEALTHY=0 of 39`). This does **not** validate the 11 analog readbacks, the complete PP/PV/TP/SV sequence, actuator enforcement of OPI preconditions, or physical fidelity. GitHub and the VM's mounted DB/Quadlet files are separate locations. See [VM installation and incident runbook](docs/EPICS_VM_RUNBOOK.md) and [replication prompt for another accelerator subsystem](docs/SUBSYSTEM_REPLICATION_PROMPT.md).
 
-**Start here for the isolated VM:** `docs/EPICS_VM_RUNBOOK.md` explains `/home/ifmif/Documents/IOCs/example_ioc_mounts`, the `/etc/containers/systemd/` Quadlets, CA settings for Phoebus and the proposed fixed IOC IP `10.0.3.16`. Never allow identical PV names to be discovered on production networks. The local vacuum bridge and migration scripts must be synchronized and compared with the deployed VM before claiming a fully reproducible GitHub checkout.
+**Start here for the isolated VM:** `docs/EPICS_VM_RUNBOOK.md` explains `/home/ifmif/Documents/IOCs/example_ioc_mounts`, the `/etc/containers/systemd/` Quadlets, CA settings for Phoebus and the proposed fixed IOC IP `10.0.3.16`. Never allow identical PV names to be discovered on production networks. The full-vacuum bridge and migration/test scripts have been recovered from the tested patch bundles and versioned in this repository. Compare these sources with the **running** image and host-mounted IOC files before claiming exact reproduction of the VM.
 
 
 LIPAc Injector Operator Training Platform (OTP) and Digital Twin.
