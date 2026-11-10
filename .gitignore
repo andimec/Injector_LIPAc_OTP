@@ -1,0 +1,29 @@
+# Python / test environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local state and histories
+*.db.bak_*
+*.db.bak_readbacks_*
+*.container.bak*
+*.swp
+*.swo
+*.log
+output/
+
+# Host-specific settings and secrets
+.env
+.env.*
+!.env.example
+settings.ini
+**/settings.ini
+*.key
+*.pem
+
+# Simulation snapshots and temporary artifacts
+*.tmp
+*.old

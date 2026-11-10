@@ -1,0 +1,4 @@
+# Phoebus CA settings for a dedicated, network-isolated training instance.
+# Keep production MQTT, archiver, alarm servers and credentials OUT of this file.
+org.phoebus.pv.ca/addr_list = 10.0.3.16
+org.phoebus.pv.ca/auto_addr_list = false

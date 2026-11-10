@@ -1,5 +1,10 @@
 # Documentación técnica del gemelo digital del inyector LIPAc
 
+> **Actualización de integración, 10-11-2026:** el IOC y el puente CA de vacío se han ensayado en la VM aislada; los 39 readbacks digitales auditados tienen `UDF=0` y `STAT/SEVR=NO_ALARM`. Permanecen pendientes la validación de los 11 analógicos, la prueba completa de secuencia y la sincronización final de archivos operativos del host con Git. Las secciones anteriores que describen el Soft IOC como «futuro» son antecedentes de diseño, no el estado completo de la VM.
+
+**Documentos prioritarios:** [Runbook de la VM, errores y recuperación](EPICS_VM_RUNBOOK.md) · [Prompt de réplica para otros subsistemas](SUBSYSTEM_REPLICATION_PROMPT.md).
+
+
 **Estado de referencia:** 6 de noviembre de 2026, rama de desarrollo del modelo configurable de vacío (PR #11), además de EMU y su reproducción offline Fast/Full. Los botones Validate/ON por EPICS siguen pendientes. Esta documentación describe el **código de entrenamiento**, no valida los equipos, los permisos PLC ni el funcionamiento físico de LIPAc.
 
 **Guías explicativas de los 20 módulos Python:** [índice de modelos, lógica, pseudocódigo y próximos pasos](models/README.md).

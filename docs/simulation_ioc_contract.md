@@ -1,5 +1,8 @@
 # Simulation IOC contract
 
+> **Implementation status note (2026-11-10):** an isolated Debian VM has operated the Python full-vacuum Channel Access bridge. The original design text below may refer to a "future" IOC, but the VM integration has already been exercised. Confirmed: 39 digital vacuum readbacks with normal alarm quality. Pending: 11 analog readbacks, complete PP/PV/TP/SV acceptance, end-to-end valve permit enforcement, and final synchronization of local bridge code/Quadlets. For exact deployed paths, fault diagnosis and rollback consult [EPICS VM runbook](EPICS_VM_RUNBOOK.md).
+
+
 ## Purpose
 
 The digital twin runs inside a VM physically/logically isolated from the LIPAc

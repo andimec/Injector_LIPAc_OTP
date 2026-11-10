@@ -293,122 +293,134 @@ record(bi, "LEBT:FC:OutStat")
 
 record(bi, "LEBT:GV:OpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ONAM, "Open")
     field(ZNAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:GV:CloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:PPOnStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Off")
     field(ONAM, "On")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:TPOnStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status TP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Off")
     field(ONAM, "On")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:PVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:PVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:AIVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status AIV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:AIVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status AIV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:SVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:SVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:NIVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status NIV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:NIVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status NIV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:LTVOpenStat")
@@ -433,142 +445,156 @@ record(bi, "LEBT:VAC01:LTVCloseStat")
 
 record(bi, "LEBT:VAC01:TPSpeedStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status TP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Not nominal speed")
     field(ONAM, "Nominal speed")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:TPDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status TP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Failure")
     field(ONAM, "No failure")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:PGVCDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PGVC")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:SGVCDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SGVC")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:PGTPDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PGTP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC01:SGTPDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SGTP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:PPOnStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Off")
     field(ONAM, "On")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:TPOnStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status TP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Off")
     field(ONAM, "On")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:PVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:PVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:AIVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status AIV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:AIVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status AIV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:SVOpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:SVCloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SV")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Open")
     field(ONAM, "Close")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:LTVOpenStat")
@@ -593,62 +619,68 @@ record(bi, "LEBT:VAC02:LTVCloseStat")
 
 record(bi, "LEBT:VAC02:TPSpeedStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status TP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Not nominal speed")
     field(ONAM, "Nominal speed")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:TPDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status TP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Error")
     field(ONAM, "No error")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:PGVCDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PGVC")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:SGVCDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SGVC")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:PGTPDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PGTP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:VAC02:SGTPDefStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status SGTP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Fault")
     field(ONAM, "Ok")
+    field(INP, "0")
 }
 
 record(bi, "LEBT:SOL01:TSDefStat")
@@ -1063,42 +1095,46 @@ record(bi, "SRC:IE_PS:RemStat")
 
 record(bi, "SRC:SVL:D2OpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "SRC:SVL:D2CloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ONAM, "Close")
     field(ZNAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "SRC:SVL:H2OpenStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ZNAM, "Close")
     field(ONAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "SRC:SVL:H2CloseStat")
 {
-    field(DTYP, "Injector Soft Channel")
+    field(DTYP, "Soft Channel")
     field(DESC, "Status PP")
-    field(SCAN, "I/O Intr")
+    field(SCAN, "Passive")
     field(PINI, "NO")
     field(ONAM, "Close")
     field(ZNAM, "Open")
+    field(INP, "0")
 }
 
 record(bi, "SRC:RF:FSDefStat")

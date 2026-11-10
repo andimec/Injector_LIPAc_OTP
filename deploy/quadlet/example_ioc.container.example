@@ -1,0 +1,24 @@
+# Example for the ISOLATED Debian training VM only.
+# Actual host file: /etc/containers/systemd/example_ioc.container
+# Check the network and IP address before deploying.
+[Unit]
+Description=LIPAc training Soft IOC with external DB mounts
+
+[Container]
+Image=ghcr.io/ifmif/lipac-uber-ioc
+Network=internal.network
+IP=10.0.3.16
+PodmanArgs=-it
+User=1000
+ReadOnly=true
+Volume=/data/example_ioc/%H/%N:/data
+Environment=EPICS_IOCSH_HISTFILE=/data/iocsh_history
+Volume=/home/ifmif/Documents/IOCs/example_ioc_mounts/st.cmd:/opt/uber_ioc/boot/st.cmd
+Volume=/home/ifmif/Documents/IOCs/example_ioc_mounts/db:/opt/uber_ioc/db
+
+[Service]
+Restart=always
+ExecStartPre=mkdir -p /data/example_ioc/%H/%N/
+
+[Install]
+WantedBy=default.target

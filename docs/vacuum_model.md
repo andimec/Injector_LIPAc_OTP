@@ -1,5 +1,8 @@
 # Red de vacío LIPAc V1.4. Modelo Python configurable (borrador de validación)
 
+> **Implementation status note (2026-11-10):** an isolated Debian VM has operated the Python full-vacuum Channel Access bridge. The original design text below may refer to a "future" IOC, but the VM integration has already been exercised. Confirmed: 39 digital vacuum readbacks with normal alarm quality. Pending: 11 analog readbacks, complete PP/PV/TP/SV acceptance, end-to-end valve permit enforcement, and final synchronization of local bridge code/Quadlets. For exact deployed paths, fault diagnosis and rollback consult [EPICS VM runbook](EPICS_VM_RUNBOOK.md).
+
+
 Este módulo es **solo para simulación aislada y entrenamiento**. No implementa
 interlocks Siemens ni sustituye manuales OEM o procedimientos LIPAc aprobados.
 Los valores de volúmenes, conductancias, tiempos de respuesta y fracciones de
