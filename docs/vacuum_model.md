@@ -1,5 +1,73 @@
 # Red de vacío LIPAc V1.4. Modelo Python configurable (borrador de validación)
 
+## Noviembre de 2026: lectura PG/SG, cámara externa y venteo de la TP
+
+**Ámbito:** simulador aislado. La cámara de cada estación C inicia a una presión
+configurable de un sistema de vacío externo; no se está integrando aún un
+controlador externo real. El volumen de entrada de la turbomolecular (T) y la
+línea de respaldo (F) mantienen sus propias presiones y estados.
+
+En \`config/model_parameters.yaml\`, por cada \`VAC01\` y \`VAC02\`:
+
+\`\`\`yaml
+initial_pressure_mbar: 1.0e-6         # T y F iniciales
+chamber_initial_pressure_mbar: 1.0e-7 # C inicial, sistema externo supuesto
+isolated_tp_pressure_rise_percent_per_hour: 1.0
+aiv_vent_tau_s: 5.0
+\`\`\`
+
+Estos valores son supuestos de entrenamiento. \`chamber_initial_pressure_mbar\`
+es solo condición inicial, **no** una presión fija forzada permanentemente:
+fugas, gas y válvulas abiertas pueden alterarla.
+
+### Dinámica TP / PV / SV / AIV
+
+- **TP apagada, PV cerrada, SV cerrada, AIV cerrada:** volumen T aislado
+  de F y C. Su presión evoluciona en el entrenamiento con
+  \`P_T(t + dt) = P_T(t) * (1 + r/100) ** (dt/3600)\`, donde \`r=1\`
+  corresponde a **1 %/h**. El periodo 1 h es una convención explícita
+  provisional, no una tasa experimental; con \`r=0\` la presión se mantiene.
+- **Misma condición, pero AIV abierta:** T recibe aire (gas ideal N2 en el
+  modelo) con relajación exponencial hacia la presión atmosférica configurada
+  \`1013.25 mbar\`; \`aiv_vent_tau_s=5\` s es una hipótesis rápida de
+  entrenamiento. Al ser una relajación exponencial, alcanza el valor objetivo
+  con tolerancia, no por salto instantáneo matemático.
+- **PV y SV cerradas:** ni la cámara C ni la línea F deben igualarse con T
+  durante el venteo por AIV.
+- **PV abierta y TP detenida:** se permite conductancia del volumen T hacia F,
+  como escenario del circuito de respaldo del modelo reducido.
+
+### Pirani frente a Penning
+
+| Sufijo | Zona | Tipo asumido | Rango de indicación declarado |
+|---|---|---|---|
+| \`VacPGTP\` / \`VacPGVC\` | T / C | Pirani | \`1e-4 .. 1013.25 mbar\` |
+| \`VacSGTP\` / \`VacSGVC\` | T / C | Penning | \`1e-8 .. 1e-4 mbar\` |
+
+Los límites son **configurables** en \`vacuum.gauge_ranges_mbar\`. El umbral se
+escribe \`1e-4\` y no \`10e-4\`. El simulador publica en los cuatro readbacks
+analógicos la **presión total ideal del volumen**, también fuera de los rangos,
+para conservar continuidad y permitir el valor inicial explícitamente
+solicitado \`PGVC=1e-7 mbar\`. Esto **no representa una medición físicamente
+válida de un Pirani por debajo de \`1e-4\` mbar**. El motor genera las métricas
+internas \`LEBT:VACxx:PGVC.in_range\`, \`SGVC.in_range\`, \`PGTP.in_range\`,
+\`SGTP.in_range\` y \`*.actual_pressure_mbar\` para distinguir diagnóstico
+de la presión real. Las métricas no son todavía PV EPICS ni alarmas de rango:
+si la OPI necesita indicación de «fuera de rango» habrá que añadir
+metadatos/PV de diagnóstico de forma explícita.
+
+Los ocho registros \`ai\` de \`db/plcInjectorApp/db/plcInjector_Input.db\`
+pasan de \`PREC=0\` a \`PREC=10\`. Ese cambio modifica **presentación**, no
+cálculo, unidades ni calibración. Usar \`caget -e 12\` en pruebas de presión de
+alto vacío y configurar formato científico en widgets de Phoebus.
+
+**Importante:** el estado de calidad de los 39 \`bi\` se validó en VM, pero
+la migración y prueba de los 11 \`ai\` continúan pendientes. Cambiar \`PREC\`
+en el repositorio no actualiza automáticamente la DB montada del IOC.
+No desplegar sin revisión del diff, reinicio controlado y auditoría de
+\`UDF/STAT/SEVR\`.
+
+
 > **Implementation status note (2026-11-10):** an isolated Debian VM has operated the Python full-vacuum Channel Access bridge. The original design text below may refer to a "future" IOC, but the VM integration has already been exercised. Confirmed: 39 digital vacuum readbacks with normal alarm quality. Pending: 11 analog readbacks, complete PP/PV/TP/SV acceptance, end-to-end valve permit enforcement, and final synchronization of local bridge code/Quadlets. For exact deployed paths, fault diagnosis and rollback consult [EPICS VM runbook](EPICS_VM_RUNBOOK.md).
 
 
