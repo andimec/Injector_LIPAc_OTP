@@ -28,6 +28,10 @@ def run(*, config: Path, station: str, hours: float | None,
     settings = params.setdefault("vacuum", {})
     station_config = settings.setdefault("stations", {}).setdefault(station, {})
     station_config["initial_pressure_mbar"] = start_pressure
+    # The CLI explicitly requests a chamber pumpdown start pressure.
+    # Override the external-chamber default as well, otherwise the demo
+    # could begin with a chamber already at 1e-7 mbar.
+    station_config["chamber_initial_pressure_mbar"] = start_pressure
     profile_config = station_config.setdefault("pumpdown", {})
     if hours is not None:
         if hours <= 0:
