@@ -307,7 +307,9 @@ def test_pirani_and_penning_ranges_are_reported_without_faking_measurements(stat
     assert ctx.metrics[f"{p}:SGVC.in_range"] == 1.0
     assert ctx.metrics[f"{p}:PGTP.in_range"] == 0.0
     assert ctx.metrics[f"{p}:SGTP.in_range"] == 1.0
-    assert ctx.metrics[f"{p}:SGTP.actual_pressure_mbar"] == pytest.approx(1e-6)
+    expected_after_one_second = 1e-6 * 1.01 ** (1.0 / 3600.0)
+    assert ctx.metrics[f"{p}:SGTP.actual_pressure_mbar"] == pytest.approx(
+        expected_after_one_second)
     # Reported numeric values remain ideal training surrogates even out of range.
 
 
