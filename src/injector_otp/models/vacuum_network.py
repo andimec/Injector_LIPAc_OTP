@@ -169,7 +169,16 @@ class VacuumNetworkModel(SubsystemModel):
                         volume, {"C": 180, "T": 30, "F": 20}[volume])) <= 0:
                     raise ValueError("Vacuum volumes must be positive")
             prefix = f"LEBT:{short}"
-            pressure = {v: {gas: (initial if gas == "residual" else 0.0)
+            # The chamber starts at the pressure supplied by its external
+            # vacuum system. This is an INITIAL condition, not a permanent
+            # clamp: real simulated gas loads, open valves and leaks can
+            # subsequently change chamber pressure.
+            chamber_initial = float(station_cfg.get(
+                "chamber_initial_pressure_mbar", initial))
+            if chamber_initial < 0 or not isfinite(chamber_initial):
+                raise ValueError(f"Invalid chamber initial pressure for {short}")
+            pressure = {v: {gas: ((chamber_initial if v == "C" else initial)
+                                   if gas == "residual" else 0.0)
                              for gas in COMPONENTS} for v in ("C", "T", "F")}
             self.stations[short] = VacuumStation(
                 prefix, station_cfg, profile, pressure,
@@ -307,7 +316,10 @@ class VacuumNetworkModel(SubsystemModel):
         if p == "LEBT:VAC01" and self._is_open(context, f"{p}:NIV"):
             _vent(C, dt, float(cfg.get("vent_tau_s", 120.0)), ambient)
         if self._is_open(context, f"{p}:AIV"):
-            _vent(T, dt, float(cfg.get("vent_tau_s", 120.0)), ambient)
+            # AIV admits atmosphere on the TP inlet side. It must work even
+            # with TP stopped and both PV and SV closed.
+            _vent(T, dt, float(cfg.get(
+                "aiv_vent_tau_s", cfg.get("vent_tau_s", 120.0))), ambient)
         if bool(context.pv.get(f"{p}:LTVOpenStat", False)):
             _vent(F, dt, float(cfg.get("vent_tau_s", 120.0)), ambient)
 
@@ -347,11 +359,26 @@ class VacuumNetworkModel(SubsystemModel):
                 for gas in ("H2", "D2", "Kr", "N2"):
                     _pump(T, vt, float(speeds.get(gas, 2400.0))*tp_speed,
                           dt, species=gas)
-            else:
-                # A stopped TP is a finite gas conductance to the foreline.
+            elif pv:
+                # Stopped-TP equalization is only possible with PV open.
+                # With PV closed the TP inlet is isolated from the foreline.
                 _equalize(T, vt, F, vf,
                           float(cfg.get("stopped_tp_conductance_l_s", 10000.0)),
                           dt)
+        # Configurable training leak of the sealed inlet. Interpret "1 %"
+        # as a time-normalized rate (per hour), never as 1 % per model step.
+        # An open AIV instead uses the atmospheric vent branch above.
+        isolated_rise_pct = float(cfg.get(
+            "isolated_tp_pressure_rise_percent_per_hour", 0.0))
+        if not isfinite(isolated_rise_pct) or isolated_rise_pct < 0:
+            raise ValueError("isolated TP pressure rise must be >= 0 %/h")
+        if (isolated_rise_pct > 0 and not station.tp.running
+                and not pv and not sv
+                and not self._is_open(context, f"{p}:AIV")):
+            growth = exp((dt / 3600.0) *
+                         __import__("math").log1p(isolated_rise_pct / 100.0))
+            for gas in COMPONENTS:
+                T[gas] *= growth
         if pp and pv:
             effective_rough_speed = (vc + vt + vf) / prof.roughing_tau_s
             _pump(F, vf, effective_rough_speed, dt,
@@ -364,6 +391,21 @@ class VacuumNetworkModel(SubsystemModel):
             gauge = station.gauges[suffix]
             gauge.fault = bool(context.device_faults.get(gauge.name, False))
             reading = station.total(volume)
+            # The exposed numeric PV is an ideal pressure surrogate,
+            # including out-of-range values. The range flag is diagnostic
+            # only and does NOT pretend that a real Pirani/Penning gauge
+            # remains calibrated outside its measurement interval.
+            kind = "pirani" if suffix.startswith("PG") else "penning"
+            nominal_bounds = ((1.0e-4, float(self.settings.get(
+                "atmospheric_pressure_mbar", 1013.25)))
+                if kind == "pirani" else (1.0e-8, 1.0e-4))
+            gauge_cfg = self.settings.get("gauge_ranges_mbar", {}).get(kind, {})
+            low = float(gauge_cfg.get("min", nominal_bounds[0]))
+            high = float(gauge_cfg.get("max", nominal_bounds[1]))
+            if not (0 < low <= high and isfinite(low) and isfinite(high)):
+                raise ValueError(f"Invalid {kind} gauge range: {low}, {high}")
+            context.metrics[f"{gauge.name}.in_range"] = float(low <= reading <= high)
+            context.metrics[f"{gauge.name}.actual_pressure_mbar"] = reading
             if not gauge.fault:
                 gauge.last_value_mbar = reading
             elif gauge.last_value_mbar is not None:
