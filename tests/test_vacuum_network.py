@@ -240,3 +240,97 @@ def test_offline_reference_pumpdown_demo(tmp_path):
     assert 0.7 * 3600 <= reached <= 1.6 * 3600
     assert p <= 1e-6
     assert "chamber_mbar" in output.read_text(encoding="utf-8")
+
+
+
+def _new_gauge_case(initial_chamber=1e-7):
+    """Fully offline fixture for isolation, venting and sensor range diagnostics."""
+    cfg = {"vacuum": {
+        "atmospheric_pressure_mbar": 1013.25,
+        "gauge_ranges_mbar": {
+            "pirani": {"min": 1.0e-4, "max": 1013.25},
+            "penning": {"min": 1.0e-8, "max": 1.0e-4},
+        },
+        "stations": {
+            station: {
+                "initial_pressure_mbar": 1e-6,
+                "chamber_initial_pressure_mbar": initial_chamber,
+                "isolated_tp_pressure_rise_percent_per_hour": 1.0,
+                "aiv_vent_tau_s": 5.0,
+            } for station in ("VAC01", "VAC02")
+        },
+    }}
+    return VacuumNetworkModel(catalog(), cfg), SimulationContext()
+
+
+@pytest.mark.parametrize("station", ["VAC01", "VAC02"])
+def test_isolated_turbo_inlet_increases_one_percent_per_hour(station):
+    model, ctx = _new_gauge_case()
+    p = f"LEBT:{station}"
+    # A non-equal foreline pressure must not enter the sealed TP inlet.
+    model.stations[station].pressure["F"]["residual"] = 1e-2
+    model.update(1800.0, ctx)
+    model.update(1800.0, ctx)
+    assert ctx.metrics[f"{p}.inlet_pressure_mbar"] == pytest.approx(1.01e-6)
+    assert ctx.metrics[f"{p}.foreline_pressure_mbar"] == pytest.approx(1e-2)
+    assert ctx.pv[f"{p}:VacPGTP"] == pytest.approx(1.01e-6)
+    assert ctx.pv[f"{p}:VacSGTP"] == pytest.approx(1.01e-6)
+    assert ctx.metrics[f"{p}.pressure_mbar"] == pytest.approx(1e-7)
+
+
+@pytest.mark.parametrize("station", ["VAC01", "VAC02"])
+def test_aiv_vents_only_tp_inlet_with_pv_and_sv_closed(station):
+    model, ctx = _new_gauge_case()
+    p = f"LEBT:{station}"
+    ctx.metrics[f"{p}:AIV.open"] = 1.0
+    model.update(100.0, ctx)
+    assert ctx.pv[f"{p}:VacPGTP"] == pytest.approx(1013.25, abs=0.001)
+    assert ctx.metrics[f"{p}.inlet_pressure_mbar"] == pytest.approx(
+        1013.25, abs=0.001)
+    assert ctx.metrics[f"{p}.pressure_mbar"] == pytest.approx(1e-7)
+    assert ctx.pv[f"{p}:VacPGVC"] == pytest.approx(1e-7)
+    assert ctx.pv[f"{p}:VacSGVC"] == pytest.approx(1e-7)
+    # PV and SV closed isolate the chamber and foreline.
+    assert ctx.metrics[f"{p}.foreline_pressure_mbar"] == pytest.approx(1e-6)
+    assert ctx.metrics[f"{p}:PGTP.in_range"] == 1.0
+    assert ctx.metrics[f"{p}:SGTP.in_range"] == 0.0
+
+
+@pytest.mark.parametrize("station", ["VAC01", "VAC02"])
+def test_pirani_and_penning_ranges_are_reported_without_faking_measurements(station):
+    model, ctx = _new_gauge_case()
+    p = f"LEBT:{station}"
+    model.update(1.0, ctx)
+    assert ctx.pv[f"{p}:VacPGVC"] == pytest.approx(1e-7)
+    assert ctx.pv[f"{p}:VacSGVC"] == pytest.approx(1e-7)
+    assert ctx.metrics[f"{p}:PGVC.in_range"] == 0.0
+    assert ctx.metrics[f"{p}:SGVC.in_range"] == 1.0
+    assert ctx.metrics[f"{p}:PGTP.in_range"] == 0.0
+    assert ctx.metrics[f"{p}:SGTP.in_range"] == 1.0
+    assert ctx.metrics[f"{p}:SGTP.actual_pressure_mbar"] == pytest.approx(1e-6)
+    # Reported numeric values remain ideal training surrogates even out of range.
+
+
+def test_invalid_isolated_pressure_growth_rate_fails_fast():
+    model, ctx = _new_gauge_case()
+    model.stations["VAC01"].config[
+        "isolated_tp_pressure_rise_percent_per_hour"] = -0.1
+    with pytest.raises(ValueError, match="isolated TP pressure rise"):
+        model.update(1.0, ctx)
+
+
+def test_vacuum_gauge_db_precision_supports_high_vacuum():
+    import re
+    from pathlib import Path
+    db = Path("db/plcInjectorApp/db/plcInjector_Input.db").read_text(
+        encoding="utf-8")
+    for station in ("VAC01", "VAC02"):
+        for suffix in ("PGVC", "SGVC", "PGTP", "SGTP"):
+            name = f"LEBT:{station}:Vac{suffix}"
+            record = re.search(
+                r'record\(ai,\s*"' + re.escape(name) + r'"\)\s*\{([^}]+)\}',
+                db)
+            assert record is not None, name
+            precision = re.search(r'field\(PREC,\s*"(\d+)"\)', record.group(1))
+            assert precision is not None, name
+            assert int(precision.group(1)) >= 8, name
