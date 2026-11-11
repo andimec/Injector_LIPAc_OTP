@@ -34,6 +34,13 @@ vacuum:
   # above. Legacy keys are intentionally retained for the old standalone
   # VacuumRegionModel unit tests; the live InjectorModel uses the network.
   atmospheric_pressure_mbar: 1013.25
+  # Training operational ranges. EPICS VacPG*/VacSG* outputs remain ideal
+  # numeric pressure proxies outside these ranges; Python also exposes
+  # per-gauge '<PV without Vac>.in_range' diagnostics (not EPICS PVs).
+  # A real Pirani/Penning sensor must NOT be considered valid out of range.
+  gauge_ranges_mbar:
+    pirani: {min: 1.0e-4, max: 1013.25}
+    penning: {min: 1.0e-8, max: 1.0e-4}
   gv_conductance_l_s: 500.0  # TRAINING hypothesis; not measured
   # Optional user-provided measured CSV (flow_sccm,delta_pressure_mbar).
   # Key is an existing MFC prefix. See docs/vacuum_model.md.
@@ -45,7 +52,10 @@ vacuum:
   stations:
     VAC01:
       mode: detailed
-      initial_pressure_mbar: 1.0e-6 # set to 1013.25 for atmospheric start
+      initial_pressure_mbar: 1.0e-6 # TP inlet and foreline startup
+      chamber_initial_pressure_mbar: 1.0e-7 # external chamber vacuum at startup
+      isolated_tp_pressure_rise_percent_per_hour: 1.0 # training assumption
+      aiv_vent_tau_s: 5.0 # seconds, training assumption; atmospheric target 1013.25
       temperature_K: 293.15
       volumes_l: {C: 180.0, T: 30.0, F: 20.0}  # uncalibrated
       sv_conductance_l_s: 10000.0                 # uncalibrated
@@ -69,7 +79,10 @@ vacuum:
         ultimate_pressure_mbar: 1.0e-8 # asymptotic gas-free floor
     VAC02:
       mode: simplified
-      initial_pressure_mbar: 1.0e-6
+      initial_pressure_mbar: 1.0e-6 # TP inlet and foreline startup
+      chamber_initial_pressure_mbar: 1.0e-7 # external chamber vacuum at startup
+      isolated_tp_pressure_rise_percent_per_hour: 1.0 # training assumption
+      aiv_vent_tau_s: 5.0 # seconds, training assumption; atmospheric target 1013.25
       temperature_K: 293.15
       volumes_l: {C: 120.0, T: 30.0, F: 20.0}  # uncalibrated
       sv_conductance_l_s: 10000.0
