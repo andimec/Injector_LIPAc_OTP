@@ -1,5 +1,28 @@
 # vacuum_network.py | Red de vacío acoplada VAC01 y VAC02
 
+## Estado de sensores y aislamiento de TP (actualización 11-11-2026)
+
+La presión en cámara \`C\` puede empezar a \`1e-7 mbar\` desde una condición
+inicial configurable del sistema externo. La entrada de TP \`T\` y el respaldo
+\`F\` empiezan de forma independiente. Para TP detenida y PV/SV/AIV cerradas,
+la entrada aislada aumenta \`1 %/h\` (valor configurable) sin igualarse con
+el respaldo. Al abrir AIV, \`T\` se aproxima a \`1013.25 mbar\` sin aumentar
+\`C\` o \`F\` si PV y SV siguen cerradas.
+
+Los cuatro sensores por estación siguen publicando presiones ideales en
+\`VacPGVC\`, \`VacSGVC\`, \`VacPGTP\`, \`VacSGTP\`; se incorpora un indicador
+de rango **interno a Python** \`<gauge>.in_range\`. Pirani:
+\`1e-4 .. 1013.25\` mbar. Penning: \`1e-8 .. 1e-4\` mbar. Fuera del rango,
+la lectura numérica de entrenamiento **no equivale a medición calibrada**.
+En particular, \`VacPGVC=1e-7\` es el sustituto numérico pedido para el
+sistema de vacío externo, aunque está por debajo del rango Pirani.
+
+La precisión EPICS de las ocho PV \`ai\` se aumenta a diez decimales para
+evitar mostrar cero por \`PREC=0\`. Hay que validar la calidad EPICS \`ai\`
+en la VM después de aplicar los cambios. Véase
+[guía de vacío](../vacuum_model.md) y [runbook VM](../EPICS_VM_RUNBOOK.md).
+
+
 **Implementación:** [`vacuum_network.py`](../../src/injector_otp/models/vacuum_network.py)  
 **Integración:** [`injector.py`](../../src/injector_otp/models/injector.py)  
 **Configuración:** [`model_parameters.yaml`](../../config/model_parameters.yaml)  
